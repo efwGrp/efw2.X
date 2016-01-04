@@ -6,7 +6,7 @@
 		<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2"><B>ファイルの一覧</B></FONT></TH>
 	</TR>
 </TABLE>
-<pre>
+<pre style="font-family:ＭＳ ゴシック;">
 web
 ├─<span class="prg">form1.jsp</span>
 ├─<span class="prg">form2.jsp</span>
@@ -96,7 +96,7 @@ web
 	</TR>
 </TABLE>
 <H3><A NAME="efw.jsp">jsp</A></H3>
-<pre>
+<pre style="font-family:ＭＳ ゴシック;">
 web/form1.jsp
 --------------------------------------------------------------------------------
     &lt;%@ page language="java" contentType="text/html; <b>charset</b>=UTF-8" <b>pageEncoding</b>="UTF-8"%&gt;
@@ -135,7 +135,7 @@ web/form1.jsp
 
 
 <H3><A NAME="efw.jsp.taglib">efwタグ利用</A></H3>
-<pre>
+<pre style="font-family:ＭＳ ゴシック;">
     &lt;efw:Core/&gt;
     &lt;efw:JQueryUI/&gt;
     &lt;efw:InputBehavior/&gt;
@@ -168,7 +168,7 @@ efw の taglib を宣言して、efwのタグを取り込み、efw.client の各
 
 
 <H3><A NAME="efw.jsp.charset">encode & charset</A></H3>
-<pre>
+<pre style="font-family:ＭＳ ゴシック;">
     &lt;%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%&gt;
     &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/&gt;
 </pre>
@@ -223,7 +223,7 @@ efwの各jsファイルは、UTF-8 でエンコードする。ただし、jsp画
 <HR>
 
 <H3><A NAME="efw.jsp.charset">画面間のデータ受取り引渡し</A></H3>
-<pre>
+<pre style="font-family:ＭＳ ゴシック;">
     var param1="&lt;%=request.getParameter("param1")%&gt;";
     window.location="next.jsp?param1="+param1;
 </pre>
@@ -236,7 +236,7 @@ efwの各jsファイルは、UTF-8 でエンコードする。ただし、jsp画
 <HR>
 
 <H3><A NAME="efw.jsp.event">イベントのデータ受取り引渡し</A></H3>
-<pre>
+<pre style="font-family:ＭＳ ゴシック;">
     efw.client.fire({
        eventId:"form1_event1",
            ...
@@ -253,7 +253,7 @@ efwの各jsファイルは、UTF-8 でエンコードする。ただし、jsp画
 <HR>
 
 <H3><A NAME="efw.jsp.dataFormat">入力支援</A></H3>
-<pre>
+<pre style="font-family:ＭＳ ゴシック;">
     &lt;input id="txt_testnumber" type="text" data-format="#,##0.00"&gt;
     &lt;input id="txt_testdate" type="text" data-format="yyyy年MM月dd日"&gt;
 </pre>
@@ -298,7 +298,7 @@ efw:InputBehavior をインクルードして、入力枠に data-format を定�
 	</TR>
 </TABLE>
 <H3><A NAME="efw.event">event</A></H3>
-<pre>
+<pre style="font-family:ＭＳ ゴシック;">
 web/WEB-INF/efw/event/form1_event1.js
 --------------------------------------------------------------------------------
 var form1_event1={};
@@ -332,7 +332,7 @@ form1_event1.<b>fire</b>         = function ( requestParams ) {
 <HR>
 
 <H3><A NAME="efw.event.outOfLogin">ログインチェック</A></H3>
-<pre>
+<pre style="font-family:ＭＳ ゴシック;">
     form1_event1.outOfLogin = true/false;
 </pre>
 <DL>
@@ -343,7 +343,7 @@ form1_event1.<b>fire</b>         = function ( requestParams ) {
 <HR>
 
 <H3><A NAME="efw.event.inputCheck">単純入力チェック</A></H3>
-<pre>
+<pre style="font-family:ＭＳ ゴシック;">
 form1_event1.paramsFormat = { 
                                 "#user_id"        : "<b>display-name</b>:ユーザId;<b>max-length</b>:10;",
                                 "#txt_testnumber" : "<b>format</b>:#,##0.00;<b>required</b>:true;<b>display-name</b>:テスト数字;<b>min</b>:-10.00;<b>max</b>:1,000.00",
@@ -367,7 +367,7 @@ form1_event1.paramsFormat = {
 <HR>
 
 <H3><A NAME="efw.event.workCheck">業務チェック</A></H3>
-<pre>
+<pre style="font-family:ＭＳ ゴシック;">
     return {error:{...}};
 </pre>
 <DL>
@@ -379,7 +379,7 @@ form1_event1.paramsFormat = {
 <HR>
 
 <H3><A NAME="efw.event.include">サブイベント実行</A></H3>
-<pre>
+<pre style="font-family:ＭＳ ゴシック;">
     form1_event1.include = [ { eventId : "form1_event2" } ];
     ...
     var retsub = form1_event2.fire( { ... } );
@@ -394,7 +394,7 @@ form1_event1.paramsFormat = {
 <HR>
 
 <H3><A NAME="efw.event.fire">イベントのデータ受取り引渡し</A></H3>
-<pre>
+<pre style="font-family:ＭＳ ゴシック;">
     form1_event1.paramsFormat = { ... };
     ...
     form1_event1.fire         = function ( requestParams ) {
@@ -411,7 +411,7 @@ form1_event1.paramsFormat = {
 <HR>
 
 <H3><A NAME="efw.jsp.event">トランザクション管理</A></H3>
-<pre>
+<pre style="font-family:ＭＳ ゴシック;">
 </pre>
 <DL>
 <DD>
@@ -430,7 +430,7 @@ fireイベントが成功の場合、トランザクションがcommit。失敗�
 	</TR>
 </TABLE>
 <H3><A NAME="efw.sql">sql</A></H3>
-<pre>
+<pre style="font-family:ＭＳ ゴシック;">
 web/WEB-INF/efw/sql/sqlgroup1.xml
 --------------------------------------------------------------------------------
 &lt;?<b>xml version="1.0" encoding="UTF-8"</b>?&gt;
@@ -463,7 +463,7 @@ web/WEB-INF/efw/sql/sqlgroup1.xml
 
 
 <H3><A NAME="efw.sql.groupidandsqlid">groupIdとsqlId</A></H3>
-<pre>
+<pre style="font-family:ＭＳ ゴシック;">
 </pre>
 <DL>
 <DD>
@@ -472,7 +472,7 @@ sql XMLファイルの名称は、グループId になる。その中に定義�
 <HR>
 
 <H3><A NAME="efw.sql.comment">コメントの書き方</A></H3>
-<pre>
+<pre style="font-family:ＭＳ ゴシック;">
 <I style="color:green">&lt;!-- 
  コメント１
 --&gt;
@@ -489,7 +489,7 @@ sql XMLファイルにコメントは４種類の書き方を利用できる。
 <HR>
 
 <H3><A NAME="efw.sql.param">変数の書き方</A></H3>
-<pre>
+<pre style="font-family:ＭＳ ゴシック;">
     :user_id
 </pre>
 <DL>
@@ -499,7 +499,7 @@ sql XMLファイルにコメントは４種類の書き方を利用できる。
 <HR>
 
 <H3><A NAME="efw.sql.stbt">比較条件の書き方</A></H3>
-<pre>
+<pre style="font-family:ＭＳ ゴシック;">
     WHERE validateDateFrom <b style="color:red">&amp;gt;</b> now() and validateDateTo <b style="color:red">&amp;lt;</b> now() 
 </pre>
 <DL>
@@ -509,7 +509,7 @@ XMLファイルの制限により、「 &lt; 」⇒「 &amp;lt; 」、「 &gt; �
 <HR>
 
 <H3><A NAME="efw.sql.if">if 条件の書き方</A></H3>
-<pre>
+<pre style="font-family:ＭＳ ゴシック;">
     &lt;if <b>exists</b> = "user_id" &gt; and user_id = :user_id &lt;/if&gt;
     &lt;if <b>notexists</b> = "user_id" &gt; order by user_id desc &lt;/if&gt;
 </pre>
@@ -528,7 +528,7 @@ notexists 属性は、指定されたsqlパラメーターが null または 空
 </TABLE>
 
 <H3><A NAME="efw.properties">プロパティ</A></H3>
-<pre>
+<pre style="font-family:ＭＳ ゴシック;">
 web/WEB-INF/classes/efw.properties
 </pre>
 <DL>
@@ -614,7 +614,7 @@ web/WEB-INF/classes/efw.properties
 	</TR>
 </TABLE>
 
-<pre>
+<pre style="font-family:ＭＳ ゴシック;">
 efw
 ├─client
 │  ├─<a href="#efw.client.fire">fire</a> ( <a href="#efw.eventParams">eventParams</a> )                                                    <span class="star">★★★</span>
@@ -707,7 +707,7 @@ efw
 </TABLE>
 
 <H3><A NAME="efw.client.fire">fire</A></H3>
-<PRE>
+<pre style="font-family:ＭＳ ゴシック;">
 fire ( <A href="#efw.eventParams">eventParams</A> )</PRE>
 <DL>
 <DD>Ajaxを呼び出すための入り口関数。
@@ -720,7 +720,7 @@ fire ( <A href="#efw.eventParams">eventParams</A> )</PRE>
 <HR>
 
 <H3><A NAME="efw.client.pickup">pickup</A></H3>
-<PRE>
+<pre style="font-family:ＭＳ ゴシック;">
 pickup ( <A href="#efw.event.paramsFormat">paramsFormat</A> , <A href="#efw.eventParams.manualParams">manualParams</A> )</PRE>
 <DL>
 <DD>パラメータ値を取得する関数。（fire関数機能の一部分）
@@ -739,7 +739,7 @@ pickup ( <A href="#efw.event.paramsFormat">paramsFormat</A> , <A href="#efw.even
 <HR>
 
 <H3><A NAME="efw.client.show">show</A></H3>
-<PRE>
+<pre style="font-family:ＭＳ ゴシック;">
 show ( <A href="#efw.event.fire.eventResult">eventResult</A> )</PRE>
 <DL>
 <DD>値を画面に表示する関数。（fire関数機能の一部分）
@@ -752,7 +752,7 @@ show ( <A href="#efw.event.fire.eventResult">eventResult</A> )</PRE>
 <HR>
 
 <H3><A NAME="efw.client.alert">alert</A></H3>
-<PRE>
+<pre style="font-family:ＭＳ ゴシック;">
 alert ( message , callback );                                                   //callback = function () { ... };
 </PRE>
 <DL>
@@ -773,7 +773,7 @@ alert ( message , callback );                                                   
 
 
 <H3><A NAME="efw.client.messages.OtherErrorException">OtherErrorException</A></H3>
-<PRE>
+<pre style="font-family:ＭＳ ゴシック;">
 OtherErrorException</PRE>
 <DL>
 <DD>予想外エラーが発生しました。
@@ -781,7 +781,7 @@ OtherErrorException</PRE>
 <HR>
 
 <H3><A NAME="efw.client.messages.CanNotContinueMessage">CanNotContinueMessage</A></H3>
-<PRE>
+<pre style="font-family:ＭＳ ゴシック;">
 CanNotContinueMessage</PRE>
 <DL>
 <DD>継続処理はできません。
@@ -789,7 +789,7 @@ CanNotContinueMessage</PRE>
 <HR>
 
 <H3><A NAME="efw.client.messages.ParamsFormatErrorException">ParamsFormatErrorException</A></H3>
-<PRE>
+<pre style="font-family:ＭＳ ゴシック;">
 ParamsFormatErrorException</PRE>
 <DL>
 <DD>イベントのパラメーター定義が正しくありません。
@@ -797,7 +797,7 @@ ParamsFormatErrorException</PRE>
 <HR>
 
 <H3><A NAME="efw.client.messages.ShowValuesErrorException">ShowValuesErrorException</A></H3>
-<PRE>
+<pre style="font-family:ＭＳ ゴシック;">
 ShowValuesErrorException</PRE>
 <DL>
 <DD>描画用のデータは正しくありません。
@@ -805,7 +805,7 @@ ShowValuesErrorException</PRE>
 <HR>
 
 <H3><A NAME="efw.client.messages.SuccessCallbackErrorException">SuccessCallbackErrorException</A></H3>
-<PRE>
+<pre style="font-family:ＭＳ ゴシック;">
 SuccessCallbackErrorException</PRE>
 <DL>
 <DD>成功時コールバックは正しくありません。
@@ -813,7 +813,7 @@ SuccessCallbackErrorException</PRE>
 <HR>
 
 <H3><A NAME="efw.client.messages.ReturnIsNotArrayErrorException">ReturnIsNotArrayErrorException</A></H3>
-<PRE>
+<pre style="font-family:ＭＳ ゴシック;">
 ReturnIsNotArrayErrorException</PRE>
 <DL>
 <DD>サーバー処理の戻り値は配列ではありません。
@@ -828,7 +828,7 @@ ReturnIsNotArrayErrorException</PRE>
 
 
 <H3><A NAME="efw.client.format.formatNumber">formatNumber</A></H3>
-<PRE>
+<pre style="font-family:ＭＳ ゴシック;">
 formatNumber ( value , <A href="#efw.format.formatter">formatter</A> , <A href="#efw.format.rounder">rounder</A> )</PRE>
 <DL>
 <DD>数字値を指定フォーマットにより文字列に変換する関数。
@@ -847,7 +847,7 @@ formatNumber ( value , <A href="#efw.format.formatter">formatter</A> , <A href="
 <HR>
 
 <H3><A NAME="efw.client.format.parseNumber">parseNumber</A></H3>
-<PRE>
+<pre style="font-family:ＭＳ ゴシック;">
 parseNumber ( value , <A href="#efw.format.formatter">formatter</A> )</PRE>
 <DL>
 <DD>文字列値を指定フォーマットにより数字に変換する関数。
@@ -866,7 +866,7 @@ parseNumber ( value , <A href="#efw.format.formatter">formatter</A> )</PRE>
 
 
 <H3><A NAME="efw.client.format.formatDate">formatDate</A></H3>
-<PRE>
+<pre style="font-family:ＭＳ ゴシック;">
 formatDate ( value , <A href="#efw.format.formatter">formatter</A> )</PRE>
 <DL>
 <DD>日付値を指定フォーマットにより文字列に変換する関数。
@@ -884,7 +884,7 @@ formatDate ( value , <A href="#efw.format.formatter">formatter</A> )</PRE>
 <HR>
 
 <H3><A NAME="efw.client.format.parseDate">parseDate</A></H3>
-<PRE>
+<pre style="font-family:ＭＳ ゴシック;">
 parseDate ( value , <A href="#efw.format.formatter">formatter</A> )</PRE>
 <DL>
 <DD>文字列値を指定フォーマットにより日付に変換する関数。
@@ -907,7 +907,7 @@ parseDate ( value , <A href="#efw.format.formatter">formatter</A> )</PRE>
 </TABLE>
 
 <H3><A NAME="efw.server.getParamsFormat">getParamsFormat</A></H3>
-<PRE>
+<pre style="font-family:ＭＳ ゴシック;">
 getParamsFormat ( <A href="#efw.event">event</A> )</PRE>
 <DL>
 <DD>イベントのパラメーターフォーマットを取得する関数。
@@ -925,7 +925,7 @@ getParamsFormat ( <A href="#efw.event">event</A> )</PRE>
 <HR>
 
 <H3><A NAME="efw.server.check">check</A></H3>
-<PRE>
+<pre style="font-family:ＭＳ ゴシック;">
 check ( <A href="#efw.event">event</A> , <A href="#efw.event.fire.requestParams">requestParams</A> )</PRE>
 <DL>
 <DD>リクエストパラメーターをチェックする関数。
@@ -945,7 +945,7 @@ check ( <A href="#efw.event">event</A> , <A href="#efw.event.fire.requestParams"
 <HR>
 
 <H3><A NAME="efw.server.fire">fire</A></H3>
-<PRE>
+<pre style="font-family:ＭＳ ゴシック;">
 fire ( <A href="#efw.event">event</A> , <A href="#efw.event.fire.requestParams">requestParams</A> )</PRE>
 <DL>
 <DD>イベントを実行する関数。
@@ -969,7 +969,7 @@ fire ( <A href="#efw.event">event</A> , <A href="#efw.event.fire.requestParams">
 <HR>
 
 <H3><A NAME="efw.server.prepare">prepare</A></H3>
-<PRE>
+<pre style="font-family:ＭＳ ゴシック;">
 prepare ( <A href="#efw.event">event</A> , <A href="#efw.event.fire.requestParams">requestParams</A> )</PRE>
 <DL>
 <DD>2回目Ajax実行の前に、準備ステップとして実行する関数。
@@ -990,7 +990,7 @@ prepare ( <A href="#efw.event">event</A> , <A href="#efw.event.fire.requestParam
 <HR>
 
 <H3><A NAME="efw.server.finish">finish</A></H3>
-<PRE>
+<pre style="font-family:ＭＳ ゴシック;">
 finish ( <A href="#efw.event">event</A> , <A href="#efw.event.fire.requestParams">requestParams</A> , <A href="#efw.event.fire.eventResult">eventResult</A> )</PRE>
 <DL>
 <DD>2回目Ajax実行の後に、後処理として実行する関数。
@@ -1011,7 +1011,7 @@ finish ( <A href="#efw.event">event</A> , <A href="#efw.event.fire.requestParams
 </TABLE>
 
 <H3><A NAME="efw.server.messages.SessionTimeoutException">SessionTimeoutException</A></H3>
-<PRE>
+<pre style="font-family:ＭＳ ゴシック;">
 SessionTimeoutException</PRE>
 <DL>
 <DD>セッションタイムアウトになりました。再ログインしてください。
@@ -1019,7 +1019,7 @@ SessionTimeoutException</PRE>
 <HR>
 
 <H3><A NAME="efw.server.messages.NumberIsReuqiredMessage">NumberIsReuqiredMessage</A></H3>
-<PRE>
+<pre style="font-family:ＭＳ ゴシック;">
 NumberIsReuqiredMessage</PRE>
 <DL>
 <DD>{display-name}を数字で正しく入力してください。
@@ -1027,7 +1027,7 @@ NumberIsReuqiredMessage</PRE>
 <HR>
 
 <H3><A NAME="efw.server.messages.DateIsReuqiredMessage">DateIsReuqiredMessage</A></H3>
-<PRE>
+<pre style="font-family:ＭＳ ゴシック;">
 DateIsReuqiredMessage</PRE>
 <DL>
 <DD>{display-name}を日付で正しく入力してください。
@@ -1035,7 +1035,7 @@ DateIsReuqiredMessage</PRE>
 <HR>
 
 <H3><A NAME="efw.server.messages.IsRequiredMessage">IsRequiredMessage</A></H3>
-<PRE>
+<pre style="font-family:ＭＳ ゴシック;">
 IsRequiredMessage</PRE>
 <DL>
 <DD>{display-name}を入力してください。
@@ -1043,7 +1043,7 @@ IsRequiredMessage</PRE>
 <HR>
 
 <H3><A NAME="efw.server.messages.MaxLengthOverMessage">MaxLengthOverMessage</A></H3>
-<PRE>
+<pre style="font-family:ＭＳ ゴシック;">
 MaxLengthOverMessage</PRE>
 <DL>
 <DD>{display-name}を{max-length}文字以内で入力してください。
@@ -1051,7 +1051,7 @@ MaxLengthOverMessage</PRE>
 <HR>
 
 <H3><A NAME="efw.server.messages.MinOrMaxOverMessage">MinOrMaxOverMessage</A></H3>
-<PRE>
+<pre style="font-family:ＭＳ ゴシック;">
 MinOrMaxOverMessage</PRE>
 <DL>
 <DD>{display-name}を{min}以上{max}以内の{data-type}で入力してください。
@@ -1059,7 +1059,7 @@ MinOrMaxOverMessage</PRE>
 <HR>
 
 <H3><A NAME="efw.server.messages.MinOverMessage">MinOverMessage</A></H3>
-<PRE>
+<pre style="font-family:ＭＳ ゴシック;">
 MinOverMessage</PRE>
 <DL>
 <DD>{display-name}を{min}以上の{data-type}で入力してください。
@@ -1067,7 +1067,7 @@ MinOverMessage</PRE>
 <HR>
 
 <H3><A NAME="efw.server.messages.MaxOverMessage">MaxOverMessage</A></H3>
-<PRE>
+<pre style="font-family:ＭＳ ゴシック;">
 MaxOverMessage</PRE>
 <DL>
 <DD>{display-name}を{max}以内の{data-type}で入力してください。
@@ -1082,7 +1082,7 @@ MaxOverMessage</PRE>
 
 
 <H3><A NAME="efw.server.format.formatNumber">formatNumber</A></H3>
-<PRE>
+<pre style="font-family:ＭＳ ゴシック;">
 formatNumber (value , <A href="#efw.format.formatter">formatter</A> , <A href="#efw.format.rounder">rounder</A> )</PRE>
 <DL>
 <DD>数字値を指定フォーマットにより文字列に変換する関数。
@@ -1101,7 +1101,7 @@ formatNumber (value , <A href="#efw.format.formatter">formatter</A> , <A href="#
 <HR>
 
 <H3><A NAME="efw.server.format.parseNumber">parseNumber</A></H3>
-<PRE>
+<pre style="font-family:ＭＳ ゴシック;">
 parseNumber ( value , <A href="#efw.format.formatter">formatter</A> )</PRE>
 <DL>
 <DD>文字列値を指定フォーマットにより数字に変換する関数。
@@ -1120,7 +1120,7 @@ parseNumber ( value , <A href="#efw.format.formatter">formatter</A> )</PRE>
 
 
 <H3><A NAME="efw.server.format.formatDate">formatDate</A></H3>
-<PRE>
+<pre style="font-family:ＭＳ ゴシック;">
 formatDate ( value , <A href="#efw.format.formatter">formatter</A> )</PRE>
 <DL>
 <DD>日付値を指定フォーマットにより文字列に変換する関数。
@@ -1138,7 +1138,7 @@ formatDate ( value , <A href="#efw.format.formatter">formatter</A> )</PRE>
 <HR>
 
 <H3><A NAME="efw.server.format.parseDate">parseDate</A></H3>
-<PRE>
+<pre style="font-family:ＭＳ ゴシック;">
 parseDate ( value , <A href="#efw.format.formatter">formatter</A> )</PRE>
 <DL>
 <DD>文字列値を指定フォーマットにより日付に変換する関数。
@@ -1161,7 +1161,7 @@ parseDate ( value , <A href="#efw.format.formatter">formatter</A> )</PRE>
 </TABLE>
 
 <H3><A NAME="efw.server.properties.get">get</A></H3>
-<PRE>
+<pre style="font-family:ＭＳ ゴシック;">
 get ( key , defaultValue )</PRE>
 <DL>
 <DD>文字列のプロパティを取得する。
@@ -1179,7 +1179,7 @@ get ( key , defaultValue )</PRE>
 <HR>
 
 <H3><A NAME="efw.server.properties.getBoolean">getBoolean</A></H3>
-<PRE>
+<pre style="font-family:ＭＳ ゴシック;">
 getBoolean ( key , defaultValue )</PRE>
 <DL>
 <DD>ブルーのプロパティを取得する。
@@ -1197,7 +1197,7 @@ getBoolean ( key , defaultValue )</PRE>
 <HR>
 
 <H3><A NAME="efw.server.properties.getInt">getInt</A></H3>
-<PRE>
+<pre style="font-family:ＭＳ ゴシック;">
 getInt ( key , defaultValue )</PRE>
 <DL>
 <DD>数字のプロパティを取得する。
@@ -1220,7 +1220,7 @@ getInt ( key , defaultValue )</PRE>
 </TABLE>
 
 <H3><A NAME="efw.server.session.get">get</A></H3>
-<PRE>
+<pre style="font-family:ＭＳ ゴシック;">
 get ( key )</PRE>
 <DL>
 <DD>セッションから情報を取得する。
@@ -1237,7 +1237,7 @@ get ( key )</PRE>
 <HR>
 
 <H3><A NAME="efw.server.session.set">set</A></H3>
-<PRE>
+<pre style="font-family:ＭＳ ゴシック;">
 set ( key , value )</PRE>
 <DL>
 <DD>セッションに情報を格納する。
@@ -1256,7 +1256,7 @@ set ( key , value )</PRE>
 </TABLE>
 
 <H3><A NAME="efw.server.db.open">open</A></H3>
-<PRE>
+<pre style="font-family:ＭＳ ゴシック;">
 open ( <A href="#efw.sqlExecution.jdbcResourceName">jdbcResourceName</A> )</PRE>
 <DL>
 <DD>データベース接続を開く。
@@ -1269,7 +1269,7 @@ open ( <A href="#efw.sqlExecution.jdbcResourceName">jdbcResourceName</A> )</PRE>
 <HR>
 
 <H3><A NAME="efw.server.db.getSingle">getSingle</A></H3>
-<PRE>
+<pre style="font-family:ＭＳ ゴシック;">
 getSingle ( <A href="#efw.sqlExecution.executionParams">executionParams</A> )</PRE>
 <DL>
 <DD>SELECT文を実行して、１つ目のデータを戻す。
@@ -1287,7 +1287,7 @@ getSingle ( <A href="#efw.sqlExecution.executionParams">executionParams</A> )</P
 <HR>
 
 <H3><A NAME="efw.server.db.executeQuery">executeQuery</A></H3>
-<PRE>
+<pre style="font-family:ＭＳ ゴシック;">
 executeQuery ( <A href="#efw.sqlExecution.executionParams">executionParams</A> )</PRE>
 <DL>
 <DD>SELECT文を実行する。
@@ -1304,7 +1304,7 @@ executeQuery ( <A href="#efw.sqlExecution.executionParams">executionParams</A> )
 <HR>
 
 <H3><A NAME="efw.server.db.executeUpdate">executeUpdate</A></H3>
-<PRE>
+<pre style="font-family:ＭＳ ゴシック;">
 executeUpdate ( <A href="#efw.sqlExecution.executionParams">executionParams</A> )</PRE>
 <DL>
 <DD>INSERT文、UPDATE文、DELETE文を実行する。
@@ -1321,7 +1321,7 @@ executeUpdate ( <A href="#efw.sqlExecution.executionParams">executionParams</A> 
 <HR>
 
 <H3><A NAME="efw.server.db.execute">execute</A></H3>
-<PRE>
+<pre style="font-family:ＭＳ ゴシック;">
 execute ( <A href="#efw.sqlExecution.executionParams">executionParams</A> )</PRE>
 <DL>
 <DD>任意のSQL文を実行する。
@@ -1334,7 +1334,7 @@ execute ( <A href="#efw.sqlExecution.executionParams">executionParams</A> )</PRE
 <HR>
 
 <H3><A NAME="efw.server.db.commit">commit</A></H3>
-<PRE>
+<pre style="font-family:ＭＳ ゴシック;">
 commit ( <A href="#efw.sqlExecution.jdbcResourceName">jdbcResourceName</A> )</PRE>
 <DL>
 <DD>データベースへの更新を有効とし、 データベース接続が保持するデータベースロックをすべて解除する。
@@ -1347,7 +1347,7 @@ commit ( <A href="#efw.sqlExecution.jdbcResourceName">jdbcResourceName</A> )</PR
 <HR>
 
 <H3><A NAME="efw.server.db.rollback">rollback</A></H3>
-<PRE>
+<pre style="font-family:ＭＳ ゴシック;">
 rollback ( <A href="#efw.sqlExecution.jdbcResourceName">jdbcResourceName</A> )</PRE>
 <DL>
 <DD>データベースへの更新を無効とし、 データベース接続が保持するデータベースロックをすべて解除する。
@@ -1360,7 +1360,7 @@ rollback ( <A href="#efw.sqlExecution.jdbcResourceName">jdbcResourceName</A> )</
 <HR>
 
 <H3><A NAME="efw.server.db.closeAll">closeAll</A></H3>
-<PRE>
+<pre style="font-family:ＭＳ ゴシック;">
 closeAll ( ) </PRE>
 <DL>
 <DD>すべてのデータベース接続に対して、ステートメントを全部閉じて、データベース接続をコミットして閉じる。 
@@ -1376,7 +1376,7 @@ closeAll ( ) </PRE>
 </TABLE>
 
 <H3><A NAME="efw.server.event.load">load</A></H3>
-<PRE>
+<pre style="font-family:ＭＳ ゴシック;">
 load ( <A href="#efw.eventParams.eventId">eventId</A> )</PRE>
 <DL>
 <DD>イベントをメモリにロードする。Debugモードの場合、再ロードを行う。
@@ -1399,7 +1399,7 @@ load ( <A href="#efw.eventParams.eventId">eventId</A> )</PRE>
 </TABLE>
 
 <H3><A NAME="efw.eventParams">eventParams</A></H3>
-<PRE>
+<pre style="font-family:ＭＳ ゴシック;">
 eventParams = {
                   <A href="#efw.eventParams.eventId">eventId</A>      : "myEvent",                                     //イベントId、必須。
                   <A href="#efw.eventParams.manualParams">manualParams</A> : {                                              //手動パラメーター、オプション。
@@ -1421,7 +1421,7 @@ eventParams = {
 
 
 <H3><A NAME="efw.eventParams.eventId">eventId</A></H3>
-<PRE>
+<pre style="font-family:ＭＳ ゴシック;">
 eventId = "myEvent";                                                            // WEB-INF/efw/event/myEvent.js のjsファイルとリンクする。英語の大文字小文字を区別。
 </PRE>
 <DL><DD>イベントId。イベントの実装されるサーバーサイドJavascriptファイル名と同じ。
@@ -1430,7 +1430,7 @@ eventId = "myEvent";                                                            
 
 
 <H3><A NAME="efw.eventParams.manualParams">manualParams</A></H3>
-<PRE>
+<pre style="font-family:ＭＳ ゴシック;">
 manualParams = {
                    key1 : value1,
                    key2 : value2,
@@ -1442,7 +1442,7 @@ manualParams = {
 
 
 <H3><A NAME="efw.eventParams.success">success</A></H3>
-<PRE>
+<pre style="font-family:ＭＳ ゴシック;">
 success = function ( <A href="#efw.event.fire.eventResult">eventResult</A> ) { ... };
 </PRE>
 <DL><DD>成功コールバック関数。<br>
@@ -1458,7 +1458,7 @@ success = function ( <A href="#efw.event.fire.eventResult">eventResult</A> ) { .
 </TABLE>
 
 <H3><A NAME="efw.event">event</A></H3>
-<PRE>
+<pre style="font-family:ＭＳ ゴシック;">
 WEB-INF/efw/event/myEvent.js
 ----------
 var myEvent          = { };                                                     //イベントのオブジェクト、必須。
@@ -1485,7 +1485,7 @@ myEvent.fire = function ( <A href="#efw.event.fire.requestParams">requestParams<
 <HR>
 
 <H3><A NAME="efw.event.outOfLogin">outOfLogin</A></H3>
-<PRE>
+<pre style="font-family:ＭＳ ゴシック;">
 outOfLogin = true;
 </PRE>
 <DL><DD>ログインチェック不要フラグ。<br>
@@ -1495,7 +1495,7 @@ outOfLogin = true;
 <HR>
 
 <H3><A NAME="efw.event.include">include</A></H3>
-<PRE>
+<pre style="font-family:ＭＳ ゴシック;">
 include = [
             {                                                                   //サブイベント。
               <A href="#efw.eventParams.eventId">eventId</A>           : "anotherEvent",                               //イベントId、サブイベントにとって必須、eventParams.eventIdを参照。
@@ -1511,7 +1511,7 @@ include = [
 <HR>
 
 <H3><A NAME="efw.event.mergeParamsFormat">mergeParamsFormat</A></H3>
-<PRE>
+<pre style="font-family:ＭＳ ゴシック;">
 mergeParamsFormat = true;
 </PRE>
 <DL><DD>サブとメインのパラメーターフォーマットをマージするフラグ。<br>
@@ -1522,7 +1522,7 @@ mergeParamsFormat = true;
 <HR>
 
 <H3><A NAME="efw.event.paramsFormat">paramsFormat</A></H3>
-<PRE>
+<pre style="font-family:ＭＳ ゴシック;">
 paramsFormat = {
                      selector1 : null,                                          //入力チェックなしの選択キー。選択キーの規則はJQueryを参照。
                      selector2 : "<A href="#efw.event.paramsFormat.checkStyle">checkStyle</A>",                                  //チェックスタイルの選択キー。
@@ -1588,7 +1588,7 @@ paramsFormat = {
 <HR>
 
 <H3><A NAME="efw.event.paramsFormat.checkStyle">checkStyle</A></H3>
-<PRE>
+<pre style="font-family:ＭＳ ゴシック;">
 selector = "required:true; format:###,##0;display-name:登録日;max-length:10;min:0,max:9,999;" ; //チェックスタイル。
 </PRE>
 <DL><DD>チェックスタイル。<br>
@@ -1659,7 +1659,7 @@ selector = "required:true; format:###,##0;display-name:登録日;max-length:10;m
 <HR>
 
 <H3><A NAME="efw.event.fire">fire</A></H3>
-<PRE>
+<pre style="font-family:ＭＳ ゴシック;">
 fire = function( <a href="#efw.event.fire.requestParams">requestParams</a> ){
     return <a href="#efw.event.fire.eventResult">eventResult</a>;
 };
@@ -1681,7 +1681,7 @@ fire = function( <a href="#efw.event.fire.requestParams">requestParams</a> ){
 
 
 <H3><A NAME="efw.event.fire.requestParams">requestParams</A></H3>
-<PRE>
+<pre style="font-family:ＭＳ ゴシック;">
 requestParams = {
                      selector1 : "value1",
                      selector2 : "value2",
@@ -1697,7 +1697,7 @@ requestParams = {
 <HR>
 
 <H3><A NAME="efw.event.fire.eventResult">eventResult</A></H3>
-<PRE>
+<pre style="font-family:ＭＳ ゴシック;">
 eventResult = [                                                                 //イベント実行結果、複数の表示結果を含める。
                 {                                                               //表示結果、データオブジェクトタイプ。
                   runat    : "runatSelector1",                                  //表示場所、オプション。
@@ -1768,7 +1768,7 @@ eventResult=eventResult.concat(subEvent.fire(requestParams));                   
 <HR>
 
 <H3><A NAME="efw.event.fire.eventResult.appendMask">appendMask</A></H3>
-<PRE>
+<pre style="font-family:ＭＳ ゴシック;">
 appendMask = "&lt;tr&gt;&lt;td&gt;&lt;input value='{maskKey1}'&gt;&lt;/td&gt;&lt;td&gt;&lt;span&gt;{{maskKey2}}&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;";
 </PRE>
 <DL><DD>追加内容のマスク。<br>
@@ -1777,7 +1777,7 @@ HTMLエンコード処理をしたい場合、{maskKey} で書く。したくな
 <HR>
 
 <H3><A NAME="efw.event.fire.error">error</A></H3>
-<PRE>
+<pre style="font-family:ＭＳ ゴシック;">
 error = {
             errorType      : "XXXXX",                                           //エラータイプ。
             errorMessage   : "任意のエラーメッセージ内容",                      //エラーメッセージ。
@@ -1832,7 +1832,7 @@ error = {
 </TABLE>
 
 <H3><A NAME="efw.format.formatter">formatter</A></H3>
-<PRE>
+<pre style="font-family:ＭＳ ゴシック;">
 formatter = "フォーマット定義";
 </PRE>
 <DL><DD>フォーマット定義。<br>
@@ -1906,7 +1906,7 @@ formatter = "フォーマット定義";
 
 
 <H3><A NAME="efw.format.rounder">rounder</A></H3>
-<PRE>
+<pre style="font-family:ＭＳ ゴシック;">
 rounder = "丸みタイプ";
 </PRE>
 <DL><DD>丸みタイプ。<br>
@@ -1969,7 +1969,7 @@ rounder = "丸みタイプ";
 </TABLE>
 
 <H3><A NAME="efw.sqlExecution.executionParams">executionParams</A></H3>
-<PRE>
+<pre style="font-family:ＭＳ ゴシック;">
 executionParams = {
                       <a href="#efw.sqlExecution.jdbcResourceName">jdbcResourceName</a> : "jdbc/efw",                            //jdbcリソース名、オプション。
                       groupId          : "user",                                //sqlXMLファイル名、必須。
@@ -1993,7 +1993,7 @@ SQLを実行するため、XMLファイルに定義するSQLのパラメータ�
 <HR>
 
 <H3><A NAME="efw.sqlExecution.executionResult">executionResult</A></H3>
-<PRE>
+<pre style="font-family:ＭＳ ゴシック;">
 executionResult = [                                                             //マッピングなしの実行結果、field項目と値のセットの配列。
                     {                                                           //ひとつのレコード。
                       field1 : value1 ,
@@ -2024,7 +2024,7 @@ executeQueryの実行結果。レコードセットの配列。検索結果が�
 
 
 <H3><A NAME="efw.sqlExecution.jdbcResourceName">jdbcResourceName</A></H3>
-<PRE>
+<pre style="font-family:ＭＳ ゴシック;">
 jdbcResourceName = "jdbc/efw" ;                                                 //server.xmlに定義されるリソース
 
 &lt;Resource auth="Container" driverClassName="org.postgresql.Driver" 
