@@ -1,8 +1,4 @@
-<!DOCTYPE HTML "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<HTML>
-<HEAD>
-	<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<TITLE>efw File List</TITLE>
+
 	<STYLE>
 		a:link {
 			text-decoration: none;
@@ -38,9 +34,8 @@
 
 
 	</STYLE>
-</HEAD>
-<BODY>
-<H2>efw ファイル リスト</H2>
+	
+	<H2>efw ファイル リスト</H2>
 <TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
 	<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
 		<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2"><B>ファイルの一覧</B></FONT></TH>
@@ -644,50 +639,7 @@ web/WEB-INF/classes/efw.properties
 </DL></DD>
 
 
-</BODY>
-</HTML>
-<!DOCTYPE HTML "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<HTML>
-<HEAD>
-	<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<TITLE>efw Javascript API</TITLE>
-	<STYLE>
-		a:link {
-			text-decoration: none;
-		}
 
-		a:visited {
-			text-decoration: none;
-		}
-
-		a:hover {
-			 text-decoration: underline;
-		}
-
-		a:active {
-			text-decoration: underline;
-		}
-		
-		pre{
-			 font-family:ＭＳ ゴシック;
-		}
-		
-		span.star{
-			color:yellow;
-		}
-
-		span.prg{
-			background-color:yellow;
-		}
-
-		span.ctms{
-			background-color:pink;
-		}
-
-
-	</STYLE>
-</HEAD>
-<BODY>
 
 <H2>efw Javascript API</H2>
 	
@@ -2122,7 +2074,3 @@ server.xmlに定義して、イベントjsファイルに、それを open し�
 </DL></DD>
 
 
-
-
-</BODY>
-</HTML>
