@@ -1,41 +1,6 @@
 
-	<STYLE>
-		a:link {
-			text-decoration: none;
-		}
+<H2>efw ファイル リスト</H2>
 
-		a:visited {
-			text-decoration: none;
-		}
-
-		a:hover {
-			 text-decoration: underline;
-		}
-
-		a:active {
-			text-decoration: underline;
-		}
-		
-		pre{
-			 font-family:ＭＳ ゴシック;
-		}
-		
-		span.star{
-			color:yellow;
-		}
-
-		span.prg{
-			background-color:yellow;
-		}
-
-		span.ctms{
-			background-color:pink;
-		}
-
-
-	</STYLE>
-	
-	<H2>efw ファイル リスト</H2>
 <TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
 	<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
 		<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2"><B>ファイルの一覧</B></FONT></TH>
