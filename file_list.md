@@ -6,18 +6,18 @@
 		<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2"><B>ファイルの一覧</B></FONT></TH>
 	</TR>
 </TABLE>
-<pre style="font-family:ＭＳ ゴシック;">
+<pre>
 web
-├─<span style="background-color:yellow;">form1.jsp</span>
-├─<span style="background-color:yellow;">form2.jsp</span>
-├─<span style="background-color:yellow;">...</span>
+├─<b>form1.jsp</b>
+├─<b>form2.jsp</b>
+├─<b>...</b>
 │  
 ├─efw
 │  ├─efw.client.format.js
 │  ├─efw.client.inputbehavior.js
 │  ├─efw.client.js
-│  ├─<span style="background-color:pink;">efw.client.messages.js</span>
-│  ├─<span style="background-color:pink;">efw.css</span>
+│  ├─<i>efw.client.messages.js</i>
+│  ├─<i>efw.css</i>
 │  ├─jquery-min.js
 │  ├─jquery-ui.min.css
 │  ├─jquery-ui.min.js
@@ -58,31 +58,31 @@ web
     ├─web.xml
     │  
     ├─classes
-    │  └─<span style="background-color:pink;">efw.properties</span>
+    │  └─<i>efw.properties</i>
     │  
     ├─efw
     │  ├─event
-    │  │  ├─<span style="background-color:yellow;">form1_event1.js</span>
-    │  │  ├─<span style="background-color:yellow;">form1_event2.js</span>
-    │  │  ├─<span style="background-color:yellow;">form2_event3.js</span>
-    │  │  ├─<span style="background-color:yellow;">form2_event4.js</span>
-    │  │  └─<span style="background-color:yellow;">...</span>
+    │  │  ├─<b>form1_event1.js</b>
+    │  │  ├─<b>form1_event2.js</b>
+    │  │  ├─<b>form2_event3.js</b>
+    │  │  ├─<b>form2_event4.js</b>
+    │  │  └─<b>...</b>
     │  │        
     │  ├─server
-    │  │  ├─<span style="background-color:pink;">efw.server.customize.js</span>
+    │  │  ├─<i>efw.server.customize.js</i>
     │  │  ├─efw.server.db.js
     │  │  ├─efw.server.event.js
     │  │  ├─efw.server.format.js
     │  │  ├─efw.server.js
-    │  │  ├─<span style="background-color:pink;">efw.server.messages.js</span>
+    │  │  ├─<i>efw.server.messages.js</i>
     │  │  ├─efw.server.properties.js
     │  │  ├─efw.server.session.js
     │  │  └─json2.min.js
     │  │      
     │  └─sql
-    │      ├─<span style="background-color:yellow;">sqlgroup1.xml</span>
-    │      ├─<span style="background-color:yellow;">sqlgroup2.xml</span>
-    │      └─<span style="background-color:yellow;">...</span>
+    │      ├─<b>sqlgroup1.xml</b>
+    │      ├─<b>sqlgroup2.xml</b>
+    │      └─<b>...</b>
     │          
     └─lib
         ├─efw-2.X.XXX.jar
@@ -96,7 +96,7 @@ web
 	</TR>
 </TABLE>
 <H3><A NAME="efw.jsp">jsp</A></H3>
-<pre style="font-family:ＭＳ ゴシック;">
+<pre>
 web/form1.jsp
 --------------------------------------------------------------------------------
     &lt;%@ page language="java" contentType="text/html; <b>charset</b>=UTF-8" <b>pageEncoding</b>="UTF-8"%&gt;
@@ -135,7 +135,7 @@ web/form1.jsp
 
 
 <H3><A NAME="efw.jsp.taglib">efwタグ利用</A></H3>
-<pre style="font-family:ＭＳ ゴシック;">
+<pre>
     &lt;efw:Core/&gt;
     &lt;efw:JQueryUI/&gt;
     &lt;efw:InputBehavior/&gt;
@@ -168,7 +168,7 @@ efw の taglib を宣言して、efwのタグを取り込み、efw.client の各
 
 
 <H3><A NAME="efw.jsp.charset">encode & charset</A></H3>
-<pre style="font-family:ＭＳ ゴシック;">
+<pre>
     &lt;%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%&gt;
     &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/&gt;
 </pre>
@@ -223,7 +223,7 @@ efwの各jsファイルは、UTF-8 でエンコードする。ただし、jsp画
 <HR>
 
 <H3><A NAME="efw.jsp.charset">画面間のデータ受取り引渡し</A></H3>
-<pre style="font-family:ＭＳ ゴシック;">
+<pre>
     var param1="&lt;%=request.getParameter("param1")%&gt;";
     window.location="next.jsp?param1="+param1;
 </pre>
@@ -236,7 +236,7 @@ efwの各jsファイルは、UTF-8 でエンコードする。ただし、jsp画
 <HR>
 
 <H3><A NAME="efw.jsp.event">イベントのデータ受取り引渡し</A></H3>
-<pre style="font-family:ＭＳ ゴシック;">
+<pre>
     efw.client.fire({
        eventId:"form1_event1",
            ...
@@ -253,7 +253,7 @@ efwの各jsファイルは、UTF-8 でエンコードする。ただし、jsp画
 <HR>
 
 <H3><A NAME="efw.jsp.dataFormat">入力支援</A></H3>
-<pre style="font-family:ＭＳ ゴシック;">
+<pre>
     &lt;input id="txt_testnumber" type="text" data-format="#,##0.00"&gt;
     &lt;input id="txt_testdate" type="text" data-format="yyyy年MM月dd日"&gt;
 </pre>
@@ -298,7 +298,7 @@ efw:InputBehavior をインクルードして、入力枠に data-format を定�
 	</TR>
 </TABLE>
 <H3><A NAME="efw.event">event</A></H3>
-<pre style="font-family:ＭＳ ゴシック;">
+<pre>
 web/WEB-INF/efw/event/form1_event1.js
 --------------------------------------------------------------------------------
 var form1_event1={};
@@ -332,7 +332,7 @@ form1_event1.<b>fire</b>         = function ( requestParams ) {
 <HR>
 
 <H3><A NAME="efw.event.outOfLogin">ログインチェック</A></H3>
-<pre style="font-family:ＭＳ ゴシック;">
+<pre>
     form1_event1.outOfLogin = true/false;
 </pre>
 <DL>
@@ -343,7 +343,7 @@ form1_event1.<b>fire</b>         = function ( requestParams ) {
 <HR>
 
 <H3><A NAME="efw.event.inputCheck">単純入力チェック</A></H3>
-<pre style="font-family:ＭＳ ゴシック;">
+<pre>
 form1_event1.paramsFormat = { 
                                 "#user_id"        : "<b>display-name</b>:ユーザId;<b>max-length</b>:10;",
                                 "#txt_testnumber" : "<b>format</b>:#,##0.00;<b>required</b>:true;<b>display-name</b>:テスト数字;<b>min</b>:-10.00;<b>max</b>:1,000.00",
@@ -367,7 +367,7 @@ form1_event1.paramsFormat = {
 <HR>
 
 <H3><A NAME="efw.event.workCheck">業務チェック</A></H3>
-<pre style="font-family:ＭＳ ゴシック;">
+<pre>
     return {error:{...}};
 </pre>
 <DL>
@@ -379,7 +379,7 @@ form1_event1.paramsFormat = {
 <HR>
 
 <H3><A NAME="efw.event.include">サブイベント実行</A></H3>
-<pre style="font-family:ＭＳ ゴシック;">
+<pre>
     form1_event1.include = [ { eventId : "form1_event2" } ];
     ...
     var retsub = form1_event2.fire( { ... } );
@@ -394,7 +394,7 @@ form1_event1.paramsFormat = {
 <HR>
 
 <H3><A NAME="efw.event.fire">イベントのデータ受取り引渡し</A></H3>
-<pre style="font-family:ＭＳ ゴシック;">
+<pre>
     form1_event1.paramsFormat = { ... };
     ...
     form1_event1.fire         = function ( requestParams ) {
@@ -411,7 +411,7 @@ form1_event1.paramsFormat = {
 <HR>
 
 <H3><A NAME="efw.jsp.event">トランザクション管理</A></H3>
-<pre style="font-family:ＭＳ ゴシック;">
+<pre>
 </pre>
 <DL>
 <DD>
@@ -430,7 +430,7 @@ fireイベントが成功の場合、トランザクションがcommit。失敗�
 	</TR>
 </TABLE>
 <H3><A NAME="efw.sql">sql</A></H3>
-<pre style="font-family:ＭＳ ゴシック;">
+<pre>
 web/WEB-INF/efw/sql/sqlgroup1.xml
 --------------------------------------------------------------------------------
 &lt;?<b>xml version="1.0" encoding="UTF-8"</b>?&gt;
@@ -463,7 +463,7 @@ web/WEB-INF/efw/sql/sqlgroup1.xml
 
 
 <H3><A NAME="efw.sql.groupidandsqlid">groupIdとsqlId</A></H3>
-<pre style="font-family:ＭＳ ゴシック;">
+<pre>
 </pre>
 <DL>
 <DD>
@@ -472,7 +472,7 @@ sql XMLファイルの名称は、グループId になる。その中に定義�
 <HR>
 
 <H3><A NAME="efw.sql.comment">コメントの書き方</A></H3>
-<pre style="font-family:ＭＳ ゴシック;">
+<pre>
 <I style="color:green">&lt;!-- 
  コメント１
 --&gt;
@@ -489,7 +489,7 @@ sql XMLファイルにコメントは４種類の書き方を利用できる。
 <HR>
 
 <H3><A NAME="efw.sql.param">変数の書き方</A></H3>
-<pre style="font-family:ＭＳ ゴシック;">
+<pre>
     :user_id
 </pre>
 <DL>
@@ -499,7 +499,7 @@ sql XMLファイルにコメントは４種類の書き方を利用できる。
 <HR>
 
 <H3><A NAME="efw.sql.stbt">比較条件の書き方</A></H3>
-<pre style="font-family:ＭＳ ゴシック;">
+<pre>
     WHERE validateDateFrom <b style="color:red">&amp;gt;</b> now() and validateDateTo <b style="color:red">&amp;lt;</b> now() 
 </pre>
 <DL>
@@ -509,7 +509,7 @@ XMLファイルの制限により、「 &lt; 」⇒「 &amp;lt; 」、「 &gt; �
 <HR>
 
 <H3><A NAME="efw.sql.if">if 条件の書き方</A></H3>
-<pre style="font-family:ＭＳ ゴシック;">
+<pre>
     &lt;if <b>exists</b> = "user_id" &gt; and user_id = :user_id &lt;/if&gt;
     &lt;if <b>notexists</b> = "user_id" &gt; order by user_id desc &lt;/if&gt;
 </pre>
@@ -528,7 +528,7 @@ notexists 属性は、指定されたsqlパラメーターが null または 空
 </TABLE>
 
 <H3><A NAME="efw.properties">プロパティ</A></H3>
-<pre style="font-family:ＭＳ ゴシック;">
+<pre>
 web/WEB-INF/classes/efw.properties
 </pre>
 <DL>
