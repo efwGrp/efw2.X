@@ -473,14 +473,14 @@ sql XMLファイルの名称は、グループId になる。その中に定義�
 
 <H3><A NAME="efw.sql.comment">コメントの書き方</A></H3>
 <pre>
-<I style="color:green">&lt;!-- 
+<I>&lt;!-- 
  コメント１
 --&gt;
 /**
 *コメント２
 **/
 //コメント３
---コメント４</b>
+--コメント４</I>
 </pre>
 <DL>
 <DD>
