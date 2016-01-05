@@ -2,7 +2,7 @@
 <a href="https://github.com/changkejun/efw2.X/blob/master/file_list.md">ファイル一覧</a><br>
 <a href="https://github.com/changkejun/efw2.X/blob/master/api_list.md">API一覧</a><br>
 
-以下の内容はポイントになります。
+efw1.Xの考えを継承し、以下の内容は2.Xのポイントです。
 <pre>
 ・チェックスタイルで単純入力チェックを自動化<br>
 ・チェックスタイルと検索結果マッピングの関数サポート<br>
