@@ -83,7 +83,7 @@ efw
     │  └─<a href="#efw.event.fire.eventResult.appendMask">appendMask</a>                                                          <span style="color:yellow;">★★★</span>
     └─<a href="#efw.event.fire.error">error</a>                                                                  <span style="color:yellow;">★★★</span>
 
-<a href="#efw.format.formatter">formatter</a>                                         	                           <span style="color:yellow;">★★★</span>
+<a href="#efw.format.formatter">formatter</a>                                         	                         <span style="color:yellow;">★★★</span>
 <a href="#efw.format.rounder">rounder</a>                                                                      <span style="color:yellow;">★★</span>
 
 <A href="#efw.sqlExecution.executionParams">executionParams</A>                                                              <span style="color:yellow;">★★★</span>
