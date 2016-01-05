@@ -436,14 +436,14 @@ web/WEB-INF/efw/sql/sqlgroup1.xml
 &lt;?<b>xml version="1.0" encoding="UTF-8"</b>?&gt;
 &lt;<b>sqls</b>&gt;
     &lt;<b>sql id="sql_1"</b>&gt;
-<I style="color:green">&lt;!-- 
+<I>&lt;!-- 
  コメント１
 --&gt;
 /**
 *コメント２
 **/
 //コメント３
---コメント４</b>
+--コメント４</I>
 
         
         SELECT user_id FROM usermaster
