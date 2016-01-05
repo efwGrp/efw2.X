@@ -16,8 +16,8 @@ web
 │  ├─efw.client.format.js
 │  ├─efw.client.inputbehavior.js
 │  ├─efw.client.js
-│  ├─<i>efw.client.messages.js</i>
-│  ├─<i>efw.css</i>
+│  ├─<u>efw.client.messages.js</u>
+│  ├─<u>efw.css</u>
 │  ├─jquery-min.js
 │  ├─jquery-ui.min.css
 │  ├─jquery-ui.min.js
@@ -58,7 +58,7 @@ web
     ├─web.xml
     │  
     ├─classes
-    │  └─<i>efw.properties</i>
+    │  └─<u>efw.properties</u>
     │  
     ├─efw
     │  ├─event
@@ -69,12 +69,12 @@ web
     │  │  └─<b>...</b>
     │  │        
     │  ├─server
-    │  │  ├─<i>efw.server.customize.js</i>
+    │  │  ├─<u>efw.server.customize.js</u>
     │  │  ├─efw.server.db.js
     │  │  ├─efw.server.event.js
     │  │  ├─efw.server.format.js
     │  │  ├─efw.server.js
-    │  │  ├─<i>efw.server.messages.js</i>
+    │  │  ├─<u>efw.server.messages.js</u>
     │  │  ├─efw.server.properties.js
     │  │  ├─efw.server.session.js
     │  │  └─json2.min.js
@@ -443,7 +443,7 @@ web/WEB-INF/efw/sql/sqlgroup1.xml
 *コメント２
 **/
 //コメント３
---コメント４</I>
+--コメント４</u>
 
         
         SELECT user_id FROM usermaster
@@ -480,7 +480,7 @@ sql XMLファイルの名称は、グループId になる。その中に定義�
 *コメント２
 **/
 //コメント３
---コメント４</I>
+--コメント４</u>
 </pre>
 <DL>
 <DD>
