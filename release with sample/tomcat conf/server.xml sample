@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<Server port="8005" shutdown="SHUTDOWN">
+
+  <Service name="Catalina">
+
+    <Engine name="Catalina" defaultHost="localhost">
+
+      <Host name="localhost"  appBase="webapps"
+            unpackWARs="true" autoDeploy="true">
+
+		<Context docBase="efw" path="/efw" reloadable="true">
+		<Resource auth="Container" 
+			driverClassName="org.postgresql.Driver" 
+			type="javax.sql.DataSource"
+			url="jdbc:postgresql://127.0.0.1:5432/efwSample"
+			maxActive="100" 
+			maxIdle="20"
+			maxWait="10" 
+			name="jdbc/efw" 
+			password="postgres" username="postgres"
+		/>
+		</Context>
+
+      </Host>
+    </Engine>
+  </Service>
+</Server>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sqls>
+	<sql id="seek">
+SELECT 
+項目コード, 
+項目名称
+FROM 検査項目情報
+WHERE 項目コード = :field_index 
+	</sql>
+	<sql id="list">
+SELECT
+"男性・下限",
+"男性・上限",
+"女性・下限",
+"女性・上限",
+判定区分,
+コメント,
+指示コメント
+FROM 判定情報
+WHERE 項目コード= :field_index 
+ORDER BY "男性・下限"
+	</sql>
+</sqls>
