@@ -6,13 +6,10 @@
 var _serverfolder;
 var _eventfolder;
 var _isdebug;
-var _engine;// Mozilla Rhino 1.6 1.7 / Oracle Nashorn 1.8
+var _engine;// Mozilla Rhino 1.7 / Oracle Nashorn 1.8
 ///////////////////////////////////////////////////////////////////////////////
-if (_engine.getFactory().getEngineName()=="Mozilla Rhino"){//java 1.6 1.7
+if (_engine.getFactory().getEngineName()=="Mozilla Rhino"){//java 1.7
 	function load(filename) { Packages.efw.script.ScriptManager.load(filename);}
-	if(_engine.getFactory().getEngineVersion()<"1.7"){//java 1.6
-		load(_serverfolder+"/json2.min.js");
-	}
 }
 ///////////////////////////////////////////////////////////////////////////////
 function doPost(req){
