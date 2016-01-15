@@ -66,7 +66,6 @@ efw
 
 
 <a href="#efw.eventParams">eventParams</a>                                                                  <span style="color:yellow;">★★★</span>
-├─<a href="#efw.eventParams.server">server</a>                                                                     <span style="color:yellow;">★</span>
 ├─<a href="#efw.eventParams.eventId">eventId</a>                                                                    <span style="color:yellow;">★★★</span>
 ├─<a href="#efw.eventParams.manualParams">manualParams</a>                                                               <span style="color:yellow;">★★</span>
 └─<a href="#efw.eventParams.success">success</a>                                                                    <span style="color:yellow;">★★★</span>
@@ -794,7 +793,6 @@ load ( <A href="#efw.eventParams.eventId">eventId</A> )</PRE>
 <H3><A NAME="efw.eventParams">eventParams</A></H3>
 <pre>
 eventParams = {
-                  <A href="#efw.eventParams.server">server</A>       : "http://127.0.0.1:8080/efwTest",               //サーバURL、オプション。
                   <A href="#efw.eventParams.eventId">eventId</A>      : "myEvent",                                     //イベントId、必須。
                   <A href="#efw.eventParams.manualParams">manualParams</A> : {                                              //手動パラメーター、オプション。
                                      key1 : value1,
@@ -810,14 +808,6 @@ eventParams = {
 <br>・パラメーターフォーマットによりイベントパラメーターを作成時、優先的にクライアント画面から値を取得する。画面項目ではない場合、手動パラメーターで渡す。
 <br>・イベント実行成功後、さらに継続処理が必要な場合、成功コールバック関数を利用する。
 
-</DL></DD>
-<HR>
-
-<H3><A NAME="efw.eventParams.server">server</A></H3>
-<pre>
-server = "http://127.0.0.1:8080/efwTest",                                       //サーバURL、オプション。
-</PRE>
-<DL><DD>サーバURL。cors方式で他のサーバアプリと接続する場合利用できる。
 </DL></DD>
 <HR>
 

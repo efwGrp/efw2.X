@@ -600,12 +600,6 @@ web/WEB-INF/classes/efw.properties
 	<td>OFF</td>
 	<td>efwログファイルの出力レベル。</td>
 </tr>
-<tr>
-	<td>efw.cors</td>
-	<td>*</td>
-	<td>クロスドメイン通信設定、他のサーバーのウェブページから本サイトのイベントを利用する可否を管理する。<br>
-	* : 全部許可, null : 全部拒否, http://xxx/xxx,http://yyy/yyy : 指定サイト許可。</td>
-</tr>
 </table>
 </DL></DD>
 
