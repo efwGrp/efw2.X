@@ -2,7 +2,6 @@
 <%@ taglib prefix="efw" uri="efw" %>
 <html>
 <head>
-	<meta http-equiv="X-UA-Compatible" content="IE=9" />
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>健康診断</title>
 
@@ -14,6 +13,7 @@
 	<script>
 		function btnLogin_onclick(){
 			efw.client.fire({
+//				server:"http://127.0.0.1:8080/efwTest",  //cors　test
 				eventId:"mdclexam_login",
 				success:function(){
 					window.location="mdclexam.jsp";

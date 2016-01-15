@@ -20,6 +20,11 @@ public final class PropertiesManager {
      */
     public static final String EFW_ISDEBUG ="efw.isdebug";
     /**
+     * クロスドメイン通信設定のプロパティキー。
+     * 「efw.cors」の定数。
+     */
+    public static final String EFW_CORS ="efw.cors";
+    /**
      * フレームワークに利用するjdbcリソースの名称のプロパティキー。
      * 「efw.jdbc.resource」の定数。
      */

@@ -2,7 +2,6 @@
 <%@ taglib prefix="efw" uri="/WEB-INF/efw.tld" %>
 <html>
 <head>
-	<meta http-equiv="X-UA-Compatible" content="IE=9" />
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>健康診断</title>
 

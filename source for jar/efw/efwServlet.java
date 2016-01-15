@@ -57,6 +57,13 @@ public final class efwServlet extends HttpServlet {
      */
     private static boolean isDebug=false;
     /**
+     * クロスドメイン通信設定、
+     * 他のサーバーのウェブページから本サイトのイベントを利用する可否を管理する。
+     * デフォルトは * 全部許可。
+     * * : 全部許可, null : 全部拒否, http://xxx/xxx,http://yyy/yyy : 指定サイト許可。
+     */
+    private static String cors="*";
+    /**
      * レスポンスの文字セット定数、XMLHttpRequestのデフォルトに合わせ、「UTF-8」に固定。
      */
     private static final String RESPONSE_CHAR_SET="UTF-8";
@@ -90,6 +97,8 @@ public final class efwServlet extends HttpServlet {
             LogManager.InitCommonDebug("LogManager.init");
             //get attrs from properties or context
             isDebug=PropertiesManager.getBooleanProperty(PropertiesManager.EFW_ISDEBUG,isDebug);
+        	LogManager.InitCommonDebug("isDebug = " + isDebug);
+            cors=PropertiesManager.getProperty(PropertiesManager.EFW_ISDEBUG,cors);
         	LogManager.InitCommonDebug("isDebug = " + isDebug);
         	serverFolder=this.getServletContext().getRealPath(PropertiesManager.getProperty(PropertiesManager.EFW_SEVER_FOLDER,serverFolder));
         	LogManager.InitCommonDebug("serverFolder = " + serverFolder);
@@ -134,7 +143,18 @@ public final class efwServlet extends HttpServlet {
 			response.getWriter().print(otherError);
 			return;
 		}
-
+		//cors support
+		if("*".equals(cors)){
+			response.setHeader("Access-Control-Allow-Origin", "*");
+		}else if("null".equals(cors)||"".equals(cors)||null==cors){
+			//do nothing
+		}else{
+			String[] corsAry=cors.split(",");
+			for(int i=0;i<corsAry.length;i++){
+				response.setHeader("Access-Control-Allow-Origin", corsAry[i]);
+			}
+		}
+		//call script 
 		efwServlet.request.set(request);
 		try {
 			response.getWriter().print(ScriptManager.doPost(request.getParameter("data")));
