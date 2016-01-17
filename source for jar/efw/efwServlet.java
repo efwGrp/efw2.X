@@ -98,8 +98,8 @@ public final class efwServlet extends HttpServlet {
             //get attrs from properties or context
             isDebug=PropertiesManager.getBooleanProperty(PropertiesManager.EFW_ISDEBUG,isDebug);
         	LogManager.InitCommonDebug("isDebug = " + isDebug);
-            cors=PropertiesManager.getProperty(PropertiesManager.EFW_ISDEBUG,cors);
-        	LogManager.InitCommonDebug("isDebug = " + isDebug);
+            cors=PropertiesManager.getProperty(PropertiesManager.EFW_CORS,cors);
+        	LogManager.InitCommonDebug("cors = " + cors);
         	serverFolder=this.getServletContext().getRealPath(PropertiesManager.getProperty(PropertiesManager.EFW_SEVER_FOLDER,serverFolder));
         	LogManager.InitCommonDebug("serverFolder = " + serverFolder);
         	eventFolder=this.getServletContext().getRealPath(PropertiesManager.getProperty(PropertiesManager.EFW_EVENT_FOLDER,eventFolder));
