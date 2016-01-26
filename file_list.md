@@ -289,7 +289,7 @@ efw:InputBehavior をインクルードして、入力枠に data-format を定�
 </table>
 フォーマットの書き方は、詳細はAPIの formatter を参照。
 </DL></DD>
-
+<HR>
 
 <H3><A NAME="efw.jsp.shortCut">ショットカット</A></H3>
 <pre>
