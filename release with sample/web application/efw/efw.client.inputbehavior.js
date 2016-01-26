@@ -3,6 +3,56 @@
  * @author Chang Kejun
  */
 $(function(){
+	$(document).ready(function() {
+		window.onhelp = function() {return false;};//stop ie help
+	    $(document).keydown(function(e) {
+            var keyCode = parseInt(e.keyCode, 10);
+            var ctrl=e.ctrlKey;
+            var alt=e.altKey;
+            var fcsElt=$(":focus");
+            var doShortcut=false;
+	        if (!isNaN(keyCode) && keyCode >= 112 && keyCode <= 123) {//function key
+	        	var key="F"+(keyCode-111);
+	            $("[data-shortcut]").each(function(){
+	            	var btn=$(this);
+	            	var shortcutKey=$(this).attr("data-shortcut");
+	            	if(key==shortcutKey){
+		            	this.focus();
+		            	setTimeout(function(){btn.click();$(fcsElt).focus();},100);
+		            	doShortcut=true;
+	            	}
+	            });
+	        }else if(ctrl && !isNaN(keyCode)){
+	        	if(keyCode!=17){
+	        		var key="CTRL+"+String.fromCharCode(keyCode);
+		            $("[data-shortcut]").each(function(){
+		            	var btn=$(this);
+		            	var shortcutKey=$(this).attr("data-shortcut");
+		            	if(key==shortcutKey){
+			            	this.focus();
+			            	setTimeout(function(){btn.click();$(fcsElt).focus();},100);
+			            	doShortcut=true;
+		            	}
+		            });
+	        	}
+	        }else if(alt && !isNaN(keyCode)){
+	        	if(keyCode!=18){
+	        		var key="ALT+"+String.fromCharCode(keyCode);
+		            $("[data-shortcut]").each(function(){
+		            	var btn=$(this);
+		            	var shortcutKey=$(this).attr("data-shortcut");
+		            	if(key==shortcutKey){
+			            	this.focus();
+			            	setTimeout(function(){btn.click();$(fcsElt).focus();},100);
+			            	doShortcut=true;
+		            	}
+		            });
+	        	}
+	        }
+	        if(doShortcut) return false;
+	    });
+	});
+
 	///////////////////////////////////////////////////////////////////////////
 	$(":text,:password,:radio,:checkbox,select,textarea")
 	.focus(function(){

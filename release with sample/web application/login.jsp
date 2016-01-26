@@ -67,10 +67,27 @@
 	<td></td>
 </tr>
 </table>
+<br><br><br><br>
+<div style="text-align:center">
+
+<span style="display:inline-block;width:540px;text-align:left">テスト数字<input id="txt_testnumber" type="text" data-format="#,##0.00">-10.00～1,000.00の数字を入力してください。</span><br>
+<span style="display:inline-block;width:540px;text-align:left">テスト日付<input id="txt_testdate" type="text" data-format="yyyy年MM月dd日">今日から一週間以内の日付をyyyyMMddで入力してください。</span><br>
 <br>
-テスト数字<input id="txt_testnumber" type="text" data-format="#,##0.00">-10.00～1,000.00の数字を入力してください。<br>
-テスト日付<input id="txt_testdate" type="text" data-format="yyyy年MM月dd日">今日から一週間以内の日付をyyyyMMddで入力してください。<br>
+<input type="button" value="F1" data-shortcut="F1" onclick="alert('F1 is clicked!');">
+<input type="button" value="F2" data-shortcut="F2" onclick="alert('F2 is clicked!');">
+<input type="button" value="F3" data-shortcut="F3" onclick="alert('F3 is clicked!');">
+<input type="button" value="F4" data-shortcut="F4" onclick="alert('F4 is clicked!');">
+<input type="button" value="F5" data-shortcut="F5" onclick="alert('F5 is clicked!');">
+<input type="button" value="F6" data-shortcut="F6" onclick="alert('F6 is clicked!');">
+<input type="button" value="F7" data-shortcut="F7" onclick="alert('F7 is clicked!');">
+<input type="button" value="F8" data-shortcut="F8" onclick="alert('F8 is clicked!');">
+<input type="button" value="F9" data-shortcut="F9" onclick="alert('F9 is clicked!');">
+<input type="button" value="F10" data-shortcut="F10" onclick="alert('F10 is clicked!');">
+<input type="button" value="F11" data-shortcut="F11" onclick="alert('F11 is clicked!');">
+<input type="button" value="F12" data-shortcut="F12" onclick="alert('F12 is clicked!');">
 
-
+<input type="button" value="CTRL+A" data-shortcut="CTRL+A" onclick="alert('CTRL+A is clicked!');">
+<input type="button" value="ALT+Z" data-shortcut="ALT+Z" onclick="alert('ALT+Z is clicked!');">
+</div>
 </body>
 </html>

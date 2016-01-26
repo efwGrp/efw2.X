@@ -3,6 +3,8 @@
  * @author Chang Kejun
  */
 ///////////////////////////////////////////////////////////////////////////////
+jQuery.support.cors = true;
+///////////////////////////////////////////////////////////////////////////////
 var Efw=function(){};
 var EfwClient=function(){};
 ///////////////////////////////////////////////////////////////////////////////
@@ -19,6 +21,7 @@ EfwClient.prototype={
 		//---------------------------------------------------------------------
 		EfwClient.prototype._displayLoading();
 		var servletUrl="efwServlet";
+		if(eventParams.server)servletUrl=eventParams.server+"/"+servletUrl;
 		$.ajax({
 			url: servletUrl,
 			type: "POST",//post method
@@ -34,7 +37,7 @@ EfwClient.prototype={
 				if (data.error){//if it is error from efw server side
 					EfwClient.prototype._returnAlert(data.error,eventId);
 				}else{//if no error, run the second fire
-					EfwClient.prototype._fire2nd(eventId,data,manualParams,successCallback);
+					EfwClient.prototype._fire2nd(eventId,data,manualParams,successCallback,servletUrl);
 				}
 			},
 			error: function(errorResponse, errorType, errorMessage){
@@ -92,7 +95,7 @@ EfwClient.prototype={
 		}
 	},
 ///////////////////////////////////////////////////////////////////////////////
-	"_fire2nd":function(eventId,paramsFormat,manualParams,successCallback){
+	"_fire2nd":function(eventId,paramsFormat,manualParams,successCallback,servletUrl){
 		//auto collect params
 		//---------------------------------------------------------------------
 		try{
@@ -107,7 +110,6 @@ EfwClient.prototype={
 		this._consoleLog("Second calling parameters",params);
 		//the second calling
 		//---------------------------------------------------------------------
-		var servletUrl="efwServlet";
 		$.ajax({
 			url: servletUrl,
 			type: "POST",//post method
