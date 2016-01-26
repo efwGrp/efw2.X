@@ -291,6 +291,34 @@ efw:InputBehavior をインクルードして、入力枠に data-format を定�
 </DL></DD>
 
 
+<H3><A NAME="efw.jsp.shortCut">ショットカット</A></H3>
+<pre>
+    &lt;input id="btn_save" type="button" data-shortcut="CTRL+S"&gt;
+    &lt;input id="btn_cancel" type="button" data-shortcut="F6"&gt;
+</pre>
+<DL>
+<DD>
+efw:InputBehavior をインクルードして、ボタンに data-shortcut を定義する場合、ショットカットの動きを行う。<br>
+<table BORDER="1"  CELLPADDING="3" CELLSPACING="0" SUMMARY="">
+<tr BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+	<th style="width:300px">data-shortcut</th>
+	<th style="width:750px">説明</th>
+</tr>
+<tr>
+	<td>F1～F12</td>
+	<td>フォクションキー。</td>
+</tr>
+<tr>
+	<td>CTRL+A～CTRL+Z</td>
+	<td>コントロールキー。</td>
+</tr>
+<tr>
+	<td>ALT+A～ALT+Z</td>
+	<td>オルトキー。</td>
+</tr>
+</table>
+</DL></DD>
+
 
 <TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
 	<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
