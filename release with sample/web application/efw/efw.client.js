@@ -294,9 +294,9 @@ EfwClient.prototype={
 								||(this.tagName=="INPUT"&&this.type=="radio")
 							){
 								if (withdata[withdata_key]==$(this).val()){
-									$(this).attr("checked",true); 
+									$(this).prop("checked",true);
 								}else{
-									$(this).removeAttr("checked"); 
+									$(this).prop("checked",false);
 								}
 							}else if(this.tagName=="SELECT"){//set data with selected attribute
 								var dataAry=(""+data).split(",");
