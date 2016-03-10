@@ -576,7 +576,7 @@ web/WEB-INF/classes/efw.properties
 <tr>
 	<td>efw.jdbc.resource</td>
 	<td>jdbc/efw</td>
-	<td>デフォルトjdbcリソース名。server.xmlに定義する必要。</td>
+	<td>デフォルトjdbcリソース名。server.xmlに定義する必要。もし、tomcat以外のアプリケーションサーバの場合、直接jndi名を書いてもよい。サンプル：　　java:xxx/yyy/zzz　　or　　[java:comp/env/]jdbc/efw</td>
 </tr>
 <tr>
 	<td>efw.server.folder</td>
