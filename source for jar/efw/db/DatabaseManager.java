@@ -57,9 +57,13 @@ public final class DatabaseManager {
 	 */
 	public static synchronized void init() throws efwException{
 		try {
-	        Context envContext = (Context) new InitialContext().lookup(JAVA_INITCONTEXT_NAME);
 	        jdbcResourceName=PropertiesManager.getProperty(PropertiesManager.EFW_JDBC_RESOURCE,jdbcResourceName);
-	        dataSource=(DataSource) envContext.lookup(jdbcResourceName);
+	        if(jdbcResourceName.indexOf("java:")>-1){//if the jdbc resouce begins from [java:], it is full jndi name.
+	        	dataSource = (DataSource) new InitialContext().lookup(jdbcResourceName);
+	        }else{//or it begins by [java:comp/env/]
+	        	dataSource = (DataSource) new InitialContext().lookup(JAVA_INITCONTEXT_NAME+"/"+jdbcResourceName);
+	        }
+
 		} catch (NamingException e) {
 			e.printStackTrace();
     		throw new efwException(efwException.DataSourceInitFailedException,jdbcResourceName);
