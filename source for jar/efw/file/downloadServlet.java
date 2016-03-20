@@ -40,7 +40,7 @@ public final class downloadServlet extends HttpServlet {
 				File zipFile=File.createTempFile("tmp", "zip",new File(FileManager.getStorageFolder()));
 				tmp_zip=zipFile.getName();
 				attr_file=zipFile.getName();
-				FileManager.zip(tmp_zip, FileManager.getStorageFolder(), tmp_files);
+				FileManager.zip(tmp_zip, tmp_files);
 				
 				if(attr_saveas==null||"".equals(attr_saveas)){
 					attr_saveas="attachment.zip";

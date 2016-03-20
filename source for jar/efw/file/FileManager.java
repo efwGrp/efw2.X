@@ -27,18 +27,26 @@ public final class FileManager {
 	public static synchronized void init(String storageFolder){
 		FileManager.storageFolder=storageFolder;
 	}
-	
+	/**
+	 * ファイルの格納パスを取得する。
+	 * @return　 ファイルの格納パス。
+	 */
 	public static String getStorageFolder(){
 		return storageFolder;
 	}
-	
-	public static void zip(String filename, String base, String[] paths) throws IOException{
+	/**
+	 * ファイルを圧縮する。
+	 * @param filename 圧縮後のファイル名。
+	 * @param paths 圧縮対象のファイル配列。
+	 * @throws IOException ファイルアクセスエラー。
+	 */
+	public static void zip(String filename, String[] paths) throws IOException{
 		
-		ZipOutputStream zos = new ZipOutputStream(new BufferedOutputStream(new FileOutputStream(new File(base+"/"+filename))));
+		ZipOutputStream zos = new ZipOutputStream(new BufferedOutputStream(new FileOutputStream(new File(storageFolder+"/"+filename))));
 		try{
 			byte[] buf = new byte[1024];
 			for (String path : paths) {
-	            InputStream is = new BufferedInputStream(new FileInputStream(base+"/"+path));
+	            InputStream is = new BufferedInputStream(new FileInputStream(storageFolder+"/"+path));
 	            zos.putNextEntry(new ZipEntry(path));
 	            int len = 0;
 	            while ((len = is.read(buf)) != -1) {
