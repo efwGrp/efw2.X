@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import efw.db.DatabaseManager;
+import efw.file.FileManager;
 import efw.format.FormatManager;
 import efw.log.LogManager;
 import efw.properties.PropertiesManager;
@@ -49,6 +50,14 @@ public final class efwServlet extends HttpServlet {
      * デフォルトは「/WEB-INF/efw/sql」。
      */
     private static String sqlFolder="/WEB-INF/efw/sql";
+    /**
+     * ファイルの格納パス、
+     * 絶対パスで表す。
+     * <br>efw.propertiesのefw.storage.folderで設定、
+     * デフォルトは「/storage」。
+     */
+	private static String storageFolder="/WEB-INF/efw/storage";
+    
     /**
      * デバッグモードを制御するフラグ。
      * <br>efw.propertiesのefw.isdebugで設定、
@@ -100,19 +109,41 @@ public final class efwServlet extends HttpServlet {
         	LogManager.InitCommonDebug("isDebug = " + isDebug);
             cors=PropertiesManager.getProperty(PropertiesManager.EFW_CORS,cors);
         	LogManager.InitCommonDebug("cors = " + cors);
-        	serverFolder=this.getServletContext().getRealPath(PropertiesManager.getProperty(PropertiesManager.EFW_SEVER_FOLDER,serverFolder));
+        	String propertyPath="";
+        	propertyPath=PropertiesManager.getProperty(PropertiesManager.EFW_SEVER_FOLDER,serverFolder);
+        	if(propertyPath.startsWith("/")){propertyPath=this.getServletContext().getRealPath(propertyPath);}
+        	serverFolder=propertyPath;
         	LogManager.InitCommonDebug("serverFolder = " + serverFolder);
-        	eventFolder=this.getServletContext().getRealPath(PropertiesManager.getProperty(PropertiesManager.EFW_EVENT_FOLDER,eventFolder));
+        	propertyPath=PropertiesManager.getProperty(PropertiesManager.EFW_EVENT_FOLDER,eventFolder);
+        	if(propertyPath.startsWith("/")){propertyPath=this.getServletContext().getRealPath(propertyPath);}
+        	eventFolder=propertyPath;
         	LogManager.InitCommonDebug("eventFolder = " + eventFolder);
-        	sqlFolder=this.getServletContext().getRealPath(PropertiesManager.getProperty(PropertiesManager.EFW_EVENT_SQL,sqlFolder));
+        	propertyPath=PropertiesManager.getProperty(PropertiesManager.EFW_SQL_FOLDER,sqlFolder);
+        	if(propertyPath.startsWith("/")){propertyPath=this.getServletContext().getRealPath(propertyPath);}
+        	sqlFolder=propertyPath;
         	LogManager.InitCommonDebug("sqlFolder = " + sqlFolder);
+        	propertyPath=PropertiesManager.getProperty(PropertiesManager.EFW_STORAGE_FOLDER,storageFolder);
+        	if(propertyPath.startsWith("/")){propertyPath=this.getServletContext().getRealPath(propertyPath);}
+        	storageFolder=propertyPath;
+        	LogManager.InitCommonDebug("storageFolder = " + storageFolder);
+        	
         	//check the define folders
         	if (!new File(serverFolder).exists())throw new efwException(efwException.ServerFolderDoesNotExistException,serverFolder);
         	if (!new File(eventFolder).exists())throw new efwException(efwException.EventFolderDoesNotExistException,eventFolder);
         	if (!new File(sqlFolder).exists())throw new efwException(efwException.SqlFolderIsNotExistsException,sqlFolder);
+        	File fileStorage=new File(storageFolder);
+        	if(!fileStorage.exists()){
+        		try{
+            		fileStorage.mkdirs();
+        		}catch(SecurityException e){
+        			throw new efwException(efwException.StorageFolderIsNotExistsException,storageFolder);
+        		}
+        	}
         	//load definition from folders
     		SqlManager.init(sqlFolder,isDebug);
     		LogManager.InitCommonDebug("SqlsManager.init");
+    		FileManager.init(storageFolder);
+    		LogManager.InitCommonDebug("FileManager.init");
 			DatabaseManager.init();
     		LogManager.InitCommonDebug("DatabaseManager.init");
             ScriptManager.init(serverFolder,eventFolder,isDebug);

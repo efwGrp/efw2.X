@@ -581,17 +581,17 @@ web/WEB-INF/classes/efw.properties
 <tr>
 	<td>efw.server.folder</td>
 	<td>/WEB-INF/efw/server</td>
-	<td>サーバーソースのフォルダ。webアプリの相対パス。</td>
+	<td>サーバーソースのフォルダ。webアプリの相対パスで設定する。あるいは絶対パスで設定する。</td>
 </tr>
 <tr>
 	<td>efw.event.folder</td>
 	<td>/WEB-INF/efw/event</td>
-	<td>イベントソースのフォルダ。webアプリの相対パス。</td>
+	<td>イベントソースのフォルダ。webアプリの相対パスで設定する。あるいは絶対パスで設定する。</td>
 </tr>
 <tr>
 	<td>efw.event.sql</td>
 	<td>/WEB-INF/efw/sql</td>
-	<td>sql XMLファイルのフォルダ。webアプリの相対パス。</td>
+	<td>sql XMLファイルのフォルダ。webアプリの相対パスで設定する。あるいは絶対パスで設定する。</td>
 </tr>
 <tr>
 	<td>efw.login.check</td>
@@ -625,8 +625,8 @@ web/WEB-INF/classes/efw.properties
 </tr>
 <tr>
 	<td>efw.logging.level</td>
-	<td>OFF</td>
-	<td>efwログファイルの出力レベル。</td>
+	<td>WARNING</td>
+	<td>efwログファイルの出力レベル。ALL,FINEST,FINER,FINE,CONFIG,INFO,WARNING,SEVERE,OFF</td>
 </tr>
 <tr>
 	<td>efw.cors</td>

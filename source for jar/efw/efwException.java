@@ -21,6 +21,10 @@ public final class efwException extends ServletException {
 	 */
 	public static final String SqlFolderIsNotExistsException="SqlFolderIsNotExistsException";
 	/**
+	 * ストレジの格納パスが存在しないエラー定数。
+	 */
+	public static final String StorageFolderIsNotExistsException="StorageFolderIsNotExistsException";
+	/**
 	 * データソースが取得できないエラー定数。
 	 */
 	public static final String DataSourceInitFailedException="DataSourceInitFailedException";

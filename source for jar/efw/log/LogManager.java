@@ -36,7 +36,7 @@ public final class LogManager {
      * <br>efw.propertiesのefw.logging.levelで設定、
      * デフォルトは「OFF」。
      */
-    private static String logLevel="OFF";
+    private static String logLevel="WARNING";
     /**
      * ログファイルのサイズ。
      * <br>efw.propertiesのefw.logging.limitで設定、
@@ -102,27 +102,21 @@ public final class LogManager {
      * @param value ログ内容。
      */
     public static void ErrorDebug(String value) {
-    	if (logger.getLevel().intValue()<=Level.SEVERE.intValue()){
-            logger.log(Level.SEVERE, "[EFW.NG]" + value.replaceAll("\n", ""));
-    	}
+        logger.log(Level.SEVERE, "[EFW.NG]" + value.replaceAll("\n", ""));
     }
     /**
      * 正常ログを出力する。
      * @param value ログ内容。
      */
     public static void CommDebug(String value) {
-    	if (logger.getLevel().intValue()<=Level.INFO.intValue()){
-            logger.log(Level.INFO, "[EFW.OK]" + value.replaceAll("\n", ""));
-    	}
+        logger.log(Level.INFO, "[EFW.OK]" + value.replaceAll("\n", ""));
     }
     /**
      * ワーニングログを出力する。
      * @param value ログ内容。
      */
     public static void WarningDebug(String value) {
-    	if (logger.getLevel().intValue()<=Level.INFO.intValue()){
-            logger.log(Level.INFO, "[EFW.WARNING]" + value.replaceAll("\n", ""));
-    	}
+        logger.log(Level.WARNING, "[EFW.WARNING]" + value.replaceAll("\n", ""));
     }
     
     /**
@@ -131,9 +125,7 @@ public final class LogManager {
      * @param value2　ログ内容２。
      */
     public static void ErrorDebug(String value1,String value2) {
-    	if (logger.getLevel().intValue()<=Level.SEVERE.intValue()){
-            logger.log(Level.SEVERE, "[EFW.NG]" + value1.replaceAll("\n", "")+" "+value2.replaceAll("\n", ""));
-    	}
+        logger.log(Level.SEVERE, "[EFW.NG]" + value1.replaceAll("\n", "")+" "+value2.replaceAll("\n", ""));
     }
     /**
      * 正常ログを出力する。
@@ -141,9 +133,7 @@ public final class LogManager {
      * @param value2　ログ内容２。
      */
     public static void CommDebug(String value1,String value2) {
-    	if (logger.getLevel().intValue()<=Level.INFO.intValue()){
-            logger.log(Level.INFO, "[EFW.OK]" + value1.replaceAll("\n", "")+" "+value2.replaceAll("\n", ""));
-    	}
+        logger.log(Level.INFO, "[EFW.OK]" + value1.replaceAll("\n", "")+" "+value2.replaceAll("\n", ""));
     }
     /**
      * ワーニングログを出力する。
@@ -151,27 +141,21 @@ public final class LogManager {
      * @param value2　ログ内容２。
      */
     public static void WariningDebug(String value1,String value2) {
-    	if (logger.getLevel().intValue()<=Level.INFO.intValue()){
-            logger.log(Level.INFO, "[EFW.WARNING]" + value1.replaceAll("\n", "")+" "+value2.replaceAll("\n", ""));
-    	}
+        logger.log(Level.WARNING, "[EFW.WARNING]" + value1.replaceAll("\n", "")+" "+value2.replaceAll("\n", ""));
     }
     /**
      * 初期化時の正常ログを出力する。
      * @param value ログ内容。
      */
     public static void InitCommonDebug(String value) {
-    	if (logger.getLevel().intValue()<=Level.INFO.intValue()){
-            logger.log(Level.INFO, "[EFW.INI.OK]" + value.replaceAll("\n", ""));
-    	}
+        logger.log(Level.INFO, "[EFW.INI.OK]" + value.replaceAll("\n", ""));
     }
     /**
      * 初期化時のエラーログを出力する。
      * @param value ログ内容。
      */
     public static void InitErrorDebug(String value) {
-    	if (logger.getLevel().intValue()<=Level.INFO.intValue()){
-            logger.log(Level.SEVERE, "[EFW.INI.NG]" + value.replaceAll("\n", ""));
-    	}
+        logger.log(Level.SEVERE, "[EFW.INI.NG]" + value.replaceAll("\n", ""));
     }
     /**
      * 初期化時のエラーログを出力する。
@@ -179,8 +163,6 @@ public final class LogManager {
      * @param value2　ログ内容２。
      */
     public static void InitErrorDebug(String value1,String value2) {
-    	if (logger.getLevel().intValue()<=Level.INFO.intValue()){
-            logger.log(Level.SEVERE, "[EFW.INI.NG]" + value1.replaceAll("\n", "")+" "+value2.replaceAll("\n", ""));
-    	}
+        logger.log(Level.SEVERE, "[EFW.INI.NG]" + value1.replaceAll("\n", "")+" "+value2.replaceAll("\n", ""));
     }
 }

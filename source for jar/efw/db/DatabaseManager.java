@@ -108,8 +108,9 @@ public final class DatabaseManager {
     }
     /**
      * すべてのデータベースを閉じる。
+     * @throws SQLException 　データベースアクセスエラー。
      */
-    public static void closeAll(){
+    public static void closeAll() throws SQLException{
 		if(DatabaseManager.database.get()==null)
 			DatabaseManager.database.set(new HashMap<String,Database>());
 

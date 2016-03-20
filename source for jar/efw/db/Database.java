@@ -61,7 +61,6 @@ public final class Database {
     	    return rs;
     	}catch(efwException|SQLException e){
     		e.printStackTrace();
-    	    LogManager.ErrorDebug("Database.executeQuery");
     		throw e;
     	}
 	}
@@ -90,7 +89,6 @@ public final class Database {
             return cnt;
     	}catch(efwException|SQLException e){
     		e.printStackTrace();
-    	    LogManager.ErrorDebug("Database.executeUpdate");
     		throw e;
     	}
     }
@@ -103,44 +101,58 @@ public final class Database {
      * @throws SQLException データベースアクセスエラー。
      */
     public void execute(String groupId,String sqlId,Map<String,Object> params) throws efwException, SQLException{
-    	Sql sql=SqlManager.get(groupId, sqlId);
-    	String sqlString=sql.getSqlString(params);
-    	ArrayList<Object> sqlParams=sql.getSqlParams(params);
-        LogManager.CommDebug("sql =" , sqlString);
-        CallableStatement mStmt = mConn.prepareCall(sqlString);
-        mStmtAry.add(mStmt);
-        setSQLParams(mStmt, sqlParams);
-        mStmt.execute();
-        LogManager.CommDebug("Database.execute");
+    	try{
+        	Sql sql=SqlManager.get(groupId, sqlId);
+        	String sqlString=sql.getSqlString(params);
+        	ArrayList<Object> sqlParams=sql.getSqlParams(params);
+            LogManager.CommDebug("sql =" , sqlString);
+            CallableStatement mStmt = mConn.prepareCall(sqlString);
+            mStmtAry.add(mStmt);
+            setSQLParams(mStmt, sqlParams);
+            mStmt.execute();
+            LogManager.CommDebug("Database.execute");
+    	}catch(efwException|SQLException e){
+    		e.printStackTrace();
+    		throw e;
+    	}
     }
     /**
      * データベースへの更新を無効とし、 データベース接続が保持するデータベースロックをすべて解除する。
+     * @throws SQLException データベースアクセスエラー。
      */
-    public void rollback(){
+    public void rollback() throws SQLException{
     	try{
             if (null != mConn) {
                 if (!mConn.isClosed()) {
                     mConn.rollback();
                 }
             }
-    	}catch(SQLException e){e.printStackTrace();}
+    	}catch(SQLException e){
+    		e.printStackTrace();
+    		throw e;
+    	}
     }
     /**
      * データベースへの更新を有効とし、 データベース接続が保持するデータベースロックをすべて解除する。
+     * @throws SQLException データベースアクセスエラー。
      */
-    public void commit(){
+    public void commit() throws SQLException{
     	try{
             if (null != mConn) {
                 if (!mConn.isClosed()) {
                     mConn.commit();
                 }
             }
-    	}catch(SQLException e){e.printStackTrace();}
+    	}catch(SQLException e){
+    		e.printStackTrace();
+    		throw e;
+    	}
     }
     /**
      * ステートメントを全部閉じて、データベース接続をコミットして、閉じる。
+     * @throws SQLException データベースアクセスエラー。
      */
-    public void close(){
+    public void close() throws SQLException{
     	try{
             if (!mConn.isClosed()) {
                 if (null != mStmtAry) {
@@ -156,7 +168,10 @@ public final class Database {
                 }
                 mConn.close();
             }
-    	}catch(SQLException e){e.printStackTrace();}
+    	}catch(SQLException e){
+    		e.printStackTrace();
+    		throw e;
+    	}
     }
     /**
      * Sqlパラメータを配列から設定する。

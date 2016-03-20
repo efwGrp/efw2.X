@@ -43,7 +43,12 @@ public final class PropertiesManager {
      * Sqlを外部化するXMLファイルの格納パスのプロパティキー。
      * 「efw.sql.folder」の定数。
      */
-	public static final String EFW_EVENT_SQL ="efw.sql.folder";
+	public static final String EFW_SQL_FOLDER="efw.sql.folder";
+    /**
+     * ファイルの格納パスのプロパティキー。
+     * 「efw.upload.folder」の定数。
+     */
+	public static final String EFW_STORAGE_FOLDER="efw.storage.folder";
 	/**
 	 * ログの保存パスのプロパティキー。
 	 * 「efw.logging.path」の定数。
