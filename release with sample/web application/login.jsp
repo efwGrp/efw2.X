@@ -25,6 +25,12 @@
 			$("#txt_pwd").val("");
 		}
 		
+		function btnF1_onclick(){
+			efw.client.fire({
+				eventId:"mdclexam_download"
+			});
+		}
+		
 		$(function(){
 			$("#btnLogin,#btnClear").button();
 		});
@@ -73,7 +79,7 @@
 <span style="display:inline-block;width:540px;text-align:left">テスト数字<input id="txt_testnumber" type="text" data-format="#,##0.00">-10.00～1,000.00の数字を入力してください。</span><br>
 <span style="display:inline-block;width:540px;text-align:left">テスト日付<input id="txt_testdate" type="text" data-format="yyyy年MM月dd日">今日から一週間以内の日付をyyyyMMddで入力してください。</span><br>
 <br>
-<input type="button" value="F1" data-shortcut="F1" onclick="alert('F1 is clicked!');">
+<input type="button" value="F1 ダウンロードテスト" data-shortcut="F1" onclick="btnF1_onclick();">
 <input type="button" value="F2" data-shortcut="F2" onclick="alert('F2 is clicked!');">
 <input type="button" value="F3" data-shortcut="F3" onclick="alert('F3 is clicked!');">
 <input type="button" value="F4" data-shortcut="F4" onclick="alert('F4 is clicked!');">
