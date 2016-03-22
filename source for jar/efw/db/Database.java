@@ -200,4 +200,65 @@ public final class Database {
         }
     }
     
+    
+    /**
+     * 単一の ResultSetオブジェクトを返すSqlを直接実行する。
+     * 
+     * @param sql　実行されるsql。
+     * @return　指定されたクエリーによって作成されたデータを含む ResultSet オブジェクト。null にはならない。
+     * @throws SQLException データベースアクセスエラー。
+     */
+    public ResultSet executeQuerySql(String sql) throws SQLException{
+    	try{
+    	    LogManager.CommDebug("sql =" , sql);
+    	    CallableStatement mStmt = mConn.prepareCall(sql);
+    	    mStmtAry.add(mStmt);
+    	    ResultSet rs = mStmt.executeQuery();
+    	    LogManager.CommDebug("Database.executeQuery");
+    	    return rs;
+    	}catch(SQLException e){
+    		e.printStackTrace();
+    		throw e;
+    	}
+	}
+    /**
+     * INSERT文、UPDATE文、DELETE文を直接実行する。
+     * @param sql　実行されるsql。
+     * @return　実行された行数を戻す。 
+     * @throws SQLException データベースアクセスエラー。
+     */
+    public int executeUpdateSql(String sql) throws SQLException{
+    	try{
+            LogManager.CommDebug("sql =" , sql);
+            CallableStatement mStmt = mConn.prepareCall(sql);
+            mStmtAry.add(mStmt);
+            int cnt = mStmt.executeUpdate();
+            LogManager.CommDebug("Database.executeUpdate");
+            
+            return cnt;
+    	}catch(SQLException e){
+    		e.printStackTrace();
+    		throw e;
+    	}
+    }
+    /**
+     * 任意のSQL文を直接実行する。
+     * @param groupId　Sqlを外部化するXMLのファイル名（拡張子を除く）。
+     * @param sqlId SqlXMLファイルのsqlタグに定義されるId。
+     * @param params　Sqlに利用される引数を格納するマップ。
+     * @throws efwException フレームワークの実行時エラー。
+     * @throws SQLException データベースアクセスエラー。
+     */
+    public void executeSql(String sql) throws SQLException{
+    	try{
+            LogManager.CommDebug("sql =" , sql);
+            CallableStatement mStmt = mConn.prepareCall(sql);
+            mStmtAry.add(mStmt);
+            mStmt.execute();
+            LogManager.CommDebug("Database.execute");
+    	}catch(SQLException e){
+    		e.printStackTrace();
+    		throw e;
+    	}
+    }    
 }
