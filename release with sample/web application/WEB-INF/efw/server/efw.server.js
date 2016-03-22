@@ -8,7 +8,7 @@ var _eventfolder;
 var _isdebug;
 var _engine;// Mozilla Rhino 1.7 / Oracle Nashorn 1.8
 ///////////////////////////////////////////////////////////////////////////////
-if (_engine.getFactory().getEngineName()=="Mozilla Rhino"){//java 1.7
+if ((_engine.getFactory().getEngineName()+"").indexOf("Rhino")>-1){//java 1.7
 	function load(filename) { Packages.efw.script.ScriptManager.load(filename);}
 }
 ///////////////////////////////////////////////////////////////////////////////
@@ -208,9 +208,9 @@ EfwServer.prototype={
 							message=_createMessage(message,"{display-name}",displayName);
 							message=_createMessage(message,"{min}",min);
 							message=_createMessage(message,"{max}",max);
-							if(value.toFixed)message=_createMessage(message,"{data-type}","数字");
-							else if(value.getTime)message=_createMessage(message,"{data-type}","日付");
-							else message=_createMessage(message,"{data-type}","文字");
+							if(value.toFixed)message=_createMessage(message,"{data-type}",EfwServerMessages.prototype.NumberType);
+							else if(value.getTime)message=_createMessage(message,"{data-type}",EfwServerMessages.prototype.DateType);
+							else message=_createMessage(message,"{data-type}",EfwServerMessages.prototype.StringType);
 							ret.push({errorMessage:message,element:errorElementKey});
 							continue;
 						}
@@ -261,6 +261,7 @@ load(_serverfolder+"/efw.server.session.js");
 load(_serverfolder+"/efw.server.db.js");
 load(_serverfolder+"/efw.server.event.js");
 load(_serverfolder+"/efw.server.customize.js");
+load(_serverfolder+"/efw.server.file.js");
 ///////////////////////////////////////////////////////////////////////////////
 Efw.prototype.server=new EfwServer();
 ///////////////////////////////////////////////////////////////////////////////

@@ -6,6 +6,9 @@
 var EfwServerMessages=function(){};
 ///////////////////////////////////////////////////////////////////////////////
 EfwServerMessages.prototype={
+	NumberType:"数字",
+	DateType:"日付",
+	StringType:"文字",
 	SessionTimeoutException:"セッションタイムアウトになりました。再ログインしてください。",
 	NumberIsReuqiredMessage:"{display-name}を数字で正しく入力してください。",
 	DateIsReuqiredMessage:"{display-name}を日付で正しく入力してください。",
