@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.net.URLEncoder;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -23,7 +24,8 @@ public final class downloadServlet extends HttpServlet {
     private static final String RESPONSE_CHAR_SET="UTF-8";
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
-    	request.setCharacterEncoding(RESPONSE_CHAR_SET);
+    	request.setCharacterEncoding(RESPONSE_CHAR_SET);//画面からの送信情報をUTF-8で認識する、jsp画面の<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    	response.setCharacterEncoding(RESPONSE_CHAR_SET);//URLEncoder.encodeと関連
 		OutputStream os = response.getOutputStream();
 		String attr_file=request.getParameter("file");
 		String attr_zip=request.getParameter("zip");
@@ -58,7 +60,7 @@ public final class downloadServlet extends HttpServlet {
 			int len = 0;
 			byte[] buffer = new byte[1024];
 			response.setContentType("application/octet-stream");
-			response.setHeader("Content-Disposition","attachment; filename=\""+attr_saveas+"\"");
+			response.setHeader("Content-Disposition","attachment; filename=\""+URLEncoder.encode(attr_saveas, RESPONSE_CHAR_SET)+"\"");
 			while ((len = bis.read(buffer)) >= 0) os.write(buffer, 0, len);
 			bis.close();
 			if("true".equals(attr_deleteafterdownload)){
@@ -74,7 +76,6 @@ public final class downloadServlet extends HttpServlet {
 		} catch (IOException e) {
 			LogManager.ErrorDebug(e.getMessage());
 			response.reset();
-			response.setCharacterEncoding(RESPONSE_CHAR_SET);
 			response.getWriter().print("<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"></head><body>");
 			response.getWriter().print(e.getMessage());
 			response.getWriter().print("</body></html>");
