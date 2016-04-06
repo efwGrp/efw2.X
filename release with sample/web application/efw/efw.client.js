@@ -19,6 +19,7 @@ EfwClient.prototype={
 		//---------------------------------------------------------------------
 		//the first calling
 		//---------------------------------------------------------------------
+		$(".efw_input_error").removeClass("efw_input_error");//clear input error
 		EfwClient.prototype._displayLoading();
 		var servletUrl="efwServlet";
 		if(eventParams.server)servletUrl=eventParams.server+"/"+servletUrl;
@@ -73,22 +74,20 @@ EfwClient.prototype={
 	//=========================================================================
 	"alert":function(message,callback){
 		if($("body").dialog){
-			if($("#efw_client_alert").size()==0){
-				$("body").append("<div id='efw_client_alert'><p></p></div>");
-				$("#efw_client_alert")
-				.dialog({
-					modal: true,
-					width:500,
-					title:"メッセージ",
-					buttons: {"OK":function(){
-						$(this).dialog("close").remove();
-						if(callback)callback();
-					}}
-				});
-			}
+			$("#efw_client_alert").remove();
+			$("body").append("<div id='efw_client_alert' style='display:none'><p></p></div>");
 			message=message.replace(/\n/g,"<br>");
 			$("#efw_client_alert p").html(message);
-			$("#efw_client_alert").dialog("open");
+			$("#efw_client_alert")
+			.dialog({
+				modal: true,
+				width:500,
+				title:"メッセージ",
+				buttons: {"OK":function(){
+					$(this).dialog("close").remove();
+					if(callback)callback();
+				}}
+			});
 		}else{
 			alert(message);
 			if(callback)callback();
@@ -139,7 +138,34 @@ EfwClient.prototype={
 						EfwClient.prototype._returnAlert({errorType:"SuccessCallbackErrorException",canNotContinue:true},eventId);
 					}
 				}else{
-					if (data.error){
+					if (data.download){//about filename encode, efw has not do anything .
+						var attr_file=data.download["file"];
+						if(attr_file==null)attr_file="";
+						var array_zip=data.download["zip"];
+						var attr_zip="";
+						if(array_zip!=null){
+							for(var i=0;i<array_zip.length;i++){
+								attr_zip+=array_zip[i];
+								if(i<array_zip.length-1)attr_zip+="|";
+							}
+						}
+						var attr_saveas=data.download["saveas"];
+						if(attr_saveas==null)attr_saveas="";						
+						var attr_deleteafterdownload=data.download["deleteafterdownload"];
+						if(attr_deleteafterdownload==null)attr_deleteafterdownload="";
+						
+						if(attr_file!=""||attr_zip!=""){
+							var downloadUrl="downloadServlet";
+							window.location=downloadUrl+"?file="+attr_file+"&zip="+attr_zip+"&saveas="+attr_saveas+"&deleteafterdownload="+attr_deleteafterdownload;
+							EfwClient.prototype._removeLoading();
+						}else{//the download is wrong
+							var e={};
+							e.errorType="data type";
+							e.errorMessage="The file or zip attribute is must in a download return.";
+							EfwClient.prototype._consoleLog("Second calling error",e);
+							EfwClient.prototype._returnAlert({errorType:"FileOrZipIsMustErrorException",canNotContinue:true},eventId);
+						}
+					}else if (data.error){
 						EfwClient.prototype._returnAlert(data.error);
 						if(data.error.canNotContinue==undefined||data.error.canNotContinue==false){
 							EfwClient.prototype._removeLoading();
@@ -271,7 +297,7 @@ EfwClient.prototype={
 					for(var withdata_key in withdata){
 						var data=withdata[withdata_key];
 						if (data==null)data="";//if data isnull then change it to blank
-						if($.type(data)!="string"&&$.type(data)!="number"&&$.type(data)!="date"){
+						if($.type(data)!="string"&&$.type(data)!="number"&&$.type(data)!="date"&&$.type(data)!="boolean"){
 							var e={};
 							e.errorType="not matched";
 							e.errorMessage="The data "+ data +" in withdata of [runat="+attr_runat +"] should be a simple type.";
@@ -294,9 +320,9 @@ EfwClient.prototype={
 								||(this.tagName=="INPUT"&&this.type=="radio")
 							){
 								if (withdata[withdata_key]==$(this).val()){
-									$(this).prop("checked",true);
+									$(this).prop("checked",true); 
 								}else{
-									$(this).prop("checked",false);
+									$(this).prop("checked",false); 
 								}
 							}else if(this.tagName=="SELECT"){//set data with selected attribute
 								var dataAry=(""+data).split(",");
@@ -377,9 +403,8 @@ EfwClient.prototype={
 	},
 	//=========================================================================
 	"_displayLoading":function(){
-		if($("#loading").size()==0){
-			$("body").append("<div id='loading' class='ui-widget-overlay ui-front'></div>");
-		}
+		$("#loading").remove();
+		$("body").append("<div id='loading' class='ui-widget-overlay ui-front'></div>");
 	},
 	//=========================================================================
 	"_removeLoading":function(){
@@ -407,7 +432,6 @@ EfwClient.prototype={
 				if(error.focusTo){
 					try{$(error.focusTo).focus();}catch(e){}
 				}
-				$(".efw_input_error").removeClass("efw_input_error");
 				if(error.elements){
 					$(error.elements).addClass("efw_input_error");
 				}
