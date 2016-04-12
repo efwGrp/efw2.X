@@ -5,13 +5,13 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.OutputStream;
-import java.net.URLEncoder;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import efw.log.LogManager;
 
@@ -22,21 +22,28 @@ public final class downloadServlet extends HttpServlet {
      * レスポンスの文字セット定数、XMLHttpRequestのデフォルトに合わせ、「UTF-8」に固定。
      */
     private static final String RESPONSE_CHAR_SET="UTF-8";
+    private static final String EFW_DOWNLOAD_FILE="efw.download.file";
+    private static final String EFW_DOWNLOAD_ZIP="efw.download.zip";
+    private static final String EFW_DOWNLOAD_SAVEAS="efw.download.saveas";
+    private static final String EFW_DOWNLOAD_DELETEAFTERDOWNLOAD="efw.download.deleteafterdownload";
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
-    	request.setCharacterEncoding(RESPONSE_CHAR_SET);//画面からの送信情報をUTF-8で認識する、jsp画面の<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    	response.setCharacterEncoding(RESPONSE_CHAR_SET);//URLEncoder.encodeと関連
-		OutputStream os = response.getOutputStream();
-		String attr_file=request.getParameter("file");
-		String attr_zip=request.getParameter("zip");
-		String attr_saveas=request.getParameter("saveas");
-		String attr_deleteafterdownload=request.getParameter("deleteafterdownload");
-		LogManager.CommDebug(request.getQueryString());
+    	HttpSession sn=request.getSession();
+		String attr_file=(String)sn.getAttribute(EFW_DOWNLOAD_FILE);
+		String attr_zip=(String)sn.getAttribute(EFW_DOWNLOAD_ZIP);
+		String attr_saveas=(String)sn.getAttribute(EFW_DOWNLOAD_SAVEAS);
+		String attr_deleteafterdownload=(String)sn.getAttribute(EFW_DOWNLOAD_DELETEAFTERDOWNLOAD);
+		sn.removeAttribute(EFW_DOWNLOAD_FILE);
+		sn.removeAttribute(EFW_DOWNLOAD_ZIP);
+		sn.removeAttribute(EFW_DOWNLOAD_SAVEAS);
+		sn.removeAttribute(EFW_DOWNLOAD_DELETEAFTERDOWNLOAD);
 
 		String tmp_zip=null;
 		String[] tmp_files=null;
+
+		OutputStream os = response.getOutputStream();
 		try {
-			response.reset();
+			response.setCharacterEncoding(RESPONSE_CHAR_SET);//URLEncoder.encodeと関連
 			if(attr_zip!=null&&!"".equals(attr_zip)){
 				tmp_files=attr_zip.split("\\|");
 				File zipFile=File.createTempFile("tmp", "zip",new File(FileManager.getStorageFolder()));
@@ -60,22 +67,23 @@ public final class downloadServlet extends HttpServlet {
 			int len = 0;
 			byte[] buffer = new byte[1024];
 			response.setContentType("application/octet-stream");
-			response.setHeader("Content-Disposition","attachment; filename=\""+URLEncoder.encode(attr_saveas, RESPONSE_CHAR_SET)+"\"");
+			response.setHeader("Content-Disposition","attachment; filename=\""+attr_saveas+"\"");
 			while ((len = bis.read(buffer)) >= 0) os.write(buffer, 0, len);
 			bis.close();
 			if("true".equals(attr_deleteafterdownload)){
 				if(attr_zip!=null&&!"".equals(attr_zip)){
 					for(int i=0;i<tmp_files.length;i++){
-						(new File(FileManager.getStorageFolder()+"/"+tmp_files[i])).delete();
+						FileManager.remove(tmp_files[i]);
 					}
 				}else if(attr_file!=null&&!"".equals(attr_file)){
-					(new File(FileManager.getStorageFolder()+"/"+attr_file)).delete();
+					FileManager.remove(attr_file);
 				}
 			}
 
 		} catch (IOException e) {
 			LogManager.ErrorDebug(e.getMessage());
 			response.reset();
+			response.setCharacterEncoding(RESPONSE_CHAR_SET);//URLEncoder.encodeと関連
 			response.getWriter().print("<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"></head><body>");
 			response.getWriter().print(e.getMessage());
 			response.getWriter().print("</body></html>");

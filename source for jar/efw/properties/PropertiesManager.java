@@ -29,6 +29,10 @@ public final class PropertiesManager {
      * 「efw.jdbc.resource」の定数。
      */
     public static final String EFW_JDBC_RESOURCE ="efw.jdbc.resource";
+	/**
+	 * 「efw.brms.codetype」の定数。
+	 */
+    public static final String EFW_BRMS_CODETYPE="efw.brms.codetype";    
     /**
      * サーバー部品JavaScriptファイルの格納パスのプロパティキー。
      * 「efw.server.folder」の定数。

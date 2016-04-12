@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import efw.brms.BrmsManager;
 import efw.db.DatabaseManager;
 import efw.file.FileManager;
 import efw.format.FormatManager;
@@ -111,19 +112,19 @@ public final class efwServlet extends HttpServlet {
         	LogManager.InitCommonDebug("cors = " + cors);
         	String propertyPath="";
         	propertyPath=PropertiesManager.getProperty(PropertiesManager.EFW_SEVER_FOLDER,serverFolder);
-        	if(propertyPath.startsWith("/")){propertyPath=this.getServletContext().getRealPath(propertyPath);}
+        	if(propertyPath.startsWith("/WEB-INF/")){propertyPath=this.getServletContext().getRealPath(propertyPath);}
         	serverFolder=propertyPath;
         	LogManager.InitCommonDebug("serverFolder = " + serverFolder);
         	propertyPath=PropertiesManager.getProperty(PropertiesManager.EFW_EVENT_FOLDER,eventFolder);
-        	if(propertyPath.startsWith("/")){propertyPath=this.getServletContext().getRealPath(propertyPath);}
+        	if(propertyPath.startsWith("/WEB-INF/")){propertyPath=this.getServletContext().getRealPath(propertyPath);}
         	eventFolder=propertyPath;
         	LogManager.InitCommonDebug("eventFolder = " + eventFolder);
         	propertyPath=PropertiesManager.getProperty(PropertiesManager.EFW_SQL_FOLDER,sqlFolder);
-        	if(propertyPath.startsWith("/")){propertyPath=this.getServletContext().getRealPath(propertyPath);}
+        	if(propertyPath.startsWith("/WEB-INF/")){propertyPath=this.getServletContext().getRealPath(propertyPath);}
         	sqlFolder=propertyPath;
         	LogManager.InitCommonDebug("sqlFolder = " + sqlFolder);
         	propertyPath=PropertiesManager.getProperty(PropertiesManager.EFW_STORAGE_FOLDER,storageFolder);
-        	if(propertyPath.startsWith("/")){propertyPath=this.getServletContext().getRealPath(propertyPath);}
+        	if(propertyPath.startsWith("/WEB-INF/")){propertyPath=this.getServletContext().getRealPath(propertyPath);}
         	storageFolder=propertyPath;
         	LogManager.InitCommonDebug("storageFolder = " + storageFolder);
         	
@@ -146,6 +147,8 @@ public final class efwServlet extends HttpServlet {
     		LogManager.InitCommonDebug("FileManager.init");
 			DatabaseManager.init();
     		LogManager.InitCommonDebug("DatabaseManager.init");
+    		BrmsManager.init();
+    		LogManager.InitCommonDebug("BrmsManager.init");
             ScriptManager.init(serverFolder,eventFolder,isDebug);
     		LogManager.InitCommonDebug("ScriptManager.init");
     		FormatManager.init();

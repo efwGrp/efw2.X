@@ -139,32 +139,9 @@ EfwClient.prototype={
 					}
 				}else{
 					if (data.download){//about filename encode, efw has not do anything .
-						var attr_file=data.download["file"];
-						if(attr_file==null)attr_file="";
-						var array_zip=data.download["zip"];
-						var attr_zip="";
-						if(array_zip!=null){
-							for(var i=0;i<array_zip.length;i++){
-								attr_zip+=array_zip[i];
-								if(i<array_zip.length-1)attr_zip+="|";
-							}
-						}
-						var attr_saveas=data.download["saveas"];
-						if(attr_saveas==null)attr_saveas="";						
-						var attr_deleteafterdownload=data.download["deleteafterdownload"];
-						if(attr_deleteafterdownload==null)attr_deleteafterdownload="";
-						
-						if(attr_file!=""||attr_zip!=""){
-							var downloadUrl="downloadServlet";
-							window.location=downloadUrl+"?file="+attr_file+"&zip="+attr_zip+"&saveas="+attr_saveas+"&deleteafterdownload="+attr_deleteafterdownload;
-							EfwClient.prototype._removeLoading();
-						}else{//the download is wrong
-							var e={};
-							e.errorType="data type";
-							e.errorMessage="The file or zip attribute is must in a download return.";
-							EfwClient.prototype._consoleLog("Second calling error",e);
-							EfwClient.prototype._returnAlert({errorType:"FileOrZipIsMustErrorException",canNotContinue:true},eventId);
-						}
+						var downloadUrl="downloadServlet";
+						window.location=downloadUrl;
+						EfwClient.prototype._removeLoading();
 					}else if (data.error){
 						EfwClient.prototype._returnAlert(data.error);
 						if(data.error.canNotContinue==undefined||data.error.canNotContinue==false){

@@ -244,6 +244,21 @@ EfwServer.prototype={
 		}else{
 			try{
 				result=event.fire(requestParams);
+				//save download info to session
+				if(result!=null && result["download"]){
+					var tmpfile=result.download.file;if(tmpfile==null)tmpfile="";
+					var tmpzip=result.download.zip;
+					if(tmpzip==null)tmpzip="";
+					else tmpzip=tmpzip.join("|");
+					var tmpdeleteafterdownload=result.download.deleteafterdownload;
+					if(tmpdeleteafterdownload==null)tmpdeleteafterdownload="";
+					else tmpdeleteafterdownload=""+tmpdeleteafterdownload;
+					var tmpsaveas=result.download.saveas;if(tmpsaveas==null)tmpsaveas="";
+					EfwServerSession.prototype.set("efw.download.file", tmpfile);
+					EfwServerSession.prototype.set("efw.download.zip", tmpzip);
+					EfwServerSession.prototype.set("efw.download.deleteafterdownload", tmpdeleteafterdownload);
+					EfwServerSession.prototype.set("efw.download.saveas", tmpsaveas);
+				}
 				EfwServer.prototype.finish(event,requestParams,result);
 				return result;
 			}catch(e){
@@ -262,6 +277,8 @@ load(_serverfolder+"/efw.server.db.js");
 load(_serverfolder+"/efw.server.event.js");
 load(_serverfolder+"/efw.server.customize.js");
 load(_serverfolder+"/efw.server.file.js");
+
+load(_serverfolder+"/efw.server.brms.js");
 ///////////////////////////////////////////////////////////////////////////////
 Efw.prototype.server=new EfwServer();
 ///////////////////////////////////////////////////////////////////////////////

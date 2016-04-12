@@ -13,7 +13,7 @@
 	<script>
 		function btnLogin_onclick(){
 			efw.client.fire({
-//				server:"http://127.0.0.1:8080/efwTest",  //cors　test
+				//				server:"http://127.0.0.1:8080/efwTest",  //cors　test
 				eventId:"mdclexam_login",
 				success:function(){
 					window.location="mdclexam.jsp";
@@ -27,16 +27,43 @@
 		
 		function btnF1_onclick(){
 			efw.client.fire({
-				eventId:"mdclexam_download"
+				eventId:"mdclexam_inputcheck",
+				success:function(){
+					efw.client.alert("入力は正しいです。");
+				},
 			});
 		}
 		
+		function btnF2_onclick(){
+			efw.client.fire({
+				eventId:"mdclexam_upload",
+			});
+		}
+
+		function btnF3_onclick(){
+			efw.client.fire({
+				eventId:"mdclexam_download",
+			});
+		}
+		
+		function show_files(){
+			efw.client.fire({
+				eventId:"mdclexam_showfiles",
+			});
+		}
+		
+		function btnF4_onclick(){
+			efw.client.fire({
+				eventId:"mdclexam_brmstest",
+			});
+		}
+
 		$(function(){
-			$("#btnLogin,#btnClear").button();
+			$("#btnLogin,#btnClear,#btnF1,#btnF2,#btnF3,#btnF4").button();
 		});
   	</script>
 </head>
-<body style="background-color:ghostwhite;">
+<body style="background-color:ghostwhite;" onload="show_files()">
 
 <table style="width:100%">
 <tr style="height:20px">
@@ -73,16 +100,32 @@
 	<td></td>
 </tr>
 </table>
-<br><br><br><br>
+<br><br>
 <div style="text-align:center">
 
-<span style="display:inline-block;width:540px;text-align:left">テスト数字<input id="txt_testnumber" type="text" data-format="#,##0.00">-10.00～1,000.00の数字を入力してください。</span><br>
-<span style="display:inline-block;width:540px;text-align:left">テスト日付<input id="txt_testdate" type="text" data-format="yyyy年MM月dd日">今日から一週間以内の日付をyyyyMMddで入力してください。</span><br>
+<span style="display:inline-block;width:540px;text-align:left">テスト文字：<input id="txt_testtext" type="text">5桁以内に入力してください。</span><br>
+<span style="display:inline-block;width:540px;text-align:left">テスト数字：<input id="txt_testnumber" type="text" data-format="#,##0.00">-10.00～1,000.00の数字を入力してください。</span><br>
+<span style="display:inline-block;width:540px;text-align:left">テスト日付：<input id="txt_testdate" type="text" data-format="yyyy年MM月dd日">今日から一週間以内の日付をyyyyMMddで入力してください。</span><br>
 <br>
-<input type="button" value="F1 ダウンロードテスト" data-shortcut="F1" onclick="btnF1_onclick();">
-<input type="button" value="F2" data-shortcut="F2" onclick="alert('F2 is clicked!');">
-<input type="button" value="F3" data-shortcut="F3" onclick="alert('F3 is clicked!');">
-<input type="button" value="F4" data-shortcut="F4" onclick="alert('F4 is clicked!');">
+<input type="button" id="btnF1" style="width:150px" value="F1 入力チェックテスト" data-shortcut="F1" onclick="btnF1_onclick();"><br>
+<br>
+
+<span style="display:inline-block;width:540px;text-align:left">アップロードファイル：<input id="txt_file" type="file"></span><br><br>
+<input type="button" id="btnF2" style="width:150px" value="F2 アップロード" data-shortcut="F2" onclick="btnF2_onclick();"><br>
+<br>
+
+<span style="display:inline-block;width:540px;text-align:left">ダウンロードファイル：<select id="cmb_download" size=5 multiple><option value="あ.xls">あ.xls</option></select></span><br><br>
+<input type="button" id="btnF3" style="width:150px" value="F3 ダウンロード" data-shortcut="F3" onclick="btnF3_onclick();"><br>
+<br>
+
+<span style="display:inline-block;width:540px;text-align:left">引数1：<input type="text" id="txt_param1"></span><br>
+<span style="display:inline-block;width:540px;text-align:left">引数2：<input type="text" id="txt_param2"></span><br>
+<span style="display:inline-block;width:540px;text-align:left">結果-：<input type="text" id="txt_result"></span><br>
+<input type="button" id="btnF4" style="width:150px" value="F4 BRMSテスト" data-shortcut="F4" onclick="btnF4_onclick();">
+<br>
+<br>
+<br>
+
 <input type="button" value="F5" data-shortcut="F5" onclick="alert('F5 is clicked!');">
 <input type="button" value="F6" data-shortcut="F6" onclick="alert('F6 is clicked!');">
 <input type="button" value="F7" data-shortcut="F7" onclick="alert('F7 is clicked!');">
@@ -94,6 +137,7 @@
 
 <input type="button" value="CTRL+A" data-shortcut="CTRL+A" onclick="alert('CTRL+A is clicked!');">
 <input type="button" value="ALT+Z" data-shortcut="ALT+Z" onclick="alert('ALT+Z is clicked!');">
+
 </div>
 </body>
 </html>
