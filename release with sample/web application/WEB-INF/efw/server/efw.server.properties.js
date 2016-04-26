@@ -12,7 +12,7 @@ EfwServerProperties.prototype={
 		}else{
 			dv=defaultValue+"";
 		}
-		return Packages.efw.properties.PropertiesManager.getProperty(key,dv);
+		return ""+Packages.efw.properties.PropertiesManager.getProperty(key,dv);
 	},
 	"getBoolean":function(key,defaultValue){
 		var dv;
@@ -21,7 +21,7 @@ EfwServerProperties.prototype={
 		}else{
 			dv=defaultValue && true;
 		}
-		return Packages.efw.properties.PropertiesManager.getBooleanProperty(key,dv);
+		return true && Packages.efw.properties.PropertiesManager.getBooleanProperty(key,dv);
 	},
 	"getInt":function(key,defaultValue){
 		var dv;
@@ -30,7 +30,7 @@ EfwServerProperties.prototype={
 		}else{
 			dv=defaultValue +0;
 		}
-		return Packages.efw.properties.PropertiesManager.getIntProperty(key,dv);
+		return 0 + Packages.efw.properties.PropertiesManager.getIntProperty(key,dv);
 	},	
 };
 ///////////////////////////////////////////////////////////////////////////////

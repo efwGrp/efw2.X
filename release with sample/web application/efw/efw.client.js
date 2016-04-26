@@ -83,10 +83,14 @@ EfwClient.prototype={
 				modal: true,
 				width:500,
 				title:"メッセージ",
+				closeOnEscape: false,
 				buttons: {"OK":function(){
 					$(this).dialog("close").remove();
 					if(callback)callback();
-				}}
+				}},
+				open: function (event, ui) {
+					$(".ui-dialog-titlebar-close", $(this).parent()).hide();
+				}
 			});
 		}else{
 			alert(message);
@@ -411,6 +415,9 @@ EfwClient.prototype={
 				}
 				if(error.elements){
 					$(error.elements).addClass("efw_input_error");
+				}
+				if(error.nextUrl){
+					window.location = error.nextUrl;
 				}
 			}
 		);

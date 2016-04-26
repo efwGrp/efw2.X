@@ -11,7 +11,12 @@ EfwServer.prototype.prepare=function(event,requestParams){
 	if (needlogincheck && !event.outOfLogin){
 		var vl=EfwServerSession.prototype.get(loginkey);
 		if (vl==null||vl==""){
-			return {error:{errorMessage:EfwServerMessages.prototype.SessionTimeoutException}};
+			var loginUrl=EfwServerProperties.prototype.get("efw.login.url");
+			if (loginUrl==""){
+				return {error:{errorMessage:EfwServerMessages.prototype.SessionTimeoutException,}};
+			}else{
+				return {error:{errorMessage:EfwServerMessages.prototype.SessionTimeoutException,nextUrl:loginUrl}};
+			}
 		}
 	}
 	//open database
