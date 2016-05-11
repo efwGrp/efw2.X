@@ -73,6 +73,7 @@ EfwClient.prototype={
 	},
 	//=========================================================================
 	"alert":function(message,callback){
+		var $=top.$;
 		if($("body").dialog){
 			$("#efw_client_alert").remove();
 			$("body").append("<div id='efw_client_alert' style='display:none'><p></p></div>");
@@ -384,11 +385,13 @@ EfwClient.prototype={
 	},
 	//=========================================================================
 	"_displayLoading":function(){
+		var $=top.$;
 		$("#loading").remove();
 		$("body").append("<div id='loading' class='ui-widget-overlay ui-front'></div>");
 	},
 	//=========================================================================
 	"_removeLoading":function(){
+		var $=top.$;
 		$("#loading").remove();
 	},
 	//=========================================================================
