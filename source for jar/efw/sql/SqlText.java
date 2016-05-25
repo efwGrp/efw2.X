@@ -34,7 +34,7 @@ final class SqlText {
 	 */
 	protected ArrayList<String> getParamKeys(){
 		ArrayList<String> ret=new ArrayList<String>();
-		Pattern p = Pattern.compile("(\\:[\\w]*)[^\\w]");//20150925 (\\:[\\w]*)[\\s] -> (\\:[\\w]*)[^\\w]
+		Pattern p = Pattern.compile("(\\:[a-zA-Z_][\\w]*)");//20160420 kill bug 
 		Matcher m;
 		String tmp;
 		String subsql=text.replaceAll("//.*\\n", "\n");//コメント行を認識するため
@@ -43,7 +43,7 @@ final class SqlText {
 		m= p.matcher(subsql);
 		while(m.find()){
 			tmp=m.group();
-			tmp=tmp.substring(1, tmp.length()-1);
+			tmp=tmp.substring(1, tmp.length());
 			ret.add(tmp);
 		}
 		return ret;
@@ -57,7 +57,7 @@ final class SqlText {
 		String subsql=text.replaceAll("//.*\\n", "\n");//コメント行を認識するため
 		subsql=subsql.replaceAll("\\-\\-.*\\n", "\n");//コメント行を認識するため
 		subsql=subsql.replaceAll("/\\*/?([^/]|[^*]/)*\\*/", "");//コメント行を認識するため
-		subsql=subsql.replaceAll("(\\:[\\w]*)", " ? ");//20150925 (\\:[\\w]*)[\\s] -> (\\:[\\w]*)[^\\w]
+		subsql=subsql.replaceAll("(\\:[a-zA-Z_][\\w]*)", " ? ");//20160420 kill bug
 		return subsql;
 	}
 	

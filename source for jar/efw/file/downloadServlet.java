@@ -43,7 +43,6 @@ public final class downloadServlet extends HttpServlet {
 
 		OutputStream os = response.getOutputStream();
 		try {
-			response.setCharacterEncoding(RESPONSE_CHAR_SET);//URLEncoder.encodeと関連
 			if(attr_zip!=null&&!"".equals(attr_zip)){
 				tmp_files=attr_zip.split("\\|");
 				File zipFile=File.createTempFile("tmp", "zip",new File(FileManager.getStorageFolder()));
@@ -62,12 +61,14 @@ public final class downloadServlet extends HttpServlet {
 				//do nothing in this case because it is an error in client js.
 				return;
 			}
+			
+			response.setContentType("application/octet-stream");
+			response.setHeader("Content-Disposition","attachment; filename=\""+java.net.URLEncoder.encode(attr_saveas, RESPONSE_CHAR_SET)+"\"");
+
 			FileInputStream hFile = new FileInputStream(FileManager.getStorageFolder()+"/"+attr_file);
 			BufferedInputStream bis = new BufferedInputStream(hFile);
 			int len = 0;
 			byte[] buffer = new byte[1024];
-			response.setContentType("application/octet-stream");
-			response.setHeader("Content-Disposition","attachment; filename=\""+attr_saveas+"\"");
 			while ((len = bis.read(buffer)) >= 0) os.write(buffer, 0, len);
 			bis.close();
 			if("true".equals(attr_deleteafterdownload)){
@@ -82,8 +83,8 @@ public final class downloadServlet extends HttpServlet {
 
 		} catch (IOException e) {
 			LogManager.ErrorDebug(e.getMessage());
-			response.reset();
 			response.setCharacterEncoding(RESPONSE_CHAR_SET);//URLEncoder.encodeと関連
+			response.setContentType("text/html;charset=UTF-8"); 
 			response.getWriter().print("<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"></head><body>");
 			response.getWriter().print(e.getMessage());
 			response.getWriter().print("</body></html>");
