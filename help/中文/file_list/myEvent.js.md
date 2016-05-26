@@ -1,4 +1,4 @@
-<a href="../file_list.md">戻る</a>
+<a href="../file_list.md">返回</a>
 <H3><A NAME="efw.event">eventのプログラム</A></H3>
 <pre>
 web/WEB-INF/efw/event/myEvent.js

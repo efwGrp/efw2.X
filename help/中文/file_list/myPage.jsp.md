@@ -1,5 +1,5 @@
-<a href="../file_list.md">戻る</a>
-<H3><A NAME="efw.jsp">jspのプログラム</A></H3>
+<a href="../file_list.md">返回</a>
+<H3><A NAME="efw.jsp">jsp程序</A></H3>
 <pre>
 web/myPage.jsp
 --------------------------------------------------------------------------------
@@ -33,12 +33,12 @@ web/myPage.jsp
     &lt;/html&gt;
 </pre>
 <DL>
-<DD>jspファイル。<br>
+<DD>jsp文件。<br>
 </DL></DD>
 <HR>
 
 
-<H3><A NAME="efw.jsp.taglib">efwタグ利用</A></H3>
+<H3><A NAME="efw.jsp.taglib">efw标签的使用</A></H3>
 <pre>
     &lt;efw:Core/&gt;
     &lt;efw:JQueryUI/&gt;
@@ -47,24 +47,24 @@ web/myPage.jsp
 
 <DL>
 <DD>
-efw の taglib を宣言して、efwのタグを取り込み、efw.client の各機能を利用できる。<br>
+设置efw的taglib宣言,然后在程序里加入efw标签,就可以使用efw.client的各种功能了.<br>
 
 <table BORDER="1"  CELLPADDING="3" CELLSPACING="0" SUMMARY="">
 <tr BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
-	<th style="width:200px">タグ</th>
-	<th style="width:850px">説明</th>
+	<th style="width:200px">标签</th>
+	<th style="width:850px">说明</th>
 </tr>
 <tr>
 	<td>&lt;efw:Core/&gt;</td>
-	<td>efwの基本機能をインクルードする。必須。</td>
+	<td>引入efw的基本功能.必须.</td>
 </tr>
 <tr>
 	<td>&lt;efw:JQueryUI/&gt;</td>
-	<td>JQueryUI 機能をインクルードする。オプション。</td>
+	<td>引入JQueryUI的功能.可选.</td>
 </tr>
 <tr>
 	<td>&lt;efw:InputBehavior/&gt;</td>
-	<td>入力支援機能をインクルードする。オプション。入力支援のカスタマイズは、efw.css 。</td>
+	<td>引入输入支援功能.可选输入支援的样式定制化使用efw.css文件.</td>
 </tr>
 </table>
 </DL></DD>
