@@ -126,20 +126,20 @@ efw的各个js文件使用UTF-8编码.但是jspjsp画面根据用途可以自由
 </DL></DD>
 <HR>
 
-<H3><A NAME="efw.jsp.charset">画面間のデータ受取り引渡し</A></H3>
+<H3><A NAME="efw.jsp.charset">画面间数据传递</A></H3>
 <pre>
     var param1="&lt;%=request.getParameter("param1")%&gt;";
     window.location="next.jsp?param1="+param1;
 </pre>
 <DL>
 <DD>
-画面間のデータ受取りは、request.getParameter方式を推薦。画面間のデータ引渡しは、jsp従来どおりのURLパラメーター方式を推薦。<br>
-また、画面遷移は、jsp従来どおりのURL呼び出す方式を推薦。必要に応じて、フォームポスト、セッション、クッキーなども利用可能。<br>
+画面间收取数据,推荐使用request.getParameter方式.画面间发送数据,推荐使用jsp常规的URL参数方式.<br>
+另外,画面迁移推荐使用jsp常规的URL调用方式.如有必要,画面提交,session,cookies也可以使用.<br>
 
 </DL></DD>
 <HR>
 
-<H3><A NAME="efw.jsp.event">イベントのデータ受取り引渡し</A></H3>
+<H3><A NAME="efw.jsp.event">事件的数据传递</A></H3>
 <pre>
     efw.client.fire({
        eventId:"form1_event1",
@@ -151,12 +151,12 @@ efw的各个js文件使用UTF-8编码.但是jspjsp画面根据用途可以自由
 </pre>
 <DL>
 <DD>
-イベントのデータ受取り引渡しは、サーバーサイドのイベントjsファイルに記載する。クライアントjsに記載不要。<br>
-ただし、success 関数に受取りデータに対して処理があれば、eventResult を意識する必要。詳細はAPIの efw.client.fire を参照。
+事件的数据传递记述是在服务端js文件,而不是客户端js文件.<br>
+但是,如果在success函数里处理收到的数据的话,需意识到eventResult的存在.詳細请参照efw.client.fire的API.
 </DL></DD>
 <HR>
 
-<H3><A NAME="efw.jsp.dataFormat">入力支援</A></H3>
+<H3><A NAME="efw.jsp.dataFormat">输入支援</A></H3>
 <pre>
     &lt;input id="txt_testnumber" type="text" data-format="#,##0.00"&gt;
     &lt;input id="txt_testdate" type="text" data-format="yyyy年MM月dd日"&gt;
