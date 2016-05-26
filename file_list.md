@@ -1,14 +1,14 @@
 <H2>efwファイル一覧抜粋</H2>
 <pre>
 web
-├─<b><a href="#">myPage.jsp</a></b>								aaa
+├─<a href="#">myPage.jsp</a>								aaa
 ├─efw
-│  ├─<a href="#">efw.client.messages.js</a>						aaaa
+│  ├─<a href="#">efw.client.messages.js</a>				aaaa
 │  └─<a href="#">efw.css</a>								avvsada
 ├─META-INF
 │  └─<a href="#">context.xml</a>							asdfasdf
 └─WEB-INF
-    ├─<a href="#">web.xml</a>								adsfasfaf
+    ├─<a href="#">web.xml</a>							adsfasfaf
     ├─classes
     │  └─<a href="#">efw.properties</a>							sadfasdf
     ├─efw
