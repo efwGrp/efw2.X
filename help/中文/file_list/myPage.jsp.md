@@ -47,7 +47,7 @@ web/myPage.jsp
 
 <DL>
 <DD>
-设置efw的taglib宣言,然后在程序里加入efw标签,就可以使用efw.client的各种功能了.<br>
+设置efw的taglib宣言，然后在程序里加入efw标签，就可以使用efw。client的各种功能了。<br>
 
 <table BORDER="1"  CELLPADDING="3" CELLSPACING="0" SUMMARY="">
 <tr BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
@@ -56,15 +56,15 @@ web/myPage.jsp
 </tr>
 <tr>
 	<td>&lt;efw:Core/&gt;</td>
-	<td>引入efw的基本功能.必须.</td>
+	<td>引入efw的基本功能。必须。</td>
 </tr>
 <tr>
 	<td>&lt;efw:JQueryUI/&gt;</td>
-	<td>引入JQueryUI的功能.可选.</td>
+	<td>引入JQueryUI的功能。可选。</td>
 </tr>
 <tr>
 	<td>&lt;efw:InputBehavior/&gt;</td>
-	<td>引入输入支援功能.可选输入支援的样式定制化使用efw.css文件.</td>
+	<td>引入输入支援功能。可选输入支援的样式定制化使用efw。css文件。</td>
 </tr>
 </table>
 </DL></DD>
@@ -78,7 +78,7 @@ web/myPage.jsp
 </pre>
 <DL>
 <DD>
-efw的各个js文件使用UTF-8编码.但是jspjsp画面根据用途可以自由设置encode和charset.<br>
+efw的各个js文件使用UTF-8编码。但是jspjsp画面根据用途可以自由设置encode和charset。<br>
 
 <table BORDER="1"  CELLPADDING="3" CELLSPACING="0" SUMMARY="">
 <tr BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
@@ -89,22 +89,22 @@ efw的各个js文件使用UTF-8编码.但是jspjsp画面根据用途可以自由
 <tr>
 	<td>efw/efw.client.messages.js</td>
 	<td>UTF-8</td>
-	<td>客户端信息文件,固定为UTF-8编码.</td>
+	<td>客户端信息文件，固定为UTF-8编码。</td>
 </tr>
 <tr>
 	<td>efw/efw.server.messages.js</td>
 	<td>UTF-8</td>
-	<td>服务端信息文件,固定为UTF-8编码.</td>
+	<td>服务端信息文件，固定为UTF-8编码。</td>
 </tr>
 <tr>
 	<td>jsp pageEncoding</td>
 	<td>推荐 UTF-8</td>
-	<td>jsp画面的encode和charset推荐使用UTF-8.根据用途可以自由设置.</td>
+	<td>jsp画面的encode和charset推荐使用UTF-8。根据用途可以自由设置。</td>
 </tr>
 <tr>
 	<td>jsp charset</td>
 	<td>推荐 UTF-8</td>
-	<td>jsp画面的encode和charset推荐使用UTF-8.根据用途可以自由设置.</td>
+	<td>jsp画面的encode和charset推荐使用UTF-8。根据用途可以自由设置。</td>
 </tr>
 <tr>
 	<td>jsp meta charset</td>
@@ -114,12 +114,12 @@ efw的各个js文件使用UTF-8编码.但是jspjsp画面根据用途可以自由
 <tr>
 	<td>event js</td>
 	<td>UTF-8</td>
-	<td>服务端js文件,固定为UTF-8编码.</td>
+	<td>服务端js文件，固定为UTF-8编码。</td>
 </tr>
 <tr>
 	<td>sql xml</td>
 	<td>推荐 UTF-8</td>
-	<td>服务端xml文件推荐使用UTF-8编码.可以自由设置.</td>
+	<td>服务端xml文件推荐使用UTF-8编码。可以自由设置。</td>
 </tr>
 
 </table>
@@ -133,8 +133,8 @@ efw的各个js文件使用UTF-8编码.但是jspjsp画面根据用途可以自由
 </pre>
 <DL>
 <DD>
-画面间收取数据,推荐使用request.getParameter方式.画面间发送数据,推荐使用jsp常规的URL参数方式.<br>
-另外,画面迁移推荐使用jsp常规的URL调用方式.如有必要,画面提交,session,cookies也可以使用.<br>
+画面间收取数据，推荐使用request.getParameter方式。画面间发送数据，推荐使用jsp常规的URL参数方式。<br>
+另外，画面迁移推荐使用jsp常规的URL调用方式。如有必要，画面提交，session，cookies也可以使用。<br>
 
 </DL></DD>
 <HR>
@@ -151,8 +151,8 @@ efw的各个js文件使用UTF-8编码.但是jspjsp画面根据用途可以自由
 </pre>
 <DL>
 <DD>
-事件的数据传递记述是在服务端js文件,而不是客户端js文件.<br>
-但是,如果在success函数里处理收到的数据的话,需意识到eventResult的存在.詳細请参照efw.client.fire的API.
+事件的数据传递记述是在服务端js文件，而不是客户端js文件。<br>
+但是，如果在success函数里处理收到的数据的话，需意识到eventResult的存在。詳細请参照efw.client.fire的API。
 </DL></DD>
 <HR>
 
