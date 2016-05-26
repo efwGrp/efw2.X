@@ -1,7 +1,7 @@
 <a href="../file_list.md">戻る</a>
 <H3><A NAME="efw.sql">sqlのプログラム</A></H3>
 <pre>
-web/WEB-INF/efw/sql/sqlgroup1.xml
+web/WEB-INF/efw/sql/mySqlGroup.xml
 --------------------------------------------------------------------------------
 &lt;?<b>xml version="1.0" encoding="UTF-8"</b>?&gt;
 &lt;<b>sqls</b>&gt;

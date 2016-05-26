@@ -1,7 +1,7 @@
 <a href="../file_list.md">戻る</a>
 <H3><A NAME="efw.event">eventのプログラム</A></H3>
 <pre>
-web/WEB-INF/efw/event/form1_event1.js
+web/WEB-INF/efw/event/myEvent.js
 --------------------------------------------------------------------------------
 var form1_event1={};
 form1_event1.<b>outOfLogin</b>   = false;
