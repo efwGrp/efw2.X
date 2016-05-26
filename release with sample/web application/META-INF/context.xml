@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+	<Resource
+		name			=	"jdbc/efw"
+		auth			=	"Container"
+		type			=	"javax.sql.DataSource"
+		driverClassName	=	"org.postgresql.Driver"
+		url				=	"jdbc:postgresql://127.0.0.1:5432/efwSample"
+		username		=	"postgres"
+		password		=	"postgres"
+		maxActive		=	"100"
+		maxIdle			=	"20"
+		maxWait			=	"10"
+	/>
+</Context>
