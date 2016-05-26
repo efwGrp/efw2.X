@@ -16,9 +16,9 @@ web
     │  │  └─<b><a href="file_list/myEvent.js.md">myEvent.js</a></b>					&nbsp;//アプリのイベント
     │  ├─server
     │  │  ├─<a href="../../release%20with%20sample/web%20application/WEB-INF/efw/server/efw.server.customize.js">efw.server.customize.js</a>	&nbsp;//efwサーバ処理カスタマイズファイル
-    │  │  └─<a href="../../release%20with%20sample/web%20application/WEB-INF/efw/server/efw.server.messages.js">efw.server.messages.js</a>	&nbsp;&nbsp;&nbsp;//efwサーバメッセージ、カスタマイズ可能
+    │  │  └─<a href="../../release%20with%20sample/web%20application/WEB-INF/efw/server/efw.server.messages.js">efw.server.messages.js</a>		//efwサーバメッセージ、カスタマイズ可能
     │  └─sql
-    │      └─<b><a href="file_list/mySqlGroup.xml.md">mySqlGroup.xml</a></b>				//アプリの外出しSql
+    │      └─<b><a href="file_list/mySqlGroup.xml.md">mySqlGroup.xml</a></b>			&nbsp;&nbsp;&nbsp;//アプリの外出しSql
     └─lib
-        └─jdbc.XXXXXX.jar			&nbsp;&nbsp;&nbsp;//jdbcドライブ、接続先のDB種類とバージョンによる
+        └─jdbc.XXXXXX.jar				//jdbcドライブ、接続先のDB種類とバージョンによる
 </pre>
