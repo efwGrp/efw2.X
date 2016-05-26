@@ -1,10 +1,5 @@
 <a href="../file_list.md">戻る</a>
-<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-	<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
-		<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2"><B>eventのプログラム</B></FONT></TH>
-	</TR>
-</TABLE>
-<H3><A NAME="efw.event">event</A></H3>
+<H3><A NAME="efw.event">eventのプログラム</A></H3>
 <pre>
 web/WEB-INF/efw/event/form1_event1.js
 --------------------------------------------------------------------------------
