@@ -78,48 +78,48 @@ web/myPage.jsp
 </pre>
 <DL>
 <DD>
-efwの各jsファイルは、UTF-8 でエンコードする。ただし、jsp画面は用途によりencodeとcharsetは、自由に設定できる。<br>
+efw的各个js文件使用UTF-8编码.但是jspjsp画面根据用途可以自由设置encode和charset.<br>
 
 <table BORDER="1"  CELLPADDING="3" CELLSPACING="0" SUMMARY="">
 <tr BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
-	<th style="width:200px">ファイル</th>
+	<th style="width:200px">文件</th>
 	<th style="width:200px">encode & charset</th>
-	<th style="width:650px">説明</th>
+	<th style="width:650px">说明</th>
 </tr>
 <tr>
 	<td>efw/efw.client.messages.js</td>
 	<td>UTF-8</td>
-	<td>クライアントのメッセージファイルは、UTF-8でencodeを固定にする。</td>
+	<td>客户端信息文件,固定为UTF-8编码.</td>
 </tr>
 <tr>
 	<td>efw/efw.server.messages.js</td>
 	<td>UTF-8</td>
-	<td>サーバーのメッセージファイルは、UTF-8でencodeを固定にする。</td>
+	<td>服务端信息文件,固定为UTF-8编码.</td>
 </tr>
 <tr>
 	<td>jsp pageEncoding</td>
-	<td>UTF-8 推薦</td>
-	<td>jsp画面は用途によりencodeとcharsetは、UTF-8を推薦。自由に設定できる。</td>
+	<td>推荐 UTF-8</td>
+	<td>jsp画面的encode和charset推荐使用UTF-8.根据用途可以自由设置.</td>
 </tr>
 <tr>
 	<td>jsp charset</td>
-	<td>UTF-8 推薦</td>
-	<td>jsp画面は用途によりencodeとcharsetは、UTF-8を推薦。自由に設定できる。</td>
+	<td>推荐 UTF-8</td>
+	<td>jsp画面的encode和charset推荐使用UTF-8.根据用途可以自由设置.</td>
 </tr>
 <tr>
 	<td>jsp meta charset</td>
-	<td>jsp charset と同じ</td>
+	<td>和 jsp charset 一致</td>
 	<td>－</td>
 </tr>
 <tr>
 	<td>event js</td>
 	<td>UTF-8</td>
-	<td>サーバーサイドのjsファイルのencodeは、UTF-8でencodeを固定にする。</td>
+	<td>服务端js文件,固定为UTF-8编码.</td>
 </tr>
 <tr>
 	<td>sql xml</td>
-	<td>UTF-8 推薦</td>
-	<td>サーバーサイドのxmlファイルのencodeは、UTF-8を推薦。自由に設定できる。</td>
+	<td>推荐 UTF-8</td>
+	<td>服务端xml文件推荐使用UTF-8编码.可以自由设置.</td>
 </tr>
 
 </table>
