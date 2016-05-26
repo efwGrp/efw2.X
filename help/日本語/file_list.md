@@ -4,11 +4,11 @@ Web Application Folder
 ├─<a href="file_list/myPage.jsp.md">myPage.jsp</a>							&nbsp;&nbsp;//アプリのウェブ画面
 ├─efw
 │  ├─<a href="file_list/efw.client.messages.js.md">efw.client.messages.js</a>				//efwクライアントメッセージ
-│  └─<a href="file_list/efw.css.md">efw.css</a>							//efwスタイルシート
+│  └─<a href="file_list/efw.css.md">efw.css</a>							&nbsp;//efwスタイルシート
 ├─META-INF
-│  └─<a href="file_list/context.xml.md">context.xml</a>						//context.xmlファイル
+│  └─<a href="file_list/context.xml.md">context.xml</a>						&nbsp;//context.xmlファイル
 └─WEB-INF
-    ├─<a href="file_list/web.xml.md">web.xml</a>						&nbsp;&nbsp;//web.xmlファイル
+    ├─<a href="file_list/web.xml.md">web.xml</a>						&nbsp;&nbsp;&nbsp;//web.xmlファイル
     ├─classes
     │  └─<a href="file_list/efw.properties.md">efw.properties</a>					//efwプロパティ
     ├─efw
