@@ -4,11 +4,11 @@ web
 ├─<b><a href="file_list/myPage.jsp.md">myPage.jsp</a></b>							&nbsp;//アプリのウェブ画面
 ├─efw
 │  ├─<a href="../../release%20with%20sample/web%20application/efw/efw.client.messages.js">efw.client.messages.js</a>			&nbsp;&nbsp;&nbsp;//efwクライアントメッセージ、カスタマイズ可能
-│  └─<a href="../../release%20with%20sample/web%20application/efw/efw.css">efw.css</a>							&nbsp;//efwスタイルシート、カスタマイズ可能
+│  └─<a href="../../release%20with%20sample/web%20application/efw/efw.css">efw.css</a>							//efwスタイルシート、カスタマイズ可能
 ├─META-INF
 │  └─<a href="../../release%20with%20sample/web%20application/META-INF/context.xml">context.xml</a>						&nbsp;//context.xmlファイル、DB接続を定義する
 └─WEB-INF
-    ├─<a href="../../release%20with%20sample/web%20application/WEB-INF/web.xml">web.xml</a>						&nbsp;&nbsp;&nbsp;//web.xmlファイル、DB接続のの引用を定義する
+    ├─<a href="../../release%20with%20sample/web%20application/WEB-INF/web.xml">web.xml</a>							&nbsp;&nbsp;//web.xmlファイル、DB接続のの引用を定義する
     ├─classes
     │  └─<a href="file_list/efw.properties.md">efw.properties</a>					//efwプロパティ
     ├─efw
