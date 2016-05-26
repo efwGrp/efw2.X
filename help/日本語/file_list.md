@@ -13,7 +13,7 @@ Web Application Folder
     │  └─<a href="file_list/efw.properties.md">efw.properties</a>					//efwプロパティ
     ├─efw
     │  ├─event
-    │  │  └─<a href="file_list/myEvent.js.md">myEvent.js</a>				&nbsp;//アプリのイベント
+    │  │  └─<a href="file_list/myEvent.js.md">myEvent.js</a>				&nbsp;&nbsp;//アプリのイベント
     │  ├─server
     │  │  ├─<a href="file_list/efw.server.customize.js.md">efw.server.customize.js</a>	&nbsp;&nbsp;&nbsp;//efwサーバ処理カスタマイズファイル
     │  │  └─<a href="file_list/efw.server.messages.js.md">efw.server.messages.js</a>	&nbsp;&nbsp;//efwサーバメッセージ
