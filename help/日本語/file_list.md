@@ -3,7 +3,7 @@
 web
 ├─<b><a href="file_list/myPage.jsp.md">myPage.jsp</a></b>							&nbsp;//アプリのウェブ画面
 ├─efw
-│  ├─<a href="../../../release%20with%20sample/web%20application/efw/efw.client.messages.js">efw.client.messages.js</a>				//efwクライアントメッセージ、カスタマイズ可能
+│  ├─<a href="../../release%20with%20sample/web%20application/efw/efw.client.messages.js">efw.client.messages.js</a>				//efwクライアントメッセージ、カスタマイズ可能
 │  └─<a href="file_list/efw.css.md">efw.css</a>							&nbsp;//efwスタイルシート、カスタマイズ可能
 ├─META-INF
 │  └─<a href="file_list/context.xml.md">context.xml</a>						&nbsp;//context.xmlファイル、DB接続を定義する
