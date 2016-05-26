@@ -1,24 +1,24 @@
 <H2>efwファイル一覧抜粋</H2>
 <pre>
 web
-├─<b>myPage.jsp</b>
+├─<b><a href="#">myPage.jsp</a></b>								aaa
 ├─efw
-│  ├─<b>efw.client.messages.js</b>
-│  └─<b>efw.css</b>
+│  ├─<a href="#">efw.client.messages.js</a>						aaaa
+│  └─<a href="#">efw.css</a>								avvsada
 ├─META-INF
-│  └─context.xml
+│  └─<a href="#">context.xml</a>							asdfasdf
 └─WEB-INF
-    ├─web.xml
+    ├─<a href="#">web.xml</a>								adsfasfaf
     ├─classes
-    │  └─<b>efw.properties</b>
+    │  └─<a href="#">efw.properties</a>							sadfasdf
     ├─efw
     │  ├─event
-    │  │  └─<b>myEvent.js</b>
+    │  │  └─<b><a href="#">myEvent.js</a></b>							sadfasdf
     │  ├─server
-    │  │  ├─<b>efw.server.customize.js</b>
-    │  │  └─<b>efw.server.messages.js</b>
+    │  │  ├─<a href="#">efw.server.customize.js</a>					sgdgsf
+    │  │  └─<a href="#">efw.server.messages.js</a>					sdgfsdfds
     │  └─sql
-    │      └─<b>mySqlGroup.xml</b>
+    │      └─<b><a href="#">mySqlGroup.xml</a></b>						adsfafd
     └─lib
-        └─jdbc.XXXXXX.jar
+        └─<a href="#">jdbc.XXXXXX.jar</a>						adsfsafd
 </pre>
