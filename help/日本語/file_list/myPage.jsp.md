@@ -191,7 +191,7 @@ efw:InputBehavior をインクルードして、入力枠に data-format を定�
 	<td>フォーマット後の文字列で表す。フォーマットできない場合空白。20151231 ⇒ 2015年12月31日、ABCD ⇒ 「」</td>
 </tr>
 </table>
-フォーマットの書き方は、詳細はAPIの formatter を参照。
+フォーマットの書き方の詳細はAPIの formatter を参照。
 </DL></DD>
 <HR>
 

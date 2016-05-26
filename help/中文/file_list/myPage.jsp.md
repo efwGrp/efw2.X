@@ -47,7 +47,7 @@ web/myPage.jsp
 
 <DL>
 <DD>
-设置efw的taglib宣言，然后在程序里加入efw标签，就可以使用efw。client的各种功能了。<br>
+设置efw的taglib宣言，然后在程序里加入efw标签，就可以使用efw.client的各种功能了。<br>
 
 <table BORDER="1"  CELLPADDING="3" CELLSPACING="0" SUMMARY="">
 <tr BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
@@ -78,7 +78,7 @@ web/myPage.jsp
 </pre>
 <DL>
 <DD>
-efw的各个js文件使用UTF-8编码。但是jspjsp画面根据用途可以自由设置encode和charset。<br>
+efw的各个js文件使用UTF-8编码。但是jsp画面根据用途可以自由设置encode和charset。<br>
 
 <table BORDER="1"  CELLPADDING="3" CELLSPACING="0" SUMMARY="">
 <tr BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
@@ -163,62 +163,62 @@ efw的各个js文件使用UTF-8编码。但是jspjsp画面根据用途可以自�
 </pre>
 <DL>
 <DD>
-efw:InputBehavior をインクルードして、入力枠に data-format を定義する場合、入力支援の動きを行う。<br>
+引入efw:InputBehavior标签后，如果定义输入框的data-format属性，就可以触发输入支援的画面动作。<br>
 <table BORDER="1"  CELLPADDING="3" CELLSPACING="0" SUMMARY="">
 <tr BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
 	<th style="width:200px">data-format</th>
-	<th style="width:100px">イベント</th>
-	<th style="width:750px">説明</th>
+	<th style="width:100px">事件</th>
+	<th style="width:750px">说明</th>
 </tr>
 <tr>
 	<td>#,##0.00</td>
 	<td>focus</td>
-	<td>フォーマットなしの数字で表す。1,234.00 ⇒ 1234</td>
+	<td>显示无格式数字。1,234.00 ⇒ 1234</td>
 </tr>
 <tr>
 	<td>#,##0.00</td>
 	<td>blur</td>
-	<td>フォーマット後の文字列で表す。フォーマットできない場合空白。1234 ⇒ 1,234.00、ABCD ⇒ 「」</td>
+	<td>显示有格式字符串。如果输入数据无法格式的话显示空白。1234 ⇒ 1,234.00 ，ABCD ⇒ 「」</td>
 </tr>
 <tr>
 	<td>yyyy年MM月dd日</td>
 	<td>focus</td>
-	<td>フォーマットなしの数字で表す。2015年12月31日 ⇒ 20151231</td>
+	<td>显示无格式数字。2015年12月31日 ⇒ 20151231</td>
 </tr>
 <tr>
 	<td>yyyy年MM月dd日</td>
 	<td>blur</td>
-	<td>フォーマット後の文字列で表す。フォーマットできない場合空白。20151231 ⇒ 2015年12月31日、ABCD ⇒ 「」</td>
+	<td>显示有格式字符串。如果输入数据无法格式的话显示空白。20151231 ⇒ 2015年12月31日、ABCD ⇒ 「」</td>
 </tr>
 </table>
-フォーマットの書き方は、詳細はAPIの formatter を参照。
+格式化定义的详细写法请参照formatter的API。
 </DL></DD>
 <HR>
 
-<H3><A NAME="efw.jsp.shortCut">ショットカット</A></H3>
+<H3><A NAME="efw.jsp.shortCut">快捷键</A></H3>
 <pre>
     &lt;input id="btn_save" type="button" data-shortcut="CTRL+S"&gt;
     &lt;input id="btn_cancel" type="button" data-shortcut="F6"&gt;
 </pre>
 <DL>
 <DD>
-efw:InputBehavior をインクルードして、ボタンに data-shortcut を定義する場合、ショットカットの動きを行う。<br>
+引入efw:InputBehavior标签后，如果定义按钮的data-shortcut属性，就可以触发快捷键的画面动作。<br>
 <table BORDER="1"  CELLPADDING="3" CELLSPACING="0" SUMMARY="">
 <tr BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
 	<th style="width:300px">data-shortcut</th>
-	<th style="width:750px">説明</th>
+	<th style="width:750px">说明</th>
 </tr>
 <tr>
 	<td>F1～F12</td>
-	<td>フォクションキー。</td>
+	<td>功能键。</td>
 </tr>
 <tr>
 	<td>CTRL+A～CTRL+Z</td>
-	<td>コントロールキー。</td>
+	<td>控制键。</td>
 </tr>
 <tr>
 	<td>ALT+A～ALT+Z</td>
-	<td>オルトキー。</td>
+	<td>代用键。</td>
 </tr>
 </table>
 </DL></DD>
