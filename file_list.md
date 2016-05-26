@@ -13,12 +13,12 @@ web
     │  └─<a href="#">efw.properties</a>					sadfasdf
     ├─efw
     │  ├─event
-    │  │  └─<b><a href="#">myEvent.js</a></b>					&nbsp;&nbsp;sadfasdf
+    │  │  └─<b><a href="#">myEvent.js</a></b>					&nbsp;sadfasdf
     │  ├─server
-    │  │  ├─<a href="#">efw.server.customize.js</a>			sgdgsf
-    │  │  └─<a href="#">efw.server.messages.js</a>			sdgfsdfds
+    │  │  ├─<a href="#">efw.server.customize.js</a>		&nbsp;&nbsp;sgdgsf
+    │  │  └─<a href="#">efw.server.messages.js</a>		&nbsp;&nbsp;sdgfsdfds
     │  └─sql
-    │      └─<b><a href="#">mySqlGroup.xml</a></b>				adsfafd
+    │      └─<b><a href="#">mySqlGroup.xml</a></b>			&nbsp;&nbsp;&nbsp;adsfafd
     └─lib
         └─<a href="#">jdbc.XXXXXX.jar</a>				&nbsp;&nbsp;adsfsafd
 </pre>
