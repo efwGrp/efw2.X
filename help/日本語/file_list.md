@@ -1,6 +1,6 @@
 <H2>efwファイル一覧抜粋</H2>
 <pre>
-Web Application Folder
+web
 ├─<b><a href="file_list/myPage.jsp.md">myPage.jsp</a></b>							&nbsp;//アプリのウェブ画面
 ├─efw
 │  ├─<a href="file_list/efw.client.messages.js.md">efw.client.messages.js</a>				//efwクライアントメッセージ

@@ -5,7 +5,7 @@
 </TABLE>
 <H3><A NAME="efw.jsp">jsp</A></H3>
 <pre>
-web/form1.jsp
+web/myPage.jsp
 --------------------------------------------------------------------------------
     &lt;%@ page language="java" contentType="text/html; <b>charset</b>=UTF-8" <b>pageEncoding</b>="UTF-8"%&gt;
     &lt;%@ <b>taglib</b> prefix="efw" uri="efw" %&gt;
