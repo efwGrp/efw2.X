@@ -21,7 +21,7 @@
 │  └─format
 │      └─...                                          //後続のefw.server.formatとほぼ同じ機能、その説明をご参照。
 └─server
-    ├─<a href="#efw.server.prepare">prepare</a> ( <a href="#efw.event">event</a> , <a href="#efw.event.fire.requestParams">requestParams</a> )               //サーバイベントの準備処理関数
+    ├─prepare ( <a href="#efw.event">event</a> , requestParams )               //サーバイベントの準備処理関数、サーバ処理カスタマイズ用
     │            ├─outOfLogin                         //イベントの ログインチェック不要フラグ
     │            ├─include                            //          サブイベントを取り込むためのインクルード
     │            │  ├─eventId                         //          サブイベントId
@@ -31,27 +31,27 @@
     │            └─<a href="#efw.event.fire">fire</a> ( <a href="#efw.event.fire.requestParams">requestParams</a> )                              //★★★
     │               ├─<a href="#efw.event.fire.eventResult">eventResult</a>                     //★★★
     │               └─<a href="#efw.event.fire.error">error</a>                           //★★★
-    ├─<a href="#efw.server.finish">finish</a> ( <a href="#efw.event">event</a> , <a href="#efw.event.fire.requestParams">requestParams</a> , <a href="#efw.event.fire.eventResult">eventResult</a> )  //★
-    ├─<a href="#efw.server.format">format</a>
-    │  ├─formatNumber ( value , formatter , rounder )                         ★★
-    │  ├─parseNumber ( value , formatter )                                    ★★
-    │  ├─formatDate ( value , formatter )                                     ★★
-    │  └─parseDate ( value , formatter )                                      ★★
-    ├─properties
-    │  ├─<a href="#efw.server.properties.get">get</a> ( key , defaultValue )                                          ★★
-    │  ├─<a href="#efw.server.properties.getBoolean">getBoolean</a> ( key , defaultValue )                                   ★★
-    │  └─<a href="#efw.server.properties.getInt">getInt</a> ( key , defaultValue )                                       ★★
-    ├─<a href="api_list/efw.server.session.md">session</a>
-    │  ├─get ( key )                                                         ★★
-    │  └─set ( key , value )                                                 ★★
-    └─<a href="api_list/efw.server.db.md">db</a>
-        ├─open ( jdbcResourceName )                                           ★
-        ├─getSingle ( executionParams )                                       ★★★
-        ├─executeQuery ( executionParams )                                    ★★★
-        ├─executeUpdate ( executionParams )                                   ★★
-        ├─execute( executionParams )                                          ★★★
-        ├─commit ( jdbcResourceName )                                         ★
-        ├─rollback ( jdbcResourceName )                                       ★
-        └─closeAll ( )                                                        ★
+    ├─finish ( event , requestParams , eventResult )  //サーバイベントの後処理関数、サーバ処理カスタマイズ用
+    ├─<a href="efw.server.format.md">format</a>
+    │  ├─formatNumber ( value , formatter , rounder ) //数字値を指定フォーマットにより文字列に変換する関数
+    │  ├─parseNumber ( value , formatter )            //文字列値を指定フォーマットにより数字に変換する関数
+    │  ├─formatDate ( value , formatter )             //日付値を指定フォーマットにより文字列に変換する関数
+    │  └─parseDate ( value , formatter )              //文字列値を指定フォーマットにより日付に変換する関数
+    ├─<a href="efw.server.properties.md">properties</a>
+    │  ├─get ( key , defaultValue )                   //文字列のプロパティを取得する関数
+    │  ├─getBoolean ( key , defaultValue )            //ブルーのプロパティを取得する関数
+    │  └─getInt ( key , defaultValue )                //数字のプロパティを取得する関数
+    ├─<a href="/changkejun/efw2.X/blob/master/help/日本語/api_list/efw.server.session.md">session</a>
+    │  ├─get ( key )                                  //セッションから情報を取得する関数
+    │  └─set ( key , value )                          //セッションに情報を格納する関数
+    └─<a href="/changkejun/efw2.X/blob/master/help/日本語/api_list/efw.server.db.md">db</a>
+       ├─open ( jdbcResourceName )                    //データベース接続を開く関数
+       ├─getSingle ( executionParams )                //SELECT文を実行して１つ目のデータを戻す関数
+       ├─executeQuery ( executionParams )             //SELECT文を実行する関数
+       ├─executeUpdate ( executionParams )            //INSERT文、UPDATE文、DELETE文を実行する関数
+       ├─execute( executionParams )                   //任意のSQL文を実行する関数
+       ├─commit ( jdbcResourceName )                  //データベースへの更新を有効とする関数
+       ├─rollback ( jdbcResourceName )                //データベースへの更新を無効とする関数
+       └─closeAll ( )                                 //すべてのデータベース接続をコミットして閉じる関数
 
 </pre>
