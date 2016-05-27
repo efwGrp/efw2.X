@@ -13,8 +13,8 @@ efw
 │  │         ├─<a href="#efw.eventParams.server">server</a>                                    //★
 │  │         ├─<a href="#efw.eventParams.eventId">eventId</a>                                   //★★★
 │  │         ├─<a href="#efw.eventParams.manualParams">manualParams</a>                              //★★
-│  │         └─<a href="#efw.eventParams.success">success</a>                                                        //★★★
-│  ├─<a href="#efw.client.alert">alert</a>( message , callback )                                             <span style="color:yellow;">★★★</span>
+│  │         └─<a href="#efw.eventParams.success">success</a>                                   //★★★
+│  ├─<a href="#efw.client.alert">alert</a>( message , callback )                         //★★★
 │  └─format
 │      └─...                                      <span style="color:yellow;">★★</span>
 └─server
