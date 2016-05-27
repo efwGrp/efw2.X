@@ -17,9 +17,8 @@
 │  │                      ├─withdata                  //                                     表示データ
 │  │                      ├─remove                    //                                     削除内容
 │  │                      └─append                    //                                     htmlマスク
-│  ├─pickup ( paramsFormat , manualParams )            //パラメータ値を取得する関数（fire関数機能の一部分）
-│  ├─show ( eventResult )                              //値を画面に表示する関数（fire関数機能の一部分）
-│  ├─alert ( message , callback )                     //クライアントでアラートメッセージを表示する関数
+│  ├─pickup ( paramsFormat , manualParams )           //パラメータ値を取得する関数（fire関数機能の一部分）
+│  ├─show ( eventResult )                             //値を画面に表示する関数（fire関数機能の一部分）
 │  ├─alert ( message , callback )                     //クライアントでアラートメッセージを表示する関数
 │  └─format
 │      └─...                                          //後続のefw.server.formatとほぼ同じ機能、その説明をご参照。
