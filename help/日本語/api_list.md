@@ -10,11 +10,10 @@
 efw
 ├─client
 │  ├─<a href="#efw.client.fire">fire</a> ( <a href="#efw.eventParams">eventParams</a> )                                                    <span style="color:yellow;">★★★</span>
-                <a href="#efw.eventParams">eventParams</a>                                                                  <span style="color:yellow;">★★★</span>
-                ├─<a href="#efw.eventParams.server">server</a>                                                                     <span style="color:yellow;">★</span>
-                ├─<a href="#efw.eventParams.eventId">eventId</a>                                                                    <span style="color:yellow;">★★★</span>
-                ├─<a href="#efw.eventParams.manualParams">manualParams</a>                                                               <span style="color:yellow;">★★</span>
-                └─<a href="#efw.eventParams.success">success</a>                                                                    <span style="color:yellow;">★★★</span>
+              ├─<a href="#efw.eventParams.server">server</a>                                                                     <span style="color:yellow;">★</span>
+              ├─<a href="#efw.eventParams.eventId">eventId</a>                                                                    <span style="color:yellow;">★★★</span>
+              ├─<a href="#efw.eventParams.manualParams">manualParams</a>                                                               <span style="color:yellow;">★★</span>
+              └─<a href="#efw.eventParams.success">success</a>                                                                    <span style="color:yellow;">★★★</span>
 │  ├─<a href="#efw.client.alert">alert</a>( message , callback )                                             <span style="color:yellow;">★★★</span>
 │  └─format
 │      ├─<a href="#efw.client.format.formatNumber">formatNumber</a>( value , <a href="#efw.format.formatter">formatter</a> , <a href="#efw.format.rounder">rounder</a> )                         <span style="color:yellow;">★★</span>
