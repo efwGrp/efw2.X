@@ -1,10 +1,11 @@
-<BR><TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-	<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
-		<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2"><B>efw.server.sessionの詳細</B></FONT></TH>
-	</TR>
-</TABLE>
+<a href="../api_list.md">戻る</a>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="../../日本語/api_list/efw.server.session.md">日本語</a>
+&nbsp;<a href="../../中文/api_list/efw.server.session.md">中文</a>
+&nbsp;<a href="../../English/api_list/efw.server.session.md">English</a>
+<H3>efw.server.sessionの詳細</H3>
+<HR>
 
-<H3><A NAME="efw.server.session.get">get</A></H3>
+<H3><A NAME="get">get</A></H3>
 <pre>
 get ( key )</PRE>
 <DL>
@@ -21,7 +22,7 @@ get ( key )</PRE>
 </DL></DD>
 <HR>
 
-<H3><A NAME="efw.server.session.set">set</A></H3>
+<H3><A NAME="set">set</A></H3>
 <pre>
 set ( key , value )</PRE>
 <DL>
