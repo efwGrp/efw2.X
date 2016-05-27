@@ -1,4 +1,7 @@
 <a href="../file_list.md">返回</a>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="../../日本語/file_list/myPage.jsp.md">日本語</a>
+&nbsp;<a href="../../中文/file_list/myPage.jsp.md">中文</a>
+&nbsp;<a href="../../English/file_list/myPage.jsp.md">English</a>
 <H3><A NAME="efw.jsp">jsp程序</A></H3>
 <pre>
 web/myPage.jsp
