@@ -1,10 +1,12 @@
-<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-	<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
-		<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2"><B>efw.client‚ÌÚ×</B></FONT></TH>
-	</TR>
-</TABLE>
+<a href="../api_list.md">–ß‚é</a>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="../../“ú–{Œê/api_list/efw.client.md">“ú–{Œê</a>
+&nbsp;<a href="../../’†•¶/api_list/efw.client.md">’†•¶</a>
+&nbsp;<a href="../../English/api_list/efw.client.md">English</a>
+<H3>efw.client‚ÌÚ×</H3>
+<HR>
 
-<H3><A NAME="efw.client.fire">fire</A></H3>
+
+<H3><A NAME="fire">fire</A></H3>
 <pre>
 fire ( <A href="#efw.eventParams">eventParams</A> )</PRE>
 <DL>
@@ -17,7 +19,7 @@ fire ( <A href="#efw.eventParams">eventParams</A> )</PRE>
 </DL></DD>
 <HR>
 
-<H3><A NAME="efw.client.pickup">pickup</A></H3>
+<H3><A NAME="pickup">pickup</A></H3>
 <pre>
 pickup ( <A href="#efw.event.paramsFormat">paramsFormat</A> , <A href="#efw.eventParams.manualParams">manualParams</A> )</PRE>
 <DL>
@@ -36,7 +38,7 @@ pickup ( <A href="#efw.event.paramsFormat">paramsFormat</A> , <A href="#efw.even
 </DL></DD>
 <HR>
 
-<H3><A NAME="efw.client.show">show</A></H3>
+<H3><A NAME="show">show</A></H3>
 <pre>
 show ( <A href="#efw.event.fire.eventResult">eventResult</A> )</PRE>
 <DL>
@@ -49,7 +51,7 @@ show ( <A href="#efw.event.fire.eventResult">eventResult</A> )</PRE>
 </DL></DD>
 <HR>
 
-<H3><A NAME="efw.client.alert">alert</A></H3>
+<H3><A NAME="alert">alert</A></H3>
 <pre>
 alert ( message , callback );                                                   //callback = function () { ... };
 </PRE>
