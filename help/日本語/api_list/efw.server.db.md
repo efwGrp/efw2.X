@@ -3,6 +3,7 @@
 &nbsp;<a href="../../中文/api_list/efw.server.db.md">中文</a>
 &nbsp;<a href="../../English/api_list/efw.server.db.md">English</a>
 <H3>efw.server.dbの詳細</H3>
+<HR>
 
 <H3><A NAME="open">open</A></H3>
 <pre>
@@ -117,27 +118,8 @@ closeAll ( ) </PRE>
 <DD><DL>
 </DL></DD>
 </DL></DD>
+<HR>
 
-<H3><A NAME="jdbcResourceName">jdbcResourceName</A></H3>
-<pre>
-jdbcResourceName = "jdbc/efw" ;                                                 //server.xmlに定義されるリソース
-
-&lt;Resource auth="Container" driverClassName="org.postgresql.Driver" 
-maxActive="100" maxIdle="20" maxWait="10" name="jdbc/efw" password="postgres" 
-type="javax.sql.DataSource" url="jdbc:postgresql://127.0.0.1:5432/efwSample" 
-username="postgres"/&gt;
-</PRE>
-<DL><DD>jdbcのリソース名。<br>
-efwのディフォルトリソースは、jdbc/efw 。それ以外のリソースを利用したい場合、<br>
-server.xmlに定義して、イベントjsファイルに、それを open して、トランザクションを管理する。
-
-</DL></DD>
-
-<BR><TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-	<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
-		<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2"><B>SQL executionの詳細</B></FONT></TH>
-	</TR>
-</TABLE>
 
 <H3><A NAME="executionParams">executionParams</A></H3>
 <pre>
