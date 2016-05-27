@@ -23,7 +23,7 @@ web/WEB-INF/classes/efw.properties
 <tr>
 	<td>efw.jdbc.resource</td>
 	<td>jdbc/efw</td>
-	<td>默认的jdbc资源名。需要在server.xml里定义。如果应用服务器不是tomcat的话，可以直接写jndi名。例：　　java:xxx/yyy/zzz　　or　　[java:comp/env/]jdbc/efw</td>
+	<td>默认的jdbc资源名。需要在context.xml里定义。如果应用服务器不是tomcat的话，可以直接写jndi名。例：　　java:xxx/yyy/zzz　　or　　[java:comp/env/]jdbc/efw</td>
 </tr>
 <tr>
 	<td>efw.server.folder</td>
