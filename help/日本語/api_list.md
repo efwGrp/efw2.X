@@ -9,9 +9,9 @@
 <pre>
 efw
 ├─client
-│  ├─<a href="#efw.client.fire">fire</a> ( <a href="#efw.eventParams">eventParams</a> )                                                    <span style="color:yellow;">★★★</span>
-│  │         ├─<a href="#efw.eventParams.server">server</a>                                                                     <span style="color:yellow;">★</span>
-│  │         ├─<a href="#efw.eventParams.eventId">eventId</a>                                                                    <span style="color:yellow;">★★★</span>
+│  ├─<a href="#efw.client.fire">fire</a> ( <a href="#efw.eventParams">eventParams</a> )                                <span style="color:yellow;">//★★★</span>
+│  │         ├─<a href="#efw.eventParams.server">server</a>                                                  <span style="color:yellow;">//★</span>
+│  │         ├─<a href="#efw.eventParams.eventId">eventId</a>                                                                    <span style="color:yellow;">//★★★</span>
 │  │         ├─<a href="#efw.eventParams.manualParams">manualParams</a>                                                               <span style="color:yellow;">★★</span>
 │  │         └─<a href="#efw.eventParams.success">success</a>                                                                    <span style="color:yellow;">★★★</span>
 │  ├─<a href="#efw.client.alert">alert</a>( message , callback )                                             <span style="color:yellow;">★★★</span>
@@ -26,10 +26,10 @@ efw
     │            ├─<a href="#efw.event.paramsFormat">paramsFormat</a>                                                               <span style="color:yellow;">★★★</span>
     │            │  └─<a href="#efw.event.paramsFormat.checkStyle">checkStyle</a>                                                              <span style="color:yellow;">★★★</span>
     │            └─<a href="#efw.event.fire">fire</a>                                                                       <span style="color:yellow;">★★★</span>
-    │                ├─<a href="#efw.event.fire.requestParams">requestParams</a>                                                          <span style="color:yellow;">★★★</span>
-    │                ├─<a href="#efw.event.fire.eventResult">eventResult</a>                                                            <span style="color:yellow;">★★★</span>
-    │                │  └─<a href="#efw.event.fire.eventResult.appendMask">appendMask</a>                                                          <span style="color:yellow;">★★★</span>
-    │                └─<a href="#efw.event.fire.error">error</a>                                                                  <span style="color:yellow;">★★★</span>
+    │               ├─<a href="#efw.event.fire.requestParams">requestParams</a>                                                          <span style="color:yellow;">★★★</span>
+    │               ├─<a href="#efw.event.fire.eventResult">eventResult</a>                                                            <span style="color:yellow;">★★★</span>
+    │               │  └─<a href="#efw.event.fire.eventResult.appendMask">appendMask</a>                                                          <span style="color:yellow;">★★★</span>
+    │               └─<a href="#efw.event.fire.error">error</a>                                                                  <span style="color:yellow;">★★★</span>
     ├─<a href="#efw.server.finish">finish</a> ( <a href="#efw.event">event</a> , <a href="#efw.event.fire.requestParams">requestParams</a> , <a href="#efw.event.fire.eventResult">eventResult</a> )                         <span style="color:yellow;">★</span>
     ├─format
     │  ├─<a href="#efw.server.format.formatNumber">formatNumber</a>( value , <a href="#efw.format.formatter">formatter</a> , <a href="#efw.format.rounder">rounder</a> )                         <span style="color:yellow;">★★</span>
@@ -52,16 +52,6 @@ efw
         ├─<a href="#efw.server.db.commit">commit</a> ( <a href="#efw.sqlExecution.jdbcResourceName">jdbcResourceName</a> )                                         <span style="color:yellow;">★</span>
         ├─<a href="#efw.server.db.rollback">rollback</a> ( <a href="#efw.sqlExecution.jdbcResourceName">jdbcResourceName</a> )                                       <span style="color:yellow;">★</span>
         └─<a href="#efw.server.db.closeAll">closeAll</a> ( )                                                        <span style="color:yellow;">★</span>
-
-
-
-
-<a href="#efw.format.formatter">formatter</a>                                         	                         <span style="color:yellow;">★★★</span>
-<a href="#efw.format.rounder">rounder</a>                                                                      <span style="color:yellow;">★★</span>
-
-<A href="#efw.sqlExecution.executionParams">executionParams</A>                                                              <span style="color:yellow;">★★★</span>
-<a href="#efw.sqlExecution.executionResult">executionResult</a>                                                              <span style="color:yellow;">★★★</span>
-<a href="#efw.sqlExecution.jdbcResourceName">jdbcResourceName</a>                                                             <span style="color:yellow;">★</span>
 
 </pre>
 
