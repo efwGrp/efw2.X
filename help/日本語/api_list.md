@@ -45,13 +45,13 @@
     │  ├─get ( key )                                  //セッションから情報を取得する関数
     │  └─set ( key , value )                          //セッションに情報を格納する関数
     └─<a href="api_list/efw.server.db.md">db</a>
-       ├─open ( jdbcResourceName )                    //データベース接続を開く関数
-       ├─getSingle ( executionParams )                //SELECT文を実行して１つ目のデータを戻す関数
-       ├─executeQuery ( executionParams )             //SELECT文を実行する関数
-       ├─executeUpdate ( executionParams )            //INSERT文、UPDATE文、DELETE文を実行する関数
-       ├─execute( executionParams )                   //任意のSQL文を実行する関数
-       ├─commit ( jdbcResourceName )                  //データベースへの更新を有効とする関数
-       ├─rollback ( jdbcResourceName )                //データベースへの更新を無効とする関数
-       └─closeAll ( )                                 //すべてのデータベース接続をコミットして閉じる関数
+       ├─<a href="api_list/efw.server.db.md#open">open</a> ( jdbcResourceName )                    //データベース接続を開く関数
+       ├─<a href="api_list/efw.server.db.md#getSingle">getSingle</a> ( executionParams )                //SELECT文を実行して１つ目のデータを戻す関数
+       ├─<a href="api_list/efw.server.db.md#executeQuery">executeQuery</a> ( executionParams )             //SELECT文を実行する関数
+       ├─<a href="api_list/efw.server.db.md#executeUpdate">executeUpdate</a> ( executionParams )            //INSERT文、UPDATE文、DELETE文を実行する関数
+       ├─<a href="api_list/efw.server.db.md#execute">execute</a> ( executionParams )                  //任意のSQL文を実行する関数
+       ├─<a href="api_list/efw.server.db.md#commit">commit</a> ( jdbcResourceName )                  //データベースへの更新を有効とする関数
+       ├─<a href="api_list/efw.server.db.md#rollback">rollback</a> ( jdbcResourceName )                //データベースへの更新を無効とする関数
+       └─<a href="api_list/efw.server.db.md#closeAll">closeAll</a> ( )                                 //すべてのデータベース接続をコミットして閉じる関数
 
 </pre>
