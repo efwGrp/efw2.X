@@ -133,8 +133,8 @@ executionParams = {
                                          },
                       mapping          : {                                      //マッピング、オプション。検索SQLの検索結果フィールドを画面項目またはマスクキーとマッピングする。
                                              selector1 : field1 ,
-                                             selector2 : [ Datefield , formatter ] ,             //日付フィールドをフォーマットしてからマッピング。
-                                             selector3 : [ Numberfield , formatter , rounder ] , //数字フィールドをフォーマットしてからマッピング。必要でされば丸みタイプを指定可能。
+                                             selector2 : [ Datefield , <a href="efw.server.format.md#formatter">formatter</a> ] ,             //日付フィールドをフォーマットしてからマッピング。
+                                             selector3 : [ Numberfield , <a href="efw.server.format.md#formatter">formatter</a> , <a href="efw.server.format.md#rounder">rounder</a> ] , //数字フィールドをフォーマットしてからマッピング。必要でされば丸みタイプを指定可能。
                                              selector4 : function(rs){ ... },   //検索結果のレコードから値を算出してマッピングする。
                                          },
                   };
