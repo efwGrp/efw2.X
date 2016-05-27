@@ -6,52 +6,52 @@
 	</TR>
 </TABLE>
 
-<pre>
-efw
-├─client
-│  ├─<a href="#efw.client.fire">fire</a> ( <a href="#efw.eventParams">eventParams</a> )                                //★★★
-│  │         ├─<a href="#efw.eventParams.server">server</a>                                    //★
-│  │         ├─<a href="#efw.eventParams.eventId">eventId</a>                                   //★★★
-│  │         ├─<a href="#efw.eventParams.manualParams">manualParams</a>                              //★★
-│  │         └─<a href="#efw.eventParams.success">success</a>                                   //★★★
-│  ├─<a href="#efw.client.alert">alert</a>( message , callback )                         //★★★
+<pre>efw
+├─<a href="#efw.client">client</a>
+│  ├─fire ( <a href="#efw.eventParams">eventParams</a> )                             //クライアントからサーバイベントを実行する関数
+│  │         ├─server                                 //イベントパラメータの サーバURL
+│  │         ├─eventId                                //                   イベントId
+│  │         ├─manualParams                           //                   手動パラメータ
+│  │         └─success ( <a href="#efw.event.fire.eventResult">eventResult</a> )                //                   成功コールバック関数
+│  │                      ├─runat                     //                   イベント実行結果の 表示場所
+│  │                      ├─withdata                  //                                     表示データ
+│  │                      ├─remove                    //                                     削除内容
+│  │                      └─append                    //                                     htmlマスク
+│  ├─alert ( message , callback )                     //クライアントでアラートメッセージを表示する関数
 │  └─format
-│      └─...                                             //★★
+│      └─...                                          //後続のefw.server.formatとほぼ同じ機能、その説明をご参照。
 └─server
-    ├─<a href="#efw.server.prepare">prepare</a> ( <a href="#efw.event">event</a> , <a href="#efw.event.fire.requestParams">requestParams</a> )                  //★
-    │            ├─<a href="#efw.event.outOfLogin">outOfLogin</a>                                             //★★
-    │            ├─<a href="#efw.event.include">include</a>                                                   //★★
-    │            │  ├─<a href="#efw.eventParams.eventId">eventId</a>                                         //★★
-    │            │  └─<a href="#efw.event.mergeParamsFormat">mergeParamsFormat</a>                           //★★
-    │            ├─<a href="#efw.event.paramsFormat">paramsFormat</a>                                         //★★★
-    │            │  └─<a href="#efw.event.paramsFormat.checkStyle">checkStyle</a>                            //★★★
-    │            └─<a href="#efw.event.fire">fire</a>                                                         //★★★
-    │               ├─<a href="#efw.event.fire.requestParams">requestParams</a>                               //★★★
-    │               ├─<a href="#efw.event.fire.eventResult">eventResult</a>                                   //★★★
-    │               │  └─<a href="#efw.event.fire.eventResult.appendMask">appendMask</a>                     //★★★
-    │               └─<a href="#efw.event.fire.error">error</a>                                               //★★★
-    ├─<a href="#efw.server.finish">finish</a> ( <a href="#efw.event">event</a> , <a href="#efw.event.fire.requestParams">requestParams</a> , <a href="#efw.event.fire.eventResult">eventResult</a> )     //★
-    ├─format
-    │  ├─<a href="#efw.server.format.formatNumber">formatNumber</a>( value , <a href="#efw.format.formatter">formatter</a> , <a href="#efw.format.rounder">rounder</a> )                         <span style="color:yellow;">★★</span>
-    │  ├─<a href="#efw.server.format.parseNumber">parseNumber</a>( value , <a href="#efw.format.formatter">formatter</a> )                                    <span style="color:yellow;">★★</span>
-    │  ├─<a href="#efw.server.format.formatDate">formatDate</a>( value , <a href="#efw.format.formatter">formatter</a> )                                     <span style="color:yellow;">★★</span>
-    │  └─<a href="#efw.server.format.parseDate">parseDate</a>( value , <a href="#efw.format.formatter">formatter</a> )                                      <span style="color:yellow;">★★</span>
+    ├─<a href="#efw.server.prepare">prepare</a> ( <a href="#efw.event">event</a> , <a href="#efw.event.fire.requestParams">requestParams</a> )               //サーバイベントの準備処理関数
+    │            ├─outOfLogin                         //イベントの ログインチェック不要フラグ
+    │            ├─include                            //          サブイベントを取り込むためのインクルード
+    │            │  ├─eventId                         //          サブイベントId
+    │            │  └─mergeParamsFormat               //          サブとメインのパラメータフォーマットをマージするフラグ
+    │            ├─paramsFormat                       //★★★
+    │            │  └─checkStyle                      //★★★
+    │            └─<a href="#efw.event.fire">fire</a> ( <a href="#efw.event.fire.requestParams">requestParams</a> )                              //★★★
+    │               ├─<a href="#efw.event.fire.eventResult">eventResult</a>                     //★★★
+    │               └─<a href="#efw.event.fire.error">error</a>                           //★★★
+    ├─<a href="#efw.server.finish">finish</a> ( <a href="#efw.event">event</a> , <a href="#efw.event.fire.requestParams">requestParams</a> , <a href="#efw.event.fire.eventResult">eventResult</a> )  //★
+    ├─<a href="#efw.server.format">format</a>
+    │  ├─formatNumber ( value , formatter , rounder )                         ★★
+    │  ├─parseNumber ( value , formatter )                                    ★★
+    │  ├─formatDate ( value , formatter )                                     ★★
+    │  └─parseDate ( value , formatter )                                      ★★
     ├─properties
-    │  ├─<a href="#efw.server.properties.get">get</a> ( key , defaultValue )                                          <span style="color:yellow;">★★</span>
-    │  ├─<a href="#efw.server.properties.getBoolean">getBoolean</a> ( key , defaultValue )                                   <span style="color:yellow;">★★</span>
-    │  └─<a href="#efw.server.properties.getInt">getInt</a> ( key , defaultValue )                                       <span style="color:yellow;">★★</span>
+    │  ├─<a href="#efw.server.properties.get">get</a> ( key , defaultValue )                                          ★★
+    │  ├─<a href="#efw.server.properties.getBoolean">getBoolean</a> ( key , defaultValue )                                   ★★
+    │  └─<a href="#efw.server.properties.getInt">getInt</a> ( key , defaultValue )                                       ★★
     ├─session
-    │  ├─<a href="#efw.server.session.get">get</a> ( key )                                                         <span style="color:yellow;">★★</span>
-    │  └─<a href="#efw.server.session.set">set</a> ( key , value )                                                 <span style="color:yellow;">★★</span>
-    └─db
-        ├─<a href="#efw.server.db.open">open</a> ( <a href="#efw.sqlExecution.jdbcResourceName">jdbcResourceName</a> )                                           <span style="color:yellow;">★</span>
-        ├─<a href="#efw.server.db.getSingle">getSingle</a> ( <A href="#efw.sqlExecution.executionParams">executionParams</A> )                                       <span style="color:yellow;">★★★</span>
-        ├─<a href="#efw.server.db.executeQuery">executeQuery</a> ( <A href="#efw.sqlExecution.executionParams">executionParams</A> )                                    <span style="color:yellow;">★★★</span>
-        ├─<a href="#efw.server.db.executeUpdate">executeUpdate</a> ( <A href="#efw.sqlExecution.executionParams">executionParams</A> )                                   <span style="color:yellow;">★★</span>
-        ├─<a href="#efw.server.db.execute">execute</a>( <A href="#efw.sqlExecution.executionParams">executionParams</A> )                                          <span style="color:yellow;">★★★</span>
-        ├─<a href="#efw.server.db.commit">commit</a> ( <a href="#efw.sqlExecution.jdbcResourceName">jdbcResourceName</a> )                                         <span style="color:yellow;">★</span>
-        ├─<a href="#efw.server.db.rollback">rollback</a> ( <a href="#efw.sqlExecution.jdbcResourceName">jdbcResourceName</a> )                                       <span style="color:yellow;">★</span>
-        └─<a href="#efw.server.db.closeAll">closeAll</a> ( )                                                        <span style="color:yellow;">★</span>
+    │  ├─<a href="#efw.server.session.get">get</a> ( key )                                                         ★★
+    │  └─<a href="#efw.server.session.set">set</a> ( key , value )                                                 ★★
+    └─<a href="#efw.server.db">db</a>
+        ├─open ( jdbcResourceName )                                           ★
+        ├─getSingle ( executionParams )                                       ★★★
+        ├─executeQuery ( executionParams )                                    ★★★
+        ├─executeUpdate ( executionParams )                                   ★★
+        ├─execute( executionParams )                                          ★★★
+        ├─commit ( jdbcResourceName )                                         ★
+        ├─rollback ( jdbcResourceName )                                       ★
+        └─closeAll ( )                                                        ★
 
 </pre>
-
