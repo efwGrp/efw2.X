@@ -33,12 +33,12 @@ web/WEB-INF/classes/efw.properties
 	<td>webアプリのイベントソースのフォルダ。webアプリの相対パスで設定する。あるいは絶対パスで設定する。</td>
 </tr>
 <tr>
-	<td>efw.event.sql</td>
+	<td>efw.sql.folder</td>
 	<td>/WEB-INF/efw/sql</td>
 	<td>webアプリの外出しsqlファイルのフォルダ。webアプリの相対パスで設定する。あるいは絶対パスで設定する。</td>
 </tr>
 <tr>
-	<td>efw.storage.sql</td>
+	<td>efw.storage.folder</td>
 	<td>/WEB-INF/efw/storage</td>
 	<td>webアプリの取り扱うファイルのフォルダ。webアプリの相対パスで設定する。あるいは絶対パスで設定する。</td>
 </tr>

@@ -33,12 +33,12 @@ web/WEB-INF/classes/efw.properties
 	<td>web应用事件程序的路径。可以设置web应用下的相对路径，也可以设置绝对路径。</td>
 </tr>
 <tr>
-	<td>efw.event.sql</td>
+	<td>efw.sql.folder</td>
 	<td>/WEB-INF/efw/sql</td>
 	<td>web应用外置Sql文件的路径。可以设置web应用下的相对路径，也可以设置绝对路径。</td>
 </tr>
 <tr>
-	<td>efw.storage.sql</td>
+	<td>efw.storage.folder</td>
 	<td>/WEB-INF/efw/storage</td>
 	<td>web应用操作文件的路径。可以设置web应用下的相对路径，也可以设置绝对路径。</td>
 </tr>
