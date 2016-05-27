@@ -2,7 +2,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="../../日本語/file_list/myPage.jsp.md">日本語</a>
 &nbsp;<a href="../../中文/file_list/myPage.jsp.md">中文</a>
 &nbsp;<a href="../../English/file_list/myPage.jsp.md">English</a>
-<H3><A NAME="efw.jsp">jspのプログラム</A></H3>
+<H3><A NAME="efw.jsp">Jsp Program</A></H3>
 <pre>
 web/myPage.jsp
 --------------------------------------------------------------------------------
@@ -30,18 +30,18 @@ web/myPage.jsp
     &lt;/head&gt;
     &lt;body onload="bodyLoad()"&gt;
         &lt;input id="txt_testnumber" type="text" <b>data-format</b>="#,##0.00"&gt;
-        &lt;input id="txt_testdate" type="text" <b>data-format</b>="yyyy年MM月dd日"&gt;
+        &lt;input id="txt_testdate" type="text" <b>data-format</b>="yyyy-MM-dd"&gt;
         ...
     &lt;/body&gt;
     &lt;/html&gt;
 </pre>
 <DL>
-<DD>jspファイル。<br>
+<DD>The jsp file.<br>
 </DL></DD>
 <HR>
 
 
-<H3><A NAME="efw.jsp.taglib">efwタグ利用</A></H3>
+<H3><A NAME="efw.jsp.taglib">Efw Tag</A></H3>
 <pre>
     &lt;efw:Core/&gt;
     &lt;efw:JQueryUI/&gt;
@@ -50,24 +50,24 @@ web/myPage.jsp
 
 <DL>
 <DD>
-efw の taglib を宣言して、efwのタグを取り込み、efw.client の各機能を利用できる。<br>
+Declare the tag library of efw, add the efw tag, you can use the function of efw.client.<br>
 
 <table BORDER="1"  CELLPADDING="3" CELLSPACING="0" SUMMARY="">
 <tr BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
-	<th style="width:200px">タグ</th>
-	<th style="width:850px">説明</th>
+	<th style="width:200px">Tag</th>
+	<th style="width:850px">Description</th>
 </tr>
 <tr>
 	<td>&lt;efw:Core/&gt;</td>
-	<td>efwの基本機能をインクルードする。必須。</td>
+	<td>To include the function of efw core. Required. </td>
 </tr>
 <tr>
 	<td>&lt;efw:JQueryUI/&gt;</td>
-	<td>JQueryUI 機能をインクルードする。オプション。</td>
+	<td>To include the function of JQueryUI. Optional. </td>
 </tr>
 <tr>
 	<td>&lt;efw:InputBehavior/&gt;</td>
-	<td>入力支援機能をインクルードする。オプション。入力支援のカスタマイズは、efw.css 。</td>
+	<td>To include the function of input support. Optional. You can change the style sheet for input support by customizing efw.css .</td>
 </tr>
 </table>
 </DL></DD>
