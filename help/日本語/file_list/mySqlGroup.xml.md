@@ -37,7 +37,7 @@ web/WEB-INF/efw/sql/mySqlGroup.xml
 </pre>
 <DL>
 <DD>
-sql XMLファイルの名称は、グループId になる。その中に定義される sqlタグの id は、sqlId になる。
+sql XMLファイルの名称は、groupId になる。その中に定義される sqlタグの id は、sqlId になる。
 </DL></DD>
 <HR>
 
