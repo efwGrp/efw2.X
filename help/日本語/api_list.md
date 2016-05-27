@@ -42,8 +42,8 @@
     │  ├─getBoolean ( key , defaultValue )            //ブルーのプロパティを取得する関数
     │  └─getInt ( key , defaultValue )                //数字のプロパティを取得する関数
     ├─<a href="api_list/efw.server.session.md">session</a>
-    │  ├─get ( key )                                  //セッションから情報を取得する関数
-    │  └─set ( key , value )                          //セッションに情報を格納する関数
+    │  ├─<a href="api_list/efw.server.session.md#get">get</a> ( key )                                  //セッションから情報を取得する関数
+    │  └─<a href="api_list/efw.server.session.md#set">set</a> ( key , value )                          //セッションに情報を格納する関数
     └─<a href="api_list/efw.server.db.md">db</a>
        ├─<a href="api_list/efw.server.db.md#open">open</a> ( <a href="api_list/efw.server.db.md#jdbcResourceName">jdbcResourceName</a> )                    //データベース接続を開く関数
        ├─<a href="api_list/efw.server.db.md#getSingle">getSingle</a> ( <a href="api_list/efw.server.db.md#executionParams">executionParams</a> )                //SELECT文を実行して１つ目のデータを戻す関数
