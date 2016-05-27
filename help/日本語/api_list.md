@@ -41,10 +41,10 @@
     │  ├─<a href="#efw.server.properties.get">get</a> ( key , defaultValue )                                          ★★
     │  ├─<a href="#efw.server.properties.getBoolean">getBoolean</a> ( key , defaultValue )                                   ★★
     │  └─<a href="#efw.server.properties.getInt">getInt</a> ( key , defaultValue )                                       ★★
-    ├─session
-    │  ├─<a href="#efw.server.session.get">get</a> ( key )                                                         ★★
-    │  └─<a href="#efw.server.session.set">set</a> ( key , value )                                                 ★★
-    └─<a href="#efw.server.db">db</a>
+    ├─<a href="api_list.md/efw.server.session.md">session</a>
+    │  ├─get ( key )                                                         ★★
+    │  └─set ( key , value )                                                 ★★
+    └─<a href="api_list.md/efw.server.db.md">db</a>
         ├─open ( jdbcResourceName )                                           ★
         ├─getSingle ( executionParams )                                       ★★★
         ├─executeQuery ( executionParams )                                    ★★★
