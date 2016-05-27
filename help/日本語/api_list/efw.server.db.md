@@ -1,6 +1,6 @@
 <BR><TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
 	<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
-		<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2"><B>efw.server.db�̏ڍ�</B></FONT></TH>
+		<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2"><B>efw.server.dbの詳細</B></FONT></TH>
 	</TR>
 </TABLE>
 
@@ -8,11 +8,11 @@
 <pre>
 open ( <A href="#efw.sqlExecution.jdbcResourceName">jdbcResourceName</A> )</PRE>
 <DL>
-<DD>�f�[�^�x�[�X�ڑ����J���B
+<DD>データベース接続を開く。
 <P>
 <DD><DL>
-<DT><B>�p�����[�^:</B>
-<DD><CODE><A href="#efw.sqlExecution.jdbcResourceName">jdbcResourceName</A></CODE> - jdbc���\�[�X�̖��́A������A�I�v�V�����B
+<DT><B>パラメータ:</B>
+<DD><CODE><A href="#efw.sqlExecution.jdbcResourceName">jdbcResourceName</A></CODE> - jdbcリソースの名称、文字列、オプション。
 </DL></DD>
 </DL></DD>
 <HR>
@@ -21,16 +21,16 @@ open ( <A href="#efw.sqlExecution.jdbcResourceName">jdbcResourceName</A> )</PRE>
 <pre>
 getSingle ( <A href="#efw.sqlExecution.executionParams">executionParams</A> )</PRE>
 <DL>
-<DD>SELECT�������s���āA�P�ڂ̃f�[�^��߂��B
+<DD>SELECT文を実行して、１つ目のデータを戻す。
 <P>
 <DD><DL>
-<DT><B>�߂�l:</B>
-<DD><CODE>���ʂ�����ꍇ�A<A href="#efw.sqlExecution.executionResult">executionResult</A></CODE> �̂P�s�ڃf�[�^�B
-<DD><CODE>null</CODE> - ���ʂ��Ȃ��ꍇ�Anull ��߂��B
+<DT><B>戻り値:</B>
+<DD><CODE>結果がある場合、<A href="#efw.sqlExecution.executionResult">executionResult</A></CODE> の１行目データ。
+<DD><CODE>null</CODE> - 結果がない場合、null を戻す。
 </DL></DD>
 <DD><DL>
-<DT><B>�p�����[�^:</B>
-<DD><CODE><A href="#efw.sqlExecution.executionParams">executionParams</A></CODE> - SQL���s�p�p�����[�^�[�A�K�{�B
+<DT><B>パラメータ:</B>
+<DD><CODE><A href="#efw.sqlExecution.executionParams">executionParams</A></CODE> - SQL実行用パラメーター、必須。
 </DL></DD>
 </DL></DD>
 <HR>
@@ -39,15 +39,15 @@ getSingle ( <A href="#efw.sqlExecution.executionParams">executionParams</A> )</P
 <pre>
 executeQuery ( <A href="#efw.sqlExecution.executionParams">executionParams</A> )</PRE>
 <DL>
-<DD>SELECT�������s����B
+<DD>SELECT文を実行する。
 <P>
 <DD><DL>
-<DT><B>�߂�l:</B>
-<DD><CODE><A href="#efw.sqlExecution.executionResult">executionResult</A></CODE> - SQL�������ʁB
+<DT><B>戻り値:</B>
+<DD><CODE><A href="#efw.sqlExecution.executionResult">executionResult</A></CODE> - SQL検索結果。
 </DL></DD>
 <DD><DL>
-<DT><B>�p�����[�^:</B>
-<DD><CODE><A href="#efw.sqlExecution.executionParams">executionParams</A></CODE> - SQL���s�p�p�����[�^�[�A�K�{�B
+<DT><B>パラメータ:</B>
+<DD><CODE><A href="#efw.sqlExecution.executionParams">executionParams</A></CODE> - SQL実行用パラメーター、必須。
 </DL></DD>
 </DL></DD>
 <HR>
@@ -56,15 +56,15 @@ executeQuery ( <A href="#efw.sqlExecution.executionParams">executionParams</A> )
 <pre>
 executeUpdate ( <A href="#efw.sqlExecution.executionParams">executionParams</A> )</PRE>
 <DL>
-<DD>INSERT���AUPDATE���ADELETE�������s����B
+<DD>INSERT文、UPDATE文、DELETE文を実行する。
 <P>
 <DD><DL>
-<DT><B>�߂�l:</B>
-<DD>���s���ꂽ�s����߂��B
+<DT><B>戻り値:</B>
+<DD>実行された行数を戻す。
 </DL></DD>
 <DD><DL>
-<DT><B>�p�����[�^:</B>
-<DD><CODE><A href="#efw.sqlExecution.executionParams">executionParams</A></CODE> - SQL���s�p�p�����[�^�[�A�K�{�B
+<DT><B>パラメータ:</B>
+<DD><CODE><A href="#efw.sqlExecution.executionParams">executionParams</A></CODE> - SQL実行用パラメーター、必須。
 </DL></DD>
 </DL></DD>
 <HR>
@@ -73,11 +73,11 @@ executeUpdate ( <A href="#efw.sqlExecution.executionParams">executionParams</A> 
 <pre>
 execute ( <A href="#efw.sqlExecution.executionParams">executionParams</A> )</PRE>
 <DL>
-<DD>�C�ӂ�SQL�������s����B
+<DD>任意のSQL文を実行する。
 <P>
 <DD><DL>
-<DT><B>�p�����[�^:</B>
-<DD><CODE><A href="#efw.sqlExecution.executionParams">executionParams</A></CODE> - SQL���s�p�p�����[�^�[�A�K�{�B
+<DT><B>パラメータ:</B>
+<DD><CODE><A href="#efw.sqlExecution.executionParams">executionParams</A></CODE> - SQL実行用パラメーター、必須。
 </DL></DD>
 </DL></DD>
 <HR>
@@ -86,11 +86,11 @@ execute ( <A href="#efw.sqlExecution.executionParams">executionParams</A> )</PRE
 <pre>
 commit ( <A href="#efw.sqlExecution.jdbcResourceName">jdbcResourceName</A> )</PRE>
 <DL>
-<DD>�f�[�^�x�[�X�ւ̍X�V��L���Ƃ��A �f�[�^�x�[�X�ڑ����ێ�����f�[�^�x�[�X���b�N�����ׂĉ�������B
+<DD>データベースへの更新を有効とし、 データベース接続が保持するデータベースロックをすべて解除する。
 <P>
 <DD><DL>
-<DT><B>�p�����[�^:</B>
-<DD><CODE><A href="#efw.sqlExecution.jdbcResourceName">jdbcResourceName</A></CODE> - jdbc���\�[�X�̖��́A������A�I�v�V�����B
+<DT><B>パラメータ:</B>
+<DD><CODE><A href="#efw.sqlExecution.jdbcResourceName">jdbcResourceName</A></CODE> - jdbcリソースの名称、文字列、オプション。
 </DL></DD>
 </DL></DD>
 <HR>
@@ -99,11 +99,11 @@ commit ( <A href="#efw.sqlExecution.jdbcResourceName">jdbcResourceName</A> )</PR
 <pre>
 rollback ( <A href="#efw.sqlExecution.jdbcResourceName">jdbcResourceName</A> )</PRE>
 <DL>
-<DD>�f�[�^�x�[�X�ւ̍X�V�𖳌��Ƃ��A �f�[�^�x�[�X�ڑ����ێ�����f�[�^�x�[�X���b�N�����ׂĉ�������B
+<DD>データベースへの更新を無効とし、 データベース接続が保持するデータベースロックをすべて解除する。
 <P>
 <DD><DL>
-<DT><B>�p�����[�^:</B>
-<DD><CODE><A href="#efw.sqlExecution.jdbcResourceName">jdbcResourceName</A></CODE> - jdbc���\�[�X�̖��́A������A�I�v�V�����B
+<DT><B>パラメータ:</B>
+<DD><CODE><A href="#efw.sqlExecution.jdbcResourceName">jdbcResourceName</A></CODE> - jdbcリソースの名称、文字列、オプション。
 </DL></DD>
 </DL></DD>
 <HR>
@@ -112,7 +112,7 @@ rollback ( <A href="#efw.sqlExecution.jdbcResourceName">jdbcResourceName</A> )</
 <pre>
 closeAll ( ) </PRE>
 <DL>
-<DD>���ׂẴf�[�^�x�[�X�ڑ��ɑ΂��āA�X�e�[�g�����g��S�����āA�f�[�^�x�[�X�ڑ����R�~�b�g���ĕ���B 
+<DD>すべてのデータベース接続に対して、ステートメントを全部閉じて、データベース接続をコミットして閉じる。 
 <P>
 <DD><DL>
 </DL></DD>
@@ -120,75 +120,75 @@ closeAll ( ) </PRE>
 
 <H3><A NAME="efw.sqlExecution.jdbcResourceName">jdbcResourceName</A></H3>
 <pre>
-jdbcResourceName = "jdbc/efw" ;                                                 //server.xml�ɒ�`����郊�\�[�X
+jdbcResourceName = "jdbc/efw" ;                                                 //server.xmlに定義されるリソース
 
 &lt;Resource auth="Container" driverClassName="org.postgresql.Driver" 
 maxActive="100" maxIdle="20" maxWait="10" name="jdbc/efw" password="postgres" 
 type="javax.sql.DataSource" url="jdbc:postgresql://127.0.0.1:5432/efwSample" 
 username="postgres"/&gt;
 </PRE>
-<DL><DD>jdbc�̃��\�[�X���B<br>
-efw�̃f�B�t�H���g���\�[�X�́Ajdbc/efw �B����ȊO�̃��\�[�X�𗘗p�������ꍇ�A<br>
-server.xml�ɒ�`���āA�C�x���gjs�t�@�C���ɁA����� open ���āA�g�����U�N�V�������Ǘ�����B
+<DL><DD>jdbcのリソース名。<br>
+efwのディフォルトリソースは、jdbc/efw 。それ以外のリソースを利用したい場合、<br>
+server.xmlに定義して、イベントjsファイルに、それを open して、トランザクションを管理する。
 
 </DL></DD>
 
 <BR><TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
 	<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
-		<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2"><B>SQL execution�̏ڍ�</B></FONT></TH>
+		<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2"><B>SQL executionの詳細</B></FONT></TH>
 	</TR>
 </TABLE>
 
 <H3><A NAME="efw.sqlExecution.executionParams">executionParams</A></H3>
 <pre>
 executionParams = {
-                      <a href="#efw.sqlExecution.jdbcResourceName">jdbcResourceName</a> : "jdbc/efw",                            //jdbc���\�[�X���A�I�v�V�����B
-                      groupId          : "user",                                //sqlXML�t�@�C�����A�K�{�B
-                      sqlId            : "selectusers",                         //SQL��Id�A�K�{�B
-                      params           : {                                      //SQL�p�����[�^�[�A�K�{�B
+                      <a href="#efw.sqlExecution.jdbcResourceName">jdbcResourceName</a> : "jdbc/efw",                            //jdbcリソース名、オプション。
+                      groupId          : "user",                                //sqlXMLファイル名、必須。
+                      sqlId            : "selectusers",                         //SQLのId、必須。
+                      params           : {                                      //SQLパラメーター、必須。
                                              sqlparam1 : value1 ,
                                              sqlparma2 : value2 ,
                                          },
-                      mapping          : {                                      //�}�b�s���O�A�I�v�V�����B����SQL�̌������ʃt�B�[���h����ʍ��ڂ܂��̓}�X�N�L�[�ƃ}�b�s���O����B
+                      mapping          : {                                      //マッピング、オプション。検索SQLの検索結果フィールドを画面項目またはマスクキーとマッピングする。
                                              selector1 : field1 ,
-                                             selector2 : [ Datefield , formatter ] ,             //���t�t�B�[���h���t�H�[�}�b�g���Ă���}�b�s���O�B
-                                             selector3 : [ Numberfield , formatter , rounder ] , //�����t�B�[���h���t�H�[�}�b�g���Ă���}�b�s���O�B�K�v�ł���Ίۂ݃^�C�v���w��\�B
-                                             selector4 : function(rs){ ... },   //�������ʂ̃��R�[�h����l���Z�o���ă}�b�s���O����B
+                                             selector2 : [ Datefield , formatter ] ,             //日付フィールドをフォーマットしてからマッピング。
+                                             selector3 : [ Numberfield , formatter , rounder ] , //数字フィールドをフォーマットしてからマッピング。必要でされば丸みタイプを指定可能。
+                                             selector4 : function(rs){ ... },   //検索結果のレコードから値を算出してマッピングする。
                                          },
                   };
 </PRE>
-<DL><DD>SQL���s�p�p�����[�^�[�B<br>
-SQL�����s���邽�߁AXML�t�@�C���ɒ�`����SQL�̃p�����[�^�[�̒l��ݒ�B�܂����s���ʂ̃}�b�s���O���ݒ�B<br>
+<DL><DD>SQL実行用パラメーター。<br>
+SQLを実行するため、XMLファイルに定義するSQLのパラメーターの値を設定可。また実行結果のマッピングも設定可。<br>
 
 </DL></DD>
 <HR>
 
 <H3><A NAME="efw.sqlExecution.executionResult">executionResult</A></H3>
 <pre>
-executionResult = [                                                             //�}�b�s���O�Ȃ��̎��s���ʁAfield���ڂƒl�̃Z�b�g�̔z��B
-                    {                                                           //�ЂƂ̃��R�[�h�B
+executionResult = [                                                             //マッピングなしの実行結果、field項目と値のセットの配列。
+                    {                                                           //ひとつのレコード。
                       field1 : value1 ,
                       field2 : value2 ,
                     },
                   ];
                   
-executionResult = [                                                             //selector�ƃ}�b�s���O������s���ʁAselector���ڂƒl�̃Z�b�g�̔z��B
-                    {                                                           //�ЂƂ̃��R�[�h�B
+executionResult = [                                                             //selectorとマッピングする実行結果、selector項目と値のセットの配列。
+                    {                                                           //ひとつのレコード。
                       selector1 : value1 ,
                       selector2 : value2 ,
                     },
                   ];
 
-executionResult = [                                                             //maskKey�ƃ}�b�s���O������s���ʁAmaskKey���ڂƒl�̃Z�b�g�̔z��B
-                    {                                                           //�ЂƂ̃��R�[�h�B
+executionResult = [                                                             //maskKeyとマッピングする実行結果、maskKey項目と値のセットの配列。
+                    {                                                           //ひとつのレコード。
                       maskKey1 : value1 ,
                       maskKey2 : value2 ,
                     },
                   ];
 </PRE>
-<DL><DD>SQL�������ʁB<br>
-executeQuery�̎��s���ʁB���R�[�h�Z�b�g�̔z��B�������ʂ��Ȃ��ꍇ�A��̔z��ɂȂ�B<br>
-�}�b�s���O�̗L���ɂ��A�ω����\�B
+<DL><DD>SQL検索結果。<br>
+executeQueryの実行結果。レコードセットの配列。検索結果がない場合、空の配列になる。<br>
+マッピングの有無により、変化が可能。
 
 </DL></DD>
 <HR>
@@ -196,15 +196,15 @@ executeQuery�̎��s���ʁB���R�[�h�Z�b�g�̔z��B�������ʂ��Ȃ��ꍇ�A��̔z��ɂȂ�
 
 <H3><A NAME="efw.sqlExecution.jdbcResourceName">jdbcResourceName</A></H3>
 <pre>
-jdbcResourceName = "jdbc/efw" ;                                                 //server.xml�ɒ�`����郊�\�[�X
+jdbcResourceName = "jdbc/efw" ;                                                 //server.xmlに定義されるリソース
 
 &lt;Resource auth="Container" driverClassName="org.postgresql.Driver" 
 maxActive="100" maxIdle="20" maxWait="10" name="jdbc/efw" password="postgres" 
 type="javax.sql.DataSource" url="jdbc:postgresql://127.0.0.1:5432/efwSample" 
 username="postgres"/&gt;
 </PRE>
-<DL><DD>jdbc�̃��\�[�X���B<br>
-efw�̃f�B�t�H���g���\�[�X�́Ajdbc/efw �B����ȊO�̃��\�[�X�𗘗p�������ꍇ�A<br>
-server.xml�ɒ�`���āA�C�x���gjs�t�@�C���ɁA����� open ���āA�g�����U�N�V�������Ǘ�����B
+<DL><DD>jdbcのリソース名。<br>
+efwのディフォルトリソースは、jdbc/efw 。それ以外のリソースを利用したい場合、<br>
+server.xmlに定義して、イベントjsファイルに、それを open して、トランザクションを管理する。
 
 </DL></DD>
