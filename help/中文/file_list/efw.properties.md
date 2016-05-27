@@ -1,5 +1,5 @@
 <a href="../file_list.md">返回</a>
-<H3><A NAME="efw.properties">配置文件的设置</A></H3>
+<H3><A NAME="efw.properties">配置文件</A></H3>
 <pre>
 web/WEB-INF/classes/efw.properties
 </pre>
@@ -36,6 +36,11 @@ web/WEB-INF/classes/efw.properties
 	<td>efw.event.sql</td>
 	<td>/WEB-INF/efw/sql</td>
 	<td>web应用外置Sql文件的路径。可以设置web应用下的相对路径，也可以设置绝对路径。</td>
+</tr>
+<tr>
+	<td>efw.storage.sql</td>
+	<td>/WEB-INF/efw/storage</td>
+	<td>web应用操作文件的路径。可以设置web应用下的相对路径，也可以设置绝对路径。</td>
 </tr>
 <tr>
 	<td>efw.login.check</td>

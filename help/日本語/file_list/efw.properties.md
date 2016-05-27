@@ -1,5 +1,5 @@
 <a href="../file_list.md">戻る</a>
-<H3><A NAME="efw.properties">プロパティの設定</A></H3>
+<H3><A NAME="efw.properties">プロパティファイル</A></H3>
 <pre>
 web/WEB-INF/classes/efw.properties
 </pre>
@@ -36,6 +36,11 @@ web/WEB-INF/classes/efw.properties
 	<td>efw.event.sql</td>
 	<td>/WEB-INF/efw/sql</td>
 	<td>webアプリの外出しsqlファイルのフォルダ。webアプリの相対パスで設定する。あるいは絶対パスで設定する。</td>
+</tr>
+<tr>
+	<td>efw.storage.sql</td>
+	<td>/WEB-INF/efw/storage</td>
+	<td>webアプリの取り扱うファイルのフォルダ。webアプリの相対パスで設定する。あるいは絶対パスで設定する。</td>
 </tr>
 <tr>
 	<td>efw.login.check</td>
