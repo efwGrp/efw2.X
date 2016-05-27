@@ -32,19 +32,19 @@
     │               ├─<a href="#efw.event.fire.eventResult">eventResult</a>                     //★★★
     │               └─<a href="#efw.event.fire.error">error</a>                           //★★★
     ├─finish ( event , requestParams , eventResult )  //サーバイベントの後処理関数、サーバ処理カスタマイズ用
-    ├─<a href="efw.server.format.md">format</a>
+    ├─<a href="api_list/efw.server.format.md">format</a>
     │  ├─formatNumber ( value , formatter , rounder ) //数字値を指定フォーマットにより文字列に変換する関数
     │  ├─parseNumber ( value , formatter )            //文字列値を指定フォーマットにより数字に変換する関数
     │  ├─formatDate ( value , formatter )             //日付値を指定フォーマットにより文字列に変換する関数
     │  └─parseDate ( value , formatter )              //文字列値を指定フォーマットにより日付に変換する関数
-    ├─<a href="efw.server.properties.md">properties</a>
+    ├─<a href="api_list/efw.server.properties.md">properties</a>
     │  ├─get ( key , defaultValue )                   //文字列のプロパティを取得する関数
     │  ├─getBoolean ( key , defaultValue )            //ブルーのプロパティを取得する関数
     │  └─getInt ( key , defaultValue )                //数字のプロパティを取得する関数
-    ├─<a href="/changkejun/efw2.X/blob/master/help/日本語/api_list/efw.server.session.md">session</a>
+    ├─<a href="api_list/efw.server.session.md">session</a>
     │  ├─get ( key )                                  //セッションから情報を取得する関数
     │  └─set ( key , value )                          //セッションに情報を格納する関数
-    └─<a href="/changkejun/efw2.X/blob/master/help/日本語/api_list/efw.server.db.md">db</a>
+    └─<a href="api_list/efw.server.db.md">db</a>
        ├─open ( jdbcResourceName )                    //データベース接続を開く関数
        ├─getSingle ( executionParams )                //SELECT文を実行して１つ目のデータを戻す関数
        ├─executeQuery ( executionParams )             //SELECT文を実行する関数
