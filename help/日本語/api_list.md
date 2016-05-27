@@ -33,10 +33,10 @@
     │               └─<a href="#efw.event.fire.error">error</a>                           //★★★
     ├─finish ( event , requestParams , eventResult )  //サーバイベントの後処理関数、サーバ処理カスタマイズ用
     ├─<a href="api_list/efw.server.format.md">format</a>
-    │  ├─formatNumber ( value , formatter , rounder ) //数字値を指定フォーマットにより文字列に変換する関数
-    │  ├─parseNumber ( value , formatter )            //文字列値を指定フォーマットにより数字に変換する関数
-    │  ├─formatDate ( value , formatter )             //日付値を指定フォーマットにより文字列に変換する関数
-    │  └─parseDate ( value , formatter )              //文字列値を指定フォーマットにより日付に変換する関数
+    │  ├─<a href="api_list/efw.server.format.md#formatNumber">formatNumber</a> ( value , <a href="api_list/efw.server.format.md#formatter">formatter</a> , <a href="api_list/efw.server.format.md#rounder">rounder</a> ) //数字値を指定フォーマットにより文字列に変換する関数
+    │  ├─<a href="api_list/efw.server.format.md#parseNumber">parseNumber</a> ( value , <a href="api_list/efw.server.format.md#formatter">formatter</a> )            //文字列値を指定フォーマットにより数字に変換する関数
+    │  ├─<a href="api_list/efw.server.format.md#formatDate">formatDate</a> ( value , <a href="api_list/efw.server.format.md#formatter">formatter</a> )             //日付値を指定フォーマットにより文字列に変換する関数
+    │  └─<a href="api_list/efw.server.format.md#parseDate">parseDate</a> ( value , <a href="api_list/efw.server.format.md#formatter">formatter</a> )              //文字列値を指定フォーマットにより日付に変換する関数
     ├─<a href="api_list/efw.server.properties.md">properties</a>
     │  ├─<a href="api_list/efw.server.properties.md#get">get</a> ( key , defaultValue )                   //文字列のプロパティを取得する関数
     │  ├─<a href="api_list/efw.server.properties.md#getBoolean">getBoolean</a> ( key , defaultValue )            //ブルーのプロパティを取得する関数
