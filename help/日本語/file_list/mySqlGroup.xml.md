@@ -1,4 +1,4 @@
-<a href="../file_list.md">戻る</a>&bnsp;&bnsp;&bnsp;&bnsp;<a href="mySqlGroup.xml.md">日本語</a>&bnsp;<a href="mySqlGroup.xml.md">中文</a>&bnsp;<a href="mySqlGroup.xml.md">English</a>
+<a href="../file_list.md">戻る</a>&bnsp;&nbsp;&nbsp;&nbsp;<a href="mySqlGroup.xml.md">日本語</a>&nbsp;<a href="mySqlGroup.xml.md">中文</a>&nbsp;<a href="mySqlGroup.xml.md">English</a>
 <H3><A NAME="efw.sql">sqlのプログラム</A></H3>
 <pre>
 web/WEB-INF/efw/sql/mySqlGroup.xml
