@@ -152,7 +152,7 @@ efw的各个js文件使用UTF-8编码。但是jsp画面根据用途可以自由�
 <DL>
 <DD>
 事件的数据传递记述是在服务端js文件，而不是客户端js文件。<br>
-但是，如果在success函数里处理收到的数据的话，需意识到eventResult的存在。詳細请参照efw.client.fire的API。
+但是，如果在success函数里处理收到的数据的话，需意识到eventResult的存在。詳細内容参照efw.client.fire的API。
 </DL></DD>
 <HR>
 
@@ -191,7 +191,7 @@ efw的各个js文件使用UTF-8编码。但是jsp画面根据用途可以自由�
 	<td>显示有格式字符串。如果输入数据无法格式的话显示空白。20151231 ⇒ 2015年12月31日、ABCD ⇒ 「」</td>
 </tr>
 </table>
-格式化定义的详细写法请参照formatter的API。
+格式化定义的详细内容参照formatter的API。
 </DL></DD>
 <HR>
 

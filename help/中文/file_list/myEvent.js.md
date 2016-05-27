@@ -1,5 +1,5 @@
 <a href="../file_list.md">返回</a>
-<H3><A NAME="efw.event">eventのプログラム</A></H3>
+<H3><A NAME="efw.event">事件程序</A></H3>
 <pre>
 web/WEB-INF/efw/event/myEvent.js
 --------------------------------------------------------------------------------
@@ -7,13 +7,13 @@ var form1_event1={};
 form1_event1.<b>outOfLogin</b>   = false;
 form1_event1.<b>include</b>      = [ { eventId : "form1_event2" } ];
 form1_event1.<b>paramsFormat</b> = { 
-                                "#user_id"        : "<b>display-name</b>:ユーザId;<b>max-length</b>:10;",
-                                "#txt_testnumber" : "<b>format</b>:#,##0.00;<b>required</b>:true;<b>display-name</b>:テスト数字;<b>min</b>:-10.00;<b>max</b>:1,000.00",
+                                "#txt_teststring" : "<b>display-name</b>:测试文字;<b>max-length</b>:10;",
+                                "#txt_testnumber" : "<b>format</b>:#,##0.00;<b>required</b>:true;<b>display-name</b>:测试数字;<b>min</b>:-10.00;<b>max</b>:1,000.00",
                                 "#txt_testdate"   : function(){
                                                         var date1=new Date();
                                                         var date2=new Date();
                                                         date2.setDate(date1.getDate()+Number(6));
-                                                        return "<b>format</b>:yyyy年MM月dd日;<b>required</b>:true;<b>display-name</b>:テスト日付;"
+                                                        return "<b>format</b>:yyyy年MM月dd日;<b>required</b>:true;<b>display-name</b>:测试日期;"
                                                                +"<b>min</b>:"+efw.server.format.formatDate(date1,"yyyy年MM月dd日")+";"
                                                                +"<b>max</b>:"+efw.server.format.formatDate(date2,"yyyy年MM月dd日")+";" ;
                                                     },
@@ -29,31 +29,31 @@ form1_event1.<b>fire</b>         = function ( requestParams ) {
                             };
 </pre>
 <DL>
-<DD>eventファイル。<br>
+<DD>event文件。<br>
 </DL></DD>
 <HR>
 
-<H3><A NAME="efw.event.outOfLogin">ログインチェック</A></H3>
+<H3><A NAME="efw.event.outOfLogin">登陆校验</A></H3>
 <pre>
     form1_event1.outOfLogin = true/false;
 </pre>
 <DL>
 <DD>
-ログインチェック不要フラグが、未設定またはfalseの場合、ログインチェック要。trueの場合、ログインチェック不要。<br>
-ログインチェックの対象は、efw.properties の efw.login.key を参照。
+免除登陆校验标识，如果未设置或是false的话，进行登陆校验。如果设置true的话，不进行登陆校验。<br>
+关于登陆校验的确认对象，请参照efw.properties 的 efw.login.key 。
 </DL></DD>
 <HR>
 
-<H3><A NAME="efw.event.inputCheck">単純入力チェック</A></H3>
+<H3><A NAME="efw.event.inputCheck">单纯输入校验</A></H3>
 <pre>
 form1_event1.paramsFormat = { 
-                                "#user_id"        : "<b>display-name</b>:ユーザId;<b>max-length</b>:10;",
-                                "#txt_testnumber" : "<b>format</b>:#,##0.00;<b>required</b>:true;<b>display-name</b>:テスト数字;<b>min</b>:-10.00;<b>max</b>:1,000.00",
+                                "#txt_teststring" : "<b>display-name</b>:测试文字;<b>max-length</b>:10;",
+                                "#txt_testnumber" : "<b>format</b>:#,##0.00;<b>required</b>:true;<b>display-name</b>:测试数字;<b>min</b>:-10.00;<b>max</b>:1,000.00",
                                 "#txt_testdate"   : function(){
                                                         var date1=new Date();
                                                         var date2=new Date();
                                                         date2.setDate(date1.getDate()+Number(6));
-                                                        return "<b>format</b>:yyyy年MM月dd日;<b>required</b>:true;<b>display-name</b>:テスト日付;"
+                                                        return "<b>format</b>:yyyy年MM月dd日;<b>required</b>:true;<b>display-name</b>:测试日期;"
                                                                +"<b>min</b>:"+efw.server.format.formatDate(date1,"yyyy年MM月dd日")+";"
                                                                +"<b>max</b>:"+efw.server.format.formatDate(date2,"yyyy年MM月dd日")+";" ;
                                                     },
@@ -63,24 +63,24 @@ form1_event1.paramsFormat = {
 </pre>
 <DL>
 <DD>
-単純入力チェックを自動的に行うため、paramsFormatにチェックスタイルで定義する。<br>
-詳細はAPIの event.paramsFormat.checkStyle を参照。
+为了自动进行单纯输入校验，在paramsFormat里定义校验样式。<br>
+详细内容参照event.paramsFormat.checkStyle的API。
 </DL></DD>
 <HR>
 
-<H3><A NAME="efw.event.workCheck">業務チェック</A></H3>
+<H3><A NAME="efw.event.workCheck">业务校验</A></H3>
 <pre>
     return {error:{...}};
 </pre>
 <DL>
 <DD>
-業務チェックエラーの場合、イベント処理は、error オブジェクトを戻す。詳細はAPIの event.fire.error を参照。<br>
-業務チェックエラーを一括管理したい場合、メッセージのカスタマイズは、efw.client.messages.js または efw.server.messages.js。
+如果业务校验发现错误，事件处理中返回error对象。详细内容参照event.fire.error的API。<br>
+如果想要管理业务校验错误信息，可以定制化efw.client.messages.js或efw.server.messages.js文件。
 
 </DL></DD>
 <HR>
 
-<H3><A NAME="efw.event.include">サブイベント実行</A></H3>
+<H3><A NAME="efw.event.include">执行子事件</A></H3>
 <pre>
     form1_event1.include = [ { eventId : "form1_event2" } ];
     ...
@@ -89,13 +89,13 @@ form1_event1.paramsFormat = {
 </pre>
 <DL>
 <DD>
-メインイベントにサブイベントを実行したい場合、include 属性に定義する必要。<br>
-サブの paramsFormat をメインに取り込みたい場合、include の mergeParamsFormat を利用できる。 詳細はAPIの event.include を参照。<br>
-メインイベントとサブイベントの実行結果は、配列結合で連結。詳細はAPIの event.fire.eventResult を参照。
+如果想在主事件里执行子事件，需要定义include属性。<br>
+如果想要把子事件的paramsFormat加入主事件里，可以利用include的mergeParamsFormat。详细内容参照event.include的API。<br>
+主事件和子事件的执行结果，可以用数组结合的方式连接。详细内容参照event.fire.eventResult的API。
 </DL></DD>
 <HR>
 
-<H3><A NAME="efw.event.fire">イベントのデータ受取り引渡し</A></H3>
+<H3><A NAME="efw.event.fire">事件的数据传递</A></H3>
 <pre>
     form1_event1.paramsFormat = { ... };
     ...
@@ -107,18 +107,18 @@ form1_event1.paramsFormat = {
 </pre>
 <DL>
 <DD>
-イベントのデータ受取り引渡しは、サーバーサイドのイベントjsファイルに記載する。クライアントjsに記載不要。<br>
-詳細はAPIの efw.server.fire を参照。
+事件的数据传递记述是在服务端js文件，而不是客户端js文件。<br>
+詳細内容参照efw.client.fire的API。
 </DL></DD>
 <HR>
 
-<H3><A NAME="efw.jsp.event">トランザクション管理</A></H3>
+<H3><A NAME="efw.jsp.event">事务处理管理</A></H3>
 <pre>
 </pre>
 <DL>
 <DD>
-event.fireが実行するたび、トランザクションが発行される。<br>
-fireイベントが成功の場合、トランザクションがcommit。失敗の場合、トランザクションがrollback。<br>
-詳細はAPIの efw.server.prepare と efw.server.finish を参照。<br>
-トランザクションのカスタマイズは、efw.server.customize.js。
+每次执行event.fire时，进行事务处理。<br>
+如果事件的fire成功的话，事务处理执行commit。如果失败的话，事务处理执行rollback。<br>
+詳細内容参照efw.server.prepare和efw.server.finish的API。<br>
+事务处理的定制化可以在efw.server.customize.js里进行。
 </DL></DD>
