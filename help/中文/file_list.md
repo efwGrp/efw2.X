@@ -1,3 +1,6 @@
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="../日本語/file_list.md">日本語</a>
+&nbsp;<a href="../中文/file_list.md">中文</a>
+&nbsp;<a href="../English/file_list.md">English</a>
 <H2>efw文件一览摘抄</H2>
 <pre>
 web
