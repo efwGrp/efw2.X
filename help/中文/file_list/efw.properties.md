@@ -1,82 +1,82 @@
 <a href="../file_list.md">返回</a>
-<H3><A NAME="efw.properties">プロパティの設定</A></H3>
+<H3><A NAME="efw.properties">配置文件的设置</A></H3>
 <pre>
 web/WEB-INF/classes/efw.properties
 </pre>
 <DL>
 <DD>
-デフォルトで利用する場合、プロパティファイルは不要。
+如果完全使用默认配置的话，不需要配置文件。
 <table BORDER="1"  CELLPADDING="3" CELLSPACING="0" SUMMARY="">
 <tr BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
-	<th style="width:200px">キー</th>
-	<th style="width:200px">初期値</th>
-	<th style="width:650px">説明</th>
+	<th style="width:200px">键</th>
+	<th style="width:200px">默认值</th>
+	<th style="width:650px">说明</th>
 </tr>
 <tr>
 	<td>efw.isdebug</td>
 	<td>false</td>
-	<td>trueの場合、プログラムの編集はメモリにリロードされる。</td>
+	<td>如果是true的话，运行时修改的程序会被加载入内存。</td>
 </tr>
 <tr>
 	<td>efw.jdbc.resource</td>
 	<td>jdbc/efw</td>
-	<td>デフォルトjdbcリソース名。server.xmlに定義する必要。もし、tomcat以外のアプリケーションサーバの場合、直接jndi名を書いてもよい。サンプル：　　java:xxx/yyy/zzz　　or　　[java:comp/env/]jdbc/efw</td>
+	<td>默认的jdbc资源名。需要在server.xml里定义。如果应用服务器不是tomcat的话，可以直接写jndi名。例：　　java:xxx/yyy/zzz　　or　　[java:comp/env/]jdbc/efw</td>
 </tr>
 <tr>
 	<td>efw.server.folder</td>
 	<td>/WEB-INF/efw/server</td>
-	<td>サーバーソースのフォルダ。webアプリの相対パスで設定する。あるいは絶対パスで設定する。</td>
+	<td>efw服务端程序的路径。可以设置web应用下的相对路径，也可以设置绝对路径。</td>
 </tr>
 <tr>
 	<td>efw.event.folder</td>
 	<td>/WEB-INF/efw/event</td>
-	<td>イベントソースのフォルダ。webアプリの相対パスで設定する。あるいは絶対パスで設定する。</td>
+	<td>web应用事件程序的路径。可以设置web应用下的相对路径，也可以设置绝对路径。</td>
 </tr>
 <tr>
 	<td>efw.event.sql</td>
 	<td>/WEB-INF/efw/sql</td>
-	<td>sql XMLファイルのフォルダ。webアプリの相対パスで設定する。あるいは絶対パスで設定する。</td>
+	<td>web应用外置Sql文件的路径。可以设置web应用下的相对路径，也可以设置绝对路径。</td>
 </tr>
 <tr>
 	<td>efw.login.check</td>
 	<td>false</td>
-	<td>システムのログインチェック要否フラグ。</td>
+	<td>web应用需不需要登陆校验的控制标识。</td>
 </tr>
 <tr>
 	<td>efw.login.key</td>
 	<td>null</td>
-	<td>ログインチェック対象のセッションキー。</td>
+	<td>登陆校验用的session键。</td>
 </tr>
 <tr>
 	<td>efw.logging.path</td>
 	<td>/logs</td>
-	<td>efwログ出力パス。絶対パス。</td>
+	<td>efw日志输出路径。绝对路径。</td>
 </tr>
 <tr>
 	<td>efw.logging.name</td>
 	<td>efwlog%g.txt</td>
-	<td>efwログファイル名。</td>
+	<td>efw日志文件名。</td>
 </tr>
 <tr>
 	<td>efw.logging.limit</td>
 	<td>10485760</td>
-	<td>efwログファイルのサイズ制限。</td>
+	<td>efw日志文件大小限制。</td>
 </tr>
 <tr>
 	<td>efw.logging.num</td>
 	<td>5</td>
-	<td>efwログファイルの数。</td>
+	<td>efw日志文件数目。</td>
 </tr>
 <tr>
 	<td>efw.logging.level</td>
 	<td>WARNING</td>
-	<td>efwログファイルの出力レベル。ALL,FINEST,FINER,FINE,CONFIG,INFO,WARNING,SEVERE,OFF</td>
+	<td>efw日志文件的输出级别。ALL,FINEST,FINER,FINE,CONFIG,INFO,WARNING,SEVERE,OFF</td>
 </tr>
 <tr>
 	<td>efw.cors</td>
 	<td>*</td>
-	<td>クロスドメイン通信設定、他のサーバーのウェブページから本サイトのイベントを利用する可否を管理する。<br>
-	* : 全部許可, null : 全部拒否, http://0.0.0.0:8080,http://9.9.9.9 : 指定サイト許可。</td>
+	<td>跨域通信设置，管理其他网站是否可以利用本网站的事件。<br>
+	* : 全部许可, null : 全部拒绝, http://0.0.0.0:8080,http://9.9.9.9 : 许可指定网站。</td>
 </tr>
 </table>
 </DL></DD>

@@ -15,7 +15,7 @@ web/WEB-INF/classes/efw.properties
 <tr>
 	<td>efw.isdebug</td>
 	<td>false</td>
-	<td>trueの場合、プログラムの編集はメモリにリロードされる。</td>
+	<td>trueの場合、ランタイム時プログラムの編集はメモリにリロードされる。</td>
 </tr>
 <tr>
 	<td>efw.jdbc.resource</td>
@@ -25,27 +25,27 @@ web/WEB-INF/classes/efw.properties
 <tr>
 	<td>efw.server.folder</td>
 	<td>/WEB-INF/efw/server</td>
-	<td>サーバーソースのフォルダ。webアプリの相対パスで設定する。あるいは絶対パスで設定する。</td>
+	<td>efwサーバーソースのフォルダ。webアプリの相対パスで設定する。あるいは絶対パスで設定する。</td>
 </tr>
 <tr>
 	<td>efw.event.folder</td>
 	<td>/WEB-INF/efw/event</td>
-	<td>イベントソースのフォルダ。webアプリの相対パスで設定する。あるいは絶対パスで設定する。</td>
+	<td>webアプリのイベントソースのフォルダ。webアプリの相対パスで設定する。あるいは絶対パスで設定する。</td>
 </tr>
 <tr>
 	<td>efw.event.sql</td>
 	<td>/WEB-INF/efw/sql</td>
-	<td>sql XMLファイルのフォルダ。webアプリの相対パスで設定する。あるいは絶対パスで設定する。</td>
+	<td>webアプリの外出しsqlファイルのフォルダ。webアプリの相対パスで設定する。あるいは絶対パスで設定する。</td>
 </tr>
 <tr>
 	<td>efw.login.check</td>
 	<td>false</td>
-	<td>システムのログインチェック要否フラグ。</td>
+	<td>webアプリのログインチェック要否フラグ。</td>
 </tr>
 <tr>
 	<td>efw.login.key</td>
 	<td>null</td>
-	<td>ログインチェック対象のセッションキー。</td>
+	<td>ログインチェック用のセッションキー。</td>
 </tr>
 <tr>
 	<td>efw.logging.path</td>
