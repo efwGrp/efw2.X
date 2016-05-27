@@ -8,11 +8,11 @@
 
 <pre>efw
 ├─<a href="api_list/efw.client.md">client</a>
-│  ├─<a href="api_list/efw.client.md#fire">fire</a> ( <a href="#efw.eventParams">eventParams</a> )                             //クライアントからサーバイベントを実行する関数
-│  │         ├─server                                 //イベントパラメータの サーバURL
-│  │         ├─eventId                                //                   イベントId
-│  │         ├─manualParams                           //                   手動パラメータ
-│  │         └─success ( <a href="#efw.event.fire.eventResult">eventResult</a> )                //                   成功コールバック関数
+│  ├─<a href="api_list/efw.client.md#fire">fire</a> ( <a href="api_list/efw.client.eventParams.md">eventParams</a> )                             //クライアントからサーバイベントを実行する関数
+│  │         ├─<a href="api_list/efw.client.eventParams.md#server">server</a>                                 //イベントパラメータの サーバURL
+│  │         ├─<a href="api_list/efw.client.eventParams.md#eventId">eventId</a>                                //                   イベントId
+│  │         ├─<a href="api_list/efw.client.eventParams.md#manualParams">manualParams</a>                           //                   手動パラメータ
+│  │         └─<a href="api_list/efw.client.eventParams.md#success">success</a> ( <a href="#efw.event.fire.eventResult">eventResult</a> )                //                   成功コールバック関数
 │  │                      ├─runat                     //                   イベント実行結果の 表示場所
 │  │                      ├─withdata                  //                                     表示データ
 │  │                      ├─remove                    //                                     削除内容
