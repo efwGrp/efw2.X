@@ -17,9 +17,9 @@
 │  │                      ├─withdata                  //                                     表示データ
 │  │                      ├─remove                    //                                     削除内容
 │  │                      └─append                    //                                     htmlマスク
-│  ├─<a href="api_list/efw.client.md#fire">pickup</a> ( paramsFormat , manualParams )           //パラメータ値を取得する関数（fire関数機能の一部分）
-│  ├─<a href="api_list/efw.client.md#fire">show</a> ( eventResult )                             //値を画面に表示する関数（fire関数機能の一部分）
-│  ├─<a href="api_list/efw.client.md#fire">alert</a> ( message , callback )                     //クライアントでアラートメッセージを表示する関数
+│  ├─<a href="api_list/efw.client.md#pickup">pickup</a> ( paramsFormat , manualParams )           //パラメータ値を取得する関数（fire関数機能の一部分）
+│  ├─<a href="api_list/efw.client.md#show">show</a> ( eventResult )                             //値を画面に表示する関数（fire関数機能の一部分）
+│  ├─<a href="api_list/efw.client.md#alert">alert</a> ( message , callback )                     //クライアントでアラートメッセージを表示する関数
 │  └─format
 │      └─...                                          //後続のefw.server.formatとほぼ同じ機能、その説明をご参照。
 └─server
