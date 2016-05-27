@@ -1,10 +1,11 @@
-<BR><TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-	<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
-		<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2"><B>efw.server.propertiesの詳細</B></FONT></TH>
-	</TR>
-</TABLE>
+<a href="../api_list.md">戻る</a>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="../../日本語/api_list/efw.server.properties.md">日本語</a>
+&nbsp;<a href="../../中文/api_list/efw.server.properties.md">中文</a>
+&nbsp;<a href="../../English/api_list/efw.server.properties.md">English</a>
+<H3>efw.server.propertiesの詳細</H3>
+<HR>
 
-<H3><A NAME="efw.server.properties.get">get</A></H3>
+<H3><A NAME="get">get</A></H3>
 <pre>
 get ( key , defaultValue )</PRE>
 <DL>
@@ -22,7 +23,7 @@ get ( key , defaultValue )</PRE>
 </DL></DD>
 <HR>
 
-<H3><A NAME="efw.server.properties.getBoolean">getBoolean</A></H3>
+<H3><A NAME="getBoolean">getBoolean</A></H3>
 <pre>
 getBoolean ( key , defaultValue )</PRE>
 <DL>
@@ -40,7 +41,7 @@ getBoolean ( key , defaultValue )</PRE>
 </DL></DD>
 <HR>
 
-<H3><A NAME="efw.server.properties.getInt">getInt</A></H3>
+<H3><A NAME="getInt">getInt</A></H3>
 <pre>
 getInt ( key , defaultValue )</PRE>
 <DL>
