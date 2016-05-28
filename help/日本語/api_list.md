@@ -22,24 +22,29 @@
     │            │  └─<a href="api_list/app.event.md#mergeParamsFormat">mergeParamsFormat</a>               //    サブとメインのパラメータフォーマットをマージするフラグ
     │            ├─<a href="api_list/app.event.md#paramsFormat">paramsFormat</a>                       //パラメーターフォーマット
     │            │  └─<a href="api_list/app.event.md#checkStyle">checkStyle</a>                      //チェックスタイル
-    │            │     ├─required                     //    必須入力
-    │            │     ├─format                       //    フォーマット
-    │            │     ├─display-name                 //    表示名
-    │            │     ├─max-length                   //    最大サイズ
-    │            │     ├─min                          //    最小値
-    │            │     └─max                          //    最大値
+    │            │     ├─<a href="api_list/app.event.md#required">required</a>                     //    必須入力
+    │            │     ├─<a href="api_list/app.event.md#format">format</a>                       //    フォーマット
+    │            │     ├─<a href="api_list/app.event.md#display-name">display-name</a>                 //    表示名
+    │            │     ├─<a href="api_list/app.event.md#max-length">max-length</a>                   //    最大サイズ
+    │            │     ├─<a href="api_list/app.event.md#min">min</a>                          //    最小値
+    │            │     └─<a href="api_list/app.event.md#max">max</a>                          //    最大値
     │            └─<a href="api_list/app.event.md#fire">fire</a> ( <a href="api_list/app.event.md#requestParams">requestParams</a> )             //イベント実行関数
     │               ├─<a href="api_list/app.event.md#eventResult">eventResult</a>                     //イベント実行結果
-    │               │  ├─runat                        //    表示場所
-    │               │  ├─withdata                     //    表示データ
-    │               │  ├─remove                       //    削除内容
-    │               │  └─append                       //    htmlマスク
+    │               │  ├─<a href="api_list/app.event.md#runat">runat</a>                        //    表示場所
+    │               │  ├─<a href="api_list/app.event.md#withdata">withdata</a>                     //    表示データ
+    │               │  ├─<a href="api_list/app.event.md#remove">remove</a>                       //    削除内容
+    │               │  └─<a href="api_list/app.event.md#append">append</a>                       //    htmlマスク
+    │               ├─<a href="api_list/app.event.md#download">download</a>                     //ダウンロード
+    │               │  ├─<a href="api_list/app.event.md#file">file</a>                         //    表示場所
+    │               │  ├─<a href="api_list/app.event.md#zip">zip</a>                          //    表示データ
+    │               │  ├─<a href="api_list/app.event.md#saveas">saveas</a>                       //    削除内容
+    │               │  └─<a href="api_list/app.event.md#deleteafterdownload">deleteafterdownload</a>          //    htmlマスク
     │               └─<a href="api_list/app.event.md#error">error</a>                           //エラーオブジェクト
-    │                   ├─errorType                   //    エラータイプ
-    │                   ├─errorMessage                //    エラーメッセージ
-    │                   ├─focusTo                     //    カーソル位置
-    │                   ├─elements                    //    複数のエラー項目
-    │                   └─canNotContinue              //    継続処理不可フラグ
+    │                   ├─<a href="api_list/app.event.md#errorType">errorType</a>                   //    エラータイプ
+    │                   ├─<a href="api_list/app.event.md#errorMessage">errorMessage</a>                //    エラーメッセージ
+    │                   ├─<a href="api_list/app.event.md#focusTo">focusTo</a>                     //    カーソル位置
+    │                   ├─<a href="api_list/app.event.md#elements">elements</a>                    //    複数のエラー項目
+    │                   └─<a href="api_list/app.event.md#canNotContinue">canNotContinue</a>              //    継続処理不可フラグ
     ├─finish ( <a href="api_list/app.event.md">event</a> , <a href="api_list/app.event.md#requestParams">requestParams</a> , <a href="api_list/app.event.md#eventResult">eventResult</a> )  //サーバイベントの後処理関数、サーバ処理カスタマイズ用
     ├─<a href="api_list/efw.server.format.md">format</a>
     │  ├─<a href="api_list/efw.server.format.md#formatNumber">formatNumber</a> ( value , <a href="api_list/efw.server.format.md#formatter">formatter</a> , <a href="api_list/efw.server.format.md#rounder">rounder</a> ) //数字値を指定フォーマットにより文字列に変換する関数
