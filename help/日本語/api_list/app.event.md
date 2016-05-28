@@ -24,7 +24,7 @@ myEvent.<A href="#paramsFormat">paramsFormat</A> = {                            
                            { selector4 : ... , },                               //サブフォーマット。パラメーターフォーマットと同じ種類の要素の組合せ。
                          [ { selector5 : ... , } ],                             //サブフォーマットの配列。１種類のサブフォーマットのみを格納する。
                        };
-myEvent.fire = function ( <A href="#requestParams">requestParams</A> ) {                                     //イベント実行関数、必須。
+myEvent.<A href="#fire">fire</A> = function ( <A href="#requestParams">requestParams</A> ) {                                     //イベント実行関数、必須。
 	                                     return <A href="#eventResult">eventResult</A>;                                                     //イベント実行結果。
 }
 </PRE>
@@ -34,7 +34,7 @@ myEvent.fire = function ( <A href="#requestParams">requestParams</A> ) {        
 
 <H3><A NAME="outOfLogin">outOfLogin</A></H3>
 <pre>
-outOfLogin = true;
+myEvent.outOfLogin = true;
 </PRE>
 <DL><DD>ログインチェック不要フラグ。<br>
 未設定の場合、ログインチェック要と見なし、未ログイン時 <A href="#efw.server.messages.SessionTimeoutException">SessionTimeoutException</A> エラーが発生する。<br>
@@ -44,7 +44,7 @@ outOfLogin = true;
 
 <H3><A NAME="include">include</A></H3>
 <pre>
-include = [
+myEvent.include = [
             {                                                                   //サブイベント。
               <A href="efw.client.md#eventId">eventId</A>           : "anotherEvent",                               //イベントId、サブイベントにとって必須、eventParams.eventIdを参照。
               <A href="#mergeParamsFormat">mergeParamsFormat</A> : true,                                         //サブとメインのパラメーターフォーマットをマージするフラグ、オプション。
@@ -60,7 +60,7 @@ include = [
 
 <H3><A NAME="mergeParamsFormat">mergeParamsFormat</A></H3>
 <pre>
-mergeParamsFormat = true;
+mergeParamsFormat : true,
 </PRE>
 <DL><DD>サブとメインのパラメーターフォーマットをマージするフラグ。<br>
 未設定の場合、サブイベントに必要なパラメータは、メインイベントにも定義する必要、または、サブを呼び出す時プログラムで渡す必要。<br>
@@ -71,7 +71,7 @@ mergeParamsFormat = true;
 
 <H3><A NAME="paramsFormat">paramsFormat</A></H3>
 <pre>
-paramsFormat = {
+myEvent.paramsFormat = {
                      selector1 : null,                                          //入力チェックなしの選択キー。選択キーの規則はJQueryを参照。
                      selector2 : "<A href="#checkStyle">checkStyle</A>",                                  //チェックスタイルの選択キー。
                      selector3 : function(){ return "<A href="#checkStyle">checkStyle</A>"; },            //チェックスタイルの選択キー。イベントには関数で作成する可。
@@ -137,7 +137,7 @@ paramsFormat = {
 
 <H3><A NAME="checkStyle">checkStyle</A></H3>
 <pre>
-selector = "required:true; format:###,##0;display-name:登録日;max-length:10;min:0,max:9,999;" ; //チェックスタイル。
+selector : "required:true; format:###,##0;display-name:登録日;max-length:10;min:0,max:9,999;" , //チェックスタイル。
 </PRE>
 <DL><DD>チェックスタイル。<br>
 クライアントで入力された値に対して、いくつかの単純チェックを自動的に行うため、チェックスタイルを設ける。<br>
