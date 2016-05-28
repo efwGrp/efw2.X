@@ -1,11 +1,7 @@
-<H2>efw Javascript API</H2>
-	
-<TABLE BORDER="1" WIDTH="100%" CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-	<TR BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
-		<TH ALIGN="left" COLSPAN="1"><FONT SIZE="+2"><B>APIの一覧</B></FONT></TH>
-	</TR>
-</TABLE>
-
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="../日本語/api_list.md">日本語</a>
+&nbsp;<a href="../中文/api_list.md">中文</a>
+&nbsp;<a href="../English/api_list.md">English</a>
+<H1>efw Javascript API</H1>
 <pre>efw
 ├─<a href="api_list/efw.client.md">client</a>
 │  ├─<a href="api_list/efw.client.md#fire">fire</a> ( <a href="api_list/efw.client.md#eventParams">eventParams</a> )                             //クライアントからサーバイベントを実行する関数
