@@ -301,7 +301,7 @@ eventResult=eventResult.concat(subEvent.fire(requestParams));                   
 	<td>runatの範囲に属性値をセレクタとして、複数のタグを取得する。取得するタグを削除する。</td>
 </tr>
 <tr>
-	<td>append : appendMask</td>
+	<td>append : ""</td>
 	<td>htmlマスク、オプション。</td>
 	<td>runatの範囲に配列のwithdata件数毎にhtmlマスクの置換項目を置換して画面パーツとして、runatの後ろに追加する。
 	HTMLエンコード処理をしたい場合、{maskKey} で書く。したくない場合、{{maskKey}}で書く。</td>
