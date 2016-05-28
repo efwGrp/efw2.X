@@ -3,8 +3,6 @@
 &nbsp;<a href="../../中文/api_list/efw.client.md">中文</a>
 &nbsp;<a href="../../English/api_list/efw.client.md">English</a>
 <H2>efw.clientの詳細</H2>
-<HR>
-
 
 <H3><A NAME="fire">fire</A></H3>
 <pre>
@@ -86,42 +84,21 @@ eventParams = {
 <br>・イベント実行成功後、さらに継続処理が必要な場合、成功コールバック関数を利用する。
 
 </DL></DD>
-<HR>
+<table>
+<tr>
+	<th>属性</th><th>属性名</th><th>必須</th><th>説明</th>
+</tr>
+<tr>
+	<td><A NAME="server">server</A></td><td>サーバURL</td><td>オプション</td><td>cors方式で他のサーバアプリと接続する場合利用できる。</td>
+</tr>
+<tr>
+	<td>eventId</td><td>イベントId</td><td>必須</td><td>WEB-INF/efw/event/myEvent.js のjsファイルとリンクする。英語の大文字小文字を区別。イベントの実装されるサーバーサイドJavascriptファイル名と同じ。</td>
+</tr>
+<tr>
+	<td>manualParams</td><td>手動パラメータ</td><td>オプション</td><td>イベントに手動で渡したいパラメーターを設定する。</td>
+</tr>
+<tr>
+	<td>success</td><td>成功コールバック関数</td><td>オプション</td><td>イベント処理が成功の場合、実行される。この段階で、eventResult はすでに画面に反映した。<br>つまり、success関数に eventResult に対して修正しても意味がない。</td>
+</tr>
+</table>
 
-<H3><A NAME="server">server</A></H3>
-<pre>
-server = "http://127.0.0.1:8080/efwTest",                                       //サーバURL、オプション。
-</PRE>
-<DL><DD>サーバURL。cors方式で他のサーバアプリと接続する場合利用できる。
-</DL></DD>
-<HR>
-
-
-<H3><A NAME="eventId">eventId</A></H3>
-<pre>
-eventId = "myEvent";                                                            // WEB-INF/efw/event/myEvent.js のjsファイルとリンクする。英語の大文字小文字を区別。
-</PRE>
-<DL><DD>イベントId。イベントの実装されるサーバーサイドJavascriptファイル名と同じ。
-</DL></DD>
-<HR>
-
-
-<H3><A NAME="manualParams">manualParams</A></H3>
-<pre>
-manualParams = {
-                   key1 : value1,
-                   key2 : value2,
-               };
-</PRE>
-<DL><DD>手動パラメーター。イベントに手動で渡したいパラメーターを設定する。
-</DL></DD>
-<HR>
-
-
-<H3><A NAME="success">success</A></H3>
-<pre>
-success = function ( <A href="#efw.event.fire.eventResult">eventResult</A> ) { ... };
-</PRE>
-<DL><DD>成功コールバック関数。<br>
-イベント処理が成功の場合、実行される。この段階で、eventResult はすでに画面に反映した。<br>つまり、success関数に eventResult に対して修正しても意味がない。
-</DL></DD>

@@ -3,7 +3,7 @@
 &nbsp;<a href="../English/api_list.md">English</a>
 <H1>efw Javascript API</H1>
 <pre>efw
-├─<a href="api_list/efw.client.md">client</a>
+├─client
 │  ├─<a href="api_list/efw.client.md#fire">fire</a> ( <a href="api_list/efw.client.md#eventParams">eventParams</a> )                             //クライアントからサーバイベントを実行する関数
 │  │         ├─<a href="api_list/efw.client.md#server">server</a>                                 //    サーバURL
 │  │         ├─<a href="api_list/efw.client.md#eventId">eventId</a>                                //    イベントId
@@ -46,19 +46,19 @@
     │                   ├─<a href="api_list/app.event.md#elements">elements</a>                    //    複数のエラー項目
     │                   └─<a href="api_list/app.event.md#canNotContinue">canNotContinue</a>              //    継続処理不可フラグ
     ├─finish ( <a href="api_list/app.event.md">event</a> , <a href="api_list/app.event.md#requestParams">requestParams</a> , <a href="api_list/app.event.md#eventResult">eventResult</a> )  //サーバイベントの後処理関数、サーバ処理カスタマイズ用
-    ├─<a href="api_list/efw.server.format.md">format</a>
+    ├─format
     │  ├─<a href="api_list/efw.server.format.md#formatNumber">formatNumber</a> ( value , <a href="api_list/efw.server.format.md#formatter">formatter</a> , <a href="api_list/efw.server.format.md#rounder">rounder</a> ) //数字値を指定フォーマットにより文字列に変換する関数
     │  ├─<a href="api_list/efw.server.format.md#parseNumber">parseNumber</a> ( value , <a href="api_list/efw.server.format.md#formatter">formatter</a> )            //文字列値を指定フォーマットにより数字に変換する関数
     │  ├─<a href="api_list/efw.server.format.md#formatDate">formatDate</a> ( value , <a href="api_list/efw.server.format.md#formatter">formatter</a> )             //日付値を指定フォーマットにより文字列に変換する関数
     │  └─<a href="api_list/efw.server.format.md#parseDate">parseDate</a> ( value , <a href="api_list/efw.server.format.md#formatter">formatter</a> )              //文字列値を指定フォーマットにより日付に変換する関数
-    ├─<a href="api_list/efw.server.properties.md">properties</a>
+    ├─properties
     │  ├─<a href="api_list/efw.server.properties.md#get">get</a> ( key , defaultValue )                   //文字列のプロパティを取得する関数
     │  ├─<a href="api_list/efw.server.properties.md#getBoolean">getBoolean</a> ( key , defaultValue )            //ブルーのプロパティを取得する関数
     │  └─<a href="api_list/efw.server.properties.md#getInt">getInt</a> ( key , defaultValue )                //数字のプロパティを取得する関数
-    ├─<a href="api_list/efw.server.session.md">session</a>
+    ├─session
     │  ├─<a href="api_list/efw.server.session.md#get">get</a> ( key )                                  //セッションから情報を取得する関数
     │  └─<a href="api_list/efw.server.session.md#set">set</a> ( key , value )                          //セッションに情報を格納する関数
-    └─<a href="api_list/efw.server.db.md">db</a>
+    └─db
        ├─<a href="api_list/efw.server.db.md#open">open</a> ( <a href="api_list/efw.server.db.md#jdbcResourceName">jdbcResourceName</a> )                    //データベース接続を開く関数
        ├─<a href="api_list/efw.server.db.md#getSingle">getSingle</a> ( <a href="api_list/efw.server.db.md#executionParams">executionParams</a> )                //SELECT文を実行して１つ目のデータを戻す関数
        │              ├─<a href="api_list/efw.server.db.md#jdbcResourceName">jdbcResourceName</a>              //    jdbcのリソース名

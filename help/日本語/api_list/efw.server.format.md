@@ -3,7 +3,6 @@
 &nbsp;<a href="../../中文/api_list/efw.server.format.md">中文</a>
 &nbsp;<a href="../../English/api_list/efw.server.format.md">English</a>
 <H2>efw.server.formatの詳細</H2>
-<HR>
 
 <H3><A NAME="formatNumber">formatNumber</A></H3>
 <pre>
