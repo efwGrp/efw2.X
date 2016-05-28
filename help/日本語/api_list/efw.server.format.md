@@ -161,9 +161,9 @@ rounder = "丸みタイプ";
 <br>
 <table>
 <tr>
-	<th style="width:100px" rowspan=2>丸みタイプ</th>
-	<th style="width:450px" rowspan=2>説明</th>
-	<th style="width:500px" colspan=10>例</th>
+	<th rowspan=2>丸みタイプ</th>
+	<th rowspan=2>説明</th>
+	<th colspan=10>例</th>
 </tr>
 <tr BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
 	<td>5.5</td><td>2.5</td><td>1.6</td><td>1.1</td><td>1.0</td><td>-1.0</td><td>-1.1</td><td>-1.6</td><td>-2.5</td><td>-5.5</td>
