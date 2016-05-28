@@ -5,10 +5,10 @@
 <pre>efw
 ├─<a href="api_list/efw.client.md">client</a>
 │  ├─<a href="api_list/efw.client.md#fire">fire</a> ( <a href="api_list/efw.client.md#eventParams">eventParams</a> )                             //クライアントからサーバイベントを実行する関数
-│  │         ├─<a href="api_list/efw.client.md#server">server</a>                                 //イベントパラメータの サーバURL
-│  │         ├─<a href="api_list/efw.client.md#eventId">eventId</a>                                //                   イベントId
-│  │         ├─<a href="api_list/efw.client.md#manualParams">manualParams</a>                           //                   手動パラメータ
-│  │         └─<a href="api_list/efw.client.md#success">success</a> ( <a href="api_list/app.event.md#eventResult">eventResult</a> )                //                   成功コールバック関数
+│  │         ├─<a href="api_list/efw.client.md#server">server</a>                                 //    サーバURL
+│  │         ├─<a href="api_list/efw.client.md#eventId">eventId</a>                                //    イベントId
+│  │         ├─<a href="api_list/efw.client.md#manualParams">manualParams</a>                           //    手動パラメータ
+│  │         └─<a href="api_list/efw.client.md#success">success</a> ( <a href="api_list/app.event.md#eventResult">eventResult</a> )                //    成功コールバック関数
 │  ├─<a href="api_list/efw.client.md#pickup">pickup</a> ( <a href="api_list/app.event.md#paramsFormat">paramsFormat</a> , <a href="api_list/efw.client.md#manualParams">manualParams</a> )           //パラメータ値を取得する関数（fire関数機能の一部分）
 │  ├─<a href="api_list/efw.client.md#show">show</a> ( <a href="api_list/app.event.md#eventResult">eventResult</a> )                             //値を画面に表示する関数（fire関数機能の一部分）
 │  ├─<a href="api_list/efw.client.md#alert">alert</a> ( message , callback )                     //クライアントでアラートメッセージを表示する関数
