@@ -36,7 +36,7 @@ myEvent.<A href="#fire">fire</A> = function ( <A href="#requestParams">requestPa
 myEvent.outOfLogin = true;
 </PRE>
 <DL><DD>ログインチェック不要フラグ。<br>
-未設定の場合、ログインチェック要と見なし、未ログイン時 <A href="#efw.server.messages.SessionTimeoutException">SessionTimeoutException</A> エラーが発生する。<br>
+未設定の場合、ログインチェック要と見なし、未ログイン時 SessionTimeoutException エラーが発生する。<br>
 該当機能は、カスタマイズ用 <A href="#efw.server.prepare">prepare</A> 関数に実装される。
 </DL></DD>
 <HR>
@@ -152,7 +152,7 @@ selector : "required:true; format:###,##0;display-name:登録日;max-length:10;m
 	<td>required : true</td>
 	<td>必須入力。</td>
 	<td>取得された値が空白ではない場合、正しい。</td>
-	<td>空白の場合、<A href="#efw.server.messages.IsRequiredMessage">IsRequiredMessage</A> エラー。</td>
+	<td>空白の場合、IsRequiredMessage エラー。</td>
 </tr>
 <tr>
 	<td>format : <br>
@@ -161,8 +161,8 @@ selector : "required:true; format:###,##0;display-name:登録日;max-length:10;m
 	<td>フォーマット。</td>
 	<td>取得された値がフォーマットに合う場合、正しい。</td>
 	<td>合わないの場合、<br>
-	<A href="#efw.server.messages.NumberIsReuqiredMessage">NumberIsReuqiredMessage</A> エラー。
-	<A href="#efw.server.messages.DateIsReuqiredMessage">DateIsReuqiredMessage</A> エラー。
+	NumberIsReuqiredMessage エラー。
+	DateIsReuqiredMessage エラー。
 	</td>
 </tr>
 <tr>
@@ -175,7 +175,7 @@ selector : "required:true; format:###,##0;display-name:登録日;max-length:10;m
 	<td>max-length : 文字数</td>
 	<td>最大サイズ。</td>
 	<td>入力値のサイズは最大サイズ以内の場合、正しい。</td>
-	<td>オーバーの場合、<A href="#efw.server.messages.MaxLengthOverMessage">MaxLengthOverMessage</A> エラー。</td>
+	<td>オーバーの場合、MaxLengthOverMessage エラー。</td>
 </tr>
 <tr>
 	<td>min : <br>
@@ -184,8 +184,8 @@ selector : "required:true; format:###,##0;display-name:登録日;max-length:10;m
 	<td>最小値。</td>
 	<td>入力値は最小値より大きい場合、正しい。</td>
 	<td>小さい場合、<br>
-	<A href="#efw.server.messages.MinOrMaxOverMessage">MinOrMaxOverMessage</A> エラー。<br>
-	<A href="#efw.server.messages.MinOverMessage">MinOverMessage</A> エラー。<br>
+	MinOrMaxOverMessage エラー。<br>
+	MinOverMessage エラー。<br>
 	</td>
 </tr>
 <tr>
@@ -195,8 +195,8 @@ selector : "required:true; format:###,##0;display-name:登録日;max-length:10;m
 	<td>最大値。</td>
 	<td>入力値は最大値より小さい場合、正しい。</td>
 	<td>大きい場合、<br>
-	<A href="#efw.server.messages.MinOrMaxOverMessage">MinOrMaxOverMessage</A> エラー。<br>
-	<A href="#efw.server.messages.MaxOverMessage">MaxOverMessage</A> エラー。<br>
+	MinOrMaxOverMessage エラー。<br>
+	MaxOverMessage エラー。<br>
 	</td>
 </tr>
 
@@ -207,7 +207,7 @@ selector : "required:true; format:###,##0;display-name:登録日;max-length:10;m
 
 <H3><A NAME="fire">fire</A></H3>
 <pre>
-fire = function( <a href="#requestParams">requestParams</a> ){
+myEvent.fire = function( <a href="#requestParams">requestParams</a> ){
     return <a href="#eventResult">eventResult</a>;
 };
 </PRE>
