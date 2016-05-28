@@ -13,10 +13,6 @@
 │  │         ├─<a href="api_list/efw.client.md#eventId">eventId</a>                                //                   イベントId
 │  │         ├─<a href="api_list/efw.client.md#manualParams">manualParams</a>                           //                   手動パラメータ
 │  │         └─<a href="api_list/efw.client.md#success">success</a> ( <a href="#efw.event.fire.eventResult">eventResult</a> )                //                   成功コールバック関数
-│  │                      ├─runat                     //                   イベント実行結果の 表示場所
-│  │                      ├─withdata                  //                                     表示データ
-│  │                      ├─remove                    //                                     削除内容
-│  │                      └─append                    //                                     htmlマスク
 │  ├─<a href="api_list/efw.client.md#pickup">pickup</a> ( paramsFormat , manualParams )           //パラメータ値を取得する関数（fire関数機能の一部分）
 │  ├─<a href="api_list/efw.client.md#show">show</a> ( eventResult )                             //値を画面に表示する関数（fire関数機能の一部分）
 │  ├─<a href="api_list/efw.client.md#alert">alert</a> ( message , callback )                     //クライアントでアラートメッセージを表示する関数
@@ -32,6 +28,10 @@
     │            │  └─checkStyle                      //★★★
     │            └─<a href="#efw.event.fire">fire</a> ( <a href="#efw.event.fire.requestParams">requestParams</a> )                              //★★★
     │               ├─<a href="#efw.event.fire.eventResult">eventResult</a>                     //★★★
+    │               │     ├─runat                     //                   イベント実行結果の 表示場所
+    │               │     ├─withdata                  //                                     表示データ
+    │               │     ├─remove                    //                                     削除内容
+    │               │     └─append                    //                                     htmlマスク
     │               └─<a href="#efw.event.fire.error">error</a>                           //★★★
     ├─finish ( event , requestParams , eventResult )  //サーバイベントの後処理関数、サーバ処理カスタマイズ用
     ├─<a href="api_list/efw.server.format.md">format</a>
