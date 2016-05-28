@@ -2,7 +2,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="../../日本語/api_list/efw.server.session.md">日本語</a>
 &nbsp;<a href="../../中文/api_list/efw.server.session.md">中文</a>
 &nbsp;<a href="../../English/api_list/efw.server.session.md">English</a>
-<H3>efw.server.sessionの詳細</H3>
+<H2>efw.server.sessionの詳細</H2>
 <HR>
 
 <H3><A NAME="get">get</A></H3>
