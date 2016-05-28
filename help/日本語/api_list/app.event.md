@@ -12,7 +12,7 @@ var myEvent          = { };                                                     
 myEvent.<A href="#outOfLogin">outOfLogin</A>   = true;                                                    //ログインチェック不要フラグ、オプション。
 myEvent.<A href="#include">include</A>      = [                                                        //インクルード、オプション、複数のサブイベントを含める。
                            {                                                    //サブイベント。
-                             <A href="#efw.eventParams.eventId">eventId</A>           : "anotherEvent",                //イベントId、サブイベントにとって必須、eventParams.eventIdを参照。
+                             <A href="efw.client.md#eventId">eventId</A>           : "anotherEvent",                //イベントId、サブイベントにとって必須、eventParams.eventIdを参照。
                              <A href="#mergeParamsFormat">mergeParamsFormat</A> : true,                          //サブとメインのパラメーターフォーマットをマージするフラグ、オプション。
                             }, 
                        ];
@@ -156,7 +156,7 @@ selector : "required:true; format:###,##0;display-name:登録日;max-length:10;m
 </tr>
 <tr>
 	<td>format : <br>
-	<DD>定義方法は <a href="#efw.format.formatter">formatter</a> を参照</DD>
+	<DD>定義方法は <a href="efw.server.format.md#formatter">formatter</a> を参照</DD>
 	</td>
 	<td>フォーマット。</td>
 	<td>取得された値がフォーマットに合う場合、正しい。</td>
