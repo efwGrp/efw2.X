@@ -146,10 +146,10 @@ SQLを実行するため、XMLファイルに定義するSQLのパラメータ�
 	<th>属性</th><th>属性名</th><th>必須</th><th>説明</th>
 </tr>
 <tr>
-	<td><A NAME="jdbcResourceName">jdbcResourceName</A></td>jdbcのリソース名<td></td><td>オプション</td><td>efwのディフォルトリソースは、jdbc/efw 。それ以外のリソースを利用したい場合、server.xmlに定義して、イベントjsファイルに、それを open して、トランザクションを管理する。</td>
+	<td><A NAME="jdbcResourceName">jdbcResourceName</A></td><td>jdbcのリソース名</td><td>オプション</td><td>efwのディフォルトリソースは、jdbc/efw 。それ以外のリソースを利用したい場合、server.xmlに定義して、イベントjsファイルに、それを open して、トランザクションを管理する。</td>
 </tr>
 <tr>
-	<td><A NAME="groupId">groupId</A></td>sqlXMLファイル名<td>SQLのグループId</td><td>必須</td><td>sqlXMLファイル名と同じ。英語の大文字小文字を区別。</td>
+	<td><A NAME="groupId">groupId</A></td><td>SQLのグループId</td><td>必須</td><td>sqlXMLファイル名と同じ。英語の大文字小文字を区別。</td>
 </tr>
 <tr>
 	<td><A NAME="sqlId">sqlId</A></td><td>SQLのId</td><td>必須</td><td>sqlXMLファイルのsqlタグのId。</td>
