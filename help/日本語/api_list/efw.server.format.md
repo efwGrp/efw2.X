@@ -84,10 +84,10 @@ formatter = "フォーマット定義";
 </PRE>
 <DL><DD>フォーマット定義。<br>
 数字の場合利用できるシンボルは表にリストする。java.text.DecimalFormatを参考。<br>
-<table BORDER="1"  CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<tr BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
-	<th style="width:100px">シンボル</th>
-	<th style="width:950px">説明</th>
+<table>
+<tr>
+	<th>シンボル</th>
+	<th>説明</th>
 </tr>
 <tr>
 	<td>0</td>
