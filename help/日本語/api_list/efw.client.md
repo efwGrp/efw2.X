@@ -19,18 +19,18 @@ fire ( <A href="#eventParams">eventParams</A> )</PRE>
 
 <H3><A NAME="pickup">pickup</A></H3>
 <pre>
-pickup ( <A href="api_list/app.event.md#paramsFormat">paramsFormat</A> , <A href="#manualParams">manualParams</A> )</PRE>
+pickup ( <A href="app.event.md#paramsFormat">paramsFormat</A> , <A href="#manualParams">manualParams</A> )</PRE>
 <DL>
 <DD>パラメータ値を取得する関数。（fire関数機能の一部分）
 
 <P>
 <DD><DL>
 <DT><B>戻り値:</B>
-<DD><CODE><A href="api_list/app.event.md#requestParams">requestParams</A></CODE> - リクエストパラメーターまたはその基準に従うデータ。
+<DD><CODE><A href="app.event.md#requestParams">requestParams</A></CODE> - リクエストパラメーターまたはその基準に従うデータ。
 </DL></DD>
 <DD><DL>
 <DT><B>パラメータ:</B>
-<DD><CODE><A href="api_list/app.event.md#paramsFormat">paramsFormat</A></CODE> - パラメーターフォーマット、必須。
+<DD><CODE><A href="app.event.md#paramsFormat">paramsFormat</A></CODE> - パラメーターフォーマット、必須。
 <DD><CODE><A href="#manualParams">manualParams</A></CODE> - 手動パラメーター 、オプション。
 </DL></DD>
 </DL></DD>
@@ -38,13 +38,13 @@ pickup ( <A href="api_list/app.event.md#paramsFormat">paramsFormat</A> , <A href
 
 <H3><A NAME="show">show</A></H3>
 <pre>
-show ( <A href="api_list/app.event.md#eventResult">eventResult</A> )</PRE>
+show ( <A href="app.event.md#eventResult">eventResult</A> )</PRE>
 <DL>
 <DD>値を画面に表示する関数。（fire関数機能の一部分）
 <P>
 <DD><DL>
 <DT><B>パラメータ:</B>
-<DD><CODE><A href="api_list/app.event.md#eventResult">eventResult</A></CODE> - 2回目Ajaxの実行結果またはその基準に従うデータ、必須。
+<DD><CODE><A href="app.event.md#eventResult">eventResult</A></CODE> - 2回目Ajaxの実行結果またはその基準に従うデータ、必須。
 </DL></DD>
 </DL></DD>
 <HR>
@@ -73,7 +73,7 @@ eventParams = {
                                      key1 : value1,
                                      key2 : value2,    
                                  },
-                  <A href="#success">success</A>      : function ( <A href="api_list/app.event.md#eventResult">eventResult</A> ) {                    //成功コールバック関数、オプション。
+                  <A href="#success">success</A>      : function ( <A href="app.event.md#eventResult">eventResult</A> ) {                    //成功コールバック関数、オプション。
                                      ...
                                  },
               };
