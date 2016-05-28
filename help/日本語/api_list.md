@@ -20,7 +20,7 @@
     │            ├─<a href="api_list/app.event.md#include">include</a>                            //          サブイベントを取り込むためのインクルード
     │            │  ├─<a href="api_list/efw.client.md#eventId">eventId</a>                         //          サブイベントId
     │            │  └─<a href="api_list/app.event.md#mergeParamsFormat">mergeParamsFormat</a>               //          サブとメインのパラメータフォーマットをマージするフラグ
-    │            ├─<a href="api_list/app.event.md#paramsFormat">paramsFormat</a>                       //★★★
+    │            ├─<a href="api_list/app.event.md#paramsFormat">paramsFormat</a>                       //イベントの パラメーターフォーマット
     │            │  └─<a href="api_list/app.event.md#checkStyle">checkStyle</a>                      //チェックスタイル
     │            │     ├─required                     //    必須入力
     │            │     ├─format                       //    フォーマット
@@ -28,7 +28,7 @@
     │            │     ├─max-length                   //    最大サイズ
     │            │     ├─min                          //    最小値
     │            │     └─max                          //    最大値
-    │            └─<a href="api_list/app.event.md#fire">fire</a> ( <a href="api_list/app.event.md#requestParams">requestParams</a> )                              //★★★
+    │            └─<a href="api_list/app.event.md#fire">fire</a> ( <a href="api_list/app.event.md#requestParams">requestParams</a> )             //イベントの 実行関数
     │               ├─<a href="api_list/app.event.md#eventResult">eventResult</a>                     //イベント実行結果
     │               │  ├─runat                        //    表示場所
     │               │  ├─withdata                     //    表示データ
