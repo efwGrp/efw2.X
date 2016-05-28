@@ -16,11 +16,11 @@
 │      └─...                                          //後続のefw.server.formatとほぼ同じ機能、その説明をご参照。
 └─server
     ├─prepare ( <a href="api_list/app.event.md">event</a> , <a href="api_list/app.event.md#requestParams">requestParams</a> )               //サーバイベントの準備処理関数、サーバ処理カスタマイズ用
-    │            ├─<a href="api_list/app.event.md#outOfLogin">outOfLogin</a>                         //イベントの ログインチェック不要フラグ
-    │            ├─<a href="api_list/app.event.md#include">include</a>                            //          サブイベントを取り込むためのインクルード
-    │            │  ├─<a href="api_list/efw.client.md#eventId">eventId</a>                         //          サブイベントId
-    │            │  └─<a href="api_list/app.event.md#mergeParamsFormat">mergeParamsFormat</a>               //          サブとメインのパラメータフォーマットをマージするフラグ
-    │            ├─<a href="api_list/app.event.md#paramsFormat">paramsFormat</a>                       //イベントの パラメーターフォーマット
+    │            ├─<a href="api_list/app.event.md#outOfLogin">outOfLogin</a>                         //ログインチェック不要フラグ
+    │            ├─<a href="api_list/app.event.md#include">include</a>                            //サブイベントを取り込むためのインクルード
+    │            │  ├─<a href="api_list/efw.client.md#eventId">eventId</a>                         //    サブイベントId
+    │            │  └─<a href="api_list/app.event.md#mergeParamsFormat">mergeParamsFormat</a>               //    サブとメインのパラメータフォーマットをマージするフラグ
+    │            ├─<a href="api_list/app.event.md#paramsFormat">paramsFormat</a>                       //パラメーターフォーマット
     │            │  └─<a href="api_list/app.event.md#checkStyle">checkStyle</a>                      //チェックスタイル
     │            │     ├─required                     //    必須入力
     │            │     ├─format                       //    フォーマット
@@ -28,7 +28,7 @@
     │            │     ├─max-length                   //    最大サイズ
     │            │     ├─min                          //    最小値
     │            │     └─max                          //    最大値
-    │            └─<a href="api_list/app.event.md#fire">fire</a> ( <a href="api_list/app.event.md#requestParams">requestParams</a> )             //イベントの 実行関数
+    │            └─<a href="api_list/app.event.md#fire">fire</a> ( <a href="api_list/app.event.md#requestParams">requestParams</a> )             //イベント実行関数
     │               ├─<a href="api_list/app.event.md#eventResult">eventResult</a>                     //イベント実行結果
     │               │  ├─runat                        //    表示場所
     │               │  ├─withdata                     //    表示データ
@@ -56,11 +56,11 @@
     └─<a href="api_list/efw.server.db.md">db</a>
        ├─<a href="api_list/efw.server.db.md#open">open</a> ( <a href="api_list/efw.server.db.md#jdbcResourceName">jdbcResourceName</a> )                    //データベース接続を開く関数
        ├─<a href="api_list/efw.server.db.md#getSingle">getSingle</a> ( <a href="api_list/efw.server.db.md#executionParams">executionParams</a> )                //SELECT文を実行して１つ目のデータを戻す関数
-       │              ├─<a href="api_list/efw.server.db.md#jdbcResourceName">jdbcResourceName</a>              //SQL実行用パラメータの jdbcのリソース名
-       │              ├─<a href="api_list/efw.server.db.md#groupId">groupId</a>                       //                     sqlXMLファイル名
-       │              ├─<a href="api_list/efw.server.db.md#sqlId">sqlId</a>                         //                     SQLのId
-       │              ├─<a href="api_list/efw.server.db.md#params">params</a>                        //                     SQLパラメータ
-       │              └─<a href="api_list/efw.server.db.md#mapping">mapping</a>                       //                     マッピング
+       │              ├─<a href="api_list/efw.server.db.md#jdbcResourceName">jdbcResourceName</a>              //    jdbcのリソース名
+       │              ├─<a href="api_list/efw.server.db.md#groupId">groupId</a>                       //    sqlXMLファイル名
+       │              ├─<a href="api_list/efw.server.db.md#sqlId">sqlId</a>                         //    SQLのId
+       │              ├─<a href="api_list/efw.server.db.md#params">params</a>                        //    SQLパラメータ
+       │              └─<a href="api_list/efw.server.db.md#mapping">mapping</a>                       //    マッピング
        ├─<a href="api_list/efw.server.db.md#executeQuery">executeQuery</a> ( <a href="api_list/efw.server.db.md#executionParams">executionParams</a> )             //SELECT文を実行する関数
        ├─<a href="api_list/efw.server.db.md#executeUpdate">executeUpdate</a> ( <a href="api_list/efw.server.db.md#executionParams">executionParams</a> )            //INSERT文、UPDATE文、DELETE文を実行する関数
        ├─<a href="api_list/efw.server.db.md#execute">execute</a> ( <a href="api_list/efw.server.db.md#jdbcResourceName">executionParams</a> )                  //任意のSQL文を実行する関数
