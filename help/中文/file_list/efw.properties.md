@@ -2,7 +2,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="../../日本語/file_list/efw.properties.md">日本語</a>
 &nbsp;<a href="../../中文/file_list/efw.properties.md">中文</a>
 &nbsp;<a href="../../English/file_list/efw.properties.md">English</a>
-<H3><A NAME="efw.properties">配置文件</A></H3>
+<H2><A NAME="efw.properties">配置文件</A></H2>
 <pre>
 web/WEB-INF/classes/efw.properties
 </pre>
