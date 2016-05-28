@@ -108,10 +108,10 @@ formatter = "フォーマット定義";
 </table>
 <br>
 日付の場合利用できるシンボルは表にリストする。java.text.SimpleDateFormatを参考。<br>
-<table BORDER="1"  CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<tr BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
-	<th style="width:100px">シンボル</th>
-	<th style="width:950px">説明</th>
+<table>
+<tr>
+	<th>シンボル</th>
+	<th>説明</th>
 </tr>
 <tr>
 	<td>G</td>
@@ -159,8 +159,8 @@ rounder = "丸みタイプ";
 <DL><DD>丸みタイプ。<br>
 数字フォーマット時の丸みを設定する。設定できる値は、表にリストする。java.math.RoundingModeを参考。
 <br>
-<table BORDER="1"  CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<tr BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
+<table>
+<tr>
 	<th style="width:100px" rowspan=2>丸みタイプ</th>
 	<th style="width:450px" rowspan=2>説明</th>
 	<th style="width:500px" colspan=10>例</th>
