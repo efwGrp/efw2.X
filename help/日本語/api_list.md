@@ -27,7 +27,7 @@
     │            ├─<a href="api_list/app.event.md#paramsFormat">paramsFormat</a>                       //★★★
     │            │  └─<a href="api_list/app.event.md#checkStyle">checkStyle</a>                      //★★★
     │            └─<a href="api_list/app.event.md#fire">fire</a> ( <a href="api_list/app.event.md#requestParams">requestParams</a> )                              //★★★
-    │               ├─<a href="#efw.event.fire.eventResult">eventResult</a>                     //★★★
+    │               ├─<a href="api_list/app.event.md#eventResult">eventResult</a>                     //★★★
     │               │     ├─runat                     //                   イベント実行結果の 表示場所
     │               │     ├─withdata                  //                                     表示データ
     │               │     ├─remove                    //                                     削除内容
