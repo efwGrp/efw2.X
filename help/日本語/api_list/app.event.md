@@ -316,7 +316,7 @@ eventResult=eventResult.concat(subEvent.fire(requestParams));                   
 
 <H3><A NAME="appendMask">appendMask</A></H3>
 <pre>
-appendMask = "&lt;tr&gt;&lt;td&gt;&lt;input value='{maskKey1}'&gt;&lt;/td&gt;&lt;td&gt;&lt;span&gt;{{maskKey2}}&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;";
+append : "&lt;tr&gt;&lt;td&gt;&lt;input value='{maskKey1}'&gt;&lt;/td&gt;&lt;td&gt;&lt;span&gt;{{maskKey2}}&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;" ,
 </PRE>
 <DL><DD>追加内容のマスク。<br>
 HTMLエンコード処理をしたい場合、{maskKey} で書く。したくない場合、{{maskKey}}で書く。

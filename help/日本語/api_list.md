@@ -34,7 +34,7 @@
     │               │  ├─<a href="api_list/app.event.md#withdata">withdata</a>                     //    表示データ
     │               │  ├─<a href="api_list/app.event.md#remove">remove</a>                       //    削除内容
     │               │  └─<a href="api_list/app.event.md#append">append</a>                       //    htmlマスク
-    │               ├─<a href="api_list/app.event.md#download">download</a>                     //ダウンロード
+    │               ├─<a href="api_list/app.event.md#download">download</a>                        //ダウンロード
     │               │  ├─<a href="api_list/app.event.md#file">file</a>                         //    表示場所
     │               │  ├─<a href="api_list/app.event.md#zip">zip</a>                          //    表示データ
     │               │  ├─<a href="api_list/app.event.md#saveas">saveas</a>                       //    削除内容
