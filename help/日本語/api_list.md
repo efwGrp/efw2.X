@@ -22,6 +22,12 @@
     │            │  └─<a href="api_list/app.event.md#mergeParamsFormat">mergeParamsFormat</a>               //          サブとメインのパラメータフォーマットをマージするフラグ
     │            ├─<a href="api_list/app.event.md#paramsFormat">paramsFormat</a>                       //★★★
     │            │  └─<a href="api_list/app.event.md#checkStyle">checkStyle</a>                      //★★★
+    │            │     ├─required                    //
+    │            │     ├─format                      //
+    │            │     ├─display-name                //
+    │            │     ├─max-length                  //
+    │            │     ├─min                         //
+    │            │     └─max                         //
     │            └─<a href="api_list/app.event.md#fire">fire</a> ( <a href="api_list/app.event.md#requestParams">requestParams</a> )                              //★★★
     │               ├─<a href="api_list/app.event.md#eventResult">eventResult</a>                     //★★★
     │               │  ├─runat                        //                   イベント実行結果の 表示場所
@@ -29,12 +35,12 @@
     │               │  ├─remove                       //                                     削除内容
     │               │  └─append                       //                                     htmlマスク
     │               └─<a href="api_list/app.event.md#error">error</a>                           //★★★
-    │                   ├─required                     //
-    │                   ├─format                       //
-    │                   ├─display-name                 //
-    │                   ├─max-length                   //
-    │                   ├─min                          //
-    │                   └─max                          //
+    │                   ├─required                    //
+    │                   ├─format                      //
+    │                   ├─display-name                //
+    │                   ├─max-length                  //
+    │                   ├─min                         //
+    │                   └─max                         //
     ├─finish ( <a href="api_list/app.event.md">event</a> , <a href="api_list/app.event.md#requestParams">requestParams</a> , <a href="api_list/app.event.md#eventResult">eventResult</a> )  //サーバイベントの後処理関数、サーバ処理カスタマイズ用
     ├─<a href="api_list/efw.server.format.md">format</a>
     │  ├─<a href="api_list/efw.server.format.md#formatNumber">formatNumber</a> ( value , <a href="api_list/efw.server.format.md#formatter">formatter</a> , <a href="api_list/efw.server.format.md#rounder">rounder</a> ) //数字値を指定フォーマットにより文字列に変換する関数
