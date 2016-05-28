@@ -256,7 +256,8 @@ eventResult = [                                                                 
                 {                                                               //表示結果、データオブジェクト配列タイプ。
                   runat    : "runatSelector2",                                  //表示場所、オプション。
                   remove   : "removeSelector",                                  //削除内容、オプション。
-                  append   : "<a href="#appendMask">appendMask</a>",                                      //追加内容のマスク、必須。
+                                                                                //追加内容のマスク、オプション。
+                  append   : "&lt;tr&gt;&lt;td&gt;&lt;input value='{maskKey1}'&gt;&lt;/td&gt;&lt;td&gt;&lt;span&gt;{{maskKey2}}&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;" ,
                   withdata : [                                                  //表示データ、オプション、データオブジェクト配列タイプ。
                                {                                                //データオブジェクト。
                                  maskKey1  : "value11",                         //項目とデータのセット。
@@ -300,9 +301,10 @@ eventResult=eventResult.concat(subEvent.fire(requestParams));                   
 	<td>runatの範囲に属性値をセレクタとして、複数のタグを取得する。取得するタグを削除する。</td>
 </tr>
 <tr>
-	<td>append : <a href="#appendMask">appendMask</a></td>
+	<td>append : appendMask</td>
 	<td>htmlマスク、オプション。</td>
-	<td>runatの範囲に配列のwithdata件数毎にhtmlマスクの置換項目を置換して画面パーツとして、runatの後ろに追加する。</td>
+	<td>runatの範囲に配列のwithdata件数毎にhtmlマスクの置換項目を置換して画面パーツとして、runatの後ろに追加する。
+	HTMLエンコード処理をしたい場合、{maskKey} で書く。したくない場合、{{maskKey}}で書く。</td>
 </tr>
 <tr>
 	<td>withdata : [{}]</td>
@@ -314,14 +316,6 @@ eventResult=eventResult.concat(subEvent.fire(requestParams));                   
 </DL></DD>
 <HR>
 
-<H3><A NAME="appendMask">appendMask</A></H3>
-<pre>
-append : "&lt;tr&gt;&lt;td&gt;&lt;input value='{maskKey1}'&gt;&lt;/td&gt;&lt;td&gt;&lt;span&gt;{{maskKey2}}&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;" ,
-</PRE>
-<DL><DD>追加内容のマスク。<br>
-HTMLエンコード処理をしたい場合、{maskKey} で書く。したくない場合、{{maskKey}}で書く。
-</DL></DD>
-<HR>
 
 <H3><A NAME="error">error</A></H3>
 <pre>
