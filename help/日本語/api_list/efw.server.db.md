@@ -145,6 +145,22 @@ SQLを実行するため、XMLファイルに定義するSQLのパラメータ�
 </DL></DD>
 <HR>
 
+<H3><A NAME="groupId">groupId</A></H3>
+
+<HR>
+
+<H3><A NAME="sqlId">sqlId</A></H3>
+
+<HR>
+
+<H3><A NAME="params">params</A></H3>
+
+<HR>
+
+<H3><A NAME="mapping">mapping</A></H3>
+
+<HR>
+
 <H3><A NAME="executionResult">executionResult</A></H3>
 <pre>
 executionResult = [                                                             //マッピングなしの実行結果、field項目と値のセットの配列。
