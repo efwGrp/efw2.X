@@ -143,22 +143,22 @@ selector : "required:true; format:###,##0;display-name:登録日;max-length:10;m
 エラーがある場合、複数のエラーメッセージをまとめて <A href="#error">error</A> でクライアントに送信する。
 <table>
 <tr>
-	<th>属性種類</th>
-	<th>属性の用途</th>
+	<th>属性</th>
+	<th>属性名</th>
 	<th>正常ケース</th>
 	<th>異常ケース</th>
 </tr>
 <tr>
-	<td>required : true</td>
-	<td>必須入力。</td>
+	<td><a name="required">required</a> : true</td>
+	<td>必須入力</td>
 	<td>取得された値が空白ではない場合、正しい。</td>
 	<td>空白の場合、IsRequiredMessage エラー。</td>
 </tr>
 <tr>
-	<td>format : <br>
+	<td><a name="format">format</a> : <br>
 	<DD>定義方法は <a href="efw.server.format.md#formatter">formatter</a> を参照</DD>
 	</td>
-	<td>フォーマット。</td>
+	<td>フォーマット</td>
 	<td>取得された値がフォーマットに合う場合、正しい。</td>
 	<td>合わないの場合、<br>
 	NumberIsReuqiredMessage エラー。
@@ -166,22 +166,22 @@ selector : "required:true; format:###,##0;display-name:登録日;max-length:10;m
 	</td>
 </tr>
 <tr>
-	<td>display-name : "表示名"</td>
-	<td>表示名。</td>
+	<td><a name="display-name">display-name</a> : "表示名"</td>
+	<td>表示名</td>
 	<td>－</td>
 	<td>エラーメッセージに代入するエラー項目の名前。</td>
 </tr>
 <tr>
-	<td>max-length : 文字数</td>
-	<td>最大サイズ。</td>
+	<td><a name="max-length">max-length</a> : 文字数</td>
+	<td>最大サイズ</td>
 	<td>入力値のサイズは最大サイズ以内の場合、正しい。</td>
 	<td>オーバーの場合、MaxLengthOverMessage エラー。</td>
 </tr>
 <tr>
-	<td>min : <br>
+	<td><a name="min">min</a> : <br>
 	<DD>formatに従う文字列</DD>
 	</td>
-	<td>最小値。</td>
+	<td>最小値</td>
 	<td>入力値は最小値より大きい場合、正しい。</td>
 	<td>小さい場合、<br>
 	MinOrMaxOverMessage エラー。<br>
@@ -189,10 +189,10 @@ selector : "required:true; format:###,##0;display-name:登録日;max-length:10;m
 	</td>
 </tr>
 <tr>
-	<td>max : <br>
+	<td><a name="max">max</a> : <br>
 	<DD>formatに従う文字列</DD>
 	</td>
-	<td>最大値。</td>
+	<td>最大値</td>
 	<td>入力値は最大値より小さい場合、正しい。</td>
 	<td>大きい場合、<br>
 	MinOrMaxOverMessage エラー。<br>
