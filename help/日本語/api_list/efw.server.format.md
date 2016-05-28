@@ -150,8 +150,6 @@ formatter = "フォーマット定義";
 </DL></DD>
 <HR>
 
-
-
 <H3><A NAME="rounder">rounder</A></H3>
 <pre>
 rounder = "丸みタイプ";

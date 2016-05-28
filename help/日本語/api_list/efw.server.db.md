@@ -126,7 +126,7 @@ executionParams = {
                       <a href="#jdbcResourceName">jdbcResourceName</a> : "jdbc/efw",                            //jdbcリソース名、オプション。
                       groupId          : "user",                                //sqlXMLファイル名、必須。
                       sqlId            : "selectusers",                         //SQLのId、必須。
-                      params           : {                                      //SQLパラメーター、必須。
+                      params           : {                                      //SQLパラメータ、必須。
                                              sqlparam1 : value1 ,
                                              sqlparma2 : value2 ,
                                          },
@@ -140,25 +140,28 @@ executionParams = {
 </PRE>
 <DL><DD>SQL実行用パラメーター。<br>
 SQLを実行するため、XMLファイルに定義するSQLのパラメーターの値を設定可。また実行結果のマッピングも設定可。<br>
-
 </DL></DD>
-<HR>
+<table>
+<tr>
+	<th>属性</th><th>属性名</th><th>必須</th><th>説明</th>
+</tr>
+<tr>
+	<td><A NAME="jdbcResourceName">jdbcResourceName</A></td>jdbcのリソース名<td></td><td>オプション</td><td>efwのディフォルトリソースは、jdbc/efw 。それ以外のリソースを利用したい場合、server.xmlに定義して、イベントjsファイルに、それを open して、トランザクションを管理する。</td>
+</tr>
+<tr>
+	<td><A NAME="groupId">groupId</A></td>sqlXMLファイル名<td>SQLのグループId</td><td>必須</td><td>sqlXMLファイル名と同じ。英語の大文字小文字を区別。</td>
+</tr>
+<tr>
+	<td><A NAME="sqlId">sqlId</A></td><td>SQLのId</td><td>必須</td><td>sqlXMLファイルのsqlタグのId。</td>
+</tr>
+<tr>
+	<td><A NAME="params">params</A></td><td>SQLパラメータ</td><td>必須</td><td>sqlXMLファイルのsqlタグに定義される「:sqlparam」を代替する。</td>
+</tr>
+<tr>
+	<td><A NAME="mapping">mapping</A></td><td>マッピング</td><td>オプション</td><td>検索SQLの検索結果フィールドを画面項目またはマスクキーとマッピングする。</td>
+</tr>
+</table>
 
-<H3><A NAME="groupId">groupId</A></H3>
-
-<HR>
-
-<H3><A NAME="sqlId">sqlId</A></H3>
-
-<HR>
-
-<H3><A NAME="params">params</A></H3>
-
-<HR>
-
-<H3><A NAME="mapping">mapping</A></H3>
-
-<HR>
 
 <H3><A NAME="executionResult">executionResult</A></H3>
 <pre>
@@ -188,20 +191,5 @@ executeQueryの実行結果。レコードセットの配列。検索結果が�
 マッピングの有無により、変化が可能。
 
 </DL></DD>
-<HR>
 
 
-<H3><A NAME="jdbcResourceName">jdbcResourceName</A></H3>
-<pre>
-jdbcResourceName = "jdbc/efw" ;                                                 //server.xmlに定義されるリソース
-
-&lt;Resource auth="Container" driverClassName="org.postgresql.Driver" 
-maxActive="100" maxIdle="20" maxWait="10" name="jdbc/efw" password="postgres" 
-type="javax.sql.DataSource" url="jdbc:postgresql://127.0.0.1:5432/efwSample" 
-username="postgres"/&gt;
-</PRE>
-<DL><DD>jdbcのリソース名。<br>
-efwのディフォルトリソースは、jdbc/efw 。それ以外のリソースを利用したい場合、<br>
-server.xmlに定義して、イベントjsファイルに、それを open して、トランザクションを管理する。
-
-</DL></DD>

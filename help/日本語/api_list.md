@@ -62,7 +62,7 @@
        ├─<a href="api_list/efw.server.db.md#open">open</a> ( <a href="api_list/efw.server.db.md#jdbcResourceName">jdbcResourceName</a> )                    //データベース接続を開く関数
        ├─<a href="api_list/efw.server.db.md#getSingle">getSingle</a> ( <a href="api_list/efw.server.db.md#executionParams">executionParams</a> )                //SELECT文を実行して１つ目のデータを戻す関数
        │              ├─<a href="api_list/efw.server.db.md#jdbcResourceName">jdbcResourceName</a>              //    jdbcのリソース名
-       │              ├─<a href="api_list/efw.server.db.md#groupId">groupId</a>                       //    sqlXMLファイル名
+       │              ├─<a href="api_list/efw.server.db.md#groupId">groupId</a>                       //    SQLのグループId
        │              ├─<a href="api_list/efw.server.db.md#sqlId">sqlId</a>                         //    SQLのId
        │              ├─<a href="api_list/efw.server.db.md#params">params</a>                        //    SQLパラメータ
        │              └─<a href="api_list/efw.server.db.md#mapping">mapping</a>                       //    マッピング
