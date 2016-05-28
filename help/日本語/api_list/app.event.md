@@ -82,12 +82,12 @@ myEvent.paramsFormat = {
 選択キー、選択キー組合せのサブフォーマット、またその配列で、定義される。<br>
 パラメーターフォーマットによりイベント実行時、表のように、<A href="#requestParams">requestParams</A> が自動的に作成される。<br>
 
-<table BORDER="1"  CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<tr BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
-	<th style="width:150px">属性種類</th>
-	<th style="width:250px">属性名称の用途</th>
-	<th style="width:400px">正常ケース</th>
-	<th style="width:250px">異常ケース</th>
+<table>
+<tr>
+	<th>属性種類</th>
+	<th>属性名称の用途</th>
+	<th>正常ケース</th>
+	<th>異常ケース</th>
 </tr>
 <tr>
 	<td>selector : null</td>
@@ -141,12 +141,12 @@ selector : "required:true; format:###,##0;display-name:登録日;max-length:10;m
 <DL><DD>チェックスタイル。<br>
 クライアントで入力された値に対して、いくつかの単純チェックを自動的に行うため、チェックスタイルを設ける。<br>
 エラーがある場合、複数のエラーメッセージをまとめて <A href="#error">error</A> でクライアントに送信する。
-<table BORDER="1"  CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<tr BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
-	<th style="width:250px">属性種類</th>
-	<th style="width:100px">属性の用途</th>
-	<th style="width:350px">正常ケース</th>
-	<th style="width:350px">異常ケース</th>
+<table>
+<tr>
+	<th>属性種類</th>
+	<th>属性の用途</th>
+	<th>正常ケース</th>
+	<th>異常ケース</th>
 </tr>
 <tr>
 	<td>required : true</td>
@@ -276,11 +276,11 @@ eventResult=eventResult.concat(subEvent.fire(requestParams));                   
 </PRE>
 <DL><DD>イベント実行結果。<br>
 イベントの実行結果をクライアントに渡すため。<br>
-<table BORDER="1"  CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<tr BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
-	<th style="width:150px">属性</th>
-	<th style="width:250px">属性の名称</th>
-	<th style="width:650px">説明</th>
+<table>
+<tr>
+	<th>属性</th>
+	<th>属性の名称</th>
+	<th>説明</th>
 </tr>
 <tr>
 	<td>runat : selector</td>
@@ -335,11 +335,11 @@ error = {
 </PRE>
 <DL><DD>エラーオブジェクト。<br>
 イベントの実行エラーをクライアントに渡すため。<br>
-<table BORDER="1"  CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<tr BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
-	<th style="width:100px">属性</th>
-	<th style="width:300px">属性の名称</th>
-	<th style="width:650px">説明</th>
+<table>
+<tr>
+	<th>属性</th>
+	<th>属性の名称</th>
+	<th>説明</th>
 </tr>
 <tr>
 	<td>errorType</td>
