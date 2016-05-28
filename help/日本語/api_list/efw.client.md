@@ -92,13 +92,13 @@ eventParams = {
 	<td><A NAME="server">server</A></td><td>サーバURL</td><td>オプション</td><td>cors方式で他のサーバアプリと接続する場合利用できる。</td>
 </tr>
 <tr>
-	<td>eventId</td><td>イベントId</td><td>必須</td><td>WEB-INF/efw/event/myEvent.js のjsファイルとリンクする。英語の大文字小文字を区別。イベントの実装されるサーバーサイドJavascriptファイル名と同じ。</td>
+	<td><A NAME="eventId">eventId</A></td><td>イベントId</td><td>必須</td><td>イベントの実装されるサーバーサイドJavascriptファイル名と同じ。英語の大文字小文字を区別。</td>
 </tr>
 <tr>
-	<td>manualParams</td><td>手動パラメータ</td><td>オプション</td><td>イベントに手動で渡したいパラメーターを設定する。</td>
+	<td><A NAME="manualParams">manualParams</A></td><td>手動パラメータ</td><td>オプション</td><td>イベントに手動で渡したいパラメーターを設定する。</td>
 </tr>
 <tr>
-	<td>success</td><td>成功コールバック関数</td><td>オプション</td><td>イベント処理が成功の場合、実行される。この段階で、eventResult はすでに画面に反映した。<br>つまり、success関数に eventResult に対して修正しても意味がない。</td>
+	<td><A NAME="success">success</A></td><td>成功コールバック関数</td><td>オプション</td><td>イベント処理が成功の場合、実行される。この段階で、eventResult はすでに画面に反映したから、success関数に eventResult に対する修正は意味がない。</td>
 </tr>
 </table>
 
