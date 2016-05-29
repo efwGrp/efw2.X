@@ -85,7 +85,7 @@ myEvent.paramsFormat = {
 <table>
 <tr>
 	<th>属性種類</th>
-	<th>属性名称の用途</th>
+	<th>用途</th>
 	<th>正常ケース</th>
 	<th>異常ケース</th>
 </tr>
