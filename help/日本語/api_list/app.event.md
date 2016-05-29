@@ -353,7 +353,7 @@ return {
 <tr>
 	<td><a name="deleteafterdownload">deleteafterdownload</a></td>
 	<td>ダウンロード後元ファイル削除フラグ、オプション。</td>
-	<td>ダウンロードした後、元ファイルを削除するか否かのフラグ。デフォルトはfalse。</td>
+	<td>ダウンロードした後、元ファイルを削除するか否か設定する。デフォルトはfalse。</td>
 </tr>
 </table>
 
