@@ -245,7 +245,7 @@ requestParams = {
 
 <H3><A NAME="eventResult">eventResult</A></H3>
 <pre>
-eventResult = [                                                                 //イベント実行結果、複数の表示結果を含める。
+var ret = [                                                                     //イベント実行結果、複数の表示結果を含める。
                 {                                                               //表示結果、データオブジェクトタイプ。
                   runat    : "runatSelector1",                                  //表示場所、オプション。
                   withdata : {                                                  //表示データ、オプション、データオブジェクトタイプ。
@@ -269,11 +269,10 @@ eventResult = [                                                                 
                                }
                              ], 
                 },
-];
-
+          ];
 
 ...
-eventResult=eventResult.concat(subEvent.fire(requestParams));                   //メインイベントとサブイベントの実行結果は、配列結合で連結。
+ret = ret.concat(subEvent.fire(requestParams));                                 //メインイベントとサブイベントの実行結果は、配列結合で連結。
 </PRE>
 <DL><DD>イベント実行結果。<br>
 イベントの実行結果をクライアントに渡すため。<br>
@@ -317,15 +316,61 @@ eventResult=eventResult.concat(subEvent.fire(requestParams));                   
 <HR>
 
 
+<H3><A NAME="download">download</A></H3>
+<pre>
+return {
+            "download" : {
+                file                : "filePathName"                            //単独ファイル。
+                zip                 : ["filePathName1","filePathName2",...],    //複数ファイル。
+                saveas              : "filename",                               //保存名称。
+                deleteafterdownload : true/false,                               //ダウンロード後元ファイル削除フラグ。
+            }
+       };
+</PRE>
+<DL><DD>ダウンロードオブジェクト。<br>
+ファイルをダウンロードするためのイベント戻り値。<br>
+<table>
+<tr>
+	<th>属性</th>
+	<th>属性の名称</th>
+	<th>説明</th>
+</tr>
+<tr>
+	<td><a name="file">file</a></td>
+	<td>ダウンロード対象の単独ファイル、オプション。</td>
+	<td>単独ファイルをダウンロードする場合利用する。fileとzipはどちらひとつを設定する必要。</td>
+</tr>
+<tr>
+	<td><a name="zip">zip</a></td>
+	<td>圧縮対象の複数ファイル、オプション。</td>
+	<td>複数ファイルをダウンロードする場合利用する。fileとzipはどちらひとつを設定する必要。</td>
+</tr>
+<tr>
+	<td><a name="saveas">saveas</a></td>
+	<td>保存名称、オプション。</td>
+	<td>ファイル保存時のファイル名。設定しない場合元ファイル名が利用される。</td>
+</tr>
+<tr>
+	<td><a name="deleteafterdownload">deleteafterdownload</a></td>
+	<td>ダウンロード後元ファイル削除フラグ、オプション。</td>
+	<td>ダウンロードした後、元ファイルを削除するか否かのフラグ。デフォルトはfalse。</td>
+</tr>
+</table>
+
+</DL></DD>
+
+
 <H3><A NAME="error">error</A></H3>
 <pre>
-error = {
-            errorType      : "XXXXX",                                           //エラータイプ。
-            errorMessage   : "任意のエラーメッセージ内容",                      //エラーメッセージ。
-            focusTo        : "selector1",                                       //カーソル位置、オプション。
-            elements       : "selector1,selector2,...",                         //複数のエラー項目、オプション。
-            canNotContinue : true,                                              //継続処理不可フラグ、オプション。
-};
+return { 
+            error : {
+                        errorType      : "XXXXX",                               //エラータイプ。
+                        errorMessage   : "任意のエラーメッセージ内容",          //エラーメッセージ。
+                        focusTo        : "selector1",                           //カーソル位置、オプション。
+                        elements       : "selector1,selector2,...",             //複数のエラー項目、オプション。
+                        canNotContinue : true,                                  //継続処理不可フラグ、オプション。
+                    }
+       };
 </PRE>
 <DL><DD>エラーオブジェクト。<br>
 イベントの実行エラーをクライアントに渡すため。<br>
