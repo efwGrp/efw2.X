@@ -67,7 +67,7 @@
        │              ├─<a href="api_list/efw.server.db.md#params">params</a>                        //    SQLパラメータ
        │              └─<a href="api_list/efw.server.db.md#mapping">mapping</a>                       //    マッピング
        ├─<a href="api_list/efw.server.db.md#executeQuery">executeQuery</a> ( <a href="api_list/efw.server.db.md#executionParams">executionParams</a> )             //SELECT文を実行する関数
-       │   └─<a href="api_list/efw.server.db.md#executionResult">executionResult</a>                  //SQL検索結果
+       │   └─<a href="api_list/efw.server.db.md#executionResult">executionResult</a>                           //SQL検索結果
        ├─<a href="api_list/efw.server.db.md#executeUpdate">executeUpdate</a> ( <a href="api_list/efw.server.db.md#executionParams">executionParams</a> )            //INSERT文、UPDATE文、DELETE文を実行する関数
        ├─<a href="api_list/efw.server.db.md#execute">execute</a> ( <a href="api_list/efw.server.db.md#jdbcResourceName">executionParams</a> )                  //任意のSQL文を実行する関数
        ├─<a href="api_list/efw.server.db.md#commit">commit</a> ( <a href="api_list/efw.server.db.md#jdbcResourceName">jdbcResourceName</a> )                  //データベースへの更新を有効とする関数
