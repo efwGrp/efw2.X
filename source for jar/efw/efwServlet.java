@@ -78,6 +78,10 @@ public final class efwServlet extends HttpServlet {
      */
     private static final String RESPONSE_CHAR_SET="UTF-8";
     /**
+     * システムエラー画面遷移のURL、空白は初期値。
+     */
+    private static String systemErrorUrl="";
+    /**
      * リクエストオブジェクト。
      * スレッドローカルにリクエストオブジェクトを格納する。サーバーサイトJavascriptに利用される。
      */
@@ -127,6 +131,8 @@ public final class efwServlet extends HttpServlet {
         	if(propertyPath.startsWith("/WEB-INF/")){propertyPath=this.getServletContext().getRealPath(propertyPath);}
         	storageFolder=propertyPath;
         	LogManager.InitCommonDebug("storageFolder = " + storageFolder);
+        	systemErrorUrl=PropertiesManager.getProperty(PropertiesManager.EFW_SYSTEM_ERROR_URL,systemErrorUrl);
+        	LogManager.InitCommonDebug("systemErrorUrl = " + systemErrorUrl);
         	
         	//check the define folders
         	if (!new File(serverFolder).exists())throw new efwException(efwException.ServerFolderDoesNotExistException,serverFolder);
@@ -170,7 +176,9 @@ public final class efwServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws efwException, IOException{
         response.setCharacterEncoding(RESPONSE_CHAR_SET);
-        String otherError="{\"error\":{\"errorType\":\"OtherErrorException\",\"canNotContinue\":true}}";
+        String otherError="{\"error\":{\"errorType\":\"OtherErrorException\",\"canNotContinue\":true"+
+        		(systemErrorUrl.equals("")?"":",\"nextUrl\":\""+systemErrorUrl+"\"")
+        		+"}}";
 		//--------------------------------------------------------------------
         //if init is failed, return the info instead of throw exception
 		if (!efwServlet.initSuccessFlag){

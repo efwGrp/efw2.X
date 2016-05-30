@@ -89,6 +89,17 @@ public final class PropertiesManager {
 	 */
 	public static final String EFW_LOGIN_KEY = "efw.login.key";
 	/**
+	 * セッションタイムアウト遷移画面のURL。
+	 *  「efw.login.url」の定数。
+	 */
+	public static final String EFW_LOGIN_URL="efw.login.url";
+	/**
+	 * システムエラー遷移画面のURL。
+	 *  「efw.system.error.url」の定数。
+	 */
+	public static final String EFW_SYSTEM_ERROR_URL="efw.system.error.url";
+
+	/**
 	 * プロパティ値を格納するプロパティオブジェクト。
 	 */
     private static Properties prop = new Properties();
