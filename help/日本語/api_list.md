@@ -15,7 +15,7 @@
 │  └─format
 │      └─...                                          //後続のefw.server.formatとほぼ同じ機能、その説明をご参照。
 └─server
-    ├─prepare ( <a href="api_list/app.event.md">event</a> , <a href="api_list/app.event.md#requestParams">requestParams</a> )               //サーバイベントの準備処理関数、サーバ処理カスタマイズ用
+    ├─<a href="api_list/efw.server.customize.md#prepare">prepare</a> ( <a href="api_list/app.event.md">event</a> , <a href="api_list/app.event.md#requestParams">requestParams</a> )               //サーバイベントの準備処理関数、サーバ処理カスタマイズ用
     │
     │            <a href="api_list/app.event.md">event</a>
     │            ├─<a href="api_list/app.event.md#outOfLogin">outOfLogin</a>                         //ログインチェック不要フラグ
@@ -48,7 +48,7 @@
     │                   ├─<a href="api_list/app.event.md#elements">elements</a>                    //    複数のエラー項目
     │                   └─<a href="api_list/app.event.md#canNotContinue">canNotContinue</a>              //    継続処理不可フラグ
     │
-    ├─finish ( <a href="api_list/app.event.md">event</a> , <a href="api_list/app.event.md#requestParams">requestParams</a> , <a href="api_list/app.event.md#eventResult">eventResult</a> )  //サーバイベントの後処理関数、サーバ処理カスタマイズ用
+    ├─<a href="api_list/efw.server.customize.md#finish">finish</a> ( <a href="api_list/app.event.md">event</a> , <a href="api_list/app.event.md#requestParams">requestParams</a> , <a href="api_list/app.event.md#eventResult">eventResult</a> )  //サーバイベントの後処理関数、サーバ処理カスタマイズ用
     ├─format
     │  ├─<a href="api_list/efw.server.format.md#formatNumber">formatNumber</a> ( value , <a href="api_list/efw.server.format.md#formatter">formatter</a> , <a href="api_list/efw.server.format.md#rounder">rounder</a> ) //数字値を指定フォーマットにより文字列に変換する関数
     │  ├─<a href="api_list/efw.server.format.md#parseNumber">parseNumber</a> ( value , <a href="api_list/efw.server.format.md#formatter">formatter</a> )            //文字列値を指定フォーマットにより数字に変換する関数
