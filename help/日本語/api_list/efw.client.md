@@ -1,19 +1,19 @@
-<a href="../api_list.md">–ß‚é</a>
-&nbsp;&nbsp;&nbsp;&nbsp;<a href="../../“ú–{Œê/api_list/efw.client.md">“ú–{Œê</a>
-&nbsp;<a href="../../’†•¶/api_list/efw.client.md">’†•¶</a>
+<a href="../api_list.md">æˆ»ã‚‹</a>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="../../æ—¥æœ¬èªž/api_list/efw.client.md">æ—¥æœ¬èªž</a>
+&nbsp;<a href="../../ä¸­æ–‡/api_list/efw.client.md">ä¸­æ–‡</a>
 &nbsp;<a href="../../English/api_list/efw.client.md">English</a>
-<H2>efw.client‚ÌÚ×</H2>
+<H2>efw.clientã®è©³ç´°</H2>
 
 <H3><A NAME="fire">fire</A></H3>
 <pre>
 fire ( <A href="#eventParams">eventParams</A> )</PRE>
 <DL>
-<DD>Ajax‚ðŒÄ‚Ño‚·‚½‚ß‚Ì“ü‚èŒûŠÖ”B
- 1‰ñ–ÚAjax‚Íƒpƒ‰ƒ[ƒ^[ƒtƒH[ƒ}ƒbƒg‚ðŽæ“¾‚µA2‰ñ–ÚAjax‚ðŽÀs‚·‚éB
+<DD>Ajaxã‚’å‘¼ã³å‡ºã™ãŸã‚ã®å…¥ã‚Šå£é–¢æ•°ã€‚
+ 1å›žç›®Ajaxã¯ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ãƒ¼ãƒ•ã‚©ãƒ¼ãƒžãƒƒãƒˆã‚’å–å¾—ã—ã€2å›žç›®Ajaxã‚’å®Ÿè¡Œã™ã‚‹ã€‚
 <P>
 <DD><DL>
-<B>ƒpƒ‰ƒ[ƒ^:</B>
-<DD><CODE><A href="#eventParams">eventParams</A></CODE> - ƒCƒxƒ“ƒgƒpƒ‰ƒ[ƒ^[A•K{B
+<B>ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿:</B>
+<DD><CODE><A href="#eventParams">eventParams</A></CODE> - ã‚¤ãƒ™ãƒ³ãƒˆãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ãƒ¼ã€å¿…é ˆã€‚
 </DL></DD>
 <HR>
 
@@ -21,17 +21,17 @@ fire ( <A href="#eventParams">eventParams</A> )</PRE>
 <pre>
 pickup ( <A href="app.event.md#paramsFormat">paramsFormat</A> , <A href="#manualParams">manualParams</A> )</PRE>
 <DL>
-<DD>ƒpƒ‰ƒ[ƒ^’l‚ðŽæ“¾‚·‚éŠÖ”BifireŠÖ”‹@”\‚Ìˆê•”•ªj
+<DD>ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿å€¤ã‚’å–å¾—ã™ã‚‹é–¢æ•°ã€‚ï¼ˆfireé–¢æ•°æ©Ÿèƒ½ã®ä¸€éƒ¨åˆ†ï¼‰
 
 <P>
 <DD><DL>
-<DT><B>–ß‚è’l:</B>
-<DD><CODE><A href="app.event.md#requestParams">requestParams</A></CODE> - ƒŠƒNƒGƒXƒgƒpƒ‰ƒ[ƒ^[‚Ü‚½‚Í‚»‚ÌŠî€‚É]‚¤ƒf[ƒ^B
+<DT><B>æˆ»ã‚Šå€¤:</B>
+<DD><CODE><A href="app.event.md#requestParams">requestParams</A></CODE> - ãƒªã‚¯ã‚¨ã‚¹ãƒˆãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ãƒ¼ã¾ãŸã¯ãã®åŸºæº–ã«å¾“ã†ãƒ‡ãƒ¼ã‚¿ã€‚
 </DL></DD>
 <DD><DL>
-<DT><B>ƒpƒ‰ƒ[ƒ^:</B>
-<DD><CODE><A href="app.event.md#paramsFormat">paramsFormat</A></CODE> - ƒpƒ‰ƒ[ƒ^[ƒtƒH[ƒ}ƒbƒgA•K{B
-<DD><CODE><A href="#manualParams">manualParams</A></CODE> - Žè“®ƒpƒ‰ƒ[ƒ^[ AƒIƒvƒVƒ‡ƒ“B
+<DT><B>ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿:</B>
+<DD><CODE><A href="app.event.md#paramsFormat">paramsFormat</A></CODE> - ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ãƒ¼ãƒ•ã‚©ãƒ¼ãƒžãƒƒãƒˆã€å¿…é ˆã€‚
+<DD><CODE><A href="#manualParams">manualParams</A></CODE> - æ‰‹å‹•ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ãƒ¼ ã€ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã€‚
 </DL></DD>
 </DL></DD>
 <HR>
@@ -40,11 +40,11 @@ pickup ( <A href="app.event.md#paramsFormat">paramsFormat</A> , <A href="#manual
 <pre>
 show ( <A href="app.event.md#eventResult">eventResult</A> )</PRE>
 <DL>
-<DD>’l‚ð‰æ–Ê‚É•\Ž¦‚·‚éŠÖ”BifireŠÖ”‹@”\‚Ìˆê•”•ªj
+<DD>å€¤ã‚’ç”»é¢ã«è¡¨ç¤ºã™ã‚‹é–¢æ•°ã€‚ï¼ˆfireé–¢æ•°æ©Ÿèƒ½ã®ä¸€éƒ¨åˆ†ï¼‰
 <P>
 <DD><DL>
-<DT><B>ƒpƒ‰ƒ[ƒ^:</B>
-<DD><CODE><A href="app.event.md#eventResult">eventResult</A></CODE> - 2‰ñ–ÚAjax‚ÌŽÀsŒ‹‰Ê‚Ü‚½‚Í‚»‚ÌŠî€‚É]‚¤ƒf[ƒ^A•K{B
+<DT><B>ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿:</B>
+<DD><CODE><A href="app.event.md#eventResult">eventResult</A></CODE> - 2å›žç›®Ajaxã®å®Ÿè¡Œçµæžœã¾ãŸã¯ãã®åŸºæº–ã«å¾“ã†ãƒ‡ãƒ¼ã‚¿ã€å¿…é ˆã€‚
 </DL></DD>
 </DL></DD>
 <HR>
@@ -54,12 +54,12 @@ show ( <A href="app.event.md#eventResult">eventResult</A> )</PRE>
 alert ( message , callback );                                                   //callback = function () { ... };
 </PRE>
 <DL>
-<DD>Jquery UI‚ÌAlertƒƒbƒZ[ƒWƒ{ƒbƒNƒX‚ðŒÄ‚Ño‚·ŠÖ”B
+<DD>Jquery UIã®Alertãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ãƒœãƒƒã‚¯ã‚¹ã‚’å‘¼ã³å‡ºã™é–¢æ•°ã€‚
 <P>
 <DD><DL>
-<DT><B>ƒpƒ‰ƒ[ƒ^:</B>
-<DD><CODE>message</CODE> - •\Ž¦‚·‚éƒƒbƒZ[ƒWA•¶Žš—ñA•K{B
-<DD><CODE>callback</CODE> - OKƒ{ƒ^ƒ“‰Ÿ‚·ê‡‚ÌƒR[ƒ‹ƒoƒbƒNŠÖ”AƒIƒvƒVƒ‡ƒ“B
+<DT><B>ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿:</B>
+<DD><CODE>message</CODE> - è¡¨ç¤ºã™ã‚‹ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã€æ–‡å­—åˆ—ã€å¿…é ˆã€‚
+<DD><CODE>callback</CODE> - OKãƒœã‚¿ãƒ³æŠ¼ã™å ´åˆã®ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°ã€ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã€‚
 </DL></DD>
 </DL></DD>
 <HR>
@@ -67,38 +67,38 @@ alert ( message , callback );                                                   
 <H3><A NAME="eventParams">eventParams</A></H3>
 <pre>
 eventParams = {
-                  <A href="#server">server</A>       : "http://127.0.0.1:8080/efwTest",               //ƒT[ƒoURLAƒIƒvƒVƒ‡ƒ“B
-                  <A href="#eventId">eventId</A>      : "myEvent",                                     //ƒCƒxƒ“ƒgIdA•K{B
-                  <A href="#manualParams">manualParams</A> : {                                              //Žè“®ƒpƒ‰ƒ[ƒ^[AƒIƒvƒVƒ‡ƒ“B
+                  <A href="#server">server</A>       : "http://127.0.0.1:8080/efwTest",               //ã‚µãƒ¼ãƒURLã€ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã€‚
+                  <A href="#eventId">eventId</A>      : "myEvent",                                     //ã‚¤ãƒ™ãƒ³ãƒˆIdã€å¿…é ˆã€‚
+                  <A href="#manualParams">manualParams</A> : {                                              //æ‰‹å‹•ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ãƒ¼ã€ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã€‚
                                      key1 : value1,
                                      key2 : value2,    
                                  },
-                  <A href="#success">success</A>      : function ( <A href="app.event.md#eventResult">eventResult</A> ) {                    //¬Œ÷ƒR[ƒ‹ƒoƒbƒNŠÖ”AƒIƒvƒVƒ‡ƒ“B
+                  <A href="#success">success</A>      : function ( <A href="app.event.md#eventResult">eventResult</A> ) {                    //æˆåŠŸã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°ã€ã‚ªãƒ—ã‚·ãƒ§ãƒ³ã€‚
                                      ...
                                  },
               };
 </PRE>
-<DL><DD>ƒCƒxƒ“ƒgƒpƒ‰ƒ[ƒ^[BƒNƒ‰ƒCƒAƒ“ƒg‚ÅƒCƒxƒ“ƒg‚ðŽÀsŽžì¬‚³‚ê‚éB
-<br>EƒCƒxƒ“ƒgId‚É‚æ‚èƒCƒxƒ“ƒg‚ð“Á’è‚·‚éB
-<br>Eƒpƒ‰ƒ[ƒ^[ƒtƒH[ƒ}ƒbƒg‚É‚æ‚èƒCƒxƒ“ƒgƒpƒ‰ƒ[ƒ^[‚ðì¬ŽžA—Dæ“I‚ÉƒNƒ‰ƒCƒAƒ“ƒg‰æ–Ê‚©‚ç’l‚ðŽæ“¾‚·‚éB‰æ–Ê€–Ú‚Å‚Í‚È‚¢ê‡AŽè“®ƒpƒ‰ƒ[ƒ^[‚Å“n‚·B
-<br>EƒCƒxƒ“ƒgŽÀs¬Œ÷ŒãA‚³‚ç‚ÉŒp‘±ˆ—‚ª•K—v‚Èê‡A¬Œ÷ƒR[ƒ‹ƒoƒbƒNŠÖ”‚ð—˜—p‚·‚éB
+<DL><DD>ã‚¤ãƒ™ãƒ³ãƒˆãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ãƒ¼ã€‚ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã§ã‚¤ãƒ™ãƒ³ãƒˆã‚’å®Ÿè¡Œæ™‚ä½œæˆã•ã‚Œã‚‹ã€‚
+<br>ãƒ»ã‚¤ãƒ™ãƒ³ãƒˆIdã«ã‚ˆã‚Šã‚¤ãƒ™ãƒ³ãƒˆã‚’ç‰¹å®šã™ã‚‹ã€‚
+<br>ãƒ»ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ãƒ¼ãƒ•ã‚©ãƒ¼ãƒžãƒƒãƒˆã«ã‚ˆã‚Šã‚¤ãƒ™ãƒ³ãƒˆãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ãƒ¼ã‚’ä½œæˆæ™‚ã€å„ªå…ˆçš„ã«ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆç”»é¢ã‹ã‚‰å€¤ã‚’å–å¾—ã™ã‚‹ã€‚ç”»é¢é …ç›®ã§ã¯ãªã„å ´åˆã€æ‰‹å‹•ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ãƒ¼ã§æ¸¡ã™ã€‚
+<br>ãƒ»ã‚¤ãƒ™ãƒ³ãƒˆå®Ÿè¡ŒæˆåŠŸå¾Œã€ã•ã‚‰ã«ç¶™ç¶šå‡¦ç†ãŒå¿…è¦ãªå ´åˆã€æˆåŠŸã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°ã‚’åˆ©ç”¨ã™ã‚‹ã€‚
 
 </DL></DD>
 <table>
 <tr>
-	<th>‘®«</th><th>‘®«–¼</th><th>•K{</th><th>à–¾</th>
+	<th>å±žæ€§</th><th>å±žæ€§å</th><th>å¿…é ˆ</th><th>èª¬æ˜Ž</th>
 </tr>
 <tr>
-	<td><A NAME="server">server</A></td><td>ƒT[ƒoURL</td><td>ƒIƒvƒVƒ‡ƒ“</td><td>cors•ûŽ®‚Å‘¼‚ÌƒT[ƒoƒAƒvƒŠ‚ÆÚ‘±‚·‚éê‡—˜—p‚Å‚«‚éB</td>
+	<td><A NAME="server">server</A></td><td>ã‚µãƒ¼ãƒURL</td><td>ã‚ªãƒ—ã‚·ãƒ§ãƒ³</td><td>corsæ–¹å¼ã§ä»–ã®ã‚µãƒ¼ãƒã‚¢ãƒ—ãƒªã¨æŽ¥ç¶šã™ã‚‹å ´åˆåˆ©ç”¨ã§ãã‚‹ã€‚</td>
 </tr>
 <tr>
-	<td><A NAME="eventId">eventId</A></td><td>ƒCƒxƒ“ƒgId</td><td>•K{</td><td>ƒCƒxƒ“ƒg‚ÌŽÀ‘•‚³‚ê‚éƒT[ƒo[ƒTƒCƒhJavascriptƒtƒ@ƒCƒ‹–¼‚Æ“¯‚¶B‰pŒê‚Ì‘å•¶Žš¬•¶Žš‚ð‹æ•ÊB</td>
+	<td><A NAME="eventId">eventId</A></td><td>ã‚¤ãƒ™ãƒ³ãƒˆId</td><td>å¿…é ˆ</td><td>ã‚¤ãƒ™ãƒ³ãƒˆã®å®Ÿè£…ã•ã‚Œã‚‹ã‚µãƒ¼ãƒãƒ¼ã‚µã‚¤ãƒ‰Javascriptãƒ•ã‚¡ã‚¤ãƒ«åã¨åŒã˜ã€‚è‹±èªžã®å¤§æ–‡å­—å°æ–‡å­—ã‚’åŒºåˆ¥ã€‚</td>
 </tr>
 <tr>
-	<td><A NAME="manualParams">manualParams</A></td><td>Žè“®ƒpƒ‰ƒ[ƒ^</td><td>ƒIƒvƒVƒ‡ƒ“</td><td>ƒCƒxƒ“ƒg‚ÉŽè“®‚Å“n‚µ‚½‚¢ƒpƒ‰ƒ[ƒ^[‚ðÝ’è‚·‚éB</td>
+	<td><A NAME="manualParams">manualParams</A></td><td>æ‰‹å‹•ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿</td><td>ã‚ªãƒ—ã‚·ãƒ§ãƒ³</td><td>ã‚¤ãƒ™ãƒ³ãƒˆã«æ‰‹å‹•ã§æ¸¡ã—ãŸã„ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ãƒ¼ã‚’è¨­å®šã™ã‚‹ã€‚</td>
 </tr>
 <tr>
-	<td><A NAME="success">success</A></td><td>¬Œ÷ƒR[ƒ‹ƒoƒbƒNŠÖ”</td><td>ƒIƒvƒVƒ‡ƒ“</td><td>ƒCƒxƒ“ƒgˆ—‚ª¬Œ÷‚Ìê‡AŽÀs‚³‚ê‚éB‚±‚Ì’iŠK‚ÅAeventResult ‚Í‚·‚Å‚É‰æ–Ê‚É”½‰f‚µ‚½‚©‚çAsuccessŠÖ”‚É eventResult ‚É‘Î‚·‚éC³‚ÍˆÓ–¡‚ª‚È‚¢B</td>
+	<td><A NAME="success">success</A></td><td>æˆåŠŸã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°</td><td>ã‚ªãƒ—ã‚·ãƒ§ãƒ³</td><td>ã‚¤ãƒ™ãƒ³ãƒˆå‡¦ç†ãŒæˆåŠŸã®å ´åˆã€å®Ÿè¡Œã•ã‚Œã‚‹ã€‚ã“ã®æ®µéšŽã§ã€eventResult ã¯ã™ã§ã«ç”»é¢ã«åæ˜ ã—ãŸã‹ã‚‰ã€successé–¢æ•°ã« eventResult ã«å¯¾ã™ã‚‹ä¿®æ­£ã¯æ„å‘³ãŒãªã„ã€‚</td>
 </tr>
 </table>
 

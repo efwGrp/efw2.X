@@ -74,75 +74,74 @@ Declare the tag library of efw, add the efw tag, you can use the function of efw
 <HR>
 
 
-<H3><A NAME="efw.jsp.charset">encode & charset</A></H3>
+<H3><A NAME="efw.jsp.charset">Encode & Charset</A></H3>
 <pre>
     &lt;%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%&gt;
     &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/&gt;
 </pre>
 <DL>
 <DD>
-efwの各jsファイルは、UTF-8 でエンコードする。ただし、jsp画面は用途によりencodeとcharsetは、自由に設定できる。<br>
+All files of Efw are UTF-8 encode. But you can change the encode and charset of jsp by you self. <br>
 
 <table BORDER="1"  CELLPADDING="3" CELLSPACING="0" SUMMARY="">
 <tr BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
-	<th style="width:200px">ファイル</th>
-	<th style="width:200px">encode & charset</th>
-	<th style="width:650px">説明</th>
+	<th style="width:200px">File</th>
+	<th style="width:200px">Encode & Charset</th>
+	<th style="width:650px">Description</th>
 </tr>
 <tr>
 	<td>efw/efw.client.messages.js</td>
 	<td>UTF-8</td>
-	<td>クライアントのメッセージファイルは、UTF-8でencodeを固定にする。</td>
+	<td>The encode of the client message file is fixed to UTF-8. </td>
 </tr>
 <tr>
 	<td>efw/efw.server.messages.js</td>
 	<td>UTF-8</td>
-	<td>サーバーのメッセージファイルは、UTF-8でencodeを固定にする。</td>
+	<td>The encode of the server message file is fixed to UTF-8. </td>
 </tr>
 <tr>
 	<td>jsp pageEncoding</td>
-	<td>UTF-8 推薦</td>
-	<td>jsp画面は用途によりencodeとcharsetは、UTF-8を推薦。自由に設定できる。</td>
+	<td>UTF-8 is recommended</td>
+	<td>The encode and charset of jsp page is set to UTF-8. It can be changed as you like. </td>
 </tr>
 <tr>
 	<td>jsp charset</td>
-	<td>UTF-8 推薦</td>
-	<td>jsp画面は用途によりencodeとcharsetは、UTF-8を推薦。自由に設定できる。</td>
+	<td>UTF-8 recommended</td>
+	<td>The encode and charset of jsp page is set to UTF-8. It can be changed as you like. </td>
 </tr>
 <tr>
 	<td>jsp meta charset</td>
-	<td>jsp charset と同じ</td>
+	<td>same to jsp charset</td>
 	<td>－</td>
 </tr>
 <tr>
 	<td>event js</td>
 	<td>UTF-8</td>
-	<td>サーバーサイドのjsファイルのencodeは、UTF-8でencodeを固定にする。</td>
+	<td>The encode of the server js file is fixed to UTF-8. </td>
 </tr>
 <tr>
 	<td>sql xml</td>
-	<td>UTF-8 推薦</td>
-	<td>サーバーサイドのxmlファイルのencodeは、UTF-8を推薦。自由に設定できる。</td>
+	<td>UTF-8 is recommended</td>
+	<td>The encode and charset of server xml is set to UTF-8. It can be changed as you like. </td>
 </tr>
 
 </table>
 </DL></DD>
 <HR>
 
-<H3><A NAME="efw.jsp.charset">画面間のデータ受取り引渡し</A></H3>
+<H3><A NAME="efw.jsp.charset">Data Receipt And Delivery Between Two Pages</A></H3>
 <pre>
     var param1="&lt;%=request.getParameter("param1")%&gt;";
     window.location="next.jsp?param1="+param1;
 </pre>
 <DL>
 <DD>
-画面間のデータ受取りは、request.getParameter方式を推薦。画面間のデータ引渡しは、jsp従来どおりのURLパラメーター方式を推薦。<br>
-また、画面遷移は、jsp従来どおりのURL呼び出す方式を推薦。必要に応じて、フォームポスト、セッション、クッキーなども利用可能。<br>
-
+The data receiving from another page is recommented to use request.getParameter. And the data sending is recommended to use URL paramter as usual.<br>
+And the page transition is recommended to use URL calling as usual. Form post, session, cookie can be used if it is necessary.<br>
 </DL></DD>
 <HR>
 
-<H3><A NAME="efw.jsp.event">イベントのデータ受取り引渡し</A></H3>
+<H3><A NAME="efw.jsp.event">Data Receipt And Delivery Of Events</A></H3>
 <pre>
     efw.client.fire({
        eventId:"form1_event1",
@@ -154,19 +153,19 @@ efwの各jsファイルは、UTF-8 でエンコードする。ただし、jsp画
 </pre>
 <DL>
 <DD>
-イベントのデータ受取り引渡しは、サーバーサイドのイベントjsファイルに記載する。クライアントjsに記載不要。<br>
-ただし、success 関数に受取りデータに対して処理があれば、eventResult を意識する必要。詳細はAPIの efw.client.fire を参照。
+The data Receipt and delivery of events is written in the server side js files,  not the client js files.<br>
+But if the success function is necessary to do with the Received data, you must know the eventResult. See the detail by API efw.client.fire .
 </DL></DD>
 <HR>
 
-<H3><A NAME="efw.jsp.dataFormat">入力支援</A></H3>
+<H3><A NAME="efw.jsp.dataFormat">Input Support</A></H3>
 <pre>
     &lt;input id="txt_testnumber" type="text" data-format="#,##0.00"&gt;
-    &lt;input id="txt_testdate" type="text" data-format="yyyy年MM月dd日"&gt;
+    &lt;input id="txt_testdate" type="text" data-format="yyyy-MM-dd"&gt;
 </pre>
 <DL>
 <DD>
-efw:InputBehavior をインクルードして、入力枠に data-format を定義する場合、入力支援の動きを行う。<br>
+Input support will work if you import efw:InputBehavior tag and set the data-format attribute of the input element.<br>
 <table BORDER="1"  CELLPADDING="3" CELLSPACING="0" SUMMARY="">
 <tr BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
 	<th style="width:200px">data-format</th>

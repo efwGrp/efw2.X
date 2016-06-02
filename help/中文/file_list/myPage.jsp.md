@@ -81,7 +81,7 @@ web/myPage.jsp
 </pre>
 <DL>
 <DD>
-efw的各个js文件使用UTF-8编码。但是jsp画面根据用途可以自由设置encode和charset。<br>
+efw的各个文件使用UTF-8编码。但是jsp画面根据用途可以自由设置encode和charset。<br>
 
 <table BORDER="1"  CELLPADDING="3" CELLSPACING="0" SUMMARY="">
 <tr BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">

@@ -56,6 +56,11 @@ web/WEB-INF/classes/efw.properties
 	<td>ログインチェック用のセッションキー。</td>
 </tr>
 <tr>
+	<td>efw.login.url</td>
+	<td>login.jsp</td>
+	<td>ログインチェック用のセッションキー。</td>
+</tr>
+<tr>
 	<td>efw.logging.path</td>
 	<td>/logs</td>
 	<td>efwログ出力パス。絶対パス。</td>

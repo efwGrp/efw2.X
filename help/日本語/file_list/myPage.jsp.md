@@ -81,7 +81,7 @@ efw の taglib を宣言して、efwのタグを取り込み、efw.client の各
 </pre>
 <DL>
 <DD>
-efwの各jsファイルは、UTF-8 でエンコードする。ただし、jsp画面は用途によりencodeとcharsetは、自由に設定できる。<br>
+efwの各ファイルは、UTF-8 でエンコードする。ただし、jsp画面は用途によりencodeとcharsetは、自由に設定できる。<br>
 
 <table BORDER="1"  CELLPADDING="3" CELLSPACING="0" SUMMARY="">
 <tr BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
