@@ -32,6 +32,13 @@
 <tr>
 	<td>サンプルDB</td><td>サンプルDBをダウンロードしてください。efwSampleのデータベースにリストアしてください。<br>https://github.com/changkejun/efw2.X/<br>efw2.X/release with sample/sample database/</td><td></td>
 </tr>
+<tr>
+	<td>サンプルアプリ</td><td>サンプルアプリをダウンロードしてください。Tomcat/webapps/efwフォルダにコピーしてください。<br>https://github.com/changkejun/efw2.X/<br>efw2.X/release with sample/web application/</td><td></td>
+</tr>
+<tr>
+	<td>DB接続</td><td>efw/META-INF/context.xmlを開いて、ユーザ名とパスワードなどの接続情報を修正する。</td><td>postgresのJDBCドライブは、サンプルアプリに含んでいる。</td>
+</tr>
+
 </table>
 
 <h2>開発環境構築</h2>
