@@ -39,7 +39,7 @@
 	<td>DB接続</td><td>efw/META-INF/context.xmlを開いて、ユーザ名とパスワードなどの接続情報を修正する。</td><td>postgresのJDBCドライブは、サンプルアプリに含んでいる。</td>
 </tr>
 <tr>
-	<td>プロパティ設定</td>efw/WEB-INF/classes/efw.propertiesを開いて、プロパティファイルを修正する。<br>efw.isdebugをtrueに設定してください。<br>efw.logging.levelをALLに設定してください。<td></td><td></td>
+	<td>プロパティ設定</td><td>efw/WEB-INF/classes/efw.propertiesを開いて、プロパティファイルを修正する。<br>efw.isdebugをtrueに設定してください。<br>efw.logging.levelをALLに設定してください。</td><td></td>
 </tr>
 <tr>
 	<td>動作確認</td><td>Tomcatを起動して、http://localhost:8080/efw/login.jsp でefwサンプル画面を開いてください。</td><td></td>
