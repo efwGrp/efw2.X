@@ -18,8 +18,37 @@
 	<td>ブラウザ</td><td>IE8以上、FireFox、Chromeなど</td><td>基本的にjQuery1.12を利用できるブラウザならefwのメイン機能を利用できる。ただし個別機能を微調整する必要かもしれない。</td>
 </tr>
 </table>
+<h2>サンプル環境構築</h2>
+<table>
+<tr>
+	<th>ステップ</th><th>説明</th><th>注意事項</th>
+</tr>
+<tr>
+	<td>Tomcatダウンロード</td><td>http://tomcat.apache.org/ にてTomcat 7 あるいはそれより新しいバージョンをダウンロードする。</td><td>Servlet 3.0をサポートするバージョンが必要。http://tomcat.apache.org/whichversion.html</td>
+</tr>
+<tr>
+	<td></td><td></td><td></td>
+</tr>
+<tr>
+	<td></td><td></td><td></td>
+</tr>
+</table>
 
 <h2>開発環境構築</h2>
+<table>
+<tr>
+	<th>ステップ</th><th>説明</th><th>注意事項</th>
+</tr>
+<tr>
+	<td></td><td></td><td></td>
+</tr>
+<tr>
+	<td></td><td></td><td></td>
+</tr>
+<tr>
+	<td></td><td></td><td></td>
+</tr>
+</table>
 
 <h2>実行環境構築</h2>
 
