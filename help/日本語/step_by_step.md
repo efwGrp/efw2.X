@@ -24,7 +24,7 @@
 	<th>ステップ</th><th>説明</th><th>注意事項</th>
 </tr>
 <tr>
-	<td>Tomcatダウンロード</td><td>http://tomcat.apache.org/ にてTomcat 7 あるいはそれより新しいバージョンをダウンロードする。</td><td>Servlet 3.0をサポートするバージョンが必要。http://tomcat.apache.org/whichversion.html</td>
+	<td>Tomcatダウンロード</td><td>Tomcat 7 あるいはそれより新しいバージョンをダウンロードする。<br>http://tomcat.apache.org/</td><td>Servlet 3.0をサポートするバージョンが必要。<br>http://tomcat.apache.org/whichversion.html</td>
 </tr>
 <tr>
 	<td></td><td></td><td></td>
