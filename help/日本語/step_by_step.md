@@ -1,7 +1,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="../日本語/step_by_step.md">日本語</a>
 &nbsp;<a href="../中文/step_by_step.md">中文</a>
 &nbsp;<a href="../English/step_by_step.md">English</a>
-<H1>Step By Step 環境を構築</H1>
+<H1>Step By Step 環境構築</H1>
 
 <h2>要求事項</h2>
 <table>
