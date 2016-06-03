@@ -9,7 +9,7 @@
 	<th>項目</th><th>説明</th><th>注意事項</th>
 </tr>
 <tr>
-	<td>JDK</td><td>java JDK 1.7 or java JDK 1.8</td><td>Open JDK 1.7でエラーが発生する。Open JDK 1.8は試したことがない。TODO</td>
+	<td>JDK</td><td>java JDK 1.7 or java JDK 1.8</td><td>Java JDKとOpen JDKの違いを注意する必要。<br>Open JDK 1.7でエラーが発生する。Open JDK 1.8は試したことがない。</td>
 </tr>
 <tr>
 	<td>アプリサーバ</td><td>Tomcat 1.7 or Tomcat 1.8 を推薦</td><td>Servlet 3をサポートしないアプリサーバに設置する場合、web.xmlの調整が必要。</td>
@@ -19,8 +19,10 @@
 </tr>
 </table>
 
-<h2>実行環境</h2>
-<h2>開発環境</h2>
+<h2>開発環境構築</h2>
+
+<h2>実行環境構築</h2>
+
 1.ダウンロードする
 2.DBをリスドアする
 3.アプリをtomcatにいれる
