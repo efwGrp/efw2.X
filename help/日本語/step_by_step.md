@@ -30,7 +30,7 @@
 	<td>PostgreSQL</td><td>9.3以降バージョンをダウンロード＆インストールしてください。efwSampleのデータベースを作ってください。<br>https://www.postgresql.org/download/</td><td>サンプルDBのバージョンは9.3だから。</td>
 </tr>
 <tr>
-	<td>サンプルDB</td><td>https://github.com/changkejun/efw2.X/ にてサンプルDBをダウンロードしてください。efwSampleのデータベースにリストアしてください。<br>efw2.X/release with sample/sample database/</td><td></td>
+	<td>サンプルDB</td><td>サンプルDBをダウンロードしてください。efwSampleのデータベースにリストアしてください。<br>https://github.com/changkejun/efw2.X/<br>efw2.X/release with sample/sample database/</td><td></td>
 </tr>
 </table>
 
