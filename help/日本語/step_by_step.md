@@ -3,7 +3,7 @@
 &nbsp;<a href="../English/step_by_step.md">English</a>
 <H1>Step By Step 環境構築</H1>
 
-<h2>要求事項</h2>
+<h2>前提条件</h2>
 <table>
 <tr>
 	<th>項目</th><th>説明</th><th>注意事項</th>
@@ -18,13 +18,13 @@
 	<td>ブラウザ</td><td>IE8以上、FireFox、Chromeなど</td><td>jQuery1.12を利用できるブラウザ。<br>cors機能は特別な要求がある。</td>
 </tr>
 </table>
-<h2>サンプル環境構築</h2>
+<h2>サンプルアプリ環境構築</h2>
 <table>
 <tr>
 	<th>ステップ</th><th>説明</th><th>注意事項</th>
 </tr>
 <tr>
-	<td>JDKとTomcat</td><td>要求事項を参照。</td><td>要求事項を参照。</td>
+	<td>JDKとTomcat</td><td>前提条件を参照。</td><td>前提条件を参照。</td>
 </tr>
 <tr>
 	<td>PostgreSQL</td><td>9.3以降バージョンをダウンロード＆インストールしてください。efwSampleのデータベースを作ってください。<br>https://www.postgresql.org/download/</td><td>サンプルDBのバージョンは9.3だから。</td>
