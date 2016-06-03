@@ -12,7 +12,7 @@
 	<td>JDK</td><td>java JDK 1.7 or java JDK 1.8</td><td>Java JDKとOpen JDKの違いを注意する必要。<br>Open JDK 1.7でエラーが発生する。Open JDK 1.8は試したことがない。</td>
 </tr>
 <tr>
-	<td>アプリサーバ</td><td>Tomcat 1.7 or Tomcat 1.8 を推薦</td><td>Servlet 3をサポートしないアプリサーバに設置する場合、web.xmlの調整が必要。</td>
+	<td>アプリサーバ</td><td>Tomcat 1.7 or Tomcat 1.8 を推薦<br>Servlet 3.0をサポートするバージョンが必要。<br>http://tomcat.apache.org/whichversion.html</td><td>Servlet 3をサポートしないアプリサーバに設置する場合、web.xmlの調整が必要。</td>
 </tr>
 <tr>
 	<td>ブラウザ</td><td>IE8以上、FireFox、Chromeなど</td><td>基本的にjQuery1.12を利用できるブラウザならefwのメイン機能を利用できる。ただし個別機能を微調整する必要かもしれない。</td>
@@ -24,13 +24,10 @@
 	<th>ステップ</th><th>説明</th><th>注意事項</th>
 </tr>
 <tr>
-	<td>JDKダウンロード</td><td></td><td></td>
 </tr>
 <tr>
-	<td>Tomcatダウンロード</td><td>Tomcat 7 あるいはそれより新しいバージョンをダウンロードする。<br>http://tomcat.apache.org/</td><td>Servlet 3.0をサポートするバージョンが必要。<br>http://tomcat.apache.org/whichversion.html</td>
 </tr>
 <tr>
-	<td></td><td></td><td></td>
 </tr>
 </table>
 
