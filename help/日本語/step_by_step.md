@@ -24,10 +24,13 @@
 	<th>ステップ</th><th>説明</th><th>注意事項</th>
 </tr>
 <tr>
+	<td>JDKとTomcat</td><td>要求事項を参照。</td><td>要求事項を参照。</td>
 </tr>
 <tr>
+	<td>PostgreSQL</td><td>9.3以降バージョンをダウンロード＆インストールしてください。efwSampleのデータベースを作ってください。<br>https://www.postgresql.org/download/</td><td>サンプルDBのバージョンは9.3だから。</td>
 </tr>
 <tr>
+	<td>サンプルDB</td><td>https://github.com/changkejun/efw2.X/ にてサンプルDBをダウンロードしてください。efwSampleのデータベースにリストアしてください。<br>efw2.X/release with sample/sample database/</td><td></td>
 </tr>
 </table>
 
