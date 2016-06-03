@@ -33,36 +33,19 @@
 	<td>サンプルDB</td><td>サンプルDBをダウンロードしてください。efwSampleのデータベースにリストアしてください。<br>https://github.com/changkejun/efw2.X/<br>efw2.X/release with sample/sample database/</td><td></td>
 </tr>
 <tr>
-	<td>サンプルアプリ</td><td>サンプルアプリをダウンロードしてください。Tomcat/webapps/efwフォルダにコピーしてください。<br>https://github.com/changkejun/efw2.X/<br>efw2.X/release with sample/web application/</td><td></td>
+	<td>サンプルApp</td><td>サンプルAppをダウンロードしてください。Tomcat/webapps/efwフォルダにコピーしてください。<br>https://github.com/changkejun/efw2.X/<br>efw2.X/release with sample/web application/</td><td></td>
 </tr>
 <tr>
 	<td>DB接続</td><td>efw/META-INF/context.xmlを開いて、ユーザ名とパスワードなどの接続情報を修正する。</td><td>postgresのJDBCドライブは、サンプルアプリに含んでいる。</td>
 </tr>
-
-</table>
-
-<h2>開発環境構築</h2>
-<table>
 <tr>
-	<th>ステップ</th><th>説明</th><th>注意事項</th>
+	<td>プロパティ設定</td>efw/WEB-INF/classes/efw.propertiesを開いて、プロパティファイルを修正する。<br>efw.isdebugをtrueに設定してください。<br>efw.logging.levelをALLに設定してください。<td></td><td></td>
 </tr>
 <tr>
-	<td></td><td></td><td></td>
-</tr>
-<tr>
-	<td></td><td></td><td></td>
-</tr>
-<tr>
-	<td></td><td></td><td></td>
+	<td>動作確認</td><td>Tomcatを起動して、http://localhost:8080/efw/login.jsp でefwサンプル画面を開いてください。</td><td></td>
 </tr>
 </table>
 
-<h2>実行環境構築</h2>
 
-1.ダウンロードする
-2.DBをリスドアする
-3.アプリをtomcatにいれる
-4.ＤＢ設定を修正する
-5.Debugモードに設定する
 
 
