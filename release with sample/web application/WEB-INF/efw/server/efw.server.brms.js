@@ -1,4 +1,8 @@
-﻿///////////////////////////////////////////////////////////////////////////////
+﻿/**
+ * efw framework server brms library
+ * @author Lin He,Liang Tian
+ */
+///////////////////////////////////////////////////////////////////////////////
 var EfwServerBRMS=function(){};
 ///////////////////////////////////////////////////////////////////////////////
 EfwServerBRMS.prototype={
@@ -28,50 +32,26 @@ EfwServerBRMS.prototype={
 		var rs= Packages.efw.brms.BrmsManager.execute(ruleCode,ruleDate,params);
 		var ret=[];
 		var meta=rs.getMetaData();
-		var iColCnt = meta.getColumnCount();
+		var parseValue=function(rs,idx){
+			var value=null;
+			if( meta.getColumnType(idx) == com.innoexpert.rulesclient.Constants.TYPE_NUMBER){
+				value= 0+new Number(rs.getDouble( idx ));
+			} else if( meta.getColumnType(idx) == com.innoexpert.rulesclient.Constants.TYPE_STRING){
+				value= "" + rs.getString(idx);
+			} else if( meta.getColumnType(idx) == com.innoexpert.rulesclient.Constants.TYPE_BOOLEAN){
+				value= true && rs.getBoolean(idx);
+			}
+			return value;
+		};
 		//change recordset to java array
 		while (rs.next()) {
-			var item={};
 			var rsdata={};
-			for( var i = 1; i <= iColCnt; i++ ){
-				var key= "" + meta.getColumnName(i);
-                	 if( meta.getColumnType(i) == new Number(com.innoexpert.rulesclient.Constants.TYPE_NUMBER)){
-					rsdata[key] = 0+new Number(rs.getDouble( i ));
-                	 } else if( meta.getColumnType(i) == new Number(com.innoexpert.rulesclient.Constants.TYPE_STRING)){
-	            		 rsdata[key]="" + rs.getString(i);
-	     		} else if( meta.getColumnType(i) == new Number(com.innoexpert.rulesclient.Constants.TYPE_BOOLEAN)){
-					rsdata[key] = (true && rs.getBoolean( i ));
-				}
-
-			}	
-			if (mapping!=null){
-				for(var key in mapping){
-					var mp=mapping[key];
-					if(typeof mp =="string"){
-						var vl=rsdata[mp];
-						item[key]=vl;
-					}else if(typeof mp =="function"){
-						var vl=mp(rsdata);
-						item[key]=vl;
-					}else if(typeof mp =="object" && Array.isArray(mp)){
-						var vl=rsdata[mp[0]];
-						var ft=mp[1];
-						if(vl!=null&&ft!=null){
-							if(vl.toFixed){//if vl is number #,##0.00
-								var round=""+mp[2];
-								vl=EfwServerFormat.prototype.formatNumber(vl,ft,round);
-							}else if(vl.getTime){//if vl is date yyyyMMdd
-								vl=EfwServerFormat.prototype.formatDate(vl,ft);
-							}
-							//if vl is not date or number, it should not have format
-						}
-						item[key]=vl;
-					}
-				}
-			}else{
-				item=rsdata;
+			var maxColumnCount=meta.getColumnCount();
+			for (var j=1;j<=maxColumnCount;j++){
+				var key=meta.getColumnName(j);
+				rsdata[key]=parseValue(rs,j);
 			}
-			ret.push(item);
+			ret.push(EfwServerMapping.prototype.doSingle(rsdata,mapping));
 		}
 		return ret;		
 	},

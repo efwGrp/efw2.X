@@ -80,7 +80,10 @@ public final class ScriptManager {
 		se.put(KEY_ENGINE, ScriptManager.se);
 		try {
 			load(serverFolder+"/efw.server.js");
-		} catch (ScriptException | IOException e) {
+		} catch (ScriptException e) {
+			e.printStackTrace();
+			throw new efwException(efwException.ScriptInitFailedException);
+		} catch (IOException e) {
 			e.printStackTrace();
 			throw new efwException(efwException.ScriptInitFailedException);
 		}
@@ -98,7 +101,10 @@ public final class ScriptManager {
 		Invocable invocable = (Invocable) se;
 		try {
 			return (String)invocable.invokeFunction("doPost", req);
-		} catch (NoSuchMethodException | ScriptException e) {
+		} catch (NoSuchMethodException e) {
+			e.printStackTrace();
+			throw new efwException(efwException.ScriptDoPostFailedException);
+		} catch (ScriptException e) {
 			e.printStackTrace();
 			throw new efwException(efwException.ScriptDoPostFailedException);
 		}

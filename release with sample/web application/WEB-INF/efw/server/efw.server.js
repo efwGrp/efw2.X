@@ -8,8 +8,11 @@ var _eventfolder;
 var _isdebug;
 var _engine;// Mozilla Rhino 1.7 / Oracle Nashorn 1.8
 ///////////////////////////////////////////////////////////////////////////////
-if ((_engine.getFactory().getEngineName()+"").indexOf("Rhino")>-1){//java 1.7
+if ((_engine.getFactory().getEngineName()+"").indexOf("Rhino")>-1){//java 1.7 1.6
 	function load(filename) { Packages.efw.script.ScriptManager.load(filename);}
+	if((java.lang.System.getProperty("java.version")+"").indexOf("1.6")==0){
+		load(_serverfolder+"/json2.min.js");
+	}
 }
 ///////////////////////////////////////////////////////////////////////////////
 function doPost(req){
@@ -94,7 +97,7 @@ EfwServer.prototype={
 				
 				if(paramdef==null){//if format define is null
 					//do nothing
-				}else if(Array.isArray(paramdef)){//if format define is array
+				}else if(paramdef instanceof Array){//if format define is array
 					if(param!=null){
 						for(var i=0;i<paramdef.length;i++){//loop it to validate items in the array
 							ret=ret.concat(_check(param[i],paramdef[0],parentkey+key+":eq("+i+")"));
@@ -277,7 +280,7 @@ load(_serverfolder+"/efw.server.db.js");
 load(_serverfolder+"/efw.server.event.js");
 load(_serverfolder+"/efw.server.customize.js");
 load(_serverfolder+"/efw.server.file.js");
-
+load(_serverfolder+"/efw.server.mapping.js");
 load(_serverfolder+"/efw.server.brms.js");
 ///////////////////////////////////////////////////////////////////////////////
 Efw.prototype.server=new EfwServer();

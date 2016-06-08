@@ -59,7 +59,10 @@ public final class Database {
     	    ResultSet rs = mStmt.executeQuery();
     	    LogManager.CommDebug("Database.executeQuery");
     	    return rs;
-    	}catch(efwException|SQLException e){
+    	}catch(efwException e){
+    		e.printStackTrace();
+    		throw e;
+    	}catch(SQLException e){
     		e.printStackTrace();
     		throw e;
     	}
@@ -87,7 +90,10 @@ public final class Database {
             LogManager.CommDebug("Database.executeUpdate");
             
             return cnt;
-    	}catch(efwException|SQLException e){
+    	}catch(efwException e){
+    		e.printStackTrace();
+    		throw e;
+    	}catch(SQLException e){
     		e.printStackTrace();
     		throw e;
     	}
@@ -111,7 +117,10 @@ public final class Database {
             setSQLParams(mStmt, sqlParams);
             mStmt.execute();
             LogManager.CommDebug("Database.execute");
-    	}catch(efwException|SQLException e){
+    	}catch(efwException e){
+    		e.printStackTrace();
+    		throw e;
+    	}catch(SQLException e){
     		e.printStackTrace();
     		throw e;
     	}

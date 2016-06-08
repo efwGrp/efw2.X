@@ -63,42 +63,13 @@ EfwServerDb.prototype={
 		};
 		//change recordset to java array
 		while (rs.next()) {
-			var item={};
 			var rsdata={};
 			var maxColumnCount=meta.getColumnCount();
 			for (var j=1;j<=maxColumnCount;j++){
 				var key=meta.getColumnName(j);
 				rsdata[key]=parseValue(rs.getObject(key));
 			}
-	
-			if (mapping!=null){
-				for(var key in mapping){
-					var mp=mapping[key];
-					if(typeof mp =="string"){
-						var vl=rsdata[mp];
-						item[key]=vl;
-					}else if(typeof mp =="function"){
-						var vl=mp(rsdata);
-						item[key]=vl;
-					}else if(typeof mp =="object" && Array.isArray(mp)){
-						var vl=rsdata[mp[0]];
-						var ft=mp[1];
-						if(vl!=null&&ft!=null){
-							if(vl.toFixed){//if vl is number #,##0.00
-								var round=""+mp[2];
-								vl=EfwServerFormat.prototype.formatNumber(vl,ft,round);
-							}else if(vl.getTime){//if vl is date yyyyMMdd
-								vl=EfwServerFormat.prototype.formatDate(vl,ft);
-							}
-							//if vl is not date or number, it should not have format
-						}
-						item[key]=vl;
-					}
-				}
-			}else{
-				item=rsdata;
-			}
-			ret.push(item);
+			ret.push(EfwServerMapping.prototype.doSingle(rsdata,mapping));
 		}
 		rs.close();
 		return ret;
@@ -144,7 +115,7 @@ EfwServerDb.prototype={
 	"closeAll":function(){
 		Packages.efw.db.DatabaseManager.closeAll();
 	},
-
+	
 };
 ///////////////////////////////////////////////////////////////////////////////
 EfwServer.prototype.db=new EfwServerDb();

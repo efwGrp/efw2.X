@@ -92,7 +92,10 @@ public final class LogManager {
 	        fh.setFormatter(new LogFormatter());
 	        logger.addHandler(fh);
 	        logger.setLevel(level);
-		} catch (SecurityException | IOException e) {
+		} catch (SecurityException e) {
+			e.printStackTrace();
+			throw new efwException(efwException.LogInitFailedException);
+		} catch (IOException e) {
 			e.printStackTrace();
 			throw new efwException(efwException.LogInitFailedException);
 		}
