@@ -2,7 +2,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="../../日本語/file_list/myEvent.js.md">日本語</a>
 &nbsp;<a href="../../中文/file_list/myEvent.js.md">中文</a>
 &nbsp;<a href="../../English/file_list/myEvent.js.md">English</a>
-<H2><A NAME="efw.event">eventのプログラム</A></H2>
+<H2><A NAME="efw.event">Event Program</A></H2>
 <pre>
 web/WEB-INF/efw/event/myEvent.js
 --------------------------------------------------------------------------------
@@ -32,17 +32,17 @@ form1_event1.<b>fire</b>         = function ( requestParams ) {
                             };
 </pre>
 <DL>
-<DD>eventファイル。<br>
+<DD>event file.<br>
 </DL></DD>
 <HR>
 
-<H3><A NAME="efw.event.outOfLogin">ログインチェック</A></H3>
+<H3><A NAME="efw.event.outOfLogin">Login Check</A></H3>
 <pre>
     form1_event1.outOfLogin = true/false;
 </pre>
 <DL>
 <DD>
-ログインチェック不要フラグが、未設定またはfalseの場合、ログインチェックを実行する。trueの場合、ログインチェックを実行しない。<br>
+The flag of detecting wether logged or not.未設定またはfalseの場合、ログインチェックを実行する。trueの場合、ログインチェックを実行しない。<br>
 ログインチェックの確認対象について、efw.properties の efw.login.key を参照。
 </DL></DD>
 <HR>
