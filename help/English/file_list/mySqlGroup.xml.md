@@ -2,7 +2,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;<a href="../../日本語/file_list/mySqlGroup.xml.md">日本語</a>
 &nbsp;<a href="../../中文/file_list/mySqlGroup.xml.md">中文</a>
 &nbsp;<a href="../../English/file_list/mySqlGroup.xml.md">English</a>
-<H2><A NAME="efw.sql">sqlのプログラム</A></H2>
+<H2><A NAME="efw.sql">sql program</A></H2>
 <pre>
 web/WEB-INF/efw/sql/mySqlGroup.xml
 --------------------------------------------------------------------------------
@@ -10,13 +10,13 @@ web/WEB-INF/efw/sql/mySqlGroup.xml
 &lt;<b>sqls</b>&gt;
     &lt;<b>sql id="sql_1"</b>&gt;
 <I>&lt;!-- 
- コメント１
+ comment1
 --&gt;
 /**
-*コメント２
+*comment2
 **/
-//コメント３
---コメント４</I>
+//comment3
+--comment4</I>
 
         
         SELECT user_id FROM usermaster
@@ -30,12 +30,12 @@ web/WEB-INF/efw/sql/mySqlGroup.xml
 &lt;<b>/sqls</b>&gt;
 </pre>
 <DL>
-<DD>sqlファイル。<br>
+<DD>sql file.<br>
 </DL></DD>
 <HR>
 
 
-<H3><A NAME="efw.sql.groupidandsqlid">groupIdとsqlId</A></H3>
+<H3><A NAME="efw.sql.groupidandsqlid">groupId and sqlId</A></H3>
 <pre>
 </pre>
 <DL>
