@@ -40,55 +40,55 @@ web/WEB-INF/efw/sql/mySqlGroup.xml
 </pre>
 <DL>
 <DD>
-sql XMLファイルの名称は、groupId になる。その中に定義される sqlタグの id は、sqlId になる。
+The name of the sql XML file is groupId. In the file, the value of "id" in "sql" tag is sqlId.
 </DL></DD>
 <HR>
 
-<H3><A NAME="efw.sql.comment">コメントの書き方</A></H3>
+<H3><A NAME="efw.sql.comment">how to write comment</A></H3>
 <pre>
 <I>&lt;!-- 
- コメント１
+ comment1
 --&gt;
 /**
-*コメント２
+*comment2
 **/
-//コメント３
---コメント４</I>
+//comment3
+--comment4</I>
 </pre>
 <DL>
 <DD>
-sql XMLファイルにコメントは４種類の書き方を利用できる。
+In sql XML file, you can write your comments through these 4 ways.
 </DL></DD>
 <HR>
 
-<H3><A NAME="efw.sql.param">変数の書き方</A></H3>
+<H3><A NAME="efw.sql.param">how to use parameters</A></H3>
 <pre>
     :user_id
 </pre>
 <DL>
 <DD>
-「 : 」＋変数識別子 で命名する。識別子は、java変数命名を参照。
+Named by 「 : 」＋変数識別子. 識別子は、java変数命名を参照。
 </DL></DD>
 <HR>
 
-<H3><A NAME="efw.sql.stbt">比較条件の書き方</A></H3>
+<H3><A NAME="efw.sql.stbt">how to write comparison condition</A></H3>
 <pre>
     WHERE validateDateFrom <b style="color:red">&amp;gt;</b> now() and validateDateTo <b style="color:red">&amp;lt;</b> now() 
 </pre>
 <DL>
 <DD>
-XMLファイルの制限により、「 &lt; 」⇒「 &amp;lt; 」、「 &gt; 」⇒「 &amp;gt; 」で記載する必要。
+Because of the restrictions in XML file,you have to transform 「 &lt; 」into「 &amp;lt; 」,and 「 &gt; 」into「 &amp;gt; 」.
 </DL></DD>
 <HR>
 
-<H3><A NAME="efw.sql.if">if 条件の書き方</A></H3>
+<H3><A NAME="efw.sql.if">how to write a "if" condition</A></H3>
 <pre>
     &lt;if <b>exists</b> = "user_id" &gt; and user_id = :user_id &lt;/if&gt;
     &lt;if <b>notexists</b> = "user_id" &gt; order by user_id desc &lt;/if&gt;
 </pre>
 <DL>
 <DD>
-sqlパラメーターの有無により、sqlを変化したい場合、if タグを利用できる。<br>
+If you want to change the sql string according to the presence or absence of the sql parameters,you can use "if" tag.<br>
 exists 属性は、指定されたsqlパラメーターが null または 空白ではない場合、trueと判断される。<br>
 notexists 属性は、指定されたsqlパラメーターが null または 空白の場合、trueと判断される。
 </DL></DD>
