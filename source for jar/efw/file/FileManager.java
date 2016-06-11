@@ -7,8 +7,14 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.channels.FileChannel;
+import java.util.HashMap;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
+
+import javax.servlet.http.HttpSession;
+
+import efw.efwServlet;
 /**
  * アップロードとダウンロードファイルを管理するクラス。
  * @author Chang Kejun
@@ -19,6 +25,11 @@ public final class FileManager {
 	 * サーブレットから渡される。
 	 */
     private static String storageFolder;
+    /**
+     * アップロード情報を格納するセッションキー
+     */
+    private static final String EFW_UPLOAD="EFW_UPLOAD";    
+    
     /**
      * サーブレットから設定情報を受け取る。
      * @param uploadFolder　アップロードファイルの格納パス。
@@ -45,6 +56,7 @@ public final class FileManager {
 	}
 	
 	public static File get(String path){
+		if(path==null)path="";
 		File fl=new File(storageFolder+"/"+path);
 		return fl;
 	}
@@ -118,7 +130,61 @@ public final class FileManager {
 	            }
 			}
         }	
-	}	
-
+	}
+////////////////////////////////////////////////////////////////
+	/***
+	 *　アップロードされたファイルを全部相対パスで保存する。
+	 * @param path　スドレジからの相対パス
+	 * @throws IOException 
+	 */
+	public static void saveUploadFiles(String path) throws IOException{
+		if (path==null||"".equals(path)){
+			path=storageFolder;
+		}else{
+			path=storageFolder+"/"+path;
+		}
+		File p=new File(path);
+		if (!p.exists())p.mkdirs();
+		
+		@SuppressWarnings("unchecked")
+		HashMap<String, String> map= (HashMap<String, String>)efwServlet.getRequest().getSession().getAttribute(EFW_UPLOAD);
+		if (map==null){
+			return;
+		}else{
+			for(HashMap.Entry<String, String> entry : map.entrySet()) {
+				String srcPath=entry.getValue();
+				String uploadFileName=entry.getKey();
+				String destPath=path+"/"+uploadFileName.substring(uploadFileName.lastIndexOf("\\") + 1);
+				@SuppressWarnings("resource")
+				FileChannel srcChannel = new FileInputStream(srcPath).getChannel();
+		        @SuppressWarnings("resource")
+				FileChannel destChannel = new FileOutputStream(destPath).getChannel();
+		        try {
+		            srcChannel.transferTo(0, srcChannel.size(), destChannel);
+		        } finally {
+		            srcChannel.close();
+		            destChannel.close();
+		        }
+		        new File(srcPath).delete();
+			}
+		}
+		efwServlet.getRequest().getSession().removeAttribute(EFW_UPLOAD);
+	}
 	
+	/***
+	 * アッポロードファイル名と一時ファイルパスをセッションに格納する
+	 * @param uploadFileName　アッポロードファイル名（クライアントパスと名称）
+	 * @param tempFileAbsolutePath　一時ファイルパス（サーバ絶対パスと名称）
+	 */
+	public static void keepUploadFile(HttpSession session,String uploadFileName,String tempFileAbsolutePath){
+		@SuppressWarnings("unchecked")
+		HashMap<String, String> map= (HashMap<String, String>)session.getAttribute(EFW_UPLOAD);
+		if (map==null){
+			map=new HashMap<String, String>();
+			session.setAttribute(EFW_UPLOAD,map);
+		}
+		String oldTempFileAbsolutePath=map.get(uploadFileName);
+		if (oldTempFileAbsolutePath!=null) new File(oldTempFileAbsolutePath).delete();
+		map.put(uploadFileName, tempFileAbsolutePath);
+	}
 }

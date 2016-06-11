@@ -9,7 +9,7 @@ mdclexam_showfiles.fire=function(params){
 	return [{
 		"runat":"#cmb_download",
 		"remove":"option",
-		"append":"<option value=\"{name}\">{name}　{lastModified} {length}",
+		"append":"<option value=\"{name}\">{name}",//　{lastModified} {length}
 		"withdata":data,
 	}];
 };

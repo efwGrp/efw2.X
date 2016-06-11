@@ -23,6 +23,8 @@ EfwClient.prototype={
 		EfwClient.prototype._displayLoading();
 		var servletUrl="efwServlet";
 		if(eventParams.server)servletUrl=eventParams.server+"/"+servletUrl;
+		var uploadUrl="uploadServlet";
+		if(eventParams.server)uploadUrl=eventParams.server+"/"+uploadUrl;
 		$.ajax({
 			url: servletUrl,
 			type: "POST",//post method
@@ -38,7 +40,7 @@ EfwClient.prototype={
 				if (data.error){//if it is error from efw server side
 					EfwClient.prototype._returnAlert(data.error,eventId);
 				}else{//if no error, run the second fire
-					EfwClient.prototype._fire2nd(eventId,data,manualParams,successCallback,servletUrl);
+					EfwClient.prototype._fire2nd(eventId,data,manualParams,successCallback,servletUrl,uploadUrl);
 				}
 			},
 			error: function(errorResponse, errorType, errorMessage){
@@ -99,7 +101,7 @@ EfwClient.prototype={
 		}
 	},
 ///////////////////////////////////////////////////////////////////////////////
-	"_fire2nd":function(eventId,paramsFormat,manualParams,successCallback,servletUrl){
+	"_fire2nd":function(eventId,paramsFormat,manualParams,successCallback,servletUrl,uploadUrl){
 		//auto collect params
 		//---------------------------------------------------------------------
 		try{
@@ -111,67 +113,115 @@ EfwClient.prototype={
 			EfwClient.prototype._returnAlert({errorType:"ParamsFormatErrorException",canNotContinue:true},eventId);
 			return;
 		}
-		this._consoleLog("Second calling parameters",params);
+		EfwClient.prototype._consoleLog("Second calling parameters",params);
 		//the second calling
 		//---------------------------------------------------------------------
-		$.ajax({
-			url: servletUrl,
-			type: "POST",//post method
-			cache: false,//don't use cache
-			async: true,//don't use async
-			dataType: "json",//send or get data by json type
-			//first calling only send groupid and eventid
-			data:{"data":JSON.stringify({"eventId":eventId,"params":params})},
-			success: function(data){
-				EfwClient.prototype._consoleLog("Second calling result",data);
-				if($.type(data)=="array"){
-					try{
-						EfwClient.prototype._showValues(data);
-					}catch(e){
-						EfwClient.prototype._consoleLog("Second calling error",e);
-						EfwClient.prototype._returnAlert({errorType:"ShowValuesErrorException",canNotContinue:true},eventId);
-						return;
-					}
-					try{
-						if (successCallback)successCallback(data);
-						EfwClient.prototype._removeLoading();
-					}catch(msg){
-						var e={};
-						e.errorType="success function";
-						e.errorMessage=msg;
-						EfwClient.prototype._consoleLog("Success function error",e);
-						EfwClient.prototype._returnAlert({errorType:"SuccessCallbackErrorException",canNotContinue:true},eventId);
-					}
-				}else{
-					if (data.download){//about filename encode, efw has not do anything .
-						var downloadUrl="downloadServlet";
-						window.location=downloadUrl;
-						EfwClient.prototype._removeLoading();
-					}else if (data.error){
-						EfwClient.prototype._returnAlert(data.error);
-						if(data.error.canNotContinue==undefined||data.error.canNotContinue==false){
+		var callSecondAjax=function(){
+			$.ajax({
+				url: servletUrl,
+				type: "POST",//post method
+				cache: false,//don't use cache
+				async: true,//don't use async
+				dataType: "json",//send or get data by json type
+				//first calling only send groupid and eventid
+				data:{"data":JSON.stringify({"eventId":eventId,"params":params})},
+				success: function(data){
+					EfwClient.prototype._consoleLog("Second calling result",data);
+					if($.type(data)=="array"){
+						try{
+							EfwClient.prototype._showValues(data);
+						}catch(e){
+							EfwClient.prototype._consoleLog("Second calling error",e);
+							EfwClient.prototype._returnAlert({errorType:"ShowValuesErrorException",canNotContinue:true},eventId);
+							return;
+						}
+						try{
+							if (successCallback)successCallback(data);
 							EfwClient.prototype._removeLoading();
+						}catch(msg){
+							var e={};
+							e.errorType="success function";
+							e.errorMessage=msg;
+							EfwClient.prototype._consoleLog("Success function error",e);
+							EfwClient.prototype._returnAlert({errorType:"SuccessCallbackErrorException",canNotContinue:true},eventId);
 						}
 					}else{
-						var e={};
-						e.errorType="data type";
-						e.errorMessage="The second calling return is not an array.";
-						EfwClient.prototype._consoleLog("Second calling error",e);
-						EfwClient.prototype._returnAlert({errorType:"ReturnIsNotArrayErrorException",canNotContinue:true},eventId);
+						if (data.download){//about filename encode, efw has not do anything .
+							var downloadUrl="downloadServlet";
+							window.location=downloadUrl;
+							var downloadHandle=null;
+							downloadHandle=window.setInterval(function(){
+									if (Cookies.get("efw_Downloaded")) {
+										clearInterval(downloadHandle);
+										Cookies.remove("efw_Downloaded",{path:"/"});
+										try{
+											if (successCallback)successCallback(data);
+											EfwClient.prototype._removeLoading();
+										}catch(msg){
+											var e={};
+											e.errorType="success function";
+											e.errorMessage=msg;
+											EfwClient.prototype._consoleLog("Success function error",e);
+											EfwClient.prototype._returnAlert({errorType:"SuccessCallbackErrorException",canNotContinue:true},eventId);
+										}
+									}
+								}, 1000
+							);
+						}else if (data.error){
+							EfwClient.prototype._returnAlert(data.error);
+							if(data.error.canNotContinue==undefined||data.error.canNotContinue==false){
+								EfwClient.prototype._removeLoading();
+							}
+						}else{
+							var e={};
+							e.errorType="data type";
+							e.errorMessage="The second calling return is not an array.";
+							EfwClient.prototype._consoleLog("Second calling error",e);
+							EfwClient.prototype._returnAlert({errorType:"ReturnIsNotArrayErrorException",canNotContinue:true},eventId);
+						}
 					}
+				},
+				error: function(errorResponse, errorType, errorMessage){
+					var e={};
+					e.errorResponse=errorResponse;
+					e.errorType=errorType;
+					e.errorMessage=errorMessage;
+					EfwClient.prototype._consoleLog("Second calling error",e);
+					EfwClient.prototype._returnAlert(e,eventId);
 				}
-			},
-			error: function(errorResponse, errorType, errorMessage){
-				var e={};
-				e.errorResponse=errorResponse;
-				e.errorType=errorType;
-				e.errorMessage=errorMessage;
-				EfwClient.prototype._consoleLog("Second calling error",e);
-				EfwClient.prototype._returnAlert(e,eventId);
-			}
-		});	
+			});	
+		};
+		//upload files
+		//---------------------------------------------------------------------
+		if(EfwClient.prototype._pickupParams_uploadformdata!=null){
+			$.ajax({
+				url: uploadUrl,
+				type: "POST",//post method
+				dataType: "json",//send or get data by json type
+				cache: false,//don't use cache
+				async: true,//don't use async
+				processData: false,
+				contentType: false,
+				data:EfwClient.prototype._pickupParams_uploadformdata,//upload files
+				success:function(data){
+					callSecondAjax();
+				},
+				error: function(errorResponse, errorType, errorMessage){
+					var e={};
+					e.errorResponse=errorResponse;
+					e.errorType=errorType;
+					e.errorMessage=errorMessage;
+					EfwClient.prototype._consoleLog("Second calling error",e);
+					EfwClient.prototype._returnAlert(e,eventId);
+				}
+			});
+			EfwClient.prototype._pickupParams_uploadformdata=null;//reset it for next ajax.
+		}else{
+			callSecondAjax();
+		}
 	},
 	//=========================================================================
+	"_pickupParams_uploadformdata":null,
 	"_pickupParams":function(paramsFormat,context,manualParams){
 		var data={};
 		for(var key in paramsFormat){
@@ -189,6 +239,12 @@ EfwClient.prototype={
 						if(element[0].type=="checkbox"){
 							if(!element[0].checked){
 								vl=null;
+							}
+						}else if(element[0].type=="file"){
+							if(vl!=null&&vl!=""){
+								if(EfwClient.prototype._pickupParams_uploadformdata==null)
+									EfwClient.prototype._pickupParams_uploadformdata=new FormData();
+								EfwClient.prototype._pickupParams_uploadformdata.append("filename",$(element[0]).prop("files")[0]);
 							}
 						}
 					}else{

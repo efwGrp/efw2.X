@@ -8,6 +8,7 @@ import java.io.OutputStream;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -15,6 +16,10 @@ import javax.servlet.http.HttpSession;
 
 import efw.log.LogManager;
 
+/**
+ * ファイルをWEBサーバからクライアントへダウンロードする
+ * @author Chang Kejun
+ */
 @SuppressWarnings("serial")
 @WebServlet(name="downloadServlet",urlPatterns={"/downloadServlet"})
 public final class downloadServlet extends HttpServlet {
@@ -26,7 +31,13 @@ public final class downloadServlet extends HttpServlet {
     private static final String EFW_DOWNLOAD_ZIP="efw.download.zip";
     private static final String EFW_DOWNLOAD_SAVEAS="efw.download.saveas";
     private static final String EFW_DOWNLOAD_DELETEAFTERDOWNLOAD="efw.download.deleteafterdownload";
-
+    /**
+     * get方法でファイルをダウンロードする
+     * ダウンロード方法などの情報は、セッションから渡す。
+	 * @param request HttpServletRequest オブジェクト。
+	 * @param response ファイル内容を含む HttpServletResponse オブジェクト 。
+	 * @throws ServletException IOException 
+     */
     protected void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException {
     	HttpSession sn=request.getSession();
 		String attr_file=(String)sn.getAttribute(EFW_DOWNLOAD_FILE);
@@ -64,6 +75,9 @@ public final class downloadServlet extends HttpServlet {
 			
 			response.setContentType("application/octet-stream");
 			response.setHeader("Content-Disposition","attachment; filename=\""+java.net.URLEncoder.encode(attr_saveas, RESPONSE_CHAR_SET)+"\"");
+			Cookie ck=new Cookie("efw_Downloaded","OK");
+			ck.setPath("/");
+			response.addCookie(ck);
 
 			FileInputStream hFile = new FileInputStream(FileManager.getStorageFolder()+"/"+attr_file);
 			BufferedInputStream bis = new BufferedInputStream(hFile);

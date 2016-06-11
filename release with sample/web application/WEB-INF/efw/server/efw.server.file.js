@@ -78,7 +78,10 @@ EfwServerFile.prototype={//この機能は、javaのfileを参考すればと思
 	"getStorageFolder":function(){
 		return ""+Packages.efw.file.FileManager.getStorageFolder();
 	},
-
+	"saveUploadFiles":function(path){
+		if(path==undefined)path=null;
+		Packages.efw.file.FileManager.saveUploadFiles(path);
+	},
 };
 ///////////////////////////////////////////////////////////////////////////////
 EfwServer.prototype.file=new EfwServerFile();

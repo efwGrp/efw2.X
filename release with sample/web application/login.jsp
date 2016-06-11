@@ -37,12 +37,18 @@
 		function btnF2_onclick(){
 			efw.client.fire({
 				eventId:"mdclexam_upload",
+				success:function(){
+					show_files();
+				},
 			});
 		}
 
 		function btnF3_onclick(){
 			efw.client.fire({
 				eventId:"mdclexam_download",
+				success:function(){
+					show_files();
+				}
 			});
 		}
 		
@@ -64,7 +70,6 @@
   	</script>
 </head>
 <body style="background-color:ghostwhite;" onload="show_files()">
-
 <table style="width:100%">
 <tr style="height:20px">
 	<td></td>
@@ -110,11 +115,12 @@
 <input type="button" id="btnF1" style="width:150px" value="F1 入力チェックテスト" data-shortcut="F1" onclick="btnF1_onclick();"><br>
 <br>
 
-<span style="display:inline-block;width:540px;text-align:left">アップロードファイル：<input id="txt_file" type="file"></span><br><br>
+<span style="display:inline-block;width:540px;text-align:left">アップロードファイル：<input id="txt_file1" type="file"></span><br>
+<span style="display:inline-block;width:540px;text-align:left">アップロードファイル：<input id="txt_file2" type="file"></span><br><br>
 <input type="button" id="btnF2" style="width:150px" value="F2 アップロード" data-shortcut="F2" onclick="btnF2_onclick();"><br>
 <br>
 
-<span style="display:inline-block;width:540px;text-align:left">ダウンロードファイル：<select id="cmb_download" size=5 multiple><option value="あ.xls">あ.xls</option></select></span><br><br>
+<span style="display:inline-block;width:540px;text-align:left">ダウンロードファイル：<select id="cmb_download" size=5 multiple style="width:350px;height:100px;"><option value="あ.xls">あ.xls</option></select></span><br><br>
 <input type="button" id="btnF3" style="width:150px" value="F3 ダウンロード" data-shortcut="F3" onclick="btnF3_onclick();"><br>
 <br>
 

@@ -23,6 +23,7 @@ public class Core extends SimpleTagSupport {
 		JspWriter out = this.getJspContext().getOut();
 		out.print("<link href=\"./efw/efw.css\" rel=\"stylesheet\">");
 		out.print("<script type=\"text/javascript\" charset=\"UTF-8\" src=\"./efw/jquery-min.js\"></script>");
+		out.print("<script type=\"text/javascript\" charset=\"UTF-8\" src=\"./efw/js.cookie.min.js\"></script>");
 		out.print("<script type=\"text/javascript\" charset=\"UTF-8\" src=\"./efw/efw.client.js\"></script>");
 		out.print("<script type=\"text/javascript\" charset=\"UTF-8\" src=\"./efw/efw.client.messages.js\"></script>");
 		out.print("<script type=\"text/javascript\" charset=\"UTF-8\" src=\"./efw/efw.client.format.js\"></script>");
