@@ -152,7 +152,7 @@ EfwClient.prototype={
 							var downloadHandle=null;
 							downloadHandle=window.setInterval(function(){
 									if (Cookies.get("efw_Downloaded")) {
-										clearInterval(downloadHandle);
+										window.clearInterval(downloadHandle);
 										Cookies.remove("efw_Downloaded",{path:"/"});
 										try{
 											if (successCallback)successCallback(data);
