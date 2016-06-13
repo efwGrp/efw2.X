@@ -126,6 +126,7 @@ EfwServer.prototype={
 					var maxLength=validators["max-length"];
 					var min=validators["min"];
 					var max=validators["max"];
+					var accept=validators["accept"];
 					var minv=null;
 					var maxv=null;
 					var value=null;
@@ -189,6 +190,22 @@ EfwServer.prototype={
 									continue;
 								}
 							}
+							if(accept!=null){
+								var exts=accept.split(",");
+								var isAccepted=false;
+								for(var i=0;i<exts.length;i++){
+									if(param.substr(param.length-exts[i].length).toLowerCase()==exts[i].toLowerCase()){
+										isAccepted=true;
+										break;
+									}
+								}
+								if(!isAccepted){
+									var message=EfwServerMessages.prototype.NotAcceptMessage;
+									message=_createMessage(message,"{display-name}",displayName);
+									ret.push({errorMessage:message,element:errorElementKey});
+									continue;
+								}
+							}
 							if(min==null||min==undefined)minv=null;else minv=min;
 							if(max==null||max==undefined)maxv=null;else maxv=max;
 							value=param;
@@ -225,6 +242,7 @@ EfwServer.prototype={
 		var paramsFormat=EfwServer.prototype.getParamsFormat(event);
 		var validateError=_check(requestParams,paramsFormat,"");
 		if(validateError.length>0){
+			Packages.efw.file.FileManager.removeUploadFiles();//remove upload files from temp
 			var errmsg="";
 			var elements="";
 			for(var i=0;i<validateError.length;i++){

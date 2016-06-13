@@ -170,6 +170,22 @@ public final class FileManager {
 		}
 		efwServlet.getRequest().getSession().removeAttribute(EFW_UPLOAD);
 	}
+	/***
+	 * アップロードされて一時保存中のファイルを削除する。
+	 */
+	public static void removeUploadFiles(){
+		@SuppressWarnings("unchecked")
+		HashMap<String, String> map= (HashMap<String, String>)efwServlet.getRequest().getSession().getAttribute(EFW_UPLOAD);
+		if (map==null){
+			return;
+		}else{
+			for(HashMap.Entry<String, String> entry : map.entrySet()) {
+				String srcPath=entry.getValue();
+		        new File(srcPath).delete();
+			}
+		}
+		efwServlet.getRequest().getSession().removeAttribute(EFW_UPLOAD);
+	}
 	
 	/***
 	 * アッポロードファイル名と一時ファイルパスをセッションに格納する

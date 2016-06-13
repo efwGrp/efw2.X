@@ -17,6 +17,7 @@ EfwServerMessages.prototype={
 	MinOrMaxOverMessage:"{display-name}を{min}以上{max}以内の{data-type}で入力してください。",
 	MinOverMessage:"{display-name}を{min}以上の{data-type}で入力してください。",
 	MaxOverMessage:"{display-name}を{max}以内の{data-type}で入力してください。",
+	NotAcceptMessage:"{display-name}に正しいファイルを選択してください。",
 };
 ///////////////////////////////////////////////////////////////////////////////
 EfwServer.prototype.messages=new EfwServerMessages();
