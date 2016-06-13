@@ -97,6 +97,7 @@ public final class downloadServlet extends HttpServlet {
 
 		} catch (IOException e) {
 			LogManager.ErrorDebug(e.getMessage());
+			response.reset();
 			response.setCharacterEncoding(RESPONSE_CHAR_SET);//URLEncoder.encodeと関連
 			response.setContentType("text/html;charset=UTF-8"); 
 			response.getWriter().print("<html><head><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"></head><body>");
