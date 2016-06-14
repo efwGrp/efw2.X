@@ -52,10 +52,10 @@ web/myPage.jsp
 <DD>
 设置efw的taglib宣言，然后在程序里加入efw标签，就可以使用efw.client的各种功能了。<br>
 
-<table BORDER="1"  CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<tr BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
-	<th style="width:200px">标签</th>
-	<th style="width:850px">说明</th>
+<table>
+<tr>
+	<th>标签</th>
+	<th>说明</th>
 </tr>
 <tr>
 	<td>&lt;efw:Core/&gt;</td>
@@ -83,11 +83,11 @@ web/myPage.jsp
 <DD>
 efw的各个文件使用UTF-8编码。但是jsp画面根据用途可以自由设置encode和charset。<br>
 
-<table BORDER="1"  CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<tr BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
-	<th style="width:200px">文件</th>
-	<th style="width:200px">encode & charset</th>
-	<th style="width:650px">说明</th>
+<table>
+<tr>
+	<th>文件</th>
+	<th>encode & charset</th>
+	<th>说明</th>
 </tr>
 <tr>
 	<td>efw/efw.client.messages.js</td>
@@ -167,11 +167,11 @@ efw的各个文件使用UTF-8编码。但是jsp画面根据用途可以自由设
 <DL>
 <DD>
 引入efw:InputBehavior标签后，如果定义输入框的data-format属性，就可以触发输入支援的画面动作。<br>
-<table BORDER="1"  CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<tr BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
-	<th style="width:200px">data-format</th>
-	<th style="width:100px">事件</th>
-	<th style="width:750px">说明</th>
+<table>
+<tr>
+	<th>data-format</th>
+	<th>事件</th>
+	<th>说明</th>
 </tr>
 <tr>
 	<td>#,##0.00</td>
@@ -206,10 +206,10 @@ efw的各个文件使用UTF-8编码。但是jsp画面根据用途可以自由设
 <DL>
 <DD>
 引入efw:InputBehavior标签后，如果定义按钮的data-shortcut属性，就可以触发快捷键的画面动作。<br>
-<table BORDER="1"  CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<tr BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
-	<th style="width:300px">data-shortcut</th>
-	<th style="width:750px">说明</th>
+<table>
+<tr>
+	<th>data-shortcut</th>
+	<th>说明</th>
 </tr>
 <tr>
 	<td>F1～F12</td>

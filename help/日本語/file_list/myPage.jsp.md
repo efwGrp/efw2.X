@@ -52,10 +52,10 @@ web/myPage.jsp
 <DD>
 efw の taglib を宣言して、efwのタグを取り込み、efw.client の各機能を利用できる。<br>
 
-<table BORDER="1"  CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<tr BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
-	<th style="width:200px">タグ</th>
-	<th style="width:850px">説明</th>
+<table>
+<tr>
+	<th>タグ</th>
+	<th>説明</th>
 </tr>
 <tr>
 	<td>&lt;efw:Core/&gt;</td>
@@ -83,11 +83,11 @@ efw の taglib を宣言して、efwのタグを取り込み、efw.client の各
 <DD>
 efwの各ファイルは、UTF-8 でエンコードする。ただし、jsp画面は用途によりencodeとcharsetは、自由に設定できる。<br>
 
-<table BORDER="1"  CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<tr BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
-	<th style="width:200px">ファイル</th>
-	<th style="width:200px">encode & charset</th>
-	<th style="width:650px">説明</th>
+<table>
+<tr>
+	<th>ファイル</th>
+	<th>encode & charset</th>
+	<th>説明</th>
 </tr>
 <tr>
 	<td>efw/efw.client.messages.js</td>
@@ -167,11 +167,11 @@ efwの各ファイルは、UTF-8 でエンコードする。ただし、jsp画�
 <DL>
 <DD>
 efw:InputBehavior をインクルードして、入力枠に data-format を定義する場合、入力支援の動きを行う。<br>
-<table BORDER="1"  CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<tr BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
-	<th style="width:200px">data-format</th>
-	<th style="width:100px">イベント</th>
-	<th style="width:750px">説明</th>
+<table>
+<tr>
+	<th>data-format</th>
+	<th>イベント</th>
+	<th>説明</th>
 </tr>
 <tr>
 	<td>#,##0.00</td>
@@ -206,10 +206,10 @@ efw:InputBehavior をインクルードして、入力枠に data-format を定�
 <DL>
 <DD>
 efw:InputBehavior をインクルードして、ボタンに data-shortcut を定義する場合、ショットカットの動きを行う。<br>
-<table BORDER="1"  CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<tr BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
-	<th style="width:300px">data-shortcut</th>
-	<th style="width:750px">説明</th>
+<table>
+<tr>
+	<th>data-shortcut</th>
+	<th>説明</th>
 </tr>
 <tr>
 	<td>F1～F12</td>

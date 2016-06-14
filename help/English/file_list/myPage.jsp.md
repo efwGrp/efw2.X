@@ -50,12 +50,12 @@ web/myPage.jsp
 
 <DL>
 <DD>
-Declare the tag library of efw, add the efw tag, you can use the function of efw.client.<br>
+If you declare the tag library of efw and add the efw tag, you can use the function of efw.client.<br>
 
-<table BORDER="1"  CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<tr BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
-	<th style="width:200px">Tag</th>
-	<th style="width:850px">Description</th>
+<table>
+<tr>
+	<th>Tag</th>
+	<th>Description</th>
 </tr>
 <tr>
 	<td>&lt;efw:Core/&gt;</td>
@@ -83,11 +83,11 @@ Declare the tag library of efw, add the efw tag, you can use the function of efw
 <DD>
 All files of Efw are UTF-8 encode. But you can change the encode and charset of jsp by you self. <br>
 
-<table BORDER="1"  CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<tr BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
-	<th style="width:200px">File</th>
-	<th style="width:200px">Encode & Charset</th>
-	<th style="width:650px">Description</th>
+<table>
+<tr>
+	<th>File</th>
+	<th>Encode & Charset</th>
+	<th>Description</th>
 </tr>
 <tr>
 	<td>efw/efw.client.messages.js</td>
@@ -166,31 +166,31 @@ But if the success function is necessary to do with the Received data, you must 
 <DL>
 <DD>
 Input support will work if you import efw:InputBehavior tag and set the data-format attribute of the input element.<br>
-<table BORDER="1"  CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<tr BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
-	<th style="width:200px">data-format</th>
-	<th style="width:100px">イベント</th>
-	<th style="width:750px">説明</th>
+<table>
+<tr>
+	<th>data-format</th>
+	<th>Dvent</th>
+	<th>Description</th>
 </tr>
 <tr>
 	<td>#,##0.00</td>
 	<td>focus</td>
-	<td>フォーマットなしの数字で表す。1,234.00 ⇒ 1234</td>
+	<td>To change the value of text box to number without format. 1,234.00 ⇒ 1234</td>
 </tr>
 <tr>
 	<td>#,##0.00</td>
 	<td>blur</td>
-	<td>フォーマット後の文字列で表す。フォーマットできない場合空白。1234 ⇒ 1,234.00、ABCD ⇒ 「」</td>
+	<td>To change the value of text box to number with format. The value will be blank iff it can not be formatted. 1234 ⇒ 1,234.00, ABCD ⇒ []</td>
 </tr>
 <tr>
-	<td>yyyy年MM月dd日</td>
+	<td>yyyy-MM-dd</td>
 	<td>focus</td>
-	<td>フォーマットなしの数字で表す。2015年12月31日 ⇒ 20151231</td>
+	<td>To change the value of text box to number without format. 2015-12-31 ⇒ 20151231</td>
 </tr>
 <tr>
-	<td>yyyy年MM月dd日</td>
+	<td>yyyy-MM-dd</td>
 	<td>blur</td>
-	<td>フォーマット後の文字列で表す。フォーマットできない場合空白。20151231 ⇒ 2015年12月31日、ABCD ⇒ 「」</td>
+	<td>To change the value of text box to number with format. The value will be blank iff it can not be formatted. 20151231 ⇒ 2015-12-31, ABCD ⇒ []</td>
 </tr>
 </table>
 フォーマットの書き方の詳細はAPIの formatter を参照。
@@ -205,10 +205,10 @@ Input support will work if you import efw:InputBehavior tag and set the data-for
 <DL>
 <DD>
 efw:InputBehavior をインクルードして、ボタンに data-shortcut を定義する場合、ショットカットの動きを行う。<br>
-<table BORDER="1"  CELLPADDING="3" CELLSPACING="0" SUMMARY="">
-<tr BGCOLOR="#CCCCFF" CLASS="TableHeadingColor">
-	<th style="width:300px">data-shortcut</th>
-	<th style="width:750px">説明</th>
+<table>
+<tr>
+	<th>data-shortcut</th>
+	<th>説明</th>
 </tr>
 <tr>
 	<td>F1～F12</td>
