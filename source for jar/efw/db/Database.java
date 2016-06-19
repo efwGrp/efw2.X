@@ -116,7 +116,6 @@ public final class Database {
         	String sqlString=sql.getSqlString(params);
         	ArrayList<Object> sqlParams=sql.getSqlParams(params);
             LogManager.CommDebug("sql =" , sqlString);
-            CallableStatement mStmt = mConn.prepareCall(sqlString);
             mStmt = mConn.prepareCall(sqlString);
             setSQLParams(mStmt, sqlParams);
             mStmt.execute();
@@ -246,7 +245,6 @@ public final class Database {
     	CallableStatement mStmt=null;
     	try{
             LogManager.CommDebug("sql =" , sql);
-            mStmtAry.add(mStmt);
             mStmt = mConn.prepareCall(sql);
             int cnt = mStmt.executeUpdate();
             LogManager.CommDebug("Database.executeUpdate");
@@ -271,7 +269,6 @@ public final class Database {
     	CallableStatement mStmt=null;
     	try{
             LogManager.CommDebug("sql =" , sql);
-            CallableStatement mStmt = mConn.prepareCall(sql);
             mStmt = mConn.prepareCall(sql);
             mStmt.execute();
             LogManager.CommDebug("Database.execute");
