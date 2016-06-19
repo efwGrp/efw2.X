@@ -77,14 +77,15 @@ public final class Database {
      * @throws SQLException データベースアクセスエラー。
      */
     public int executeUpdate(String groupId,String sqlId,Map<String,Object> params) throws efwException, SQLException{
+    	CallableStatement mStmt=null;
     	try{
         	Sql sql=SqlManager.get(groupId, sqlId);
         	String sqlString=sql.getSqlString(params);
         	ArrayList<Object> sqlParams=sql.getSqlParams(params);
         	
             LogManager.CommDebug("sql =" , sqlString);
-            CallableStatement mStmt = mConn.prepareCall(sqlString);
             mStmtAry.add(mStmt);
+            mStmt = mConn.prepareCall(sqlString);
             setSQLParams(mStmt, sqlParams);
             int cnt = mStmt.executeUpdate();
             LogManager.CommDebug("Database.executeUpdate");
@@ -96,6 +97,8 @@ public final class Database {
     	}catch(SQLException e){
     		e.printStackTrace();
     		throw e;
+    	}finally{
+    		if(mStmt!=null)mStmt.close();
     	}
     }
     /**
@@ -107,13 +110,14 @@ public final class Database {
      * @throws SQLException データベースアクセスエラー。
      */
     public void execute(String groupId,String sqlId,Map<String,Object> params) throws efwException, SQLException{
+    	CallableStatement mStmt=null;
     	try{
         	Sql sql=SqlManager.get(groupId, sqlId);
         	String sqlString=sql.getSqlString(params);
         	ArrayList<Object> sqlParams=sql.getSqlParams(params);
             LogManager.CommDebug("sql =" , sqlString);
             CallableStatement mStmt = mConn.prepareCall(sqlString);
-            mStmtAry.add(mStmt);
+            mStmt = mConn.prepareCall(sqlString);
             setSQLParams(mStmt, sqlParams);
             mStmt.execute();
             LogManager.CommDebug("Database.execute");
@@ -123,6 +127,8 @@ public final class Database {
     	}catch(SQLException e){
     		e.printStackTrace();
     		throw e;
+    	}finally{
+    		if(mStmt!=null)mStmt.close();
     	}
     }
     /**
@@ -237,10 +243,11 @@ public final class Database {
      * @throws SQLException データベースアクセスエラー。
      */
     public int executeUpdateSql(String sql) throws SQLException{
+    	CallableStatement mStmt=null;
     	try{
             LogManager.CommDebug("sql =" , sql);
-            CallableStatement mStmt = mConn.prepareCall(sql);
             mStmtAry.add(mStmt);
+            mStmt = mConn.prepareCall(sql);
             int cnt = mStmt.executeUpdate();
             LogManager.CommDebug("Database.executeUpdate");
             
@@ -248,6 +255,8 @@ public final class Database {
     	}catch(SQLException e){
     		e.printStackTrace();
     		throw e;
+    	}finally{
+    		if(mStmt!=null)mStmt.close();
     	}
     }
     /**
@@ -259,15 +268,18 @@ public final class Database {
      * @throws SQLException データベースアクセスエラー。
      */
     public void executeSql(String sql) throws SQLException{
+    	CallableStatement mStmt=null;
     	try{
             LogManager.CommDebug("sql =" , sql);
             CallableStatement mStmt = mConn.prepareCall(sql);
-            mStmtAry.add(mStmt);
+            mStmt = mConn.prepareCall(sql);
             mStmt.execute();
             LogManager.CommDebug("Database.execute");
     	}catch(SQLException e){
     		e.printStackTrace();
     		throw e;
+    	}finally{
+    		if(mStmt!=null)mStmt.close();
     	}
     }    
 }
