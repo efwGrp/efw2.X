@@ -68,6 +68,28 @@ public final class Database {
     	}
 	}
     /**
+     * クエリを閉じる
+     * 必ず必要ではない。データベースを閉じる際、クエリは閉じられる。
+     * ただし、大量クエリ（数百回）が発生する場合、リソースのためクエリを閉じる必要。
+     * @throws SQLException データベースアクセスエラー。
+     */
+    public void closeQuery() throws SQLException{
+        try{
+             if (!mConn.isClosed()) {
+                 if (null != mStmtAry) {
+                     if (mStmtAry.size() > 0) {
+                    	 CallableStatement mStmt = mStmtAry.get(mStmtAry.size()-1);
+                         mStmt.close();
+                         mStmtAry.remove(mStmtAry.size()-1);
+                     }
+                 }
+             }
+        }catch(SQLException e){
+           e.printStackTrace();
+           throw e;
+        }
+     }    
+    /**
      * INSERT文、UPDATE文、DELETE文を実行する。
      * @param groupId　Sqlを外部化するXMLのファイル名（拡張子を除く）。
      * @param sqlId SqlXMLファイルのsqlタグに定義されるId。

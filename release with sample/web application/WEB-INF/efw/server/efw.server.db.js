@@ -72,6 +72,7 @@ EfwServerDb.prototype={
 			ret.push(EfwServerMapping.prototype.doSingle(rsdata,mapping));
 		}
 		rs.close();
+		Packages.efw.db.DatabaseManager.getDatabase(jdbcResourceName).closeQuery();
 		return ret;
 	},
 	"executeUpdate":function(executionParams){
@@ -115,7 +116,69 @@ EfwServerDb.prototype={
 	"closeAll":function(){
 		Packages.efw.db.DatabaseManager.closeAll();
 	},
-	
+	"executeQuerySql":function(executionParams){
+		var jdbcResourceName=executionParams.jdbcResourceName;
+		if(jdbcResourceName==undefined||jdbcResourceName==null)jdbcResourceName="";
+		var sql=executionParams.sql;
+		var mapping=executionParams.mapping;
+		
+		var rs= Packages.efw.db.DatabaseManager.getDatabase(jdbcResourceName).executeQuerySql(sql);
+		var ret=[];
+		var meta=rs.getMetaData();
+		var parseValue=function(vl){
+			var value = vl;
+		    if (typeof value =="object"){
+				if (value==null){
+					value=null;
+				}else if(value.getClass().getName()=="java.lang.String"){
+					value="" + value;
+				}else if(value.getClass().getName()=="java.lang.Boolean"){
+					value= true && value;
+				}else if(value.getClass().getName()=="java.lang.Byte"
+					||value.getClass().getName()=="java.lang.Short"
+					||value.getClass().getName()=="java.lang.Integer"
+					||value.getClass().getName()=="java.lang.Long"
+					||value.getClass().getName()=="java.lang.Float"
+					||value.getClass().getName()=="java.lang.Double"
+					||value.getClass().getName()=="java.math.BigDecimal"){
+					value=0+new Number(value);
+				}else if(value.getClass().getName()=="java.sql.Date"
+					||value.getClass().getName()=="java.sql.Time"
+					||value.getClass().getName()=="java.sql.Timestamp"){
+					var dt=new Date();dt.setTime(value.getTime());value=dt;
+				}else{
+					// you should do something if the comment is printed out.
+					Packages.efw.log.LogManager.ErrorDebug("["+value + "] is an instance of "+value.getClass().getName()+" which has not been supported by efw.","");
+				}
+			}
+			return value;
+		};
+		//change recordset to java array
+		while (rs.next()) {
+			var rsdata={};
+			var maxColumnCount=meta.getColumnCount();
+			for (var j=1;j<=maxColumnCount;j++){
+				var key=meta.getColumnName(j);
+				rsdata[key]=parseValue(rs.getObject(key));
+			}
+			ret.push(EfwServerMapping.prototype.doSingle(rsdata,mapping));
+		}
+		rs.close();
+		Packages.efw.db.DatabaseManager.getDatabase(jdbcResourceName).closeQuery();
+		return ret;
+	},
+	"executeUpdateSql":function(executionParams){
+		var jdbcResourceName=executionParams.jdbcResourceName;
+		if(jdbcResourceName==undefined||jdbcResourceName==null)jdbcResourceName="";
+		var sql=executionParams.sql;
+		return Packages.efw.db.DatabaseManager.getDatabase(jdbcResourceName).executeUpdateSql(sql);
+	},
+	"executeSql":function(executionParams){
+		var jdbcResourceName=executionParams.jdbcResourceName;
+		if(jdbcResourceName==undefined||jdbcResourceName==null)jdbcResourceName="";
+		var sql=executionParams.sql;
+		Packages.efw.db.DatabaseManager.getDatabase(jdbcResourceName).executeSql(sql);
+	},
 };
 ///////////////////////////////////////////////////////////////////////////////
 EfwServer.prototype.db=new EfwServerDb();
