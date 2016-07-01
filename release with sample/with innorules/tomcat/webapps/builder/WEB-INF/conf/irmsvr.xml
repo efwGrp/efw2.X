@@ -1,0 +1,24 @@
+<IRMServer name="builder">
+    <Properties>
+      <Property>
+        <Name>JNDI.FACTORYCLASS</Name>
+        <Value>com.innoexpert.utility.jndi.IrInitialContextFactory</Value>
+      </Property>
+      <Property>
+        <Name>JNDI.PROVIDERURL</Name>
+        <Value>default</Value>
+      </Property>
+    </Properties>
+    <Systems>
+      <Development>
+        <RuleDB>RULESDB_DEV</RuleDB>
+        <RuleEngine>rulesclient</RuleEngine>
+        <ReadOnly>false</ReadOnly>
+      </Development>
+    </Systems>
+    <RuleChangeListeners>
+        <RuleChangeListener>
+            <Class>com.innoexpert.innorulesj.builder.impl.monitor.MonitorServer</Class>
+        </RuleChangeListener>
+    </RuleChangeListeners>
+</IRMServer>

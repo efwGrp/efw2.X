@@ -32,9 +32,9 @@ final class SqlText {
 	 * キーは、　「:　＋　キーの単語」で構成する。
 	 * @return　出現順番どおりにキーの単語を格納する配列を戻す。
 	 */
-	protected ArrayList<String> getParamKeys(){
+	protected ArrayList<String> getParamKeys(String paramPrefix){
 		ArrayList<String> ret=new ArrayList<String>();
-		Pattern p = Pattern.compile("(\\:[a-zA-Z_][\\w]*)");//20160420 kill bug 
+		Pattern p = Pattern.compile("(\\"+paramPrefix+"[a-zA-Z_][\\w]*)");//20160420 kill bug 
 		Matcher m;
 		String tmp;
 		String subsql=text.replaceAll("//.*\\n", "\n");//コメント行を認識するため
@@ -53,11 +53,11 @@ final class SqlText {
 	 * 「:　＋　キーの単語」を「 ? 」に変換する。
 	 * @return　変換後の文字列を戻す。
 	 */
-	protected String getSQL(){
+	protected String getSQL(String paramPrefix){
 		String subsql=text.replaceAll("//.*\\n", "\n");//コメント行を認識するため
 		subsql=subsql.replaceAll("\\-\\-.*\\n", "\n");//コメント行を認識するため
 		subsql=subsql.replaceAll("/\\*/?([^/]|[^*]/)*\\*/", "");//コメント行を認識するため
-		subsql=subsql.replaceAll("(\\:[a-zA-Z_][\\w]*)", " ? ");//20160420 kill bug
+		subsql=subsql.replaceAll("(\\"+paramPrefix+"[a-zA-Z_][\\w]*)", " ? ");//20160420 kill bug
 		return subsql;
 	}
 	

@@ -1,0 +1,6 @@
+<Resources>
+	<Resource
+		jndi-type="com.innoexpert.utility.jdbc.DSDataSource"
+		jndi-name="RULESDB_DEV"
+		source-datasource="java:comp/env/jdbc/RULESDB_DEV"/>
+</Resources>

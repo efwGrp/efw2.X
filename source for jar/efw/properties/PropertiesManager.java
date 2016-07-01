@@ -1,4 +1,5 @@
 package efw.properties;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
@@ -29,7 +30,20 @@ public final class PropertiesManager {
      * 「efw.jdbc.resource」の定数。
      */
     public static final String EFW_JDBC_RESOURCE ="efw.jdbc.resource";
-	/**
+    public static final String EFW_JDBC_RESOURCE_URL ="efw.jdbc.resource.url";
+    public static final String EFW_JDBC_RESOURCE_USERNAME ="efw.jdbc.resource.username";
+    public static final String EFW_JDBC_RESOURCE_PASSWORD ="efw.jdbc.resource.password";
+    
+    /**
+     * フレームワークに利用するmailリソースの名称のプロパティキー。
+     * 「efw.mail.resource」の定数。
+     */
+    public static final String EFW_MAIL_RESOURCE ="efw.mail.resource";
+    /**
+     * 「efw.brms.import」の定数。
+     */
+    public static final String EFW_BRMS_IMPORT="efw.brms.import";    
+    /**
 	 * 「efw.brms.codetype」の定数。
 	 */
     public static final String EFW_BRMS_CODETYPE="efw.brms.codetype";    
@@ -110,6 +124,14 @@ public final class PropertiesManager {
     public static synchronized void init()throws efwException{
     	try {
 			prop.load(Thread.currentThread().getContextClassLoader().getResourceAsStream(PropertiesManager.EFW_PROPERTIES_FILE_NAME));
+		} catch (IOException e) {
+			e.printStackTrace();
+			throw new efwException(efwException.PropertiesInitFailedException);
+		}
+    }
+    public static synchronized void initBatch(String propertiesFileName)throws efwException{
+    	try {
+			prop.load(new FileInputStream(propertiesFileName));
 		} catch (IOException e) {
 			e.printStackTrace();
 			throw new efwException(efwException.PropertiesInitFailedException);

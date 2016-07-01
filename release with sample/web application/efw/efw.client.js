@@ -85,7 +85,7 @@ EfwClient.prototype={
 			.dialog({
 				modal: true,
 				width:500,
-				title:"メッセージ",
+				title:"Message",
 				closeOnEscape: false,
 				buttons: {"OK":function(){
 					$(this).dialog("close").remove();
@@ -476,7 +476,7 @@ EfwClient.prototype={
 					$(error.elements).addClass("efw_input_error");
 				}
 				if(error.nextUrl){
-					window.location = error.nextUrl;
+					window.top.location = error.nextUrl;
 				}
 			}
 		);

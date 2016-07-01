@@ -30,6 +30,10 @@ public final class Sql {
 	 * @throws efwException　タグ不正のエラー。
 	 */
 	protected Sql(Element element,Date lastModifytime) throws efwException{
+		String tmpParamPrefix=element.getAttribute("paramPrefix");
+		//もしSQLに:がある場合、paramPrefixを別文字に設定するようにできる
+		if(tmpParamPrefix!=null&&tmpParamPrefix.length()>0)paramPrefix=tmpParamPrefix;
+		
 		this.lastModifytime=lastModifytime;
 		NodeList nodes=element.getChildNodes();
 		for(int i=0;i<nodes.getLength();i++){
@@ -58,6 +62,14 @@ public final class Sql {
 		}
 	}	
 	/**
+	 * Sqlにパラメータを識別するための頭文字
+	 */
+	private String paramPrefix=":";
+	protected String getParamPrefix(){
+		return paramPrefix;
+	}
+	
+	/**
 	 * 最終更新日時。
 	 */
 	private Date lastModifytime;
@@ -75,18 +87,18 @@ public final class Sql {
 			Object obj=steps.get(i);
 			if (obj.getClass().getName().equals("efw.sql.SqlText")){
 				SqlText sqltext=(SqlText)obj;
-				bf.append(sqltext.getSQL());
+				bf.append(sqltext.getSQL(paramPrefix));
 			}else if(obj.getClass().getName().equals("efw.sql.SqlIf")){
 				SqlIf sqlif=(SqlIf)obj;
 				SqlText sqltext=sqlif.getSqlText();
 				if (!isBlank(sqlif.getExists())){
 					if (!isBlank(params,sqlif.getExists())){
-						bf.append(sqltext.getSQL());
+						bf.append(sqltext.getSQL(paramPrefix));
 					}	
 				}
 				if (!isBlank(sqlif.getNotExists())){
 					if (isBlank(params,sqlif.getNotExists())){
-						bf.append(sqltext.getSQL());
+						bf.append(sqltext.getSQL(paramPrefix));
 					}
 				}
 			}
@@ -106,18 +118,18 @@ public final class Sql {
 			Object obj=steps.get(i);
 			if (obj.getClass().getName().equals("efw.sql.SqlText")){
 				SqlText sqltext=(SqlText)obj;
-				paramKeys.addAll(sqltext.getParamKeys());
+				paramKeys.addAll(sqltext.getParamKeys(paramPrefix));
 			}else if(obj.getClass().getName().equals("efw.sql.SqlIf")){
 				SqlIf sqlif=(SqlIf)obj;
 				SqlText sqltext=sqlif.getSqlText();
 				if (!isBlank(sqlif.getExists())){
 					if (!isBlank(params,sqlif.getExists())){
-						paramKeys.addAll(sqltext.getParamKeys());
+						paramKeys.addAll(sqltext.getParamKeys(paramPrefix));
 					}	
 				}
 				if (!isBlank(sqlif.getNotExists())){
 					if (isBlank(params,sqlif.getNotExists())){
-						paramKeys.addAll(sqltext.getParamKeys());
+						paramKeys.addAll(sqltext.getParamKeys(paramPrefix));
 					}
 				}
 			}

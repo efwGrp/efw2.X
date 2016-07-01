@@ -1,0 +1,16 @@
+<MonitorServer>
+  <Connector>
+    <Address></Address>
+    <Port>25810</Port>
+    <Timeout>10</Timeout>
+    <BroadcastPingInterval>600</BroadcastPingInterval>
+  </Connector>
+  
+  <DevelopmentClusters>
+    <Cluster>
+      <EngineID>DEV</EngineID>
+      <Count>1</Count>
+    </Cluster>
+    <ForceSaveWhenClusterError>true</ForceSaveWhenClusterError>
+  </DevelopmentClusters>
+</MonitorServer>

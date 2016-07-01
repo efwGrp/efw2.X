@@ -60,10 +60,8 @@ public final class Database {
     	    LogManager.CommDebug("Database.executeQuery");
     	    return rs;
     	}catch(efwException e){
-    		e.printStackTrace();
     		throw e;
     	}catch(SQLException e){
-    		e.printStackTrace();
     		throw e;
     	}
 	}
@@ -85,7 +83,6 @@ public final class Database {
                  }
              }
         }catch(SQLException e){
-           e.printStackTrace();
            throw e;
         }
      }    
@@ -113,10 +110,8 @@ public final class Database {
             
             return cnt;
     	}catch(efwException e){
-    		e.printStackTrace();
     		throw e;
     	}catch(SQLException e){
-    		e.printStackTrace();
     		throw e;
     	}finally{
     		if(mStmt!=null)mStmt.close();
@@ -142,10 +137,8 @@ public final class Database {
             mStmt.execute();
             LogManager.CommDebug("Database.execute");
     	}catch(efwException e){
-    		e.printStackTrace();
     		throw e;
     	}catch(SQLException e){
-    		e.printStackTrace();
     		throw e;
     	}finally{
     		if(mStmt!=null)mStmt.close();
@@ -163,7 +156,6 @@ public final class Database {
                 }
             }
     	}catch(SQLException e){
-    		e.printStackTrace();
     		throw e;
     	}
     }
@@ -179,7 +171,6 @@ public final class Database {
                 }
             }
     	}catch(SQLException e){
-    		e.printStackTrace();
     		throw e;
     	}
     }
@@ -204,7 +195,6 @@ public final class Database {
                 mConn.close();
             }
     	}catch(SQLException e){
-    		e.printStackTrace();
     		throw e;
     	}
     }
@@ -252,7 +242,6 @@ public final class Database {
     	    LogManager.CommDebug("Database.executeQuery");
     	    return rs;
     	}catch(SQLException e){
-    		e.printStackTrace();
     		throw e;
     	}
 	}
@@ -272,7 +261,6 @@ public final class Database {
             
             return cnt;
     	}catch(SQLException e){
-    		e.printStackTrace();
     		throw e;
     	}finally{
     		if(mStmt!=null)mStmt.close();
@@ -294,7 +282,6 @@ public final class Database {
             mStmt.execute();
             LogManager.CommDebug("Database.execute");
     	}catch(SQLException e){
-    		e.printStackTrace();
     		throw e;
     	}finally{
     		if(mStmt!=null)mStmt.close();

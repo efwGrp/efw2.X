@@ -2,6 +2,7 @@ package efw;
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.Method;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,7 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import efw.brms.BrmsManager;
 import efw.db.DatabaseManager;
 import efw.file.FileManager;
 import efw.format.FormatManager;
@@ -100,7 +100,8 @@ public final class efwServlet extends HttpServlet {
      * <br>初期化成功の場合、initSuccessFlagをtrueに設定する。失敗の場合、false。
      * @throws ServletException 
      */
-    public void init() throws ServletException {
+    @SuppressWarnings({ "unchecked", "rawtypes" })
+	public void init() throws ServletException {
     	try {
         	//call the orgin init function
         	super.init();
@@ -153,9 +154,17 @@ public final class efwServlet extends HttpServlet {
     		LogManager.InitCommonDebug("FileManager.init");
 			DatabaseManager.init();
     		LogManager.InitCommonDebug("DatabaseManager.init");
-    		BrmsManager.init();
-    		LogManager.InitCommonDebug("BrmsManager.init");
-            ScriptManager.init(serverFolder,eventFolder,isDebug);
+    		if (PropertiesManager.getBooleanProperty(PropertiesManager.EFW_BRMS_IMPORT, false)){
+    			try{
+            		Class brms = Class.forName("efw.brms.BrmsManager");
+        			Method method = brms.getDeclaredMethod("init", (Class[])null);
+        			method.invoke(null,(Object[])null);
+            		LogManager.InitCommonDebug("BrmsManager.init");
+    			}catch(Exception ex){
+    				LogManager.InitErrorDebug("BrmsManager.init");
+    			}
+    		}
+    		ScriptManager.init(serverFolder,eventFolder,isDebug);
     		LogManager.InitCommonDebug("ScriptManager.init");
     		FormatManager.init();
     		LogManager.InitCommonDebug("FormatManager.init");
@@ -174,7 +183,7 @@ public final class efwServlet extends HttpServlet {
 	 * @param response efwサーブレットがJQueryに返すJSON内容を含む HttpServletResponse オブジェクト 。
 	 * @throws efwException IOException 
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws efwException, IOException{
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException{
         response.setCharacterEncoding(RESPONSE_CHAR_SET);
         String otherError="{\"error\":{\"errorType\":\"OtherErrorException\",\"canNotContinue\":true"+
         		(systemErrorUrl.equals("")?"":",\"nextUrl\":\""+systemErrorUrl+"\"")

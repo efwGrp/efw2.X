@@ -3,6 +3,7 @@ package efw.brms;
 import java.util.Iterator;
 import java.util.Map;
 
+import com.innoexpert.innorulesj.batch.initializer.ModuleInitializer;
 import com.innoexpert.rulesclient.ConnectionProperties;
 import com.innoexpert.rulesclient.Constants;
 import com.innoexpert.rulesclient.ItemValue;
@@ -53,6 +54,34 @@ public class BrmsManager {
 		else if (codeType.equals(CODETYPE_ALIAS))
 			iRuleCodeType = Constants.CODETYPE_ALIAS;
 		BrmsManager.iRuleCodeType=iRuleCodeType;
+	}
+	/***
+	 * バッチからルールを実行する前
+	 * @throws Exception
+	 */
+	public static synchronized void initFromBatch() throws Exception{
+		try{
+			// プロパティ ファイルから、codeTypeを取得する。
+			String codeType = PropertiesManager.getProperty(PropertiesManager.EFW_BRMS_CODETYPE,CODETYPE_NAME);
+			int iRuleCodeType=0;
+			if (codeType.equals(CODETYPE_ID))
+				iRuleCodeType = Constants.CODETYPE_ID;
+			else if (codeType.equals(CODETYPE_NAME))
+				iRuleCodeType = Constants.CODETYPE_NAME;
+			else if (codeType.equals(CODETYPE_ALIAS))
+				iRuleCodeType = Constants.CODETYPE_ALIAS;
+			BrmsManager.iRuleCodeType=iRuleCodeType;
+			ModuleInitializer.initialize("innorules");
+		}catch(Exception e){
+			e.printStackTrace();
+			throw e;
+		}
+	}
+	/***
+	 * バッチからルールを実行完了後
+	 */
+	public static synchronized void destroyFromBatch(){
+		ModuleInitializer.destroy();
 	}
 	/**
 	 * ルール呼び出し

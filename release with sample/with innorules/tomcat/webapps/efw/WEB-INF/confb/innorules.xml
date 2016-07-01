@@ -1,0 +1,24 @@
+<innorules-modules>
+	<module>
+		<module-class>com.innoexpert.innorulesj.batch.initializer.JNDIInitializer</module-class>
+		<init-priority>20</init-priority>
+		<init-param>
+			<param-name>provider-urls</param-name>
+			<param-value>default</param-value>
+		</init-param>
+	</module>
+
+	<module>
+		<module-class>com.innoexpert.innorulesj.batch.initializer.RuleInitializer</module-class>
+		<init-priority>40</init-priority>
+		<init-param>
+			<param-name>repositories</param-name>
+			<param-value>dev</param-value>
+		</init-param>
+	</module>
+	
+	<module>
+		<module-class>com.innoexpert.innorulesj.batch.initializer.RuleClientInitializer</module-class>
+		<init-priority>60</init-priority>
+	</module>
+</innorules-modules>

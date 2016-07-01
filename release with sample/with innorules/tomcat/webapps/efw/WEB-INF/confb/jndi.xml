@@ -1,0 +1,16 @@
+<Resources>
+	<Resource
+		jndi-type="com.innoexpert.utility.jdbc.VOCDataSource"
+		jndi-name="RULESDB_DEV"
+		defaultAutoCommit="false"
+		driverClassName="org.hsqldb.jdbcDriver"
+		url="jdbc:hsqldb:file:C:/test/ruledb/RULESDB_DEV"
+		username="sa"
+		password=""
+		initCnt="5"
+		maxActive="10"
+		maxIdle="5"
+		maxWait="5000"
+		validationQuery="SELECT COUNT(*) FROM RULES010"
+		preparedStmtCacheCnt="10"/>
+</Resources>

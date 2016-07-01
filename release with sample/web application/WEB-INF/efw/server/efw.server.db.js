@@ -116,6 +116,11 @@ EfwServerDb.prototype={
 	"closeAll":function(){
 		Packages.efw.db.DatabaseManager.closeAll();
 	},
+	"getSingleSql":function(executionParams){
+		var ret=EfwServerDb.prototype.executeQuerySql(executionParams);
+		if(ret.length>0) return ret[0];
+		else return null;
+	},
 	"executeQuerySql":function(executionParams){
 		var jdbcResourceName=executionParams.jdbcResourceName;
 		if(jdbcResourceName==undefined||jdbcResourceName==null)jdbcResourceName="";

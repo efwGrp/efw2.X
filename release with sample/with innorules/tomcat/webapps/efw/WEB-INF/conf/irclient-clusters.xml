@@ -1,0 +1,18 @@
+<irclient-clusters>
+  <irclient-cluster name="rulesclient">
+    <isolated>false</isolated>
+    <pools>
+      <type>failover</type>
+      <when-exhausted-action>block</when-exhausted-action>
+      <auto-recovery>yes</auto-recovery>
+      <check-connection>no</check-connection>
+      <recovery-check-interval>30</recovery-check-interval>
+      <pool>
+        <property name="MAXACTIVE">1000</property>
+        <property name="MAXIDLE">1000</property>
+        <factory-class>com.innoexpert.rulesclient.innorulesj.InterfaceFactory</factory-class>
+        <property name="REPOSITORY.NAME">dev</property>
+      </pool>
+    </pools>
+  </irclient-cluster>
+</irclient-clusters>

@@ -4,7 +4,6 @@ import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map.Entry;
 
-import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
@@ -69,6 +68,32 @@ public final class DatabaseManager {
     		throw new efwException(efwException.DataSourceInitFailedException,jdbcResourceName);
 		}
 	}
+	
+	private static Boolean fromBatch=false;
+	private static HashMap<String,BatchDataSource> batchDataSources=new HashMap<String,BatchDataSource>();
+	public static synchronized void initFromBatch() throws efwException{
+		fromBatch=true;
+    	for (int idx=0;true;idx++){
+        	String jdbcResource=PropertiesManager.EFW_JDBC_RESOURCE+(idx==0?"":"."+idx);
+        	String url=PropertiesManager.EFW_JDBC_RESOURCE_URL+(idx==0?"":"."+idx);
+        	String username=PropertiesManager.EFW_JDBC_RESOURCE_USERNAME+(idx==0?"":"."+idx);
+        	String password=PropertiesManager.EFW_JDBC_RESOURCE_PASSWORD+(idx==0?"":"."+idx);
+        	String jdbcResourceValue=PropertiesManager.getProperty(jdbcResource, "");
+        	if(jdbcResourceValue!=null && !"".equals(jdbcResourceValue)){
+        		BatchDataSource dataSource = new BatchDataSource();
+        		String urlValue=PropertiesManager.getProperty(url, "");
+        		String usernameValue=PropertiesManager.getProperty(username, "");
+        		String passwordValue=PropertiesManager.getProperty(password, "");
+        		dataSource.setUrl(urlValue);
+        		dataSource.setUsername(usernameValue);
+        		dataSource.setPassword(passwordValue);
+        		if(idx==0)DatabaseManager.dataSource=dataSource;
+        		batchDataSources.put(jdbcResourceValue, dataSource);
+        	}else{
+        		break;
+        	}
+    	}
+	}
     ///////////////////////////////////////////////////////////////////////////
 	/**
 	 * フレームワーク用データソースからデータベース接続を取得する。
@@ -94,17 +119,24 @@ public final class DatabaseManager {
     	if (jdbcResourceName==null||"".equals(jdbcResourceName)){
     		DatabaseManager.open();
     		return;
+    	}else{
+            DataSource ds;
+    		if(fromBatch){
+    			ds = batchDataSources.get(jdbcResourceName);
+    		}else{//from web
+                if(jdbcResourceName.indexOf("java:")>-1){//if the jdbc resouce begins from [java:], it is full jndi name.
+                	ds = (DataSource) new InitialContext().lookup(jdbcResourceName);
+                }else{//or it begins by [java:comp/env/]
+                	ds = (DataSource) new InitialContext().lookup(JAVA_INITCONTEXT_NAME+"/"+jdbcResourceName);
+                }
+    		}
+            Database otherdb = new Database(ds.getConnection());
+    		if(DatabaseManager.database.get()==null)
+    			DatabaseManager.database.set(new HashMap<String,Database>());
+    		DatabaseManager.database.get()
+    		.put(jdbcResourceName, otherdb);
+            LogManager.CommDebug("DatabaseManager.open",jdbcResourceName);
     	}
-        Database otherdb = null; 
-        Context initContext = new InitialContext();
-        Context envContext = (Context) initContext.lookup(JAVA_INITCONTEXT_NAME);
-        DataSource ds = (DataSource) envContext.lookup(jdbcResourceName);
-        otherdb = new Database(ds.getConnection());
-		if(DatabaseManager.database.get()==null)
-			DatabaseManager.database.set(new HashMap<String,Database>());
-		DatabaseManager.database.get()
-		.put(jdbcResourceName, otherdb);
-        LogManager.CommDebug("DatabaseManager.open",jdbcResourceName);
     }
     /**
      * すべてのデータベースを閉じる。

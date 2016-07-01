@@ -1,13 +1,11 @@
 package efw;
 
-import javax.servlet.ServletException;
-
 /**
  * フレームワークの初期化と実行時発生する例外。
  * @author Chang Kejun
  */
 @SuppressWarnings("serial")
-public final class efwException extends ServletException {
+public final class efwException extends Exception {
 	/**
 	 * サーバー部品JavaScriptファイルの格納パスが存在しないエラー定数。
 	 */
@@ -28,9 +26,12 @@ public final class efwException extends ServletException {
 	 * データソースが取得できないエラー定数。
 	 */
 	public static final String DataSourceInitFailedException="DataSourceInitFailedException";
-
 	/**
-	 * 指定IdのSqlを外部化XMLファイルが存在しないエラー定数。
+	 * メール送信エラー定数。
+	 */
+	public static final String MailSendFailedExcepton="MailSendFailedExcepton";
+	/**
+	 * 指定IdのSql外部化XMLファイルが存在しないエラー定数。
 	 */
 	public static final String SqlGroupIdIsNotExistsException="SqlGroupIdIsNotExistsException";
 	/**
@@ -66,6 +67,18 @@ public final class efwException extends ServletException {
 	 * Script実行エラー定数。
 	 */
 	public static final String ScriptDoPostFailedException="ScriptDoPostFailedException";
+	/**
+	 * 指定IdのMailテンプレートXMLファイルが存在しないエラー定数。
+	 */
+	public static final String MailGroupIdIsNotExistsException="MailGroupIdIsNotExistsException";
+	/**
+	 * 指定IdのMailが指定テンプレートXMLファイルに存在しないエラー定数。
+	 */
+	public static final String MailIdIsNotExistsException="MailIdIsNotExistsException";
+	/**
+	 * 指定IdのMailは指定テンプレートXMLファイルに複数存在しているエラー定数。
+	 */
+	public static final String MailIdIsDuplicateException="MailIdIsDuplicateException";
 	
 	/**
 	 * efw例外コンストラクタ。

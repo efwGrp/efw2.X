@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns="http://java.sun.com/xml/ns/javaee" 
+xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" 
+id="efw" version="3.0">
+	<display-name>efw</display-name>
+	<welcome-file-list>
+		<welcome-file>login.jsp</welcome-file>
+	</welcome-file-list>
+
+	<servlet>
+    <servlet-name>RuleInitializer</servlet-name>
+    <display-name>InnoRulesJ Engine initializer</display-name>
+    <servlet-class>com.innoexpert.innorulesj.repository.initializer.ServletRepositoryInitializer</servlet-class>
+    <init-param>
+      <param-name>repositories</param-name>
+      <param-value>dev</param-value>
+      <description>Rule repository names</description>
+    </init-param>
+    <load-on-startup>40</load-on-startup>
+  </servlet>
+
+  <servlet>
+    <servlet-name>RuleClientInitializer</servlet-name>
+    <display-name>InnoRules rule client initializer</display-name>
+    <servlet-class>com.innoexpert.ruleclient2.ServletInitializer</servlet-class>
+    <load-on-startup>50</load-on-startup>
+  </servlet>
+
+</web-app>
